@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7YF62DJDB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P7YF62DJDB');
+    </script>
+    <!-- End Google Analytics -->
+
+    
+    <title>Loops: The `while` Loop</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <nav class="sidebar">
+    <ul>
+        
+        
+        <li >
+            <a href="/" >Python Tutorial</a>
+        </li>
+        
+        <li >
+            <a href="/python/introduction-to-python.html" ><b>1</b>. Introduction to Python</a>
+        </li>
+        
+        <li >
+            <a href="/python/setting-up-your-environment.html" ><b>2</b>. Setting Up Your Environment</a>
+        </li>
+        
+        <li >
+            <a href="/python/using-the-terminal-in-vs-code.html" ><b>3</b>. Using the Terminal in VS Code</a>
+        </li>
+        
+        <li >
+            <a href="/python/writing-your-first-python-program.html" ><b>4</b>. Writing Your First Python Program</a>
+        </li>
+        
+        <li >
+            <a href="/python/understanding-the-print-function.html" ><b>5</b>. Understanding the print() Function</a>
+        </li>
+        
+        <li >
+            <a href="/python/comments-in-python.html" ><b>6</b>. Comments in Python</a>
+        </li>
+        
+        <li >
+            <a href="/python/variables-and-data-types.html" ><b>7</b>. Variables and Data Types</a>
+        </li>
+        
+        <li >
+            <a href="/python/working-with-strings.html" ><b>8</b>. Working with Strings</a>
+        </li>
+        
+        <li >
+            <a href="/python/numbers-and-basic-arithmetic.html" ><b>9</b>. Numbers and Basic Arithmetic</a>
+        </li>
+        
+        <li >
+            <a href="/python/user-input.html" ><b>10</b>. User Input</a>
+        </li>
+        
+        <li >
+            <a href="/python/conditional-statements.html" ><b>11</b>. Conditional Statements</a>
+        </li>
+        
+        <li class="current">
+            <a href="/python/loops-the-while-loop.html" ><b>12</b>. Loops: The `while` Loop</a>
+        </li>
+        
+        <li >
+            <a href="/python/loops-the-for-loop.html" ><b>13</b>. Loops: The `for` Loop</a>
+        </li>
+        
+        <li >
+            <a href="/python/functions-introduction.html" ><b>14</b>. Functions: Introduction</a>
+        </li>
+        
+        <li >
+            <a href="/python/functions-return-values.html" ><b>15</b>. Functions: Return Values</a>
+        </li>
+        
+        <li >
+            <a href="/python/lists-introduction.html" ><b>16</b>. Lists: Introduction</a>
+        </li>
+        
+        <li >
+            <a href="/python/lists-operations.html" ><b>17</b>. Lists: Operations</a>
+        </li>
+        
+        <li >
+            <a href="/python/dictionaries-introduction.html" ><b>18</b>. Dictionaries: Introduction</a>
+        </li>
+        
+        <li >
+            <a href="/python/dictionaries-operations.html" ><b>19</b>. Dictionaries: Operations</a>
+        </li>
+        
+        <li >
+            <a href="/python/tuples-introduction.html" ><b>20</b>. Tuples: Introduction</a>
+        </li>
+        
+        <li >
+            <a href="/python/sets-introduction.html" ><b>21</b>. Sets: Introduction</a>
+        </li>
+        
+        <li >
+            <a href="/python/sets-operations.html" ><b>22</b>. Sets: Operations</a>
+        </li>
+        
+        <li >
+            <a href="/python/file-handling-reading-files.html" ><b>23</b>. File Handling: Reading Files</a>
+        </li>
+        
+        <li >
+            <a href="/python/file-handling-writing-files.html" ><b>24</b>. File Handling: Writing to Files</a>
+        </li>
+        
+        <li >
+            <a href="/python/error-handling-introduction.html" ><b>25</b>. Error Handling: Introduction</a>
+        </li>
+        
+        <li >
+            <a href="/python/error-handling-multiple-exceptions.html" ><b>26</b>. Error Handling: Multiple Exceptions</a>
+        </li>
+        
+        <li >
+            <a href="/python/error-handling-finally-block.html" ><b>27</b>. Error Handling: `finally` Block</a>
+        </li>
+        
+        <li >
+            <a href="/python/modules-introduction.html" ><b>28</b>. Modules: Introduction</a>
+        </li>
+        
+        <li >
+            <a href="/python/modules-creating-your-own.html" ><b>29</b>. Modules: Creating Your Own</a>
+        </li>
+        
+        <li >
+            <a href="/python/packages-introduction.html" ><b>30</b>. Packages: Introduction</a>
+        </li>
+        
+        <li >
+            <a href="/python/python-standard-library-overview.html" ><b>31</b>. Python Standard Library: Overview</a>
+        </li>
+        
+        <li >
+            <a href="/python/python-standard-library-os-module.html" ><b>32</b>. Python Standard Library: `os` Module</a>
+        </li>
+        
+        <li >
+            <a href="/python/python-standard-library-datetime-module.html" ><b>33</b>. Python Standard Library: `datetime` Module</a>
+        </li>
+        
+        <li >
+            <a href="/python/python-standard-library-json-module.html" ><b>34</b>. Python Standard Library: `json` Module</a>
+        </li>
+        
+        <li >
+            <a href="/python/python-standard-library-random-module.html" ><b>35</b>. Python Standard Library: `random` Module</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-introduction.html" ><b>36</b>. Object-Oriented Programming: Introduction</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-attributes.html" ><b>37</b>. Object-Oriented Programming: Attributes</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-methods.html" ><b>38</b>. Object-Oriented Programming: Methods</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-class-attributes.html" ><b>39</b>. Object-Oriented Programming: Class Attributes</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-inheritance.html" ><b>40</b>. Object-Oriented Programming: Inheritance</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-method-overriding.html" ><b>41</b>. Object-Oriented Programming: Method Overriding</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-super.html" ><b>42</b>. Object-Oriented Programming: `super()`</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-encapsulation.html" ><b>43</b>. Object-Oriented Programming: Encapsulation</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-polymorphism.html" ><b>44</b>. Object-Oriented Programming: Polymorphism</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-abstract-classes.html" ><b>45</b>. Object-Oriented Programming: Abstract Classes</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-properties.html" ><b>46</b>. Object-Oriented Programming: Properties</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-property-setters.html" ><b>47</b>. Object-Oriented Programming: Property Setters</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-dunder-methods.html" ><b>48</b>. Object-Oriented Programming: Dunder Methods</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-dunder-methods-for-operators.html" ><b>49</b>. Object-Oriented Programming: Dunder Methods for Operators</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-composition.html" ><b>50</b>. Object-Oriented Programming: Composition</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-aggregation.html" ><b>51</b>. Object-Oriented Programming: Aggregation</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-static-methods.html" ><b>52</b>. Object-Oriented Programming: Static Methods</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-class-methods.html" ><b>53</b>. Object-Oriented Programming: Class Methods</a>
+        </li>
+        
+        <li >
+            <a href="/python/object-oriented-programming-multiple-inheritance.html" ><b>54</b>. Object-Oriented Programming: Multiple Inheritance</a>
+        </li>
+        
+        <li >
+            <a href="/python/iterators-and-iterables.html" ><b>55</b>. Iterators and Iterables</a>
+        </li>
+        
+        <li >
+            <a href="/python/list-comprehensions.html" ><b>56</b>. List Comprehensions</a>
+        </li>
+        
+        <li >
+            <a href="/python/generators.html" ><b>57</b>. Generators</a>
+        </li>
+        
+        <li >
+            <a href="/python/decorators.html" ><b>58</b>. Decorators</a>
+        </li>
+        
+        <li >
+            <a href="/python/context-managers-and-the-with-statement.html" ><b>59</b>. Context Managers and the `with` Statement</a>
+        </li>
+        
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
+
+    <main class="content">
+        <h1>Loops: The `while` Loop</h1>
+        <p>A <code class="language-plaintext highlighter-rouge">while</code> loop allows you to repeat a block of code as long as a condition is true.</p>
+
+<h3 id="basic-while-loop">Basic <code class="language-plaintext highlighter-rouge">while</code> Loop</h3>
+
+<p>Example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Count is:</span><span class="sh">"</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Increment count
+</span></code></pre></div></div>
+
+<h3 id="expected-output">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Count is: 0
+Count is: 1
+Count is: 2
+Count is: 3
+Count is: 4
+</code></pre></div></div>
+
+<h3 id="infinite-loops">Infinite Loops</h3>
+
+<p>Be careful! If the condition in a <code class="language-plaintext highlighter-rouge">while</code> loop never becomes false, the loop will run forever. To stop an infinite loop, use <code class="language-plaintext highlighter-rouge">Ctrl + C</code> in the terminal.</p>
+
+<p>Example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This will run forever!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="breaking-out-of-a-loop">Breaking Out of a Loop</h3>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">break</code> statement to exit a loop early.</p>
+
+<p>Example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Count is:</span><span class="sh">"</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>  <span class="c1"># Exit the loop when count is 5
+</span></code></pre></div></div>
+
+<h3 id="expected-output-1">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Count is: 0
+Count is: 1
+Count is: 2
+Count is: 3
+Count is: 4
+</code></pre></div></div>
+
+        <!-- Next Lesson Button -->
+        
+        
+        <a href="/python/loops-the-for-loop.html" class="next-lesson">Next Lesson: Loops: The `for` Loop</a>
+        
+    </main>
+</body>
+
+</html>

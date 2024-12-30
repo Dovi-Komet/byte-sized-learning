@@ -1,0 +1,44 @@
+<nav class="sidebar">
+    <ul>
+        {% assign sorted_pages = site.pages | sort: "order" %}
+        {% for item in sorted_pages %}
+        <li {% if item.title == page.title %}class="current"{% endif %}>
+            <a href="{{ item.url }}" >{% if item.order != 0 %}<b>{{ item.order }}</b>. {% endif %}{{ item.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
