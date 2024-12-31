@@ -12,7 +12,8 @@ Below is the list of lessons. Follow the sequence to build your Python skills.
 
 <ul>
   {% assign sorted_pages = site.pages | sort: "order" %}
-  {% for page in sorted_pages %}
+  {% assign filtered_pages = sorted_pages | where_exp: "item", "item.order != nil" %}
+  {% for page in filtered_pages %}
   {% if page.url != "/" %}
   <li><a href="{{ page.url }}">{{ page.title }}</a></li>
   {% endif %}
