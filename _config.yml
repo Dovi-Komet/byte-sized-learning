@@ -1,4 +1,6 @@
 google_analytics: "G-P7YF62DJDB"
+url: "https://byte-sized-learning.netlify.app"
+baseurl: ""
 
 plugins:
   - jekyll-sitemap
