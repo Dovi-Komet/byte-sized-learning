@@ -1,445 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>http://localhost:4000/404.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/comments-in-python.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/conditional-statements.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/context-managers-and-the-with-statement.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/decorators.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/dictionaries-introduction.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/dictionaries-operations.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/error-handling-finally-block.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/error-handling-introduction.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/error-handling-multiple-exceptions.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/file-handling-reading-files.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/file-handling-writing-files.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/functions-introduction.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/functions-return-values.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/generators.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/introduction-to-python.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/iterators-and-iterables.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/list-comprehensions.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/lists-introduction.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/lists-operations.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/loops-the-for-loop.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/loops-the-while-loop.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/modules-creating-your-own.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/modules-introduction.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/numbers-and-basic-arithmetic.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-abstract-classes.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-aggregation.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-attributes.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-class-attributes.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-class-methods.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-composition.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-dunder-methods-for-operators.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-dunder-methods.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-encapsulation.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-inheritance.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-introduction.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-method-overriding.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-methods.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-multiple-inheritance.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-polymorphism.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-properties.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-property-setters.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-static-methods.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/object-oriented-programming-super.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/packages-introduction.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/python-standard-library-datetime-module.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/python-standard-library-json-module.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/python-standard-library-os-module.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/python-standard-library-overview.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/python-standard-library-random-module.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/robots.txt</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/sets-introduction.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/sets-operations.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/setting-up-your-environment.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/sitemap.xml</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/tuples-introduction.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/understanding-the-print-function.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/user-input.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/using-the-terminal-in-vs-code.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/variables-and-data-types.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/working-with-strings.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:4000/python/writing-your-first-python-program.html</loc>
-    <lastmod></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/python/comments-in-python.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/conditional-statements.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/context-managers-and-the-with-statement.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/decorators.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/dictionaries-introduction.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/dictionaries-operations.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/error-handling-finally-block.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/error-handling-introduction.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/error-handling-multiple-exceptions.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/file-handling-reading-files.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/file-handling-writing-files.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/functions-introduction.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/functions-return-values.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/generators.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/introduction-to-python.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/iterators-and-iterables.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/list-comprehensions.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/lists-introduction.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/lists-operations.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/loops-the-for-loop.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/loops-the-while-loop.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/modules-creating-your-own.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/modules-introduction.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/numbers-and-basic-arithmetic.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-abstract-classes.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-aggregation.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-attributes.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-class-attributes.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-class-methods.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-composition.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-dunder-methods-for-operators.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-dunder-methods.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-encapsulation.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-inheritance.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-introduction.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-method-overriding.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-methods.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-multiple-inheritance.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-polymorphism.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-properties.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-property-setters.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-static-methods.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/object-oriented-programming-super.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/packages-introduction.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/python-standard-library-datetime-module.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/python-standard-library-json-module.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/python-standard-library-os-module.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/python-standard-library-overview.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/python-standard-library-random-module.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/sets-introduction.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/sets-operations.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/setting-up-your-environment.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/tuples-introduction.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/understanding-the-print-function.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/user-input.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/using-the-terminal-in-vs-code.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/variables-and-data-types.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/working-with-strings.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/python/writing-your-first-python-program.html</loc>
+</url>
 </urlset>
