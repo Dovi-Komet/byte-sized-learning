@@ -17,20 +17,20 @@
     <!-- End Google Analytics -->
 
     
-    <title>Iterables & Iterators</title>
+    <title>Itertools & Functools</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Iterables &amp; Iterators</title>
+<title>Itertools &amp; Functools</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Iterables &amp; Iterators" />
+<meta property="og:title" content="Itertools &amp; Functools" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/python/iterables-&-iterators.html" />
-<meta property="og:url" content="http://localhost:4000/python/iterables-&-iterators.html" />
+<link rel="canonical" href="http://localhost:4000/python/itertools-and-functools.html" />
+<meta property="og:url" content="http://localhost:4000/python/itertools-and-functools.html" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Iterables &amp; Iterators" />
+<meta property="twitter:title" content="Itertools &amp; Functools" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Iterables &amp; Iterators","url":"http://localhost:4000/python/iterables-&-iterators.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Itertools &amp; Functools","url":"http://localhost:4000/python/itertools-and-functools.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -273,8 +273,8 @@
             <a href="/python/multiple-inheritance.html" ><b>57</b>. Multiple Inheritance</a>
         </li>
         
-        <li class="current">
-            <a href="/python/iterables-&-iterators.html" ><b>58</b>. Iterables & Iterators</a>
+        <li >
+            <a href="/python/iterables-and-iterators.html" ><b>58</b>. Iterables & Iterators</a>
         </li>
         
         <li >
@@ -366,7 +366,7 @@
         </li>
         
         <li >
-            <a href="/python/dates-&-times.html" ><b>81</b>. Dates & Times</a>
+            <a href="/python/dates-and-times.html" ><b>81</b>. Dates & Times</a>
         </li>
         
         <li >
@@ -425,8 +425,8 @@
             <a href="/python/debugging-tools.html" ><b>95</b>. Debugging Tools</a>
         </li>
         
-        <li >
-            <a href="/python/itertools-&-functools.html" ><b>96</b>. Itertools & Functools</a>
+        <li class="current">
+            <a href="/python/itertools-and-functools.html" ><b>96</b>. Itertools & Functools</a>
         </li>
         
         <li >
@@ -487,48 +487,43 @@
 </script>
 
     <main class="content">
-        <h1>Iterables & Iterators</h1>
-        <p>Understanding the difference between iterables and iterators is key to working with loops and comprehensions.</p>
+        <h1>Itertools & Functools</h1>
+        <p>The <code class="language-plaintext highlighter-rouge">itertools</code> and <code class="language-plaintext highlighter-rouge">functools</code> modules provide powerful tools for iterable manipulation and functional programming.</p>
 
-<h3 id="iterables">Iterables</h3>
+<h3 id="using-itertools">Using itertools</h3>
 
-<p>An object that can return an iterator (e.g., lists, strings, dictionaries).</p>
+<p>Example: Generating combinations.</p>
 
-<p>Example:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">itertools</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">b</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">c</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">combinations</span> <span class="o">=</span> <span class="n">itertools</span><span class="p">.</span><span class="nf">combinations</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">))</span>
 </code></pre></div></div>
 
-<h3 id="iterators">Iterators</h3>
+<h3 id="using-functools">Using functools</h3>
 
-<p>An object representing a stream of data, obtained using <code class="language-plaintext highlighter-rouge">iter()</code>.</p>
+<p>Example: Using <code class="language-plaintext highlighter-rouge">reduce</code> to compute the product of a list.</p>
 
-<p>Example:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">iterator</span> <span class="o">=</span> <span class="nf">iter</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="nf">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">))</span>  <span class="c1"># 1
-</span><span class="nf">print</span><span class="p">(</span><span class="nf">next</span><span class="p">(</span><span class="n">iterator</span><span class="p">))</span>  <span class="c1"># 2
-</span></code></pre></div></div>
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">product</span> <span class="o">=</span> <span class="nf">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h3 id="expected-output">Expected Output</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
-2
-3
-1
-2
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('a', 'b'), ('a', 'c'), ('b', 'c')]
+24
 </code></pre></div></div>
 
-<p>Mastering these concepts will deepen your understanding of Python’s for-loops and data processing.</p>
+<p><code class="language-plaintext highlighter-rouge">itertools</code> and <code class="language-plaintext highlighter-rouge">functools</code> simplify complex operations on iterables.</p>
 
         <!-- Next Lesson Button -->
         
         
-        <a href="/python/list-comprehensions.html" class="next-lesson">Next Lesson: List Comprehensions</a>
+        <a href="/python/testing-with-pytest.html" class="next-lesson">Next Lesson: Testing with pytest</a>
         
     </main>
 </body>

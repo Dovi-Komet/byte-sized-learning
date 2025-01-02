@@ -61,7 +61,7 @@
 <loc>http://localhost:4000/python/dash-dashboards.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/python/dates-&amp;-times.html</loc>
+<loc>http://localhost:4000/python/dates-and-times.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/python/datetime-module.html</loc>
@@ -133,10 +133,10 @@
 <loc>http://localhost:4000/python/intro-to-tuples.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/python/iterables-&amp;-iterators.html</loc>
+<loc>http://localhost:4000/python/iterables-and-iterators.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/python/itertools-&amp;-functools.html</loc>
+<loc>http://localhost:4000/python/itertools-and-functools.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/python/json-module.html</loc>

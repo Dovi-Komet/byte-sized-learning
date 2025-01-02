@@ -17,20 +17,20 @@
     <!-- End Google Analytics -->
 
     
-    <title>Itertools & Functools</title>
+    <title>Dates & Times</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Itertools &amp; Functools</title>
+<title>Dates &amp; Times</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Itertools &amp; Functools" />
+<meta property="og:title" content="Dates &amp; Times" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/python/itertools-&-functools.html" />
-<meta property="og:url" content="http://localhost:4000/python/itertools-&-functools.html" />
+<link rel="canonical" href="http://localhost:4000/python/dates-and-times.html" />
+<meta property="og:url" content="http://localhost:4000/python/dates-and-times.html" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Itertools &amp; Functools" />
+<meta property="twitter:title" content="Dates &amp; Times" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Itertools &amp; Functools","url":"http://localhost:4000/python/itertools-&-functools.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Dates &amp; Times","url":"http://localhost:4000/python/dates-and-times.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -274,7 +274,7 @@
         </li>
         
         <li >
-            <a href="/python/iterables-&-iterators.html" ><b>58</b>. Iterables & Iterators</a>
+            <a href="/python/iterables-and-iterators.html" ><b>58</b>. Iterables & Iterators</a>
         </li>
         
         <li >
@@ -365,8 +365,8 @@
             <a href="/python/intro-to-numpy.html" ><b>80</b>. Intro to NumPy</a>
         </li>
         
-        <li >
-            <a href="/python/dates-&-times.html" ><b>81</b>. Dates & Times</a>
+        <li class="current">
+            <a href="/python/dates-and-times.html" ><b>81</b>. Dates & Times</a>
         </li>
         
         <li >
@@ -425,8 +425,8 @@
             <a href="/python/debugging-tools.html" ><b>95</b>. Debugging Tools</a>
         </li>
         
-        <li class="current">
-            <a href="/python/itertools-&-functools.html" ><b>96</b>. Itertools & Functools</a>
+        <li >
+            <a href="/python/itertools-and-functools.html" ><b>96</b>. Itertools & Functools</a>
         </li>
         
         <li >
@@ -487,43 +487,53 @@
 </script>
 
     <main class="content">
-        <h1>Itertools & Functools</h1>
-        <p>The <code class="language-plaintext highlighter-rouge">itertools</code> and <code class="language-plaintext highlighter-rouge">functools</code> modules provide powerful tools for iterable manipulation and functional programming.</p>
+        <h1>Dates & Times</h1>
+        <p>The <code class="language-plaintext highlighter-rouge">time</code> and <code class="language-plaintext highlighter-rouge">calendar</code> modules help manage date and time operations.</p>
 
-<h3 id="using-itertools">Using itertools</h3>
+<h3 id="using-the-time-module">Using the <code class="language-plaintext highlighter-rouge">time</code> Module</h3>
 
-<p>Example: Generating combinations.</p>
+<p>Example:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">itertools</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">time</span>
 
-<span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">b</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">c</span><span class="sh">"</span><span class="p">]</span>
-<span class="n">combinations</span> <span class="o">=</span> <span class="n">itertools</span><span class="p">.</span><span class="nf">combinations</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">))</span>
-</code></pre></div></div>
-
-<h3 id="using-functools">Using functools</h3>
-
-<p>Example: Using <code class="language-plaintext highlighter-rouge">reduce</code> to compute the product of a list.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
-
-<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">product</span> <span class="o">=</span> <span class="nf">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+<span class="n">current_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Current timestamp:</span><span class="sh">"</span><span class="p">,</span> <span class="n">current_time</span><span class="p">)</span>
+<span class="n">local_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">localtime</span><span class="p">(</span><span class="n">current_time</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Local time:</span><span class="sh">"</span><span class="p">,</span> <span class="n">time</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="sh">"</span><span class="s">%Y-%m-%d %H:%M:%S</span><span class="sh">"</span><span class="p">,</span> <span class="n">local_time</span><span class="p">))</span>
 </code></pre></div></div>
 
 <h3 id="expected-output">Expected Output</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('a', 'b'), ('a', 'c'), ('b', 'c')]
-24
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Current timestamp: 1693409000.123456
+Local time: 2024-08-30 10:30:00
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">itertools</code> and <code class="language-plaintext highlighter-rouge">functools</code> simplify complex operations on iterables.</p>
+<h3 id="using-the-calendar-module">Using the <code class="language-plaintext highlighter-rouge">calendar</code> Module</h3>
+
+<p>Example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">calendar</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">calendar</span><span class="p">.</span><span class="nf">month</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="expected-output-1">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    August 2024
+Mo Tu We Th Fr Sa Su
+           1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30 31
+</code></pre></div></div>
+
+<p>These modules are useful for working with time-based data.</p>
 
         <!-- Next Lesson Button -->
         
         
-        <a href="/python/testing-with-pytest.html" class="next-lesson">Next Lesson: Testing with pytest</a>
+        <a href="/python/task-automation.html" class="next-lesson">Next Lesson: Task Automation</a>
         
     </main>
 </body>
