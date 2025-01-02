@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Generators"
-order: 57
+order: 60
 ---
 
 Generators are functions that yield values one at a time using the `yield` keyword, providing memory efficiency for large datasets.

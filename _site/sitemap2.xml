@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/Inheritance.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/abstract-classes.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/advanced-structures.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/aggregation.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/apis-with-requests.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/async-programming.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/boolean-logic.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/building-guis.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/class-attributes.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/class-methods.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/cli-with-click.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/code-optimization.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/command-line-tools.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/composition.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/conditionals.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/config-files.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/context-managers.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/csv-files.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/custom-modules.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/dash-dashboards.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/dates-&-times.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/datetime-module.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/debugging-tools.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/decorators.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/dict-operations.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/encapsulation.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/error-handling-basics.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/fastapi-rest-apis.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/first-python-program.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/flask-rest-apis.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/for-loops.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/generators.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/git-for-python.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/handling-large-data.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/intro-to-dicts.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/intro-to-functions.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/intro-to-lists.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/intro-to-modules.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/intro-to-numpy.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/intro-to-packages.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/intro-to-python.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/intro-to-sets.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/intro-to-tuples.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/iterables-&-iterators.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/itertools-&-functools.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/json-module.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/lambda-functions.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/list-comprehensions.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/list-operations.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/logging.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/matplotlib-basics.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/method-overriding.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/multiple-exceptions.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/multiple-inheritance.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/multiprocessing.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/nested-structures.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/numbers-and-math.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/oop-attributes.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/oop-basics.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/oop-methods.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/operator-overloading.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/os-module.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/pandas-basics.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/pickle-serialization.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/polymorphism.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/print-function.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/properties.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/property-setters.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/python-comments.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/random-module.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/reading-files.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/regex-basics.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/regex-patterns.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/return-values.html</loc>
+    </url>
+  
+
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/seaborn-visualization.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/set-operations.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/setup-environment.html</loc>
+    </url>
+  
+
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/slicing-and-indexing.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/sorting-and-key-functions.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/special-methods.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/sqlite-databases.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/standard-library.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/static-methods.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/strings.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/task-automation.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/testing-with-pytest.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/the-finally-block.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/threading.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/type-checking.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/unit-testing.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/user-input.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/using-super.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/using-vs-code-terminal.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/variables-and-types.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/virtual-environments.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/web-scraping.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/websockets.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/while-loops.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/working-with-xml.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/working-with-yaml.html</loc>
+    </url>
+  
+
+  
+    <url>
+      <loc>http://localhost:4000/python/writing-files.html</loc>
+    </url>
+  
+
+  
+
+</urlset>
