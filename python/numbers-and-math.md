@@ -6,19 +6,19 @@ order: 8
 
 Python can handle different types of numbers and perform basic arithmetic operations.
 
-### Types of Numbers
+## Types of Numbers
 
 1. **Integers**: Whole numbers, like `10` or `-5`.
 2. **Floats**: Numbers with decimals, like `3.14` or `-2.5`.
 
-### Arithmetic Operators
+## Arithmetic Operators
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
+- **Addition**: `+`
+- **Subtraction**: `-`
+- **Multiplication**: `*`
+- **Division**: `/`
 
-Example:
+### Example: Basic Arithmetic
 
 ```python
 a = 10
@@ -39,9 +39,14 @@ print(a / b)  # Division
 3.3333333333333335
 ```
 
-Python also supports operations like exponentiation (`**`) and modulus (`%`).
+## More Operators
 
-Example:
+Python also supports additional operations like **exponentiation** and **modulus**.
+
+- **Exponentiation** (`**`): Raises one number to the power of another.
+- **Modulus** (`%`): Returns the remainder of division.
+
+### Example: Advanced Operations
 
 ```python
 print(a ** b)  # a raised to the power of b

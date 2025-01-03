@@ -6,11 +6,11 @@ order: 5
 
 In the last lesson, we used the `print()` function. Let’s take a closer look at how it works.
 
-### What is the `print()` Function?
+## What is the `print()` Function?
 
 The `print()` function is used to display information on the screen. You can use it to show text, numbers, or even the results of calculations.
 
-### Example 1: Printing Text
+## Example 1: Printing Text
 
 ```python
 print("Welcome to Python!")
@@ -22,7 +22,7 @@ print("Welcome to Python!")
 Welcome to Python!
 ```
 
-### Example 2: Printing Numbers
+## Example 2: Printing Numbers
 
 ```python
 print(123)
@@ -34,7 +34,7 @@ print(123)
 123
 ```
 
-### Example 3: Printing Results of a Calculation
+## Example 3: Printing Results of a Calculation
 
 ```python
 print(10 + 5)

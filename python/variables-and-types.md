@@ -6,11 +6,11 @@ order: 7
 
 In Python, variables are used to store information that you can use and manipulate later. Let's learn about variables and their data types.
 
-### What is a Variable?
+## What is a Variable?
 
 A variable is like a container that holds data. You can assign a value to a variable using the `=` symbol.
 
-Example:
+### Example
 
 ```python
 name = "Alice"
@@ -21,7 +21,7 @@ Here:
 - `name` is a variable holding the text "Alice."
 - `age` is a variable holding the number 25.
 
-### Common Data Types in Python
+## Common Data Types in Python
 
 1. **Strings**: Used for text. Strings are enclosed in quotes (`" "` or `' '`).
    ```python
@@ -42,6 +42,8 @@ Here:
    ```python
    is_happy = True
    ```
+
+## Printing Variables
 
 You can print variables to see their values:
 

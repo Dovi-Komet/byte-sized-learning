@@ -6,11 +6,11 @@ order: 6
 
 Comments are lines in your code that are ignored by Python. They are useful for explaining your code or leaving notes for yourself and others.
 
-### Single-Line Comments
+## Single-Line Comments
 
 Start a comment with the `#` symbol. Everything after `#` on that line is ignored by Python.
 
-Example:
+### Example
 
 ```python
 # This is a comment
@@ -23,11 +23,11 @@ print("Comments are ignored by Python")
 Comments are ignored by Python
 ```
 
-### Multi-Line Comments
+## Multi-Line Comments
 
 To write longer comments, you can use multiple `#` symbols or triple quotes (`'''` or `"""`).
 
-Example:
+### Example
 
 ```python
 '''
@@ -44,4 +44,3 @@ Multi-line comments are also ignored by Python
 ```
 
 Use comments to make your code easier to understand!
-
