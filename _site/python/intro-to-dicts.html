@@ -591,13 +591,13 @@
 
     <main class="content">
         <h1>Intro to Dicts</h1>
-        <p>A dictionary is a collection of key-value pairs. Each key in a dictionary maps to a specific value.</p>
+        <p>A dictionary is a collection of key-value pairs. Each key maps to a specific value, making dictionaries a versatile data type for storing and retrieving data efficiently.</p>
 
-<h3 id="creating-a-dictionary">Creating a Dictionary</h3>
+<h2 id="creating-a-dictionary">Creating a Dictionary</h2>
 
-<p>You can create a dictionary using curly braces <code class="language-plaintext highlighter-rouge">{}</code>.</p>
+<p>You can create a dictionary using curly braces <code class="language-plaintext highlighter-rouge">{}</code>. Each key is unique and is paired with a value, separated by a colon <code class="language-plaintext highlighter-rouge">:</code>.</p>
 
-<p>Example:</p>
+<h3 id="example-creating-a-dictionary">Example: Creating a Dictionary</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span>
     <span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span>
@@ -612,11 +612,11 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'name': 'Alice', 'age': 30, 'city': 'New York'}
 </code></pre></div></div>
 
-<h3 id="accessing-values">Accessing Values</h3>
+<h2 id="accessing-values">Accessing Values</h2>
 
-<p>You can access a value in a dictionary by using its key.</p>
+<p>To access a value in a dictionary, use its key inside square brackets <code class="language-plaintext highlighter-rouge">[]</code>.</p>
 
-<p>Example:</p>
+<h3 id="example-accessing-values-by-key">Example: Accessing Values by Key</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">])</span>  <span class="c1"># Access the value associated with the key 'name'
 </span><span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">[</span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">])</span>   <span class="c1"># Access the value associated with the key 'age'
@@ -627,6 +627,48 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Alice
 30
 </code></pre></div></div>
+
+<h2 id="adding-or-updating-key-value-pairs">Adding or Updating Key-Value Pairs</h2>
+
+<p>You can add a new key-value pair or update an existing one using the assignment operator <code class="language-plaintext highlighter-rouge">=</code>.</p>
+
+<h3 id="example-adding-and-updating">Example: Adding and Updating</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span><span class="p">[</span><span class="sh">"</span><span class="s">job</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Engineer</span><span class="sh">"</span>  <span class="c1"># Add a new key-value pair
+</span><span class="n">person</span><span class="p">[</span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">31</span>         <span class="c1"># Update the value of an existing key
+</span><span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="expected-output-2">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'name': 'Alice', 'age': 31, 'city': 'New York', 'job': 'Engineer'}
+</code></pre></div></div>
+
+<h2 id="removing-key-value-pairs">Removing Key-Value Pairs</h2>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">del</code> statement to remove a key-value pair from a dictionary.</p>
+
+<h3 id="example-removing-a-key-value-pair">Example: Removing a Key-Value Pair</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">del</span> <span class="n">person</span><span class="p">[</span><span class="sh">"</span><span class="s">city</span><span class="sh">"</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="expected-output-3">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'name': 'Alice', 'age': 31, 'job': 'Engineer'}
+</code></pre></div></div>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Dictionaries are collections of key-value pairs, created using curly braces <code class="language-plaintext highlighter-rouge">{}</code>.</li>
+  <li>Access values by referencing their keys inside square brackets <code class="language-plaintext highlighter-rouge">[]</code>.</li>
+  <li>Add or update key-value pairs using the assignment operator <code class="language-plaintext highlighter-rouge">=</code>.</li>
+  <li>Remove key-value pairs with the <code class="language-plaintext highlighter-rouge">del</code> statement.</li>
+</ul>
+
+<p>Dictionaries are an essential tool for storing and managing data in Python. Understanding how to use them effectively will enhance your ability to write flexible and powerful programs.</p>
 
         <!-- Next Lesson Button -->
         

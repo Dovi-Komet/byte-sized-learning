@@ -591,13 +591,13 @@
 
     <main class="content">
         <h1>List Operations</h1>
-        <p>You can perform many operations on lists. Let’s explore some common ones.</p>
+        <p>Lists in Python come with many built-in operations that make them versatile and powerful. Let’s explore some common ones.</p>
 
-<h3 id="adding-items-to-a-list">Adding Items to a List</h3>
+<h2 id="adding-items-to-a-list">Adding Items to a List</h2>
 
 <p>Use the <code class="language-plaintext highlighter-rouge">append()</code> method to add an item to the end of a list.</p>
 
-<p>Example:</p>
+<h3 id="example-using-append">Example: Using <code class="language-plaintext highlighter-rouge">append()</code></h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">]</span>
 <span class="n">fruits</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">)</span>
@@ -609,11 +609,11 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['apple', 'banana', 'cherry']
 </code></pre></div></div>
 
-<h3 id="removing-items-from-a-list">Removing Items from a List</h3>
+<h2 id="removing-items-from-a-list">Removing Items from a List</h2>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">remove()</code> method to remove a specific item.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">remove()</code> method to remove a specific item by its value. If the item isn’t in the list, Python raises a <code class="language-plaintext highlighter-rouge">ValueError</code>.</p>
 
-<p>Example:</p>
+<h3 id="example-using-remove">Example: Using <code class="language-plaintext highlighter-rouge">remove()</code></h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">]</span>
 <span class="n">fruits</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">)</span>
@@ -625,13 +625,14 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['apple', 'cherry']
 </code></pre></div></div>
 
-<h3 id="looping-through-a-list">Looping Through a List</h3>
+<h2 id="looping-through-a-list">Looping Through a List</h2>
 
 <p>You can use a <code class="language-plaintext highlighter-rouge">for</code> loop to iterate through all the items in a list.</p>
 
-<p>Example:</p>
+<h3 id="example-looping-through-a-list">Example: Looping Through a List</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">)</span>
 </code></pre></div></div>
 
@@ -640,6 +641,68 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apple
 cherry
 </code></pre></div></div>
+
+<h2 id="inserting-items-at-a-specific-position">Inserting Items at a Specific Position</h2>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">insert()</code> method to add an item at a specific index.</p>
+
+<h3 id="example-using-insert">Example: Using <code class="language-plaintext highlighter-rouge">insert()</code></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">fruits</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Add "banana" at index 1
+</span><span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="expected-output-3">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['apple', 'banana', 'cherry']
+</code></pre></div></div>
+
+<h2 id="removing-items-by-index">Removing Items by Index</h2>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">pop()</code> method to remove an item at a specific index. If no index is provided, <code class="language-plaintext highlighter-rouge">pop()</code> removes the last item.</p>
+
+<h3 id="example-using-pop">Example: Using <code class="language-plaintext highlighter-rouge">pop()</code></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">last_fruit</span> <span class="o">=</span> <span class="n">fruits</span><span class="p">.</span><span class="nf">pop</span><span class="p">()</span>  <span class="c1"># Remove the last item
+</span><span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Removed item:</span><span class="sh">"</span><span class="p">,</span> <span class="n">last_fruit</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="expected-output-4">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['apple', 'banana']
+Removed item: cherry
+</code></pre></div></div>
+
+<h2 id="checking-for-an-item-in-a-list">Checking for an Item in a List</h2>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">in</code> keyword to check if an item exists in a list.</p>
+
+<h3 id="example-using-in">Example: Using <code class="language-plaintext highlighter-rouge">in</code></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">banana</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>  <span class="c1"># True
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">grape</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">)</span>   <span class="c1"># False
+</span></code></pre></div></div>
+
+<h3 id="expected-output-5">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+False
+</code></pre></div></div>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">append()</code> to add items to the end of a list and <code class="language-plaintext highlighter-rouge">insert()</code> to add them at specific positions.</li>
+  <li>Remove items with <code class="language-plaintext highlighter-rouge">remove()</code> by value or <code class="language-plaintext highlighter-rouge">pop()</code> by index.</li>
+  <li>Loop through lists with <code class="language-plaintext highlighter-rouge">for</code> to access each item.</li>
+  <li>Check for the presence of an item using the <code class="language-plaintext highlighter-rouge">in</code> keyword.</li>
+</ul>
+
+<p>Lists offer a wide range of operations to manage and manipulate collections of data efficiently. Explore these operations to gain confidence in handling lists!</p>
 
         <!-- Next Lesson Button -->
         

@@ -591,13 +591,13 @@
 
     <main class="content">
         <h1>Set Operations</h1>
-        <p>Sets support a variety of operations that are useful for working with collections of unique items.</p>
+        <p>Sets in Python support a variety of operations that are useful for working with collections of unique items. These operations make sets ideal for tasks involving comparisons and mathematical set logic.</p>
 
-<h3 id="union-of-sets">Union of Sets</h3>
+<h2 id="union-of-sets">Union of Sets</h2>
 
-<p>The union of two sets contains all unique items from both sets.</p>
+<p>The union of two sets contains all unique items from both sets. Use the <code class="language-plaintext highlighter-rouge">union()</code> method or the <code class="language-plaintext highlighter-rouge">|</code> operator.</p>
 
-<p>Example:</p>
+<h3 id="example-union">Example: Union</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">set1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
 <span class="n">set2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
@@ -605,40 +605,90 @@
 <span class="nf">print</span><span class="p">(</span><span class="n">union_set</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<h3 id="output">Output</h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{1, 2, 3, 4, 5}
 </code></pre></div></div>
 
-<h3 id="intersection-of-sets">Intersection of Sets</h3>
+<p>You can achieve the same result using the <code class="language-plaintext highlighter-rouge">|</code> operator:</p>
 
-<p>The intersection contains only the items that are present in both sets.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">union_set</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">|</span> <span class="n">set2</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">union_set</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>Example:</p>
+<h2 id="intersection-of-sets">Intersection of Sets</h2>
+
+<p>The intersection contains only the items that are present in both sets. Use the <code class="language-plaintext highlighter-rouge">intersection()</code> method or the <code class="language-plaintext highlighter-rouge">&amp;</code> operator.</p>
+
+<h3 id="example-intersection">Example: Intersection</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intersection_set</span> <span class="o">=</span> <span class="n">set1</span><span class="p">.</span><span class="nf">intersection</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">intersection_set</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output-1">Expected Output</h3>
+<h3 id="output-1">Output</h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{3}
 </code></pre></div></div>
 
-<h3 id="difference-of-sets">Difference of Sets</h3>
+<p>You can also use the <code class="language-plaintext highlighter-rouge">&amp;</code> operator:</p>
 
-<p>The difference contains items that are in the first set but not in the second.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">intersection_set</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">&amp;</span> <span class="n">set2</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">intersection_set</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>Example:</p>
+<h2 id="difference-of-sets">Difference of Sets</h2>
+
+<p>The difference contains items that are in the first set but not in the second. Use the <code class="language-plaintext highlighter-rouge">difference()</code> method or the <code class="language-plaintext highlighter-rouge">-</code> operator.</p>
+
+<h3 id="example-difference">Example: Difference</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">difference_set</span> <span class="o">=</span> <span class="n">set1</span><span class="p">.</span><span class="nf">difference</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">difference_set</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output-2">Expected Output</h3>
+<h3 id="output-2">Output</h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{1, 2}
 </code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">-</code> operator produces the same result:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">difference_set</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">-</span> <span class="n">set2</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">difference_set</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="symmetric-difference-of-sets">Symmetric Difference of Sets</h2>
+
+<p>The symmetric difference contains items that are in either set, but not in both. Use the <code class="language-plaintext highlighter-rouge">symmetric_difference()</code> method or the <code class="language-plaintext highlighter-rouge">^</code> operator.</p>
+
+<h3 id="example-symmetric-difference">Example: Symmetric Difference</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">symmetric_difference_set</span> <span class="o">=</span> <span class="n">set1</span><span class="p">.</span><span class="nf">symmetric_difference</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">symmetric_difference_set</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-3">Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{1, 2, 4, 5}
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">^</code> operator achieves the same result:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">symmetric_difference_set</span> <span class="o">=</span> <span class="n">set1</span> <span class="o">^</span> <span class="n">set2</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">symmetric_difference_set</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li><strong>Union (<code class="language-plaintext highlighter-rouge">union()</code> or <code class="language-plaintext highlighter-rouge">|</code>)</strong>: Combines all unique items from both sets.</li>
+  <li><strong>Intersection (<code class="language-plaintext highlighter-rouge">intersection()</code> or <code class="language-plaintext highlighter-rouge">&amp;</code>)</strong>: Finds common items in both sets.</li>
+  <li><strong>Difference (<code class="language-plaintext highlighter-rouge">difference()</code> or <code class="language-plaintext highlighter-rouge">-</code>)</strong>: Finds items in the first set but not in the second.</li>
+  <li><strong>Symmetric Difference (<code class="language-plaintext highlighter-rouge">symmetric_difference()</code> or <code class="language-plaintext highlighter-rouge">^</code>)</strong>: Finds items in either set but not in both.</li>
+</ul>
+
+<p>These operations make sets a powerful tool for comparing and combining collections. Experiment with these operations to understand how they can simplify your code.</p>
 
         <!-- Next Lesson Button -->
         

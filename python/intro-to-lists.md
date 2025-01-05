@@ -83,4 +83,4 @@ print(len(fruits))
 - Lists are mutable, allowing you to modify their contents.
 - Use `len()` to determine the number of items in a list.
 
-Lists are a powerful and flexible tool in Python. Practice creating, accessing, and modifying lists to understand their versatility!
+Lists are a foundational data type in Python. Mastering their creation, access, and modification will prepare you for more advanced programming concepts.
