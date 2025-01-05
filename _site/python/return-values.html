@@ -488,11 +488,13 @@
 
     <main class="content">
         <h1>Return Values</h1>
-        <p>Functions can return values that you can use later in your program.</p>
+        <p>Functions can return values that you can use later in your program. The <code class="language-plaintext highlighter-rouge">return</code> statement allows a function to send a result back to the caller.</p>
 
-<h3 id="using-the-return-statement">Using the <code class="language-plaintext highlighter-rouge">return</code> Statement</h3>
+<h2 id="using-the-return-statement">Using the <code class="language-plaintext highlighter-rouge">return</code> Statement</h2>
 
-<p>Example:</p>
+<p>The <code class="language-plaintext highlighter-rouge">return</code> statement specifies the value a function should send back to where it was called.</p>
+
+<h3 id="example-returning-a-value">Example: Returning a Value</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
@@ -506,11 +508,17 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The result is: 8
 </code></pre></div></div>
 
-<h3 id="why-use-return-values">Why Use Return Values?</h3>
+<p>Here:</p>
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">add</code> function computes the sum of <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">return</code> statement sends the result (<code class="language-plaintext highlighter-rouge">8</code>) back to the variable <code class="language-plaintext highlighter-rouge">result</code>.</li>
+</ul>
 
-<p>Returning values makes functions more flexible and allows you to store the results for further use.</p>
+<h2 id="why-use-return-values">Why Use Return Values?</h2>
 
-<p>Example:</p>
+<p>Returning values makes functions more versatile and allows you to store and reuse the results in different parts of your program.</p>
+
+<h3 id="example-reusing-returned-values">Example: Reusing Returned Values</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">number</span> <span class="o">*</span> <span class="n">number</span>
@@ -524,6 +532,49 @@
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Squares: 16 25
 </code></pre></div></div>
+
+<p>In this example:</p>
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">square</code> function calculates the square of a number and returns the result.</li>
+  <li>The returned values are stored in <code class="language-plaintext highlighter-rouge">x</code> and <code class="language-plaintext highlighter-rouge">y</code>, which are then printed.</li>
+</ul>
+
+<h2 id="using-returned-values-in-expressions">Using Returned Values in Expressions</h2>
+
+<p>You can use returned values directly in expressions or other functions.</p>
+
+<h3 id="example-using-returned-values">Example: Using Returned Values</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">add_and_multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+    <span class="n">sum_result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">sum_result</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="nf">add_and_multiply</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Result:</span><span class="sh">"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="expected-output-2">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Result: 20
+</code></pre></div></div>
+
+<p>In this example:</p>
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">add_and_multiply</code> function adds two numbers, then multiplies the result with a third number using the <code class="language-plaintext highlighter-rouge">multiply</code> function.</li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Use the <code class="language-plaintext highlighter-rouge">return</code> statement to send a result back to the caller.</li>
+  <li>Returning values allows you to store and reuse the results for further calculations or operations.</li>
+  <li>Functions can return values that are directly used in expressions or passed to other functions.</li>
+</ul>
+
+<p>Mastering return values will help you build more dynamic and modular programs. Practice writing functions that return and use values to enhance your coding skills!</p>
 
         <!-- Next Lesson Button -->
         

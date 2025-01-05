@@ -488,15 +488,19 @@
 
     <main class="content">
         <h1>for Loops</h1>
-        <p>A <code class="language-plaintext highlighter-rouge">for</code> loop is used to iterate over a sequence (like a list, string, or range of numbers).</p>
+        <p>A <code class="language-plaintext highlighter-rouge">for</code> loop is used to iterate over a sequence (like a list, string, or range of numbers). It allows you to execute a block of code once for each item in the sequence.</p>
 
-<h3 id="basic-for-loop">Basic <code class="language-plaintext highlighter-rouge">for</code> Loop</h3>
+<h2 id="basic-for-loop">Basic <code class="language-plaintext highlighter-rouge">for</code> Loop</h2>
 
-<p>Example:</p>
+<p>The <code class="language-plaintext highlighter-rouge">for</code> loop iterates over a sequence, assigning each item to a variable in turn.</p>
+
+<h3 id="example-iterating-over-a-range">Example: Iterating Over a Range</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Number is:</span><span class="sh">"</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">range(5)</code> function generates numbers from <code class="language-plaintext highlighter-rouge">0</code> to <code class="language-plaintext highlighter-rouge">4</code> (not including <code class="language-plaintext highlighter-rouge">5</code>).</p>
 
 <h3 id="expected-output">Expected Output</h3>
 
@@ -507,9 +511,11 @@ Number is: 3
 Number is: 4
 </code></pre></div></div>
 
-<h3 id="looping-through-a-list">Looping Through a List</h3>
+<h2 id="looping-through-a-list">Looping Through a List</h2>
 
-<p>Example:</p>
+<p>You can use a <code class="language-plaintext highlighter-rouge">for</code> loop to iterate over items in a list.</p>
+
+<h3 id="example-iterating-over-a-list">Example: Iterating Over a List</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">fruit</span> <span class="ow">in</span> <span class="n">fruits</span><span class="p">:</span>
@@ -523,9 +529,11 @@ I like banana
 I like cherry
 </code></pre></div></div>
 
-<h3 id="looping-through-a-string">Looping Through a String</h3>
+<h2 id="looping-through-a-string">Looping Through a String</h2>
 
-<p>Example:</p>
+<p>Strings are sequences of characters, so you can iterate over them with a <code class="language-plaintext highlighter-rouge">for</code> loop.</p>
+
+<h3 id="example-iterating-over-a-string">Example: Iterating Over a String</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span>
 <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
@@ -542,7 +550,57 @@ o
 n
 </code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">for</code> loop is a versatile tool for working with sequences.</p>
+<h2 id="using-break-in-a-for-loop">Using <code class="language-plaintext highlighter-rouge">break</code> in a <code class="language-plaintext highlighter-rouge">for</code> Loop</h2>
+
+<p>You can use the <code class="language-plaintext highlighter-rouge">break</code> statement to exit a <code class="language-plaintext highlighter-rouge">for</code> loop early.</p>
+
+<h3 id="example-breaking-a-loop">Example: Breaking a Loop</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">break</span>  <span class="c1"># Exit the loop when number is 5
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Number is:</span><span class="sh">"</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="expected-output-3">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number is: 0
+Number is: 1
+Number is: 2
+Number is: 3
+Number is: 4
+</code></pre></div></div>
+
+<h2 id="using-continue-in-a-for-loop">Using <code class="language-plaintext highlighter-rouge">continue</code> in a <code class="language-plaintext highlighter-rouge">for</code> Loop</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">continue</code> statement skips the current iteration and moves to the next.</p>
+
+<h3 id="example-skipping-iterations">Example: Skipping Iterations</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">continue</span>  <span class="c1"># Skip when number is 2
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Number is:</span><span class="sh">"</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="expected-output-4">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number is: 0
+Number is: 1
+Number is: 3
+Number is: 4
+</code></pre></div></div>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">for</code> loops to iterate over sequences like lists, strings, or ranges.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">range()</code> function generates a sequence of numbers.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">break</code> to exit a loop early and <code class="language-plaintext highlighter-rouge">continue</code> to skip to the next iteration.</li>
+  <li>Practice combining <code class="language-plaintext highlighter-rouge">for</code> loops with sequences to build dynamic programs.</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">for</code> loop is a versatile tool for working with sequences. Experiment with different sequences and loop behaviors to master this concept!</p>
 
         <!-- Next Lesson Button -->
         

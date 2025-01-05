@@ -488,23 +488,25 @@
 
     <main class="content">
         <h1>Intro to Functions</h1>
-        <p>Functions are reusable blocks of code that perform specific tasks. They help make your code more organized and efficient.</p>
+        <p>Functions are reusable blocks of code designed to perform specific tasks. They help make your code more organized, readable, and efficient by avoiding repetition.</p>
 
-<h3 id="defining-a-function">Defining a Function</h3>
+<h2 id="defining-a-function">Defining a Function</h2>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">def</code> keyword to define a function.</p>
+<p>In Python, you define a function using the <code class="language-plaintext highlighter-rouge">def</code> keyword, followed by the function name and parentheses <code class="language-plaintext highlighter-rouge">()</code>.</p>
 
-<p>Example:</p>
+<h3 id="example-defining-a-function">Example: Defining a Function</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello!</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="calling-a-function">Calling a Function</h3>
+<p>This creates a function named <code class="language-plaintext highlighter-rouge">greet</code> that prints “Hello!” when called.</p>
 
-<p>To use a function, you call it by its name followed by parentheses.</p>
+<h2 id="calling-a-function">Calling a Function</h2>
 
-<p>Example:</p>
+<p>To execute a function, you call it by its name followed by parentheses.</p>
+
+<h3 id="example-calling-a-function">Example: Calling a Function</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">greet</span><span class="p">()</span>
 </code></pre></div></div>
@@ -514,11 +516,11 @@
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello!
 </code></pre></div></div>
 
-<h3 id="functions-with-parameters">Functions with Parameters</h3>
+<h2 id="functions-with-parameters">Functions with Parameters</h2>
 
-<p>You can pass information to a function using parameters.</p>
+<p>Parameters allow you to pass information to a function so it can operate on different values.</p>
 
-<p>Example:</p>
+<h3 id="example-function-with-parameters">Example: Function with Parameters</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, </span><span class="sh">"</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="sh">"</span><span class="s">!</span><span class="sh">"</span><span class="p">)</span>
@@ -529,6 +531,23 @@
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, Alice!
 </code></pre></div></div>
+
+<p>In this example:</p>
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">name</code> parameter is a placeholder for the value you pass when calling the function.</li>
+  <li><code class="language-plaintext highlighter-rouge">"Alice"</code> is passed to the <code class="language-plaintext highlighter-rouge">greet</code> function, and the function uses it to generate a personalized message.</li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Functions help organize and reuse code efficiently.</li>
+  <li>Define a function with <code class="language-plaintext highlighter-rouge">def</code>, followed by a name and parentheses.</li>
+  <li>Call a function by its name followed by parentheses.</li>
+  <li>Use parameters to pass information into functions for flexibility.</li>
+</ul>
+
+<p>Functions are a powerful tool in Python, and this is just the beginning. In the next lesson, we’ll learn how to return values from functions to make them even more versatile.</p>
 
         <!-- Next Lesson Button -->
         

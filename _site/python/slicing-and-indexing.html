@@ -488,41 +488,60 @@
 
     <main class="content">
         <h1>Slicing and Indexing</h1>
-        <p>Slicing and indexing allow you to access parts of lists and strings.</p>
+        <p>Slicing and indexing allow you to access parts of strings and other sequences like lists in Python.</p>
 
-<h3 id="indexing">Indexing</h3>
+<h2 id="indexing">Indexing</h2>
 
-<p>Use brackets <code class="language-plaintext highlighter-rouge">[]</code> to access elements by position:</p>
+<p>Indexing retrieves individual elements from a sequence using their position. Python uses zero-based indexing, meaning the first element is at position <code class="language-plaintext highlighter-rouge">0</code>. Negative indices count from the end of the sequence.</p>
 
-<p>Example:</p>
+<h3 id="example-indexing-strings">Example: Indexing Strings</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># 10
-</span><span class="nf">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 50
-</span></code></pre></div></div>
-
-<h3 id="slicing">Slicing</h3>
-
-<p>Use the syntax <code class="language-plaintext highlighter-rouge">[start:end]</code> to get a subset:</p>
-
-<p>Example:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>  <span class="c1"># [20, 30, 40]
-</span><span class="nf">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>   <span class="c1"># [10, 20, 30]
-</span><span class="nf">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># [10, 30, 50]
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># First character: 'P'
+</span><span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Last character: 'n'
 </span></code></pre></div></div>
 
 <h3 id="expected-output">Expected Output</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>10
-50
-[20, 30, 40]
-[10, 20, 30]
-[10, 30, 50]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P
+n
 </code></pre></div></div>
 
-<p>Understanding slicing is crucial for efficient data manipulation.</p>
+<h2 id="slicing">Slicing</h2>
+
+<p>Slicing extracts a portion of a sequence using the syntax <code class="language-plaintext highlighter-rouge">[start:end:step]</code>.</p>
+<ul>
+  <li><strong>start</strong>: The index to start from (inclusive).</li>
+  <li><strong>end</strong>: The index to stop at (exclusive).</li>
+  <li><strong>step</strong>: The interval between indices (optional).</li>
+</ul>
+
+<h3 id="default-behavior-in-slicing">Default Behavior in Slicing</h3>
+
+<ul>
+  <li>If <code class="language-plaintext highlighter-rouge">start</code> is omitted, slicing starts from the beginning of the sequence.</li>
+  <li>If <code class="language-plaintext highlighter-rouge">end</code> is omitted, slicing goes to the end of the sequence.</li>
+  <li>If <code class="language-plaintext highlighter-rouge">step</code> is omitted, the default step is <code class="language-plaintext highlighter-rouge">1</code>.</li>
+</ul>
+
+<h3 id="example-default-behavior-in-slicing">Example: Default Behavior in Slicing</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>   <span class="c1"># From the start to index 3: 'Pyth'
+</span><span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>   <span class="c1"># From index 2 to the end: 'thon'
+</span><span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[:])</span>    <span class="c1"># The entire string: 'Python'
+</span><span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Every second character: 'Pto'
+</span></code></pre></div></div>
+
+<h3 id="expected-output-1">Expected Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pyth
+thon
+Python
+Pto
+</code></pre></div></div>
+
+<p>Slicing and indexing are powerful tools that make it easy to manipulate strings and other sequences. Practice these operations to become comfortable with sequence handling in Python!</p>
 
         <!-- Next Lesson Button -->
         

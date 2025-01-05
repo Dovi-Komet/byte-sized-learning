@@ -490,11 +490,11 @@
         <h1>User Input</h1>
         <p>In many programs, you will need to get input from the user. Python makes this easy with the <code class="language-plaintext highlighter-rouge">input()</code> function.</p>
 
-<h3 id="getting-input-from-the-user">Getting Input from the User</h3>
+<h2 id="getting-input-from-the-user">Getting Input from the User</h2>
 
-<p>The <code class="language-plaintext highlighter-rouge">input()</code> function allows you to ask the user for information.</p>
+<p>The <code class="language-plaintext highlighter-rouge">input()</code> function allows you to prompt the user for information. The text inside the parentheses is displayed to the user as a prompt.</p>
 
-<p>Example:</p>
+<h3 id="example-basic-user-input">Example: Basic User Input</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">What is your name? </span><span class="sh">"</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, </span><span class="sh">"</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="sh">"</span><span class="s">!</span><span class="sh">"</span><span class="p">)</span>
@@ -506,22 +506,77 @@
 Hello, Alice!
 </code></pre></div></div>
 
-<h3 id="converting-input">Converting Input</h3>
+<h2 id="converting-input">Converting Input</h2>
 
-<p>By default, the <code class="language-plaintext highlighter-rouge">input()</code> function returns the input as a string. If you need a number, you must convert it using <code class="language-plaintext highlighter-rouge">int()</code> or <code class="language-plaintext highlighter-rouge">float()</code>.</p>
+<p>By default, the <code class="language-plaintext highlighter-rouge">input()</code> function returns the input as a string. To perform mathematical operations, you must convert the input to a number using <code class="language-plaintext highlighter-rouge">int()</code> or <code class="language-plaintext highlighter-rouge">float()</code>.</p>
 
-<p>Example:</p>
+<h3 id="example-adding-two-numbers">Example: Adding Two Numbers</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">How old are you? </span><span class="sh">"</span><span class="p">)</span>
-<span class="n">age</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>  <span class="c1"># Convert the input to an integer
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You are </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="sh">"</span><span class="s"> years old!</span><span class="sh">"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num1</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter the first number: </span><span class="sh">"</span><span class="p">)</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter the second number: </span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Convert inputs to integers for addition
+</span><span class="n">num1</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">The sum is: </span><span class="sh">"</span> <span class="o">+</span> <span class="nf">str</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>  <span class="c1"># Convert the result back to a string for printing
+</span></code></pre></div></div>
+
+<h3 id="expected-output-if-the-user-enters-5-and-3">Expected Output (if the user enters “5” and “3”)</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter the first number: 5
+Enter the second number: 3
+The sum is: 8
 </code></pre></div></div>
 
-<h3 id="expected-output-if-the-user-enters-25">Expected Output (if the user enters “25”)</h3>
+<h2 id="why-convert-back-to-a-string">Why Convert Back to a String?</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>How old are you? 25
-You are 25 years old!
+<p>When printing the result of a mathematical operation, Python requires all parts of the message to be strings. If you try to concatenate a number (like <code class="language-plaintext highlighter-rouge">result</code>) directly with a string, Python will raise an error.</p>
+
+<h3 id="example-without-conversion">Example: Without Conversion</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">The sum is: </span><span class="sh">"</span> <span class="o">+</span> <span class="n">result</span><span class="p">)</span>  <span class="c1"># This will raise an error
+</span></code></pre></div></div>
+
+<h3 id="error-output">Error Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TypeError: can only concatenate str (not "int") to str
 </code></pre></div></div>
+
+<p>To avoid this, you must use the <code class="language-plaintext highlighter-rouge">str()</code> function to convert the number back into a string before concatenating it with other text.</p>
+
+<h2 id="what-happens-without-conversion">What Happens Without Conversion?</h2>
+
+<p>If you forget to convert inputs to numbers, Python will treat them as strings and concatenate them instead of performing arithmetic.</p>
+
+<h3 id="example-missing-conversion">Example: Missing Conversion</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num1</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter the first number: </span><span class="sh">"</span><span class="p">)</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter the second number: </span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>  <span class="c1"># Strings will be concatenated
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">The sum is: </span><span class="sh">"</span> <span class="o">+</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="expected-output-if-the-user-enters-5-and-3-1">Expected Output (if the user enters “5” and “3”)</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter the first number: 5
+Enter the second number: 3
+The sum is: 53
+</code></pre></div></div>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">input()</code> to get information from the user.</li>
+  <li>Convert inputs to numbers with <code class="language-plaintext highlighter-rouge">int()</code> or <code class="language-plaintext highlighter-rouge">float()</code> for calculations.</li>
+  <li>Convert numbers back to strings with <code class="language-plaintext highlighter-rouge">str()</code> when combining them with text for printing.</li>
+  <li>Failing to convert correctly can lead to errors or unexpected results.</li>
+</ul>
+
+<p>Practice using user input and conversions to build dynamic, interactive programs!</p>
 
         <!-- Next Lesson Button -->
         
