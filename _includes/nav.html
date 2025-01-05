@@ -1,11 +1,13 @@
 <nav class="sidebar">
     <ul>
+        {% assign page_number = 0 %}
         {% assign sorted_pages = site.pages | sort: "order" %}
         {% assign filtered_pages = sorted_pages | where_exp: "item", "item.order != nil" %}
         {% for item in filtered_pages %}
         <li {% if item.title == page.title %}class="current"{% endif %}>
-            <a href="{{ item.url }}" >{% if item.order != 0 %}<b>{{ item.order }}</b>. {% endif %}{{ item.title }}</a>
+            <a href="{{ item.url }}" >{% if item.order != 0 %}<b>{{page_number}}</b>. {% endif %}{{ item.title }}</a>
         </li>
+        {% assign page_number = page_number | plus: 1 %}
         {% endfor %}
     </ul>
 </nav>
