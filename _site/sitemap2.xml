@@ -197,6 +197,12 @@
 
   
     <url>
+      <loc>http://localhost:4000/python/formatted-strings.html</loc>
+    </url>
+  
+
+  
+    <url>
       <loc>http://localhost:4000/python/generators.html</loc>
     </url>
   

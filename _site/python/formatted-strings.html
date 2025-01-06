@@ -17,20 +17,20 @@
     <!-- End Google Analytics -->
 
     
-    <title>Static Methods</title>
+    <title>Formatted Strings</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Static Methods</title>
+<title>Formatted Strings</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Static Methods" />
+<meta property="og:title" content="Formatted Strings" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/python/static-methods.html" />
-<meta property="og:url" content="http://localhost:4000/python/static-methods.html" />
+<link rel="canonical" href="http://localhost:4000/python/formatted-strings.html" />
+<meta property="og:url" content="http://localhost:4000/python/formatted-strings.html" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Static Methods" />
+<meta property="twitter:title" content="Formatted Strings" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Static Methods","url":"http://localhost:4000/python/static-methods.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Formatted Strings","url":"http://localhost:4000/python/formatted-strings.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -122,7 +122,7 @@
         </li>
         
         
-        <li >
+        <li class="current">
             <a href="/python/formatted-strings.html" ><b>16</b>. Formatted Strings</a>
         </li>
         
@@ -322,7 +322,7 @@
         </li>
         
         
-        <li class="current">
+        <li >
             <a href="/python/static-methods.html" ><b>56</b>. Static Methods</a>
         </li>
         
@@ -595,32 +595,94 @@
 </script>
 
     <main class="content">
-        <h1>Static Methods</h1>
-        <p>Static methods are methods that belong to a class but do not access or modify the class or instance attributes. They are defined using the <code class="language-plaintext highlighter-rouge">@staticmethod</code> decorator.</p>
+        <h1>Formatted Strings</h1>
+        <p>Formatted strings, also known as f-strings, are a powerful feature in Python that allow you to create strings with embedded expressions. This makes it easy to dynamically include values in your text.</p>
 
-<h3 id="defining-and-using-a-static-method">Defining and Using a Static Method</h3>
+<h2 id="what-are-formatted-strings">What Are Formatted Strings?</h2>
 
-<p>Example:</p>
+<p>Formatted strings are strings prefixed with the letter <code class="language-plaintext highlighter-rouge">f</code> or <code class="language-plaintext highlighter-rouge">F</code>. You can include expressions inside curly braces <code class="language-plaintext highlighter-rouge">{}</code> within the string, and Python will evaluate and insert their values.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Math</span><span class="p">:</span>
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<h3 id="example-basic-formatted-string">Example: Basic Formatted String</h3>
 
-<span class="nf">print</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s"> years old.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<h3 id="output">Output:</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>My name is Alice and I am 30 years old.
 </code></pre></div></div>
 
-<p>Static methods are used for utility functions that don’t depend on the state of the object.</p>
+<h2 id="using-expressions-in-formatted-strings">Using Expressions in Formatted Strings</h2>
+
+<p>You can include any valid Python expression inside curly braces.</p>
+
+<h3 id="example-calculations-and-methods">Example: Calculations and Methods</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">The sum of </span><span class="si">{</span><span class="n">num1</span><span class="si">}</span><span class="s"> and </span><span class="si">{</span><span class="n">num2</span><span class="si">}</span><span class="s"> is </span><span class="si">{</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">My name in uppercase is </span><span class="si">{</span><span class="n">name</span><span class="p">.</span><span class="nf">upper</span><span class="p">()</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-1">Output:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The sum of 10 and 5 is 15.
+My name in uppercase is ALICE.
+</code></pre></div></div>
+
+<h2 id="formatting-numbers">Formatting Numbers</h2>
+
+<p>You can format numbers for better readability, such as specifying decimal places or adding commas.</p>
+
+<h3 id="example-formatting-numbers">Example: Formatting Numbers</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.141592653589793</span>
+<span class="n">large_number</span> <span class="o">=</span> <span class="mi">1234567890</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Pi rounded to 2 decimal places: </span><span class="si">{</span><span class="n">pi</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Large number with commas: </span><span class="si">{</span><span class="n">large_number</span><span class="si">:</span><span class="p">,</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-2">Output:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pi rounded to 2 decimal places: 3.14
+Large number with commas: 1,234,567,890
+</code></pre></div></div>
+
+<h2 id="combining-formatted-strings-with-loops">Combining Formatted Strings with Loops</h2>
+
+<p>Formatted strings can be very useful when working with loops.</p>
+
+<h3 id="example-using-formatted-strings-in-a-loop">Example: Using Formatted Strings in a Loop</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Iteration </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s"> squared is </span><span class="si">{</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-3">Output:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Iteration 1: 1 squared is 1.
+Iteration 2: 4 squared is 4.
+Iteration 3: 9 squared is 9.
+</code></pre></div></div>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Formatted strings (f-strings) allow you to include expressions directly within strings.</li>
+  <li>Use curly braces <code class="language-plaintext highlighter-rouge">{}</code> to embed variables, expressions, or method calls.</li>
+  <li>Format numbers with options like <code class="language-plaintext highlighter-rouge">:.2f</code> for decimal places or <code class="language-plaintext highlighter-rouge">:,</code> for commas.</li>
+  <li>f-strings simplify dynamic string creation and make your code more readable.</li>
+</ul>
+
+<p>Practice using formatted strings to create dynamic and flexible outputs in your Python programs!</p>
 
         <!-- Next Lesson Button -->
         
         
-        <a href="/python/class-methods.html" class="next-lesson">Next Lesson: Class Methods</a>
+        <a href="/python/intro-to-functions.html" class="next-lesson">Next Lesson: Intro to Functions</a>
         
     </main>
 </body>
