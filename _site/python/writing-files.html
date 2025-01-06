@@ -188,7 +188,7 @@
         
         
         <li >
-            <a href="/python/multiple-exceptions.html" ><b>29</b>. Multiple Exceptions</a>
+            <a href="/python/exceptions.html" ><b>29</b>. Exceptions</a>
         </li>
         
         
@@ -591,34 +591,85 @@
 
     <main class="content">
         <h1>Writing Files</h1>
-        <p>You can write data to a file in Python using the <code class="language-plaintext highlighter-rouge">write()</code> method.</p>
+        <p>Python allows you to write data to files, making it easy to save output, logs, or processed data. You can create new files or modify existing ones using various modes.</p>
 
-<h3 id="writing-to-a-file">Writing to a File</h3>
+<h2 id="writing-to-a-file">Writing to a File</h2>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">open()</code> function with the <code class="language-plaintext highlighter-rouge">"w"</code> mode to write to a file. If the file doesn’t exist, it will be created.</p>
+<p>To write to a file, use the <code class="language-plaintext highlighter-rouge">open()</code> function with the <code class="language-plaintext highlighter-rouge">"w"</code> mode. If the file doesn’t exist, it will be created. If it already exists, its contents will be overwritten.</p>
 
-<p>Example:</p>
+<h3 id="example-writing-to-a-file">Example: Writing to a File</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">output.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
     <span class="nb">file</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sh">"</span><span class="s">This is some text.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<h3 id="result">Result</h3>
 
 <p>A file named <code class="language-plaintext highlighter-rouge">output.txt</code> will be created with the following content:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is some text.
 </code></pre></div></div>
 
-<h3 id="appending-to-a-file">Appending to a File</h3>
+<h3 id="why-use-with">Why Use <code class="language-plaintext highlighter-rouge">with</code>?</h3>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">"a"</code> mode to append data to an existing file.</p>
+<p>The <code class="language-plaintext highlighter-rouge">with</code> statement ensures the file is closed automatically after writing, even if an error occurs. This helps prevent data corruption or resource leaks.</p>
 
-<p>Example:</p>
+<h2 id="appending-to-a-file">Appending to a File</h2>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">"a"</code> mode to append data to an existing file. The new data is added to the end of the file without erasing its existing content.</p>
+
+<h3 id="example-appending-to-a-file">Example: Appending to a File</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">output.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
     <span class="nb">file</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">This is additional text.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
+
+<h3 id="result-1">Result</h3>
+
+<p>The file <code class="language-plaintext highlighter-rouge">output.txt</code> will now contain:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is some text.
+This is additional text.
+</code></pre></div></div>
+
+<h2 id="writing-multiple-lines">Writing Multiple Lines</h2>
+
+<p>You can write multiple lines to a file using a loop or the <code class="language-plaintext highlighter-rouge">writelines()</code> method.</p>
+
+<h3 id="example-writing-multiple-lines">Example: Writing Multiple Lines</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">Line 1</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Line 2</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Line 3</span><span class="se">\n</span><span class="sh">"</span><span class="p">]</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">output.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="nb">file</span><span class="p">.</span><span class="nf">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="result-2">Result</h3>
+
+<p>The file <code class="language-plaintext highlighter-rouge">output.txt</code> will contain:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Line 1
+Line 2
+Line 3
+</code></pre></div></div>
+
+<h2 id="file-modes-for-writing">File Modes for Writing</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">"w"</code>: Write mode. Creates a new file or overwrites an existing file.</li>
+  <li><code class="language-plaintext highlighter-rouge">"a"</code>: Append mode. Adds data to the end of an existing file without overwriting its content.</li>
+  <li><code class="language-plaintext highlighter-rouge">"wb"</code> and <code class="language-plaintext highlighter-rouge">"ab"</code>: Write and append modes for binary data, such as images or files in non-text formats.</li>
+</ul>
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">"w"</code> mode to create or overwrite a file and <code class="language-plaintext highlighter-rouge">"a"</code> mode to append data.</li>
+  <li>Write data with the <code class="language-plaintext highlighter-rouge">write()</code> method or multiple lines with <code class="language-plaintext highlighter-rouge">writelines()</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">with</code> statement ensures files are properly closed after writing.</li>
+  <li>Understand file modes to handle text and binary files appropriately.</li>
+</ul>
+
+<p>Writing files is an essential skill for saving and managing data in Python. Experiment with writing and appending files to understand these operations better.</p>
 
         <!-- Next Lesson Button -->
         

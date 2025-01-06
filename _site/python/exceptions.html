@@ -17,20 +17,20 @@
     <!-- End Google Analytics -->
 
     
-    <title>Multiple Exceptions</title>
+    <title>Exceptions</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Multiple Exceptions</title>
+<title>Exceptions</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Multiple Exceptions" />
+<meta property="og:title" content="Exceptions" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/python/multiple-exceptions.html" />
-<meta property="og:url" content="http://localhost:4000/python/multiple-exceptions.html" />
+<link rel="canonical" href="http://localhost:4000/python/exceptions.html" />
+<meta property="og:url" content="http://localhost:4000/python/exceptions.html" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Multiple Exceptions" />
+<meta property="twitter:title" content="Exceptions" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Multiple Exceptions","url":"http://localhost:4000/python/multiple-exceptions.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Exceptions","url":"http://localhost:4000/python/exceptions.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -188,7 +188,7 @@
         
         
         <li class="current">
-            <a href="/python/multiple-exceptions.html" ><b>29</b>. Multiple Exceptions</a>
+            <a href="/python/exceptions.html" ><b>29</b>. Exceptions</a>
         </li>
         
         
@@ -590,36 +590,164 @@
 </script>
 
     <main class="content">
-        <h1>Multiple Exceptions</h1>
-        <p>In Python, you can handle multiple types of exceptions using multiple <code class="language-plaintext highlighter-rouge">except</code> blocks.</p>
+        <h1>Exceptions</h1>
+        <p>In Python, exceptions are errors that occur during program execution. Knowing the most common exceptions helps you identify and handle errors effectively.</p>
 
-<h3 id="handling-specific-exceptions">Handling Specific Exceptions</h3>
+<h2 id="what-are-exceptions">What Are Exceptions?</h2>
 
-<p>You can specify different actions for different types of errors.</p>
+<p>Exceptions are events that interrupt the normal flow of a program. They can occur due to various reasons, such as invalid user input, file not found, or division by zero. Python provides built-in exception types to describe specific error conditions.</p>
 
-<p>Example:</p>
+<h3 id="common-exceptions-in-python">Common Exceptions in Python</h3>
+
+<p>Here are some of the most common exceptions and when they occur:</p>
+
+<h3 id="1-valueerror">1. <code class="language-plaintext highlighter-rouge">ValueError</code></h3>
+
+<p>Occurs when an operation or function receives an argument of the correct type but an inappropriate value.</p>
+
+<h4 id="example">Example:</h4>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
-    <span class="n">number</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter a number: </span><span class="sh">"</span><span class="p">))</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">number</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Result is:</span><span class="sh">"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-<span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">That</span><span class="sh">'</span><span class="s">s not a valid number!</span><span class="sh">"</span><span class="p">)</span>
-<span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Cannot divide by zero!</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="sh">"</span><span class="s">abc</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Cannot convert "abc" to an integer
+</span><span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a ValueError!</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output-if-the-user-enters-0">Expected Output (if the user enters <code class="language-plaintext highlighter-rouge">0</code>)</h3>
+<h3 id="output">Output:</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cannot divide by zero!
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a ValueError!
 </code></pre></div></div>
 
-<h3 id="expected-output-if-the-user-enters-abc">Expected Output (if the user enters <code class="language-plaintext highlighter-rouge">abc</code>)</h3>
+<hr />
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>That's not a valid number!
+<h3 id="2-typeerror">2. <code class="language-plaintext highlighter-rouge">TypeError</code></h3>
+
+<p>Occurs when an operation or function is applied to an object of an inappropriate type.</p>
+
+<h4 id="example-1">Example:</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="sh">"</span><span class="s">abc</span><span class="sh">"</span> <span class="o">+</span> <span class="mi">123</span>  <span class="c1"># Cannot add a string and an integer
+</span><span class="k">except</span> <span class="nb">TypeError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a TypeError!</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>This ensures your program handles each type of error appropriately.</p>
+<h3 id="output-1">Output:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a TypeError!
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="3-indexerror">3. <code class="language-plaintext highlighter-rouge">IndexError</code></h3>
+
+<p>Occurs when trying to access an index that is out of range in a sequence (like a list or string).</p>
+
+<h4 id="example-2">Example:</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># Index 5 does not exist
+</span><span class="k">except</span> <span class="nb">IndexError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This is an IndexError!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-2">Output:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is an IndexError!
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="4-keyerror">4. <code class="language-plaintext highlighter-rouge">KeyError</code></h3>
+
+<p>Occurs when trying to access a key that does not exist in a dictionary.</p>
+
+<h4 id="example-3">Example:</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">}</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">my_dict</span><span class="p">[</span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">])</span>  <span class="c1"># Key "age" does not exist
+</span><span class="k">except</span> <span class="nb">KeyError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a KeyError!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-3">Output:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a KeyError!
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="5-zerodivisionerror">5. <code class="language-plaintext highlighter-rouge">ZeroDivisionError</code></h3>
+
+<p>Occurs when attempting to divide by zero.</p>
+
+<h4 id="example-4">Example:</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>  <span class="c1"># Division by zero
+</span><span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a ZeroDivisionError!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-4">Output:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a ZeroDivisionError!
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="6-filenotfounderror">6. <code class="language-plaintext highlighter-rouge">FileNotFoundError</code></h3>
+
+<p>Occurs when trying to open a file that does not exist.</p>
+
+<h4 id="example-5">Example:</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">nonexistent_file.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+<span class="k">except</span> <span class="nb">FileNotFoundError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a FileNotFoundError!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-5">Output:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is a FileNotFoundError!
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="7-attributeerror">7. <code class="language-plaintext highlighter-rouge">AttributeError</code></h3>
+
+<p>Occurs when trying to access an attribute that does not exist on an object.</p>
+
+<h4 id="example-6">Example:</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="mi">123</span>
+    <span class="n">number</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># Integers do not have an "append" method
+</span><span class="k">except</span> <span class="nb">AttributeError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This is an AttributeError!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-6">Output:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is an AttributeError!
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="summary">Summary</h2>
+
+<p>Understanding these common exceptions helps you:</p>
+<ol>
+  <li>Diagnose errors during program execution.</li>
+  <li>Write more effective error-handling code.</li>
+  <li>Build robust programs that can handle unexpected situations gracefully.</li>
+</ol>
+
+<p>Practice writing <code class="language-plaintext highlighter-rouge">try</code> and <code class="language-plaintext highlighter-rouge">except</code> blocks to handle these exceptions and improve the reliability of your programs.</p>
 
         <!-- Next Lesson Button -->
         

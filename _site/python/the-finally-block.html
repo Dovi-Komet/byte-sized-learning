@@ -188,7 +188,7 @@
         
         
         <li >
-            <a href="/python/multiple-exceptions.html" ><b>29</b>. Multiple Exceptions</a>
+            <a href="/python/exceptions.html" ><b>29</b>. Exceptions</a>
         </li>
         
         
@@ -591,11 +591,13 @@
 
     <main class="content">
         <h1>The finally Block</h1>
-        <p>The <code class="language-plaintext highlighter-rouge">finally</code> block allows you to execute code regardless of whether an error occurs or not.</p>
+        <p>The <code class="language-plaintext highlighter-rouge">finally</code> block allows you to execute code regardless of whether an exception occurs. It is typically used for cleanup tasks like closing files or releasing resources.</p>
 
-<h3 id="using-finally">Using <code class="language-plaintext highlighter-rouge">finally</code></h3>
+<h2 id="using-finally">Using <code class="language-plaintext highlighter-rouge">finally</code></h2>
 
-<p>Example:</p>
+<p>The <code class="language-plaintext highlighter-rouge">finally</code> block always runs after the <code class="language-plaintext highlighter-rouge">try</code> and any associated <code class="language-plaintext highlighter-rouge">except</code> blocks, even if an exception is raised.</p>
+
+<h3 id="example-using-finally">Example: Using <code class="language-plaintext highlighter-rouge">finally</code></h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
     <span class="nb">file</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">example.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span>
@@ -607,13 +609,61 @@
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Execution completed.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output-if-exampletxt-does-not-exist">Expected Output (if <code class="language-plaintext highlighter-rouge">example.txt</code> does not exist)</h3>
+<h3 id="output-if-exampletxt-does-not-exist">Output (if <code class="language-plaintext highlighter-rouge">example.txt</code> does not exist)</h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>File not found.
 Execution completed.
 </code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">finally</code> block is useful for cleanup tasks like closing files or releasing resources.</p>
+<p>In this example:</p>
+<ul>
+  <li>If the file does not exist, the <code class="language-plaintext highlighter-rouge">except</code> block runs to handle the error.</li>
+  <li>Regardless of the outcome, the <code class="language-plaintext highlighter-rouge">finally</code> block executes, printing “Execution completed.”</li>
+</ul>
+
+<hr />
+
+<h2 id="using-finally-for-cleanup">Using <code class="language-plaintext highlighter-rouge">finally</code> for Cleanup</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">finally</code> block is ideal for tasks like closing files or releasing resources to ensure they are handled properly.</p>
+
+<h3 id="example-closing-a-file-safely">Example: Closing a File Safely</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="nb">file</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">example.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">FileNotFoundError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">File not found.</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="k">if</span> <span class="sh">'</span><span class="s">file</span><span class="sh">'</span> <span class="ow">in</span> <span class="nf">locals</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">file</span><span class="p">.</span><span class="n">closed</span><span class="p">:</span>
+        <span class="nb">file</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">File closed.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-if-exampletxt-does-not-exist-1">Output (if <code class="language-plaintext highlighter-rouge">example.txt</code> does not exist)</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>File not found.
+File closed.
+</code></pre></div></div>
+
+<h3 id="output-if-exampletxt-exists-and-contains-hello-world">Output (if <code class="language-plaintext highlighter-rouge">example.txt</code> exists and contains <code class="language-plaintext highlighter-rouge">"Hello, World!"</code>)</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, World!
+File closed.
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">finally</code> block runs code after the <code class="language-plaintext highlighter-rouge">try</code> and <code class="language-plaintext highlighter-rouge">except</code> blocks, regardless of whether an exception occurs.</li>
+  <li>It is commonly used for cleanup tasks such as closing files or releasing resources.</li>
+  <li>Using <code class="language-plaintext highlighter-rouge">finally</code> ensures your program maintains proper resource management and avoids issues like unclosed files.</li>
+</ul>
+
+<p>Practice using the <code class="language-plaintext highlighter-rouge">finally</code> block with different tasks to understand its importance in maintaining program reliability.</p>
 
         <!-- Next Lesson Button -->
         

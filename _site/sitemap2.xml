@@ -167,6 +167,12 @@
 
   
     <url>
+      <loc>http://localhost:4000/python/exceptions.html</loc>
+    </url>
+  
+
+  
+    <url>
       <loc>http://localhost:4000/python/fastapi-rest-apis.html</loc>
     </url>
   
@@ -318,12 +324,6 @@
   
     <url>
       <loc>http://localhost:4000/python/method-overriding.html</loc>
-    </url>
-  
-
-  
-    <url>
-      <loc>http://localhost:4000/python/multiple-exceptions.html</loc>
     </url>
   
 

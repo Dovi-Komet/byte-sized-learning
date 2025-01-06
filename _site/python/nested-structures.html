@@ -188,7 +188,7 @@
         
         
         <li >
-            <a href="/python/multiple-exceptions.html" ><b>29</b>. Multiple Exceptions</a>
+            <a href="/python/exceptions.html" ><b>29</b>. Exceptions</a>
         </li>
         
         
@@ -591,11 +591,54 @@
 
     <main class="content">
         <h1>Nested Structures</h1>
-        <p>Nested data structures like lists of dictionaries or dictionaries of lists are common in real-world applications. They allow you to organize complex data hierarchically and access it efficiently.</p>
+        <p>Nested data structures like lists of dictionaries, dictionaries of lists, and lists of lists are common in real-world applications. They allow for flexible and efficient data organization.</p>
+
+<h2 id="lists-of-lists">Lists of Lists</h2>
+
+<p>A list of lists is useful when you need to organize data in a grid-like or tabular structure.</p>
+
+<h3 id="example-lists-of-lists">Example: Lists of Lists</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matrix</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output">Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3]
+[4, 5, 6]
+[7, 8, 9]
+</code></pre></div></div>
+
+<h3 id="accessing-nested-items-with-two-indices">Accessing Nested Items with Two Indices</h3>
+
+<p>You can use two indices to access specific elements in a list of lists:</p>
+<ul>
+  <li>The <strong>first index</strong> specifies the position of the sub-list (row) in the main list.</li>
+  <li>The <strong>second index</strong> specifies the position of the element (column) in the chosen sub-list.</li>
+</ul>
+
+<h4 id="example-accessing-specific-elements">Example: Accessing Specific Elements</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Element in the first row, second column
+</span><span class="nf">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Element in the third row, first column
+</span></code></pre></div></div>
+
+<h3 id="output-1">Output</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
+7
+</code></pre></div></div>
 
 <h2 id="lists-of-dictionaries">Lists of Dictionaries</h2>
 
-<p>A list of dictionaries is useful when you need to store multiple records, where each record is a dictionary.</p>
+<p>A list of dictionaries is useful for storing multiple records, where each record is represented as a dictionary.</p>
 
 <h3 id="example-lists-of-dictionaries">Example: Lists of Dictionaries</h3>
 
@@ -608,27 +651,27 @@
     <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">student</span><span class="p">[</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="s"> is </span><span class="si">{</span><span class="n">student</span><span class="p">[</span><span class="sh">'</span><span class="s">age</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="s"> years old</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output">Output</h3>
+<h3 id="output-2">Output</h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Alice is 20 years old
 Bob is 22 years old
 </code></pre></div></div>
 
-<h3 id="accessing-nested-data">Accessing Nested Data</h3>
+<h3 id="accessing-nested-items">Accessing Nested Items</h3>
 
-<p>You can access specific data by combining list and dictionary indexing.</p>
+<p>You can access specific data in a list of dictionaries using both list indexing and dictionary keys.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">])</span>  <span class="c1"># Access the name of the first student
 </span></code></pre></div></div>
 
-<h3 id="output-1">Output</h3>
+<h3 id="output-3">Output</h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Alice
 </code></pre></div></div>
 
 <h2 id="dictionaries-of-lists">Dictionaries of Lists</h2>
 
-<p>A dictionary of lists is useful when you need to group multiple items under specific categories.</p>
+<p>A dictionary of lists groups multiple items under specific categories represented as keys.</p>
 
 <h3 id="example-dictionaries-of-lists">Example: Dictionaries of Lists</h3>
 
@@ -641,66 +684,33 @@ Bob is 22 years old
     <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">subject</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">scores</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output-2">Output</h3>
+<h3 id="output-4">Output</h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>math: [90, 85, 88]
 science: [92, 80, 85]
 </code></pre></div></div>
 
-<h3 id="accessing-nested-data-1">Accessing Nested Data</h3>
+<h3 id="accessing-nested-items-with-two-indices-1">Accessing Nested Items with Two Indices</h3>
 
-<p>You can access specific items in the lists by combining dictionary and list indexing.</p>
+<p>You can access specific items in a list within a dictionary by using a key and an index.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">grades</span><span class="p">[</span><span class="sh">"</span><span class="s">math</span><span class="sh">"</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Access the first score in math
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">grades</span><span class="p">[</span><span class="sh">"</span><span class="s">math</span><span class="sh">"</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Access the second score in math
 </span></code></pre></div></div>
 
-<h3 id="output-3">Output</h3>
+<h3 id="output-5">Output</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>90
-</code></pre></div></div>
-
-<h2 id="mixed-nested-structures">Mixed Nested Structures</h2>
-
-<p>You can combine lists and dictionaries to create more complex structures, such as a dictionary of lists containing dictionaries.</p>
-
-<h3 id="example-mixed-structure">Example: Mixed Structure</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">class_data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="sh">"</span><span class="s">math</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">score</span><span class="sh">"</span><span class="p">:</span> <span class="mi">90</span><span class="p">},</span>
-        <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">score</span><span class="sh">"</span><span class="p">:</span> <span class="mi">85</span><span class="p">}</span>
-    <span class="p">],</span>
-    <span class="sh">"</span><span class="s">science</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">score</span><span class="sh">"</span><span class="p">:</span> <span class="mi">92</span><span class="p">},</span>
-        <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">score</span><span class="sh">"</span><span class="p">:</span> <span class="mi">80</span><span class="p">}</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-
-<span class="k">for</span> <span class="n">subject</span><span class="p">,</span> <span class="n">records</span> <span class="ow">in</span> <span class="n">class_data</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">subject</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">records</span><span class="p">:</span>
-        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">  </span><span class="si">{</span><span class="n">record</span><span class="p">[</span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="s"> scored </span><span class="si">{</span><span class="n">record</span><span class="p">[</span><span class="sh">'</span><span class="s">score</span><span class="sh">'</span><span class="p">]</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-4">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>math
-  Alice scored 90
-  Bob scored 85
-science
-  Alice scored 92
-  Bob scored 80
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>85
 </code></pre></div></div>
 
 <h2 id="summary">Summary</h2>
 
 <ul>
-  <li><strong>Lists of Dictionaries</strong>: Store multiple records, each as a dictionary, within a list.</li>
-  <li><strong>Dictionaries of Lists</strong>: Group multiple items under categories represented as keys.</li>
-  <li><strong>Mixed Structures</strong>: Combine lists and dictionaries for hierarchical or complex data needs.</li>
+  <li><strong>Lists of Lists</strong>: Organize data in a grid-like structure and access specific elements using two indices.</li>
+  <li><strong>Lists of Dictionaries</strong>: Store multiple records, each as a dictionary, and access elements with list indices and dictionary keys.</li>
+  <li><strong>Dictionaries of Lists</strong>: Group items under categories, accessed using a key and list index.</li>
 </ul>
 
-<p>Understanding how to work with nested structures allows you to manage and manipulate complex data efficiently. Practice creating and accessing nested data structures to develop your skills further.</p>
+<p>Understanding nested structures and indexing with multiple levels is essential for managing complex data. Practice these concepts to strengthen your ability to work with structured data.</p>
 
         <!-- Next Lesson Button -->
         
