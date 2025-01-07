@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Intro to Packages"
-order: 33
+order: 34
 ---
 
 A package is a collection of modules organized into directories with a special `__init__.py` file. Packages allow you to structure larger projects by grouping related modules together.

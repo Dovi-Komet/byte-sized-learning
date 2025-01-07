@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Error Handling Basics"
-order: 28
+order: 29
 ---
 
 Error handling allows you to manage errors gracefully, ensuring your program doesn't crash unexpectedly. It also helps improve user experience by providing meaningful feedback during errors.

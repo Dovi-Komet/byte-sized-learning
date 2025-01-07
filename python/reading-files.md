@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Reading Files"
-order: 26
+order: 27
 ---
 
 Python allows you to read data from files, making it easy to work with external data sources such as text files, logs, or configuration files.

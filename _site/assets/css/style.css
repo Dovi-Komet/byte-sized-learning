@@ -176,3 +176,42 @@ main.content code {
         font-size: 15px;
     }
 }
+
+/* Table Styling */
+main.content table {
+    width: 100%; /* Full width for content area */
+    border-collapse: collapse; /* Remove gaps between table borders */
+    margin-bottom: 20px; /* Space below the table */
+    background-color: #f9f9f9; /* Light background consistent with site */
+    border: 1px solid #ddd; /* Subtle border around the table */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Light shadow for elevation */
+}
+
+main.content th, main.content td {
+    padding: 12px 15px; /* Comfortable padding */
+    text-align: left; /* Align text to the left */
+    border-bottom: 1px solid #ddd; /* Horizontal lines between rows */
+    font-size: 17px; /* Font size consistent with site */
+    color: #555; /* Slightly muted text color */
+}
+
+main.content th {
+    background-color: #333; /* Dark background for headers */
+    color: #eee; /* Light text for headers */
+    font-weight: bold; /* Emphasize header text */
+    text-transform: uppercase; /* Capitalize header text */
+}
+
+main.content tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row shading for readability */
+}
+
+main.content tr:hover {
+    background-color: #e6f7ff; /* Light blue highlight on hover */
+}
+
+/* Ensure Responsive Design */
+main.content table {
+    overflow-x: auto; /* Allow horizontal scrolling on small screens */
+    display: block; /* Make table scrollable */
+}

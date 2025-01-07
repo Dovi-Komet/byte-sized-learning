@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Git for Python"
-order: 99
+title: "Git Basics"
+order: 87
 ---
 
 Git is a version control system that tracks changes in code and allows collaboration.

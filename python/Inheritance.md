@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Inheritance"
-order: 43
+order: 45
 ---
 
 Inheritance is a fundamental concept in Object-Oriented Programming (OOP) that allows one class (child class) to inherit the attributes and methods of another class (parent class). This promotes code reuse and helps create a hierarchy of classes.

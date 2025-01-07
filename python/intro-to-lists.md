@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Intro to Lists"
-order: 18
+order: 19
 ---
 
 A list is a collection of items that can be stored in a single variable. Lists are one of the most versatile and commonly used data types in Python.

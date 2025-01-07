@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Intro to Dicts"
-order: 21
+order: 22
 ---
 
 A dictionary is a collection of key-value pairs. Each key maps to a specific value, making dictionaries a versatile data type for storing and retrieving data efficiently.

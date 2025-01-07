@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Strings"
-order: 10
+order: 9
 ---
 
 Strings are one of the most commonly used data types in Python. A string is a sequence of characters enclosed in either single quotes (`'`) or double quotes (`"`). Strings can represent text such as words, sentences, or any combination of characters.

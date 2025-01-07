@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Standard Library"
-order: 34
+order: 35
 ---
 
 Python includes a vast standard library that provides modules and functions for common tasks, eliminating the need to write everything from scratch. These built-in modules make Python versatile and powerful.

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Testing with pytest"
-order: 97
+order: 71
 ---
 
 `pytest` is a popular testing framework that is more flexible than `unittest`.

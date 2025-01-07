@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "OOP Methods"
-order: 41
+order: 43
 ---
 
 Methods are functions defined inside a class that operate on objects. They allow objects to perform actions and interact with their attributes.

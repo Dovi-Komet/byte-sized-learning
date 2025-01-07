@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Writing Files"
-order: 27
+order: 28
 ---
 
 Python allows you to write data to files, making it easy to save output, logs, or processed data. You can create new files or modify existing ones using various modes.

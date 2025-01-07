@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Boolean Logic"
-order: 12.5
+order: 12
 ---
 
 Boolean logic is the foundation of decision-making in Python. It allows you to evaluate expressions as `True` or `False`.

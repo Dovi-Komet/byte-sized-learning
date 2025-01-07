@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "random Module"
-order: 38
+order: 39
 ---
 
 The `random` module provides functions for generating random numbers, selecting random items, and performing random operations. It is a powerful tool for simulations, games, and testing.

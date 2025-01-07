@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "User Input"
-order: 12
+order: 11
 ---
 
 In many programs, you will need to get input from the user. Python makes this easy with the `input()` function.

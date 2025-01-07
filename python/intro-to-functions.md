@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Intro to Functions"
-order: 16
+order: 17
 ---
 
 Functions are reusable blocks of code designed to perform specific tasks. They help make your code more organized, readable, and efficient by avoiding repetition.

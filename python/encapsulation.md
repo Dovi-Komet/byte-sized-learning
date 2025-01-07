@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Encapsulation"
-order: 46
+order: 48
 ---
 
 Encapsulation is a key principle of Object-Oriented Programming (OOP). It involves restricting access to certain parts of an object and exposing only the necessary functionality. This helps protect the internal state of an object and enforces controlled access to its data.

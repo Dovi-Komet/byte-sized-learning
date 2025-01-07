@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Sorting & Keys"
-order: 64
+order: 65
 ---
 
 The `sorted()`, `min()`, and `max()` functions can sort or evaluate data using custom criteria.

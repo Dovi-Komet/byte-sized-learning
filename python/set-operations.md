@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Set Operations"
-order: 24
+order: 25
 ---
 
 Sets in Python support a variety of operations that are useful for working with collections of unique items. These operations make sets ideal for tasks involving comparisons and mathematical set logic.

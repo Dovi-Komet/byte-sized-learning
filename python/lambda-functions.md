@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Lambda Functions"
-order: 63
+order: 60
 ---
 
 Lambda functions are anonymous, single-expression functions in Python.

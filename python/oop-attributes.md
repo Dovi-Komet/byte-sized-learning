@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "OOP Attributes"
-order: 40
+order: 41
 ---
 
 Attributes are variables associated with an object. They store the state of an object and can be used to hold information specific to that object.

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Nested Structures"
-order: 25
+order: 26
 ---
 
 Nested data structures like lists of dictionaries, dictionaries of lists, and lists of lists are common in real-world applications. They allow for flexible and efficient data organization.

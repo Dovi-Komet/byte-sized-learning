@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Exceptions"
-order: 29
+order: 30
 ---
 
 In Python, exceptions are errors that occur during program execution. Knowing the most common exceptions helps you identify and handle errors effectively.

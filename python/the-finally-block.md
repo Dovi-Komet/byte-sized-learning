@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "The finally Block"
-order: 30
+order: 31
 ---
 
 The `finally` block allows you to execute code regardless of whether an exception occurs. It is typically used for cleanup tasks like closing files or releasing resources.

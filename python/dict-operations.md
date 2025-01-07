@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dict Operations"
-order: 22
+order: 23
 ---
 
 Dictionaries in Python offer various operations for managing key-value pairs efficiently. Let’s dive into some useful operations beyond adding, modifying, and removing key-value pairs.

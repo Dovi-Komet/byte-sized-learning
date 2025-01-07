@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Understanding self"
-order: 42
+order: 44
 ---
 
 The `self` keyword is a fundamental concept in Object-Oriented Programming (OOP) in Python. It represents the instance of the class and is used to access the attributes and methods of that instance.

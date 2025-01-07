@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "List Operations"
-order: 19
+order: 20
 ---
 
 Lists in Python come with many built-in operations that make them versatile and powerful. Let’s explore some common ones.

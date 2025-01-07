@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Logging"
-order: 68
+order: 72
 ---
 
 The `logging` module provides a flexible way to log messages for debugging and monitoring.

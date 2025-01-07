@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Intro to Tuples"
-order: 20
+order: 21
 ---
 
 A tuple is a collection of items similar to a list, but it is immutable, meaning its items cannot be changed after creation. Tuples are useful for representing fixed sets of data.

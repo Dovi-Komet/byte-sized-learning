@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Slicing and Indexing"
-order: 11
+order: 10
 ---
 
 Slicing and indexing allow you to access parts of strings and other sequences like lists in Python.

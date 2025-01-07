@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Class Attributes"
-order: 40.5
+order: 42
 ---
 
 Class attributes are variables that belong to a class rather than any specific object (instance) of the class. They are shared across all instances of the class and are useful for storing data that is the same for every object.

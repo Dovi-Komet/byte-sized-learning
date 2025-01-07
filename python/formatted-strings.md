@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Formatted Strings"
-order: 15.5
+order: 16
 ---
 
 Formatted strings, also known as f-strings, are a powerful feature in Python that allow you to create strings with embedded expressions. This makes it easy to dynamically include values in your text.
