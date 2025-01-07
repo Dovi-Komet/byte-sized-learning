@@ -555,6 +555,12 @@
 
   
     <url>
+      <loc>http://localhost:4000/python/understanding-self.html</loc>
+    </url>
+  
+
+  
+    <url>
       <loc>http://localhost:4000/python/unit-testing.html</loc>
     </url>
   

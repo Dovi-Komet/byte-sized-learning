@@ -17,20 +17,20 @@
     <!-- End Google Analytics -->
 
     
-    <title>Task Automation</title>
+    <title>Understanding self</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Task Automation</title>
+<title>Understanding self</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Task Automation" />
+<meta property="og:title" content="Understanding self" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/python/task-automation.html" />
-<meta property="og:url" content="http://localhost:4000/python/task-automation.html" />
+<link rel="canonical" href="http://localhost:4000/python/understanding-self.html" />
+<meta property="og:url" content="http://localhost:4000/python/understanding-self.html" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Task Automation" />
+<meta property="twitter:title" content="Understanding self" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Task Automation","url":"http://localhost:4000/python/task-automation.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Understanding self","url":"http://localhost:4000/python/understanding-self.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -262,7 +262,7 @@
         </li>
         
         
-        <li >
+        <li class="current">
             <a href="/python/understanding-self.html" ><b>44</b>. Understanding self</a>
         </li>
         
@@ -462,7 +462,7 @@
         </li>
         
         
-        <li class="current">
+        <li >
             <a href="/python/task-automation.html" ><b>84</b>. Task Automation</a>
         </li>
         
@@ -600,40 +600,156 @@
 </script>
 
     <main class="content">
-        <h1>Task Automation</h1>
-        <p>Selenium is a library for automating web browser interactions.</p>
+        <h1>Understanding self</h1>
+        <p>The <code class="language-plaintext highlighter-rouge">self</code> keyword is a fundamental concept in Object-Oriented Programming (OOP) in Python. It represents the instance of the class and is used to access the attributes and methods of that instance.</p>
 
-<h3 id="installing-selenium">Installing Selenium</h3>
+<hr />
 
-<p>Install using pip:</p>
+<h2 id="what-is-self">What Is <code class="language-plaintext highlighter-rouge">self</code>?</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install selenium
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">self</code> is a reference to the current instance of the class.</li>
+  <li>It must be explicitly included as the first parameter in all instance methods.</li>
+  <li>It is used to:
+    <ul>
+      <li>Access attributes and methods of the instance.</li>
+      <li>Differentiate instance-specific data from shared class attributes.</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="using-self-to-access-attributes">Using <code class="language-plaintext highlighter-rouge">self</code> to Access Attributes</h2>
+
+<p>When defining attributes in a class, <code class="language-plaintext highlighter-rouge">self</code> is used to specify that the attributes belong to the instance.</p>
+
+<h3 id="example-accessing-attributes-with-self">Example: Accessing Attributes with <code class="language-plaintext highlighter-rouge">self</code></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Attribute belongs to the instance
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, my name is </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span>
 </code></pre></div></div>
 
-<h3 id="automating-a-simple-task">Automating a Simple Task</h3>
+<h3 id="explanation">Explanation:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">self.name</code> refers to the <code class="language-plaintext highlighter-rouge">name</code> attribute of the current instance.</li>
+  <li><code class="language-plaintext highlighter-rouge">self.age</code> refers to the <code class="language-plaintext highlighter-rouge">age</code> attribute of the current instance.</li>
+</ul>
 
-<p>Example:</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<span class="kn">from</span> <span class="n">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<h2 id="using-self-to-call-methods">Using <code class="language-plaintext highlighter-rouge">self</code> to Call Methods</h2>
 
-<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="nc">Chrome</span><span class="p">()</span>  <span class="c1"># Ensure you have the ChromeDriver installed
-</span><span class="n">driver</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">https://example.com</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="n">title</span><span class="p">)</span>
-<span class="n">driver</span><span class="p">.</span><span class="nf">quit</span><span class="p">()</span>
+<p>You can use <code class="language-plaintext highlighter-rouge">self</code> to call other methods within the same class.</p>
+
+<h3 id="example-calling-methods-with-self">Example: Calling Methods with <code class="language-plaintext highlighter-rouge">self</code></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, my name is </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span>
+
+    <span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">greet</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="sh">"</span><span class="s"> I am </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">age</span><span class="si">}</span><span class="s"> years old.</span><span class="sh">"</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Example Domain
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="nc">Person</span><span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">.</span><span class="nf">introduce</span><span class="p">())</span>
 </code></pre></div></div>
 
-<p>Selenium is useful for testing and automating web applications.</p>
+<h3 id="output">Output:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, my name is Alice. I am 30 years old.
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="differentiating-between-class-and-instance-attributes">Differentiating Between Class and Instance Attributes</h2>
+
+<p><code class="language-plaintext highlighter-rouge">self</code> is used to access instance-specific attributes, whereas class attributes are accessed using the class name.</p>
+
+<h3 id="example-class-vs-instance-attributes">Example: Class vs. Instance Attributes</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Canis familiaris</span><span class="sh">"</span>  <span class="c1"># Class attribute
+</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Instance attribute
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dog1</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Buddy</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">dog2</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Max</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">dog1</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>      <span class="c1"># Instance-specific attribute
+</span><span class="nf">print</span><span class="p">(</span><span class="n">Dog</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>    <span class="c1"># Shared class attribute
+</span></code></pre></div></div>
+
+<h3 id="output-1">Output:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Buddy
+Canis familiaris
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="why-is-self-explicit">Why Is <code class="language-plaintext highlighter-rouge">self</code> Explicit?</h2>
+
+<p>In Python, <code class="language-plaintext highlighter-rouge">self</code> must be explicitly declared as the first parameter of instance methods. This explicitness improves code readability and avoids ambiguity about which attributes and methods belong to the instance.</p>
+
+<hr />
+
+<h2 id="common-mistakes-with-self">Common Mistakes with <code class="language-plaintext highlighter-rouge">self</code></h2>
+
+<ol>
+  <li><strong>Forgetting to Include <code class="language-plaintext highlighter-rouge">self</code></strong>:
+    <ul>
+      <li>If you forget to include <code class="language-plaintext highlighter-rouge">self</code> as a parameter, Python will raise a <code class="language-plaintext highlighter-rouge">TypeError</code>.</li>
+    </ul>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Example</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello!</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="nc">Example</span><span class="p">()</span>
+<span class="n">obj</span><span class="p">.</span><span class="nf">greet</span><span class="p">()</span>  <span class="c1"># TypeError: greet() takes 0 positional arguments but 1 was given
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong>Using <code class="language-plaintext highlighter-rouge">self</code> for Class Attributes</strong>:
+    <ul>
+      <li>Class attributes should be accessed using the class name, not <code class="language-plaintext highlighter-rouge">self</code>.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">self</code> is a reference to the instance of the class and must be included as the first parameter in instance methods.</li>
+  <li>It is used to:
+    <ul>
+      <li>Access instance attributes and methods.</li>
+      <li>Differentiate instance-specific data from class-level data.</li>
+    </ul>
+  </li>
+  <li>Always include <code class="language-plaintext highlighter-rouge">self</code> explicitly in method definitions and calls.</li>
+</ul>
+
+<p>Understanding <code class="language-plaintext highlighter-rouge">self</code> is crucial for working with classes and objects in Python. Practice using it in different contexts to solidify your understanding.</p>
 
         <!-- Next Lesson Button -->
         
         
-        <a href="/python/seaborn-visualization.html" class="next-lesson">Next Lesson: Seaborn Visualization</a>
+        <a href="/python/Inheritance.html" class="next-lesson">Next Lesson: Inheritance</a>
         
     </main>
 </body>
