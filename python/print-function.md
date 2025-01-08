@@ -4,46 +4,71 @@ title: "print() Function"
 order: 5
 ---
 
-In the last lesson, we used the `print()` function. Let’s take a closer look at how it works.
+## The `print()` Function
 
-## What is the `print()` Function?
+The `print()` function is one of the most commonly used functions in Python. It allows you to display information on the screen, which is essential for interacting with your program.
 
-The `print()` function is used to display information on the screen. You can use it to show text, numbers, or even the results of calculations.
+### Syntax of the `print()` Function
 
-## Example 1: Printing Text
-
-```python
-print("Welcome to Python!")
-```
-
-### Expected Output
-
-```plaintext
-Welcome to Python!
-```
-
-## Example 2: Printing Numbers
+The basic syntax of the `print()` function is:
 
 ```python
-print(123)
+print(<message>)
 ```
 
-### Expected Output
+- `<message>`: The information you want to display. This can be text, numbers, or other types of data.
 
-```plaintext
-123
-```
+### Printing Text
 
-## Example 3: Printing Results of a Calculation
+To print text, enclose the message in double (`"`) or single (`'`) quotes:
 
 ```python
-print(10 + 5)
+print("Hello, Python!")
+print('Welcome to the print() function.')
 ```
 
-### Expected Output
-
+#### Output:
 ```plaintext
-15
+Hello, Python!
+Welcome to the print() function.
 ```
 
-The `print()` function is a fundamental tool in Python and will be used throughout this course.
+### Printing Numbers
+
+You can also print numbers directly without using quotes:
+
+```python
+print(42)
+print(3.14)
+```
+
+#### Output:
+```plaintext
+42
+3.14
+```
+
+### Combining Text and Variables
+
+You can use the `print()` function to display both text and variable values:
+
+```python
+name = "Alice"
+age = 30
+print("Name:", name)
+print("Age:", age)
+```
+
+#### Output:
+```plaintext
+Name: Alice
+Age: 30
+```
+
+### Using `print()` for Debugging
+
+The `print()` function is often used to debug programs by checking the values of variables or the flow of execution.
+
+---
+
+In the next lesson, we’ll learn about comments and how to use them effectively in Python.

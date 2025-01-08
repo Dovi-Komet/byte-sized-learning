@@ -17,20 +17,20 @@
     <!-- End Google Analytics -->
 
     
-    <title>Using VS Code Terminal</title>
+    <title>Using the Terminal</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Using VS Code Terminal</title>
+<title>Using the Terminal</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Using VS Code Terminal" />
+<meta property="og:title" content="Using the Terminal" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/python/using-vs-code-terminal.html" />
-<meta property="og:url" content="http://localhost:4000/python/using-vs-code-terminal.html" />
+<link rel="canonical" href="http://localhost:4000/python/using-the-terminal.html" />
+<meta property="og:url" content="http://localhost:4000/python/using-the-terminal.html" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Using VS Code Terminal" />
+<meta property="twitter:title" content="Using the Terminal" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Using VS Code Terminal","url":"http://localhost:4000/python/using-vs-code-terminal.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Using the Terminal","url":"http://localhost:4000/python/using-the-terminal.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -58,7 +58,7 @@
         
         
         <li class="current">
-            <a href="/python/using-vs-code-terminal.html" ><b>3</b>. Using VS Code Terminal</a>
+            <a href="/python/using-the-terminal.html" ><b>3</b>. Using the Terminal</a>
         </li>
         
         
@@ -365,99 +365,113 @@
 </script>
 
     <main class="content">
-        <h1>Using VS Code Terminal</h1>
-        <p>The terminal is a powerful tool for interacting with your computer and running Python code. Let’s learn how to use it.</p>
+        <h1>Using the Terminal</h1>
+        <h2 id="using-the-terminal-in-vs-code">Using the Terminal in VS Code</h2>
 
-<h2 id="opening-the-terminal-in-vs-code">Opening the Terminal in VS Code</h2>
+<p>The terminal is a powerful tool that allows you to interact with your computer using text-based commands. In this lesson, you’ll learn how to open and use the terminal in Visual Studio Code (VS Code), as well as some basic commands to get started.</p>
 
+<h3 id="what-is-the-terminal">What is the Terminal?</h3>
+
+<p>The terminal lets you:</p>
+<ul>
+  <li>Run Python programs.</li>
+  <li>Install and manage libraries.</li>
+  <li>Interact with files and directories on your computer.</li>
+</ul>
+
+<h3 id="opening-the-terminal-in-vs-code">Opening the Terminal in VS Code</h3>
+
+<p>To open the terminal in VS Code:</p>
 <ol>
   <li>Open VS Code.</li>
-  <li>Press <code class="language-plaintext highlighter-rouge">Ctrl + ~</code> (Windows/Linux) or <code class="language-plaintext highlighter-rouge">Cmd + ~</code> (Mac) to open the terminal.</li>
-  <li>Alternatively, go to the top menu, click on <strong>View</strong>, and select <strong>Terminal</strong>.</li>
+  <li>Click on the <strong>View</strong> menu at the top of the screen.</li>
+  <li>
+    <p>Select <strong>Terminal</strong> from the dropdown menu, or press <code class="language-plaintext highlighter-rouge">Ctrl + `</code> (Windows/Linux) or <code class="language-plaintext highlighter-rouge">Command + `</code> (macOS).</p>
+
+    <p>This will open an integrated terminal at the bottom of the VS Code window.</p>
+  </li>
 </ol>
 
-<p>When the terminal opens, you will see a command prompt. This indicates your current location in the file system. For example:</p>
+<h3 id="what-is-the-command-prompt">What is the Command Prompt?</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\YourName\Documents&gt;  # On Windows
-/Users/yourname/Documents&gt;    # On Mac/Linux
+<p>On Windows, the terminal defaults to the Command Prompt (also called <code class="language-plaintext highlighter-rouge">cmd</code>). It’s a text-based interface where you can execute commands. For macOS or Linux, the default terminal is usually a Unix shell like Bash or Zsh. These interfaces allow similar functionality but may have slight differences in syntax for certain commands.</p>
+
+<h3 id="navigating-the-file-system-in-the-terminal">Navigating the File System in the Terminal</h3>
+
+<p>The terminal starts in a specific directory (folder) on your computer. You can navigate and manage files using commands:</p>
+
+<h4 id="view-the-contents-of-a-directory">View the Contents of a Directory</h4>
+<ul>
+  <li><strong>Windows</strong>: Use <code class="language-plaintext highlighter-rouge">dir</code> to list all files and folders in the current directory.</li>
+  <li><strong>macOS/Linux</strong>: Use <code class="language-plaintext highlighter-rouge">ls</code> to list all files and folders.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example (Windows):</span>
+<span class="nb">dir</span>
 </code></pre></div></div>
 
-<p>The text before the <code class="language-plaintext highlighter-rouge">&gt;</code> or <code class="language-plaintext highlighter-rouge">$</code> symbol is the current directory. You can interact with files and navigate the file system from here.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example (macOS/Linux):</span>
+<span class="nb">ls</span>
+</code></pre></div></div>
 
-<h2 id="navigating-the-file-system">Navigating the File System</h2>
-
-<p>You can move around the file system using the <code class="language-plaintext highlighter-rouge">cd</code> (change directory) command and view the contents of directories with the <code class="language-plaintext highlighter-rouge">ls</code> command.</p>
-
-<h3 id="viewing-directory-contents">Viewing Directory Contents</h3>
-
+<h4 id="change-directory-cd">Change Directory (cd)</h4>
 <ul>
-  <li>To list the files and folders in your current directory, type:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span>
+  <li>Use <code class="language-plaintext highlighter-rouge">cd &lt;directory-name&gt;</code> to move into a folder.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">cd ..</code> to go up one level in the directory structure.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">cd /</code> (Linux/macOS) or <code class="language-plaintext highlighter-rouge">cd \</code> (Windows) to return to the root directory.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example (Windows):</span>
+<span class="nb">cd </span>Documents
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example (macOS/Linux):</span>
+<span class="nb">cd </span>Documents
+</code></pre></div></div>
+
+<h4 id="check-your-current-directory">Check Your Current Directory</h4>
+<ul>
+  <li><strong>Windows</strong>: Use <code class="language-plaintext highlighter-rouge">cd</code> to display the current directory path.</li>
+  <li><strong>macOS/Linux</strong>: Use <code class="language-plaintext highlighter-rouge">pwd</code> (print working directory).</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example:</span>
+<span class="nb">pwd</span>
+</code></pre></div></div>
+
+<h3 id="practical-examples">Practical Examples</h3>
+
+<ol>
+  <li><strong>Navigate to a Specific Folder</strong>:
+Suppose you have a folder named <code class="language-plaintext highlighter-rouge">PythonProjects</code> in your <code class="language-plaintext highlighter-rouge">Documents</code> folder:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>Documents/PythonProjects
 </code></pre></div>    </div>
   </li>
-  <li>After typing <code class="language-plaintext highlighter-rouge">ls</code>, <strong>press the Enter key</strong> to execute the command. You will see a list of files and folders in your current directory.</li>
-</ul>
-
-<h3 id="moving-to-a-different-directory">Moving to a Different Directory</h3>
-
-<ol>
-  <li><strong>Using a Relative Path</strong>:
-    <ul>
-      <li>A relative path starts from your current directory. For example:
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>my_folder
-</code></pre></div>        </div>
-        <p>This moves you into a folder named <code class="language-plaintext highlighter-rouge">my_folder</code> that is inside your current directory.</p>
-      </li>
-    </ul>
+  <li><strong>Navigate Back to the Parent Folder</strong>:
+If you’re in <code class="language-plaintext highlighter-rouge">PythonProjects</code> and want to return to <code class="language-plaintext highlighter-rouge">Documents</code>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ..
+</code></pre></div>    </div>
   </li>
-  <li><strong>Using a Full (Absolute) Path</strong>:
-    <ul>
-      <li>A full path specifies the exact location of a folder, starting from the root of the file system. On Windows, for example:
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>C:<span class="se">\U</span>sers<span class="se">\Y</span>ourName<span class="se">\D</span>ocuments<span class="se">\m</span>y_folder
-</code></pre></div>        </div>
-        <p>On Mac/Linux:</p>
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /Users/yourname/Documents/my_folder
-</code></pre></div>        </div>
-        <p>Replace the example paths with the actual path to your folder.</p>
-      </li>
-    </ul>
+  <li><strong>Navigate Directly to a Drive (Windows)</strong>:
+Switch to a specific drive (e.g., D:):
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:
+</code></pre></div>    </div>
   </li>
-  <li><strong>Moving Up a Level</strong>:
-    <ul>
-      <li>To move up to the parent directory of your current location, type:
-        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ..
-</code></pre></div>        </div>
-      </li>
-    </ul>
-  </li>
+  <li><strong>List Files in the Current Directory</strong>:
+After navigating, use <code class="language-plaintext highlighter-rouge">dir</code> (Windows) or <code class="language-plaintext highlighter-rouge">ls</code> (macOS/Linux) to confirm your location.</li>
 </ol>
 
-<h3 id="practice-navigating">Practice Navigating</h3>
+<h3 id="running-python-code-in-the-terminal">Running Python Code in the Terminal</h3>
 
-<p>Practice the following:</p>
-<ol>
-  <li>Use <code class="language-plaintext highlighter-rouge">ls</code> to view the files and folders in your current directory.</li>
-  <li>Navigate to a specific folder using <code class="language-plaintext highlighter-rouge">cd</code> with a relative or full path.</li>
-  <li>List the contents of that folder.</li>
-  <li>Move back to the parent directory using <code class="language-plaintext highlighter-rouge">cd ..</code>.</li>
-</ol>
-
-<h3 id="running-python-scripts-preview">Running Python Scripts (Preview)</h3>
-
-<p>To run a Python script, you will use the following command:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python script_name.py
+<p>After navigating to the folder where your Python script is saved, you can run the script using:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python &lt;script-name&gt;.py
 </code></pre></div></div>
-<p>Replace <code class="language-plaintext highlighter-rouge">script_name.py</code> with the name of the file you want to run. While we haven’t written any scripts yet, keep this command in mind for later lessons.</p>
 
-<h2 id="when-to-use-py-vs-python">When to Use <code class="language-plaintext highlighter-rouge">py</code> vs <code class="language-plaintext highlighter-rouge">python</code></h2>
+<p>Replace <code class="language-plaintext highlighter-rouge">&lt;script-name&gt;.py</code> with the name of your Python file.</p>
 
-<ul>
-  <li>On Windows, the <code class="language-plaintext highlighter-rouge">py</code> command is often used because it ensures the correct Python version is executed, especially if multiple versions are installed.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">python</code> command may work the same way, but if you encounter issues (e.g., it starts the wrong version), use <code class="language-plaintext highlighter-rouge">py</code>.</li>
-  <li>On Mac/Linux, the <code class="language-plaintext highlighter-rouge">python</code> command is typically used. If Python 2 is also installed, you might need to use <code class="language-plaintext highlighter-rouge">python3</code> to explicitly invoke Python 3.</li>
-</ul>
+<hr />
 
-<p>In the next lesson, we’ll write and run our first Python program!</p>
+<p>In the next lesson, you’ll write and run your very first Python program.</p>
 
         <!-- Next Lesson Button -->
         

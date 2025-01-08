@@ -58,7 +58,7 @@
         
         
         <li >
-            <a href="/python/using-vs-code-terminal.html" ><b>3</b>. Using VS Code Terminal</a>
+            <a href="/python/using-the-terminal.html" ><b>3</b>. Using the Terminal</a>
         </li>
         
         
@@ -366,63 +366,135 @@
 
     <main class="content">
         <h1>Numbers and Math</h1>
-        <p>Python can handle different types of numbers and perform basic arithmetic operations.</p>
+        <p>Python provides robust support for working with numbers and performing mathematical operations. There are three primary types of numbers in Python: integers, floats, and complex numbers.</p>
 
-<h2 id="types-of-numbers">Types of Numbers</h2>
+<h2 id="number-types-in-python">Number Types in Python</h2>
 
 <ol>
-  <li><strong>Integers</strong>: Whole numbers, like <code class="language-plaintext highlighter-rouge">10</code> or <code class="language-plaintext highlighter-rouge">-5</code>.</li>
-  <li><strong>Floats</strong>: Numbers with decimals, like <code class="language-plaintext highlighter-rouge">3.14</code> or <code class="language-plaintext highlighter-rouge">-2.5</code>.</li>
+  <li><strong>Integer (<code class="language-plaintext highlighter-rouge">int</code>)</strong>: Whole numbers, positive or negative, without a decimal point.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># An integer
+</span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>  <span class="c1"># A negative integer
+</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Float (<code class="language-plaintext highlighter-rouge">float</code>)</strong>: Numbers that include a decimal point.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>  <span class="c1"># A float
+</span><span class="n">e</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.718</span> <span class="c1"># A negative float
+</span><span class="nf">print</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Complex Numbers (<code class="language-plaintext highlighter-rouge">complex</code>)</strong>: Numbers with a real and imaginary part. Represented as <code class="language-plaintext highlighter-rouge">a + bj</code>.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">z</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">3j</span>  <span class="c1"># A complex number
+</span><span class="nf">print</span><span class="p">(</span><span class="n">z</span><span class="p">.</span><span class="n">real</span><span class="p">,</span> <span class="n">z</span><span class="p">.</span><span class="n">imag</span><span class="p">)</span>  <span class="c1"># Outputs the real and imaginary parts
+</span></code></pre></div>    </div>
+  </li>
 </ol>
 
-<h2 id="arithmetic-operators">Arithmetic Operators</h2>
+<h2 id="basic-mathematical-operations">Basic Mathematical Operations</h2>
 
-<ul>
-  <li><strong>Addition</strong>: <code class="language-plaintext highlighter-rouge">+</code></li>
-  <li><strong>Subtraction</strong>: <code class="language-plaintext highlighter-rouge">-</code></li>
-  <li><strong>Multiplication</strong>: <code class="language-plaintext highlighter-rouge">*</code></li>
-  <li><strong>Division</strong>: <code class="language-plaintext highlighter-rouge">/</code></li>
-</ul>
+<p>Python supports common arithmetic operators for basic math:</p>
 
-<h3 id="example-basic-arithmetic">Example: Basic Arithmetic</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">+</code></td>
+      <td>Addition</td>
+      <td><code class="language-plaintext highlighter-rouge">5 + 3 = 8</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">-</code></td>
+      <td>Subtraction</td>
+      <td><code class="language-plaintext highlighter-rouge">10 - 4 = 6</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">*</code></td>
+      <td>Multiplication</td>
+      <td><code class="language-plaintext highlighter-rouge">7 * 2 = 14</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/</code></td>
+      <td>Division</td>
+      <td><code class="language-plaintext highlighter-rouge">9 / 3 = 3.0</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">//</code></td>
+      <td>Floor Division</td>
+      <td><code class="language-plaintext highlighter-rouge">9 // 2 = 4</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">%</code></td>
+      <td>Modulus (Remainder)</td>
+      <td><code class="language-plaintext highlighter-rouge">10 % 3 = 1</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">**</code></td>
+      <td>Exponentiation</td>
+      <td><code class="language-plaintext highlighter-rouge">2 ** 3 = 8</code></td>
+    </tr>
+  </tbody>
+</table>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<h3 id="examples">Examples</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Basic operations
+</span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Addition
-</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Subtraction
-</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Multiplication
-</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Division
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Addition: 13
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Subtraction: 7
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Multiplication: 30
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Division: 3.3333...
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">//</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># Floor Division: 3
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Modulus: 1
+</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span> <span class="c1"># Exponentiation: 1000
 </span></code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<h2 id="useful-built-in-functions">Useful Built-in Functions</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>13
-7
-30
-3.3333333333333335
-</code></pre></div></div>
-
-<h2 id="more-operators">More Operators</h2>
-
-<p>Python also supports additional operations like <strong>exponentiation</strong> and <strong>modulus</strong>.</p>
+<p>Python provides several built-in functions for numbers:</p>
 
 <ul>
-  <li><strong>Exponentiation</strong> (<code class="language-plaintext highlighter-rouge">**</code>): Raises one number to the power of another.</li>
-  <li><strong>Modulus</strong> (<code class="language-plaintext highlighter-rouge">%</code>): Returns the remainder of division.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">abs(x)</code></strong>: Returns the absolute value of <code class="language-plaintext highlighter-rouge">x</code>.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 5
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">round(x, n)</code></strong>: Rounds <code class="language-plaintext highlighter-rouge">x</code> to <code class="language-plaintext highlighter-rouge">n</code> decimal places.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="mf">3.14159</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># Output: 3.14
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">pow(x, y)</code></strong>: Computes <code class="language-plaintext highlighter-rouge">x</code> raised to the power of <code class="language-plaintext highlighter-rouge">y</code>.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nf">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># Output: 8
+</span></code></pre></div>    </div>
+  </li>
 </ul>
 
-<h3 id="example-advanced-operations">Example: Advanced Operations</h3>
+<h2 id="the-math-module">The <code class="language-plaintext highlighter-rouge">math</code> Module</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># a raised to the power of b
-</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># Remainder when a is divided by b
+<p>Python’s <code class="language-plaintext highlighter-rouge">math</code> module provides additional functions for advanced mathematical operations.</p>
+
+<h3 id="example-usage">Example Usage:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span>
+
+<span class="c1"># Square root
+</span><span class="nf">print</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># Output: 4.0
+</span>
+<span class="c1"># Trigonometric functions
+</span><span class="nf">print</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># Output: 1.0
+</span>
+<span class="c1"># Logarithm
+</span><span class="nf">print</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># Output: 2.302585092994046 (natural log)
 </span></code></pre></div></div>
 
-<h3 id="expected-output-1">Expected Output</h3>
+<p>To use the <code class="language-plaintext highlighter-rouge">math</code> module, it must first be imported with <code class="language-plaintext highlighter-rouge">import math</code>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1000
-1
-</code></pre></div></div>
+<hr />
+
+<p>In the next lesson, we’ll explore how to work with strings in Python.</p>
 
         <!-- Next Lesson Button -->
         

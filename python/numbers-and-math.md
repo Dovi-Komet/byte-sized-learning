@@ -4,58 +4,97 @@ title: "Numbers and Math"
 order: 8
 ---
 
-Python can handle different types of numbers and perform basic arithmetic operations.
+Python provides robust support for working with numbers and performing mathematical operations. There are three primary types of numbers in Python: integers, floats, and complex numbers.
 
-## Types of Numbers
+## Number Types in Python
 
-1. **Integers**: Whole numbers, like `10` or `-5`.
-2. **Floats**: Numbers with decimals, like `3.14` or `-2.5`.
+1. **Integer (`int`)**: Whole numbers, positive or negative, without a decimal point.
+   ```python
+   x = 10  # An integer
+   y = -5  # A negative integer
+   print(x, y)
+   ```
 
-## Arithmetic Operators
+2. **Float (`float`)**: Numbers that include a decimal point.
+   ```python
+   pi = 3.14  # A float
+   e = -2.718 # A negative float
+   print(pi, e)
+   ```
 
-- **Addition**: `+`
-- **Subtraction**: `-`
-- **Multiplication**: `*`
-- **Division**: `/`
+3. **Complex Numbers (`complex`)**: Numbers with a real and imaginary part. Represented as `a + bj`.
+   ```python
+   z = 2 + 3j  # A complex number
+   print(z.real, z.imag)  # Outputs the real and imaginary parts
+   ```
 
-### Example: Basic Arithmetic
+## Basic Mathematical Operations
 
+Python supports common arithmetic operators for basic math:
+
+| Operator | Description            | Example          |
+|----------|------------------------|------------------|
+| `+`      | Addition               | `5 + 3 = 8`      |
+| `-`      | Subtraction            | `10 - 4 = 6`     |
+| `*`      | Multiplication         | `7 * 2 = 14`     |
+| `/`      | Division               | `9 / 3 = 3.0`    |
+| `//`     | Floor Division         | `9 // 2 = 4`     |
+| `%`      | Modulus (Remainder)    | `10 % 3 = 1`     |
+| `**`     | Exponentiation         | `2 ** 3 = 8`     |
+
+### Examples
 ```python
+# Basic operations
 a = 10
 b = 3
-
-print(a + b)  # Addition
-print(a - b)  # Subtraction
-print(a * b)  # Multiplication
-print(a / b)  # Division
+print(a + b)  # Addition: 13
+print(a - b)  # Subtraction: 7
+print(a * b)  # Multiplication: 30
+print(a / b)  # Division: 3.3333...
+print(a // b) # Floor Division: 3
+print(a % b)  # Modulus: 1
+print(a ** b) # Exponentiation: 1000
 ```
 
-### Expected Output
+## Useful Built-in Functions
 
-```plaintext
-13
-7
-30
-3.3333333333333335
-```
+Python provides several built-in functions for numbers:
 
-## More Operators
+- **`abs(x)`**: Returns the absolute value of `x`.
+  ```python
+  print(abs(-5))  # Output: 5
+  ```
 
-Python also supports additional operations like **exponentiation** and **modulus**.
+- **`round(x, n)`**: Rounds `x` to `n` decimal places.
+  ```python
+  print(round(3.14159, 2))  # Output: 3.14
+  ```
 
-- **Exponentiation** (`**`): Raises one number to the power of another.
-- **Modulus** (`%`): Returns the remainder of division.
+- **`pow(x, y)`**: Computes `x` raised to the power of `y`.
+  ```python
+  print(pow(2, 3))  # Output: 8
+  ```
 
-### Example: Advanced Operations
+## The `math` Module
 
+Python's `math` module provides additional functions for advanced mathematical operations.
+
+### Example Usage:
 ```python
-print(a ** b)  # a raised to the power of b
-print(a % b)   # Remainder when a is divided by b
+import math
+
+# Square root
+print(math.sqrt(16))  # Output: 4.0
+
+# Trigonometric functions
+print(math.sin(math.pi / 2))  # Output: 1.0
+
+# Logarithm
+print(math.log(10))  # Output: 2.302585092994046 (natural log)
 ```
 
-### Expected Output
+To use the `math` module, it must first be imported with `import math`.
 
-```plaintext
-1000
-1
-```
+---
+
+In the next lesson, we’ll explore how to work with strings in Python.

@@ -58,7 +58,7 @@
         
         
         <li >
-            <a href="/python/using-vs-code-terminal.html" ><b>3</b>. Using VS Code Terminal</a>
+            <a href="/python/using-the-terminal.html" ><b>3</b>. Using the Terminal</a>
         </li>
         
         
@@ -366,43 +366,69 @@
 
     <main class="content">
         <h1>print() Function</h1>
-        <p>In the last lesson, we used the <code class="language-plaintext highlighter-rouge">print()</code> function. Let’s take a closer look at how it works.</p>
+        <h2 id="the-print-function">The <code class="language-plaintext highlighter-rouge">print()</code> Function</h2>
 
-<h2 id="what-is-the-print-function">What is the <code class="language-plaintext highlighter-rouge">print()</code> Function?</h2>
+<p>The <code class="language-plaintext highlighter-rouge">print()</code> function is one of the most commonly used functions in Python. It allows you to display information on the screen, which is essential for interacting with your program.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">print()</code> function is used to display information on the screen. You can use it to show text, numbers, or even the results of calculations.</p>
+<h3 id="syntax-of-the-print-function">Syntax of the <code class="language-plaintext highlighter-rouge">print()</code> Function</h3>
 
-<h2 id="example-1-printing-text">Example 1: Printing Text</h2>
+<p>The basic syntax of the <code class="language-plaintext highlighter-rouge">print()</code> function is:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Welcome to Python!</span><span class="sh">"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="o">&lt;</span><span class="n">message</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;message&gt;</code>: The information you want to display. This can be text, numbers, or other types of data.</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Welcome to Python!
+<h3 id="printing-text">Printing Text</h3>
+
+<p>To print text, enclose the message in double (<code class="language-plaintext highlighter-rouge">"</code>) or single (<code class="language-plaintext highlighter-rouge">'</code>) quotes:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, Python!</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Welcome to the print() function.</span><span class="sh">'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="example-2-printing-numbers">Example 2: Printing Numbers</h2>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<h4 id="output">Output:</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, Python!
+Welcome to the print() function.
 </code></pre></div></div>
 
-<h3 id="expected-output-1">Expected Output</h3>
+<h3 id="printing-numbers">Printing Numbers</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>123
+<p>You can also print numbers directly without using quotes:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="example-3-printing-results-of-a-calculation">Example 3: Printing Results of a Calculation</h2>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span>
+<h4 id="output-1">Output:</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>42
+3.14
 </code></pre></div></div>
 
-<h3 id="expected-output-2">Expected Output</h3>
+<h3 id="combining-text-and-variables">Combining Text and Variables</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>15
+<p>You can use the <code class="language-plaintext highlighter-rouge">print()</code> function to display both text and variable values:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Name:</span><span class="sh">"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Age:</span><span class="sh">"</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">print()</code> function is a fundamental tool in Python and will be used throughout this course.</p>
+<h4 id="output-2">Output:</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name: Alice
+Age: 30
+</code></pre></div></div>
+
+<h3 id="using-print-for-debugging">Using <code class="language-plaintext highlighter-rouge">print()</code> for Debugging</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">print()</code> function is often used to debug programs by checking the values of variables or the flow of execution.</p>
+
+<hr />
+
+<p>In the next lesson, we’ll learn about comments and how to use them effectively in Python.</p>
 
         <!-- Next Lesson Button -->
         

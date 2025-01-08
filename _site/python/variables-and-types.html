@@ -58,7 +58,7 @@
         
         
         <li >
-            <a href="/python/using-vs-code-terminal.html" ><b>3</b>. Using VS Code Terminal</a>
+            <a href="/python/using-the-terminal.html" ><b>3</b>. Using the Terminal</a>
         </li>
         
         
@@ -366,58 +366,98 @@
 
     <main class="content">
         <h1>Variables and Types</h1>
-        <p>In Python, variables are used to store information that you can use and manipulate later. Let’s learn about variables and their data types.</p>
+        <p>Variables are used to store data in a Python program. They act as placeholders for values that can change during the execution of the program.</p>
 
-<h2 id="what-is-a-variable">What is a Variable?</h2>
+<h2 id="creating-variables">Creating Variables</h2>
 
-<p>A variable is like a container that holds data. You can assign a value to a variable using the <code class="language-plaintext highlighter-rouge">=</code> symbol.</p>
+<p>In Python, creating a variable is simple. You just need to assign a value to a name using the <code class="language-plaintext highlighter-rouge">=</code> operator.</p>
 
-<h3 id="example">Example</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Assigning values to variables
+</span><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span>  <span class="c1"># A string
+</span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>        <span class="c1"># An integer
+</span><span class="n">height</span> <span class="o">=</span> <span class="mf">5.8</span>    <span class="c1"># A float
+</span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
-</code></pre></div></div>
-
-<p>Here:</p>
+<h3 id="explanation">Explanation</h3>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">name</code> is a variable holding the text “Alice.”</li>
-  <li><code class="language-plaintext highlighter-rouge">age</code> is a variable holding the number 25.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">name</code></strong>: Stores a text value (string).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">age</code></strong>: Stores a whole number (integer).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">height</code></strong>: Stores a decimal number (float).</li>
 </ul>
 
-<h2 id="common-data-types-in-python">Common Data Types in Python</h2>
+<h2 id="variable-naming-rules">Variable Naming Rules</h2>
 
 <ol>
-  <li><strong>Strings</strong>: Used for text. Strings are enclosed in quotes (<code class="language-plaintext highlighter-rouge">" "</code> or <code class="language-plaintext highlighter-rouge">' '</code>).
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">greeting</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span>
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Integers</strong>: Used for whole numbers.
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Floats</strong>: Used for decimal numbers.
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Booleans</strong>: Represent True or False values.
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_happy</span> <span class="o">=</span> <span class="bp">True</span>
-</code></pre></div>    </div>
-  </li>
+  <li>Must start with a letter or an underscore (<code class="language-plaintext highlighter-rouge">_</code>).</li>
+  <li>Cannot start with a number.</li>
+  <li>Can only contain alphanumeric characters and underscores (<code class="language-plaintext highlighter-rouge">_</code>).</li>
+  <li>Are case-sensitive (<code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">Name</code> are different).</li>
 </ol>
 
-<h2 id="printing-variables">Printing Variables</h2>
-
-<p>You can print variables to see their values:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<h3 id="examples">Examples</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">valid_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">John</span><span class="sh">"</span>
+<span class="n">_valid_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Jane</span><span class="sh">"</span>
+<span class="n">name1</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Doe</span><span class="sh">"</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Invalid examples (uncommenting will cause an error):
+# 1name = "Error"  # Starts with a number
+# name@ = "Error"  # Contains a special character
+</span></code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Alice
-25
+<h2 id="types-of-data">Types of Data</h2>
+
+<p>Python automatically assigns the type of a variable based on its value. Common data types include:</p>
+
+<h3 id="string-str">String (<code class="language-plaintext highlighter-rouge">str</code>)</h3>
+
+<p>Text enclosed in quotes.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span>
 </code></pre></div></div>
+
+<h3 id="integer-int">Integer (<code class="language-plaintext highlighter-rouge">int</code>)</h3>
+
+<p>Whole numbers.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">42</span>
+</code></pre></div></div>
+
+<h3 id="float-float">Float (<code class="language-plaintext highlighter-rouge">float</code>)</h3>
+
+<p>Decimal numbers.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+</code></pre></div></div>
+
+<h3 id="boolean-bool">Boolean (<code class="language-plaintext highlighter-rouge">bool</code>)</h3>
+
+<p>True or False values.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_active</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<h2 id="checking-variable-types">Checking Variable Types</h2>
+
+<p>You can use the <code class="language-plaintext highlighter-rouge">type()</code> function to check the type of a variable:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c1"># Output: &lt;class 'int'&gt;
+</span></code></pre></div></div>
+
+<h2 id="changing-variable-values">Changing Variable Values</h2>
+
+<p>Variables can be reassigned to new values, even of a different type:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">variable</span> <span class="o">=</span> <span class="mi">10</span>       <span class="c1"># Initially an integer
+</span><span class="nf">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>     <span class="c1"># Output: 10
+</span><span class="n">variable</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span> <span class="c1"># Now a string
+</span><span class="nf">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>     <span class="c1"># Output: Python
+</span></code></pre></div></div>
+
+<hr />
+
+<p>In the next lesson, we’ll explore numbers and mathematical operations in Python.</p>
 
         <!-- Next Lesson Button -->
         
