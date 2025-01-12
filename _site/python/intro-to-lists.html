@@ -366,80 +366,78 @@
 
     <main class="content">
         <h1>Intro to Lists</h1>
-        <p>A list is a collection of items that can be stored in a single variable. Lists are one of the most versatile and commonly used data types in Python.</p>
+        <p>Lists in Python are one of the most versatile and commonly used data structures. They are used to store multiple items in a single variable and can hold elements of different data types.</p>
 
-<h2 id="creating-a-list">Creating a List</h2>
+<h2 id="what-is-a-list">What is a List?</h2>
 
-<p>You can create a list by placing items inside square brackets <code class="language-plaintext highlighter-rouge">[]</code>, separated by commas. Lists can contain any type of data, including strings, numbers, or even other lists.</p>
+<p>A list is an ordered, mutable collection of elements enclosed in square brackets <code class="language-plaintext highlighter-rouge">[]</code>, with each element separated by a comma.</p>
 
-<h3 id="example-creating-a-list">Example: Creating a List</h3>
+<h3 id="example">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># A list of integers
+</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
+<span class="c1"># A list of strings
+</span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="c1"># A mixed list
+</span><span class="n">mixed</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="output">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4, 5]
+["apple", "banana", "cherry"]
+[1, "apple", True]
+</code></pre></div></div>
+
+<h2 id="accessing-elements-in-a-list">Accessing Elements in a List</h2>
+
+<p>You can access elements in a list using their index. Python uses zero-based indexing, meaning the first element has an index of <code class="language-plaintext highlighter-rouge">0</code>.</p>
+
+<h3 id="example-1">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">]</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+
+<span class="c1"># Access the first element
+</span><span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Access the second element
+</span><span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['apple', 'banana', 'cherry']
-</code></pre></div></div>
-
-<h2 id="accessing-list-items">Accessing List Items</h2>
-
-<p>You can access individual items in a list using their index. Indexing starts at <code class="language-plaintext highlighter-rouge">0</code> for the first item, and you can use negative indices to access items from the end of the list.</p>
-
-<h3 id="example-accessing-items-by-index">Example: Accessing Items by Index</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># First item
-</span><span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Second item
-</span><span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Last item
-</span></code></pre></div></div>
-
-<h3 id="expected-output-1">Expected Output</h3>
-
+<h3 id="output-1">Output:</h3>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apple
 banana
-cherry
 </code></pre></div></div>
 
-<h2 id="modifying-list-items">Modifying List Items</h2>
+<h2 id="negative-indexing">Negative Indexing</h2>
 
-<p>Lists are mutable, meaning you can change their contents after they are created.</p>
+<p>Python allows negative indexing, where <code class="language-plaintext highlighter-rouge">-1</code> refers to the last element, <code class="language-plaintext highlighter-rouge">-2</code> to the second last, and so on.</p>
 
-<h3 id="example-changing-an-item">Example: Changing an Item</h3>
+<h3 id="example-2">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">]</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fruits</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">blueberry</span><span class="sh">"</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+<span class="c1"># Access the last element
+</span><span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># Access the second last element
+</span><span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
 </code></pre></div></div>
 
-<h3 id="expected-output-2">Expected Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['apple', 'blueberry', 'cherry']
+<h3 id="output-2">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cherry
+banana
 </code></pre></div></div>
 
-<h2 id="checking-the-length-of-a-list">Checking the Length of a List</h2>
+<h2 id="why-use-lists">Why Use Lists?</h2>
 
-<p>You can find the number of items in a list using the <code class="language-plaintext highlighter-rouge">len()</code> function.</p>
+<ol>
+  <li><strong>Ordered</strong>: Lists maintain the order of elements, making them predictable.</li>
+  <li><strong>Mutable</strong>: You can modify elements after creating the list.</li>
+  <li><strong>Versatile</strong>: They can store elements of any data type, including other lists.</li>
+</ol>
 
-<h3 id="example-getting-list-length">Example: Getting List Length</h3>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">fruits</span><span class="p">))</span>
-</code></pre></div></div>
-
-<h3 id="expected-output-3">Expected Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
-</code></pre></div></div>
-
-<h2 id="summary">Summary</h2>
-
-<ul>
-  <li>Lists are collections of items stored in square brackets <code class="language-plaintext highlighter-rouge">[]</code>.</li>
-  <li>Items in a list can be accessed by their index, starting at <code class="language-plaintext highlighter-rouge">0</code>.</li>
-  <li>Lists are mutable, allowing you to modify their contents.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">len()</code> to determine the number of items in a list.</li>
-</ul>
-
-<p>Lists are a foundational data type in Python. Mastering their creation, access, and modification will prepare you for more advanced programming concepts.</p>
+<p>In the next lesson, we’ll learn about common operations you can perform on lists.</p>
 
         <!-- Next Lesson Button -->
         

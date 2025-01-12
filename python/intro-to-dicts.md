@@ -4,87 +4,97 @@ title: "Intro to Dicts"
 order: 22
 ---
 
-A dictionary is a collection of key-value pairs. Each key maps to a specific value, making dictionaries a versatile data type for storing and retrieving data efficiently.
+Dictionaries in Python are powerful data structures that store data as key-value pairs. They are mutable and allow for efficient data retrieval based on unique keys.
 
-## Creating a Dictionary
+## What is a Dictionary?
 
-You can create a dictionary using curly braces `{}`. Each key is unique and is paired with a value, separated by a colon `:`.
+A dictionary is an unordered collection of key-value pairs, where each key must be unique. Keys act as identifiers for their associated values.
 
-### Example: Creating a Dictionary
-
+### Example:
 ```python
+# A dictionary with strings as keys and values
 person = {
     "name": "Alice",
     "age": 30,
     "city": "New York"
 }
-print(person)
+
+# A dictionary with mixed types
+product = {
+    "id": 101,
+    "name": "Laptop",
+    "price": 799.99
+}
 ```
 
-### Expected Output
-
+### Output:
 ```plaintext
 {'name': 'Alice', 'age': 30, 'city': 'New York'}
+{'id': 101, 'name': 'Laptop', 'price': 799.99}
 ```
 
-## Accessing Values
+## Key Characteristics of Dictionaries
 
-To access a value in a dictionary, use its key inside square brackets `[]`.
+1. **Key-Value Pairs**: Each key maps to a specific value.
+2. **Keys Must Be Unique**: Duplicate keys are not allowed.
+3. **Values Can Be Any Type**: Values can be strings, numbers, lists, or even other dictionaries.
+4. **Unordered**: As of Python 3.7+, dictionaries preserve insertion order, but this is not guaranteed in earlier versions.
 
-### Example: Accessing Values by Key
+## Creating a Dictionary
 
+### Empty Dictionary:
 ```python
-print(person["name"])  # Access the value associated with the key 'name'
-print(person["age"])   # Access the value associated with the key 'age'
+empty_dict = {}
+print(empty_dict)
 ```
 
-### Expected Output
+### Output:
+```plaintext
+{}
+```
 
+### Pre-Filled Dictionary:
+```python
+car = {
+    "brand": "Toyota",
+    "model": "Corolla",
+    "year": 2020
+}
+print(car)
+```
+
+### Output:
+```plaintext
+{'brand': 'Toyota', 'model': 'Corolla', 'year': 2020}
+```
+
+## Accessing Values in a Dictionary
+
+You can access values by referencing their keys.
+
+### Example:
+```python
+person = {"name": "Alice", "age": 30, "city": "New York"}
+
+# Access the value associated with the key 'name'
+print(person["name"])
+
+# Access the value associated with the key 'city'
+print(person["city"])
+```
+
+### Output:
 ```plaintext
 Alice
-30
+New York
 ```
 
-## Adding or Updating Key-Value Pairs
+## Why Use Dictionaries?
 
-You can add a new key-value pair or update an existing one using the assignment operator `=`.
+1. **Fast Lookups**: Retrieve values quickly using keys.
+2. **Flexible**: Store diverse types of data.
+3. **Descriptive**: Keys provide context to the values they store.
 
-### Example: Adding and Updating
+---
 
-```python
-person["job"] = "Engineer"  # Add a new key-value pair
-person["age"] = 31         # Update the value of an existing key
-print(person)
-```
-
-### Expected Output
-
-```plaintext
-{'name': 'Alice', 'age': 31, 'city': 'New York', 'job': 'Engineer'}
-```
-
-## Removing Key-Value Pairs
-
-Use the `del` statement to remove a key-value pair from a dictionary.
-
-### Example: Removing a Key-Value Pair
-
-```python
-del person["city"]
-print(person)
-```
-
-### Expected Output
-
-```plaintext
-{'name': 'Alice', 'age': 31, 'job': 'Engineer'}
-```
-
-## Summary
-
-- Dictionaries are collections of key-value pairs, created using curly braces `{}`.
-- Access values by referencing their keys inside square brackets `[]`.
-- Add or update key-value pairs using the assignment operator `=`.
-- Remove key-value pairs with the `del` statement.
-
-Dictionaries are an essential tool for storing and managing data in Python. Understanding how to use them effectively will enhance your ability to write flexible and powerful programs.
+In the next lesson, we’ll learn more about performing operations on dictionaries.

@@ -4,111 +4,146 @@ title: "Set Operations"
 order: 25
 ---
 
-Sets in Python support a variety of operations that are useful for working with collections of unique items. These operations make sets ideal for tasks involving comparisons and mathematical set logic.
+Sets in Python come with built-in methods to perform operations such as union, intersection, difference, and more. These operations are efficient and follow the principles of mathematical sets.
 
-## Union of Sets
+## Adding and Removing Elements
 
-The union of two sets contains all unique items from both sets. Use the `union()` method or the `|` operator.
+### Adding an Element
+You can add a single element to a set using the `add()` method.
 
-### Example: Union
+```python
+numbers = {1, 2, 3}
+numbers.add(4)
+print(numbers)
+```
+
+### Output:
+```plaintext
+{1, 2, 3, 4}
+```
+
+### Removing an Element
+The `remove()` method removes a specific element, but it raises an error if the element is not found.
+
+```python
+numbers = {1, 2, 3, 4}
+numbers.remove(3)
+print(numbers)
+```
+
+### Output:
+```plaintext
+{1, 2, 4}
+```
+
+The `discard()` method works like `remove()` but does not raise an error if the element is not found.
+
+```python
+numbers = {1, 2, 4}
+numbers.discard(5)  # No error if 5 is not in the set
+print(numbers)
+```
+
+### Output:
+```plaintext
+{1, 2, 4}
+```
+
+## Mathematical Set Operations
+
+### Union
+The union of two sets combines all unique elements from both sets. Use the `union()` method or the `|` operator.
 
 ```python
 set1 = {1, 2, 3}
 set2 = {3, 4, 5}
-union_set = set1.union(set2)
-print(union_set)
+result = set1.union(set2)
+print(result)
 ```
 
-### Output
-
+### Output:
 ```plaintext
 {1, 2, 3, 4, 5}
 ```
 
-You can achieve the same result using the `|` operator:
+### Intersection
+The intersection contains only elements common to both sets. Use the `intersection()` method or the `&` operator.
 
 ```python
-union_set = set1 | set2
-print(union_set)
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+result = set1.intersection(set2)
+print(result)
 ```
 
-## Intersection of Sets
-
-The intersection contains only the items that are present in both sets. Use the `intersection()` method or the `&` operator.
-
-### Example: Intersection
-
-```python
-intersection_set = set1.intersection(set2)
-print(intersection_set)
-```
-
-### Output
-
+### Output:
 ```plaintext
 {3}
 ```
 
-You can also use the `&` operator:
+### Difference
+The difference contains elements in the first set but not in the second. Use the `difference()` method or the `-` operator.
 
 ```python
-intersection_set = set1 & set2
-print(intersection_set)
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+result = set1.difference(set2)
+print(result)
 ```
 
-## Difference of Sets
-
-The difference contains items that are in the first set but not in the second. Use the `difference()` method or the `-` operator.
-
-### Example: Difference
-
-```python
-difference_set = set1.difference(set2)
-print(difference_set)
-```
-
-### Output
-
+### Output:
 ```plaintext
 {1, 2}
 ```
 
-The `-` operator produces the same result:
+### Symmetric Difference
+The symmetric difference contains elements in either set but not in both. Use the `symmetric_difference()` method or the `^` operator.
 
 ```python
-difference_set = set1 - set2
-print(difference_set)
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+result = set1.symmetric_difference(set2)
+print(result)
 ```
 
-## Symmetric Difference of Sets
-
-The symmetric difference contains items that are in either set, but not in both. Use the `symmetric_difference()` method or the `^` operator.
-
-### Example: Symmetric Difference
-
-```python
-symmetric_difference_set = set1.symmetric_difference(set2)
-print(symmetric_difference_set)
-```
-
-### Output
-
+### Output:
 ```plaintext
 {1, 2, 4, 5}
 ```
 
-The `^` operator achieves the same result:
+## Membership Testing
+
+Use the `in` keyword to check if an element is in a set.
 
 ```python
-symmetric_difference_set = set1 ^ set2
-print(symmetric_difference_set)
+numbers = {1, 2, 3}
+print(2 in numbers)
+print(4 in numbers)
 ```
 
-## Summary
+### Output:
+```plaintext
+True
+False
+```
 
-- **Union (`union()` or `|`)**: Combines all unique items from both sets.
-- **Intersection (`intersection()` or `&`)**: Finds common items in both sets.
-- **Difference (`difference()` or `-`)**: Finds items in the first set but not in the second.
-- **Symmetric Difference (`symmetric_difference()` or `^`)**: Finds items in either set but not in both.
+## Combining Sets
 
-These operations make sets a powerful tool for comparing and combining collections. Experiment with these operations to understand how they can simplify your code.
+### Updating a Set
+You can combine sets using the `update()` method, which adds all elements from another set to the current set.
+
+```python
+set1 = {1, 2, 3}
+set2 = {4, 5}
+set1.update(set2)
+print(set1)
+```
+
+### Output:
+```plaintext
+{1, 2, 3, 4, 5}
+```
+
+---
+
+In the next lesson, we’ll explore nested structures and how they can be used to organize data in Python.

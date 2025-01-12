@@ -366,106 +366,85 @@
 
     <main class="content">
         <h1>Intro to Sets</h1>
-        <p>A set is an unordered collection of unique items. Sets are useful when you need to store distinct elements and perform operations like unions, intersections, and differences.</p>
+        <p>Sets in Python are an unordered collection of unique elements. They are useful for storing data without duplicates and for performing mathematical set operations like union, intersection, and difference.</p>
 
-<h2 id="creating-a-set">Creating a Set</h2>
+<h2 id="what-is-a-set">What is a Set?</h2>
 
-<p>You can create a set by placing items inside curly braces <code class="language-plaintext highlighter-rouge">{}</code>. Duplicate items are automatically removed, and the order of elements is not guaranteed.</p>
+<p>A set is defined using curly braces <code class="language-plaintext highlighter-rouge">{}</code> or the <code class="language-plaintext highlighter-rouge">set()</code> constructor. Unlike lists or tuples, sets do not allow duplicate elements, and their elements are unordered.</p>
 
-<h3 id="example-creating-a-set">Example: Creating a Set</h3>
+<h3 id="example">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Creating a set with unique elements
+</span><span class="n">fruits</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unique_numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">unique_numbers</span><span class="p">)</span>
+<span class="c1"># Using the set() constructor
+</span><span class="n">numbers</span> <span class="o">=</span> <span class="nf">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{1, 2, 3, 4, 5}
-</code></pre></div></div>
-
-<h3 id="creating-an-empty-set">Creating an Empty Set</h3>
-
-<p>To create an empty set, use the <code class="language-plaintext highlighter-rouge">set()</code> function. Using <code class="language-plaintext highlighter-rouge">{}</code> will create an empty dictionary instead.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">empty_set</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">empty_set</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-1">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set()
-</code></pre></div></div>
-
-<h2 id="adding-and-removing-items">Adding and Removing Items</h2>
-
-<p>You can modify sets by adding or removing items.</p>
-
-<h3 id="adding-items">Adding Items</h3>
-
-<p>Use the <code class="language-plaintext highlighter-rouge">add()</code> method to add a single item to a set.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unique_numbers</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">unique_numbers</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-2">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{1, 2, 3, 4, 5, 6}
-</code></pre></div></div>
-
-<h3 id="removing-items">Removing Items</h3>
-
-<p>Use the <code class="language-plaintext highlighter-rouge">remove()</code> method to remove a specific item. If the item does not exist, it raises a <code class="language-plaintext highlighter-rouge">KeyError</code>.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unique_numbers</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">unique_numbers</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-3">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{1, 2, 4, 5, 6}
-</code></pre></div></div>
-
-<h3 id="using-discard">Using <code class="language-plaintext highlighter-rouge">discard()</code></h3>
-
-<p>If you want to remove an item without raising an error if it doesn’t exist, use the <code class="language-plaintext highlighter-rouge">discard()</code> method.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">unique_numbers</span><span class="p">.</span><span class="nf">discard</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># No error if 10 is not in the set
-</span></code></pre></div></div>
-
-<h2 id="checking-membership">Checking Membership</h2>
-
-<p>You can check if an item exists in a set using the <code class="language-plaintext highlighter-rouge">in</code> keyword.</p>
-
-<h3 id="example-membership-test">Example: Membership Test</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="mi">4</span> <span class="ow">in</span> <span class="n">unique_numbers</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">4 is in the set.</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-4">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4 is in the set.
+<h3 id="output">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'apple', 'banana', 'cherry'}
+{1, 2, 3}
 </code></pre></div></div>
 
 <h2 id="key-characteristics-of-sets">Key Characteristics of Sets</h2>
 
 <ol>
+  <li><strong>Unique Elements</strong>: Duplicate elements are automatically removed.</li>
   <li><strong>Unordered</strong>: Sets do not preserve the order of elements.</li>
-  <li><strong>Unique</strong>: Duplicate items are automatically removed.</li>
-  <li><strong>Mutable</strong>: You can add or remove items, but the set itself is immutable if it contains immutable elements.</li>
+  <li><strong>Mutable</strong>: You can add or remove elements from a set.</li>
 </ol>
 
-<h2 id="summary">Summary</h2>
+<h2 id="creating-sets">Creating Sets</h2>
 
-<ul>
-  <li>Create sets with <code class="language-plaintext highlighter-rouge">{}</code> or the <code class="language-plaintext highlighter-rouge">set()</code> function for empty sets.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">add()</code> to add items and <code class="language-plaintext highlighter-rouge">remove()</code> or <code class="language-plaintext highlighter-rouge">discard()</code> to remove them.</li>
-  <li>Check for membership with the <code class="language-plaintext highlighter-rouge">in</code> keyword.</li>
-  <li>Sets are ideal for tasks requiring uniqueness or performing mathematical set operations.</li>
-</ul>
+<h3 id="empty-set">Empty Set</h3>
+<p>An empty set must be created using the <code class="language-plaintext highlighter-rouge">set()</code> constructor because <code class="language-plaintext highlighter-rouge">{}</code> creates an empty dictionary.</p>
 
-<p>In the next lesson, we’ll explore set operations like union, intersection, and difference.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">empty_set</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">empty_set</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-1">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>set()
+</code></pre></div></div>
+
+<h3 id="pre-filled-set">Pre-Filled Set</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">red</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">blue</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">green</span><span class="sh">"</span><span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-2">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'red', 'blue', 'green'}
+</code></pre></div></div>
+
+<h2 id="accessing-elements">Accessing Elements</h2>
+
+<p>Since sets are unordered, you cannot access elements by index. Instead, you can iterate over the set.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">colors</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">red</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">blue</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">green</span><span class="sh">"</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">colors</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-3">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>red
+blue
+green
+</code></pre></div></div>
+
+<p>(Note: The order of elements in the output may vary.)</p>
+
+<h2 id="why-use-sets">Why Use Sets?</h2>
+
+<ol>
+  <li><strong>Duplicate Removal</strong>: Automatically removes duplicate items.</li>
+  <li><strong>Membership Testing</strong>: Quickly check if an item exists in the set using the <code class="language-plaintext highlighter-rouge">in</code> keyword.</li>
+  <li><strong>Set Operations</strong>: Perform mathematical operations like union, intersection, and difference.</li>
+</ol>
+
+<hr />
+
+<p>In the next lesson, we’ll dive deeper into performing operations on sets.</p>
 
         <!-- Next Lesson Button -->
         

@@ -4,88 +4,82 @@ title: "Return Values"
 order: 18
 ---
 
-Functions can return values that you can use later in your program. The `return` statement allows a function to send a result back to the caller.
+Functions in Python can send data back to the part of the program that called them using the `return` statement. This allows you to reuse the output of a function for further processing.
 
-## Using the `return` Statement
+## The `return` Statement
 
-The `return` statement specifies the value a function should send back to where it was called. 
+The `return` statement ends a function and sends a value back to the caller. Without a `return` statement, a function returns `None` by default.
 
-### Example: Returning a Value
-
+### Syntax:
 ```python
-def add(a, b):
-    return a + b
-
-result = add(5, 3)
-print("The result is:", result)
+def function_name(parameters):
+    # Code block
+    return value
 ```
 
-### Expected Output
+## Returning a Single Value
 
-```plaintext
-The result is: 8
-```
+A function can return a single value for use in the rest of the program.
 
-Here:
-- The `add` function computes the sum of `a` and `b`.
-- The `return` statement sends the result (`8`) back to the variable `result`.
-
-## Why Use Return Values?
-
-Returning values makes functions more versatile and allows you to store and reuse the results in different parts of your program.
-
-### Example: Reusing Returned Values
-
+### Example:
 ```python
 def square(number):
-    return number * number
+    return number ** 2
 
-x = square(4)
-y = square(5)
-print("Squares:", x, y)
+result = square(4)
+print(f"The square of 4 is {result}")
 ```
 
-### Expected Output
-
+### Output:
 ```plaintext
-Squares: 16 25
+The square of 4 is 16
 ```
 
-In this example:
-- The `square` function calculates the square of a number and returns the result.
-- The returned values are stored in `x` and `y`, which are then printed.
+## Returning Multiple Values
 
-## Using Returned Values in Expressions
+A function can return multiple values using a tuple.
 
-You can use returned values directly in expressions or other functions.
+### Example:
+```python
+def calculate(a, b):
+    sum = a + b
+    difference = a - b
+    return sum, difference
 
-### Example: Using Returned Values
+result_sum, result_difference = calculate(10, 5)
+print(f"Sum: {result_sum}, Difference: {result_difference}")
+```
 
+### Output:
+```plaintext
+Sum: 15, Difference: 5
+```
+
+## Using Return Values in Expressions
+
+The returned value can be used directly in other operations or expressions.
+
+### Example:
 ```python
 def multiply(a, b):
     return a * b
 
-def add_and_multiply(x, y, z):
-    sum_result = x + y
-    return multiply(sum_result, z)
-
-result = add_and_multiply(2, 3, 4)
-print("Result:", result)
+print(f"Product: {multiply(3, 7)}")
+print(f"Double the product: {multiply(3, 7) * 2}")
 ```
 
-### Expected Output
-
+### Output:
 ```plaintext
-Result: 20
+Product: 21
+Double the product: 42
 ```
 
-In this example:
-- The `add_and_multiply` function adds two numbers, then multiplies the result with a third number using the `multiply` function.
+## Why Use Return Values?
 
-## Summary
+1. **Reusability**: Functions with return values can be used in various parts of the program.
+2. **Flexibility**: Returning values allows for complex operations and further computations.
+3. **Modularity**: Simplifies code by separating logic into reusable components.
 
-- Use the `return` statement to send a result back to the caller.
-- Returning values allows you to store and reuse the results for further calculations or operations.
-- Functions can return values that are directly used in expressions or passed to other functions.
+---
 
-Mastering return values will help you build more dynamic and modular programs. Practice writing functions that return and use values to enhance your coding skills!
+In the next lesson, we’ll explore Python’s list data structure and how to work with collections of data.

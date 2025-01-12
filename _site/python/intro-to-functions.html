@@ -366,66 +366,84 @@
 
     <main class="content">
         <h1>Intro to Functions</h1>
-        <p>Functions are reusable blocks of code designed to perform specific tasks. They help make your code more organized, readable, and efficient by avoiding repetition.</p>
+        <p>Functions in Python are reusable blocks of code designed to perform specific tasks. They help make your programs more organized, modular, and easier to debug.</p>
 
-<h2 id="defining-a-function">Defining a Function</h2>
+<h2 id="what-is-a-function">What is a Function?</h2>
 
-<p>In Python, you define a function using the <code class="language-plaintext highlighter-rouge">def</code> keyword, followed by the function name and parentheses <code class="language-plaintext highlighter-rouge">()</code>.</p>
+<p>A function is defined using the <code class="language-plaintext highlighter-rouge">def</code> keyword, followed by a name, parentheses (which can include parameters), and a colon. The code inside the function is indented.</p>
 
-<h3 id="example-defining-a-function">Example: Defining a Function</h3>
+<h3 id="syntax">Syntax:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">parameters</span><span class="p">):</span>
+    <span class="c1"># Code block
+</span>    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></div>
 
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">function_name</code>: The name of the function, which should follow naming conventions (lowercase with underscores).</li>
+  <li><code class="language-plaintext highlighter-rouge">parameters</code>: Optional inputs the function can accept.</li>
+  <li><code class="language-plaintext highlighter-rouge">return</code>: Optional keyword to send a value back to the caller.</li>
+</ul>
+
+<h2 id="defining-and-calling-a-function">Defining and Calling a Function</h2>
+
+<p>To use a function, you first define it and then call it by its name.</p>
+
+<h3 id="example">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">():</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello!</span><span class="sh">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Calling the function
+</span><span class="nf">greet</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>This creates a function named <code class="language-plaintext highlighter-rouge">greet</code> that prints “Hello!” when called.</p>
-
-<h2 id="calling-a-function">Calling a Function</h2>
-
-<p>To execute a function, you call it by its name followed by parentheses.</p>
-
-<h3 id="example-calling-a-function">Example: Calling a Function</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">greet</span><span class="p">()</span>
+<h3 id="output">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, World!
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<h2 id="parameters-in-functions">Parameters in Functions</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello!
+<p>Functions can accept parameters to make them more flexible.</p>
+
+<h3 id="example-1">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet_person</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="nf">greet_person</span><span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">greet_person</span><span class="p">(</span><span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="functions-with-parameters">Functions with Parameters</h2>
-
-<p>Parameters allow you to pass information to a function so it can operate on different values.</p>
-
-<h3 id="example-function-with-parameters">Example: Function with Parameters</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, </span><span class="sh">"</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="sh">"</span><span class="s">!</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">greet</span><span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="expected-output-1">Expected Output</h3>
-
+<h3 id="output-1">Output:</h3>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, Alice!
+Hello, Bob!
 </code></pre></div></div>
 
-<p>In this example:</p>
-<ul>
-  <li>The <code class="language-plaintext highlighter-rouge">name</code> parameter is a placeholder for the value you pass when calling the function.</li>
-  <li><code class="language-plaintext highlighter-rouge">"Alice"</code> is passed to the <code class="language-plaintext highlighter-rouge">greet</code> function, and the function uses it to generate a personalized message.</li>
-</ul>
+<h2 id="returning-values">Returning Values</h2>
 
-<h2 id="summary">Summary</h2>
+<p>Functions can return values using the <code class="language-plaintext highlighter-rouge">return</code> statement.</p>
 
-<ul>
-  <li>Functions help organize and reuse code efficiently.</li>
-  <li>Define a function with <code class="language-plaintext highlighter-rouge">def</code>, followed by a name and parentheses.</li>
-  <li>Call a function by its name followed by parentheses.</li>
-  <li>Use parameters to pass information into functions for flexibility.</li>
-</ul>
+<h3 id="example-2">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
-<p>Functions are a powerful tool in Python, and this is just the beginning. In the next lesson, we’ll learn how to return values from functions to make them even more versatile.</p>
+<span class="n">result</span> <span class="o">=</span> <span class="nf">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">The sum is </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-2">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The sum is 8
+</code></pre></div></div>
+
+<h2 id="why-use-functions">Why Use Functions?</h2>
+
+<ol>
+  <li><strong>Code Reusability</strong>: Avoid repeating code by defining reusable functions.</li>
+  <li><strong>Improved Readability</strong>: Functions help organize code into logical sections.</li>
+  <li><strong>Easier Maintenance</strong>: Functions make debugging and updates simpler.</li>
+</ol>
+
+<hr />
+
+<p>In the next lesson, we’ll dive deeper into return values and learn how to use them effectively.</p>
 
         <!-- Next Lesson Button -->
         

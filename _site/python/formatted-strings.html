@@ -366,88 +366,107 @@
 
     <main class="content">
         <h1>Formatted Strings</h1>
-        <p>Formatted strings, also known as f-strings, are a powerful feature in Python that allow you to create strings with embedded expressions. This makes it easy to dynamically include values in your text.</p>
+        <p>Formatted strings in Python allow you to embed variables and expressions directly within string text, making it easier to create dynamic content. Python provides multiple ways to format strings, including f-strings, <code class="language-plaintext highlighter-rouge">str.format()</code>, and the <code class="language-plaintext highlighter-rouge">%</code> operator.</p>
 
-<h2 id="what-are-formatted-strings">What Are Formatted Strings?</h2>
+<h2 id="f-strings-recommended">f-Strings (Recommended)</h2>
 
-<p>Formatted strings are strings prefixed with the letter <code class="language-plaintext highlighter-rouge">f</code> or <code class="language-plaintext highlighter-rouge">F</code>. You can include expressions inside curly braces <code class="language-plaintext highlighter-rouge">{}</code> within the string, and Python will evaluate and insert their values.</p>
+<p>Introduced in Python 3.6, f-strings are the most modern and efficient way to format strings. They use the <code class="language-plaintext highlighter-rouge">f</code> prefix and curly braces <code class="language-plaintext highlighter-rouge">{}</code> to embed variables or expressions directly.</p>
 
-<h3 id="example-basic-formatted-string">Example: Basic Formatted String</h3>
+<h3 id="syntax">Syntax:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sa">f</span><span class="sh">"</span><span class="s">Your text here </span><span class="si">{</span><span class="n">variable_or_expression</span><span class="si">}</span><span class="sh">"</span>
+</code></pre></div></div>
 
+<h3 id="example">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span>
 <span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+
 <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s"> years old.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="output">Output:</h3>
-
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>My name is Alice and I am 30 years old.
 </code></pre></div></div>
 
-<h2 id="using-expressions-in-formatted-strings">Using Expressions in Formatted Strings</h2>
+<h3 id="inline-expressions">Inline Expressions:</h3>
+<p>You can include expressions inside f-strings.</p>
 
-<p>You can include any valid Python expression inside curly braces.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
 
-<h3 id="example-calculations-and-methods">Example: Calculations and Methods</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">num1</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">num2</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">The sum of </span><span class="si">{</span><span class="n">num1</span><span class="si">}</span><span class="s"> and </span><span class="si">{</span><span class="n">num2</span><span class="si">}</span><span class="s"> is </span><span class="si">{</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">My name in uppercase is </span><span class="si">{</span><span class="n">name</span><span class="p">.</span><span class="nf">upper</span><span class="p">()</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">The sum of </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s"> and </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s"> is </span><span class="si">{</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="output-1">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The sum of 5 and 10 is 15.
+</code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The sum of 10 and 5 is 15.
-My name in uppercase is ALICE.
+<h2 id="strformat"><code class="language-plaintext highlighter-rouge">str.format()</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">str.format()</code> method was the primary way to format strings before f-strings.</p>
+
+<h3 id="example-1">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">My name is {} and I am {} years old.</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="output-2">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>My name is Bob and I am 25 years old.
+</code></pre></div></div>
+
+<h3 id="using-positional-and-keyword-arguments">Using Positional and Keyword Arguments:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Name: {0}, Age: {1}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">Carol</span><span class="sh">"</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Name: {name}, Age: {age}</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sh">"</span><span class="s">Dave</span><span class="sh">"</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">35</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="output-3">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name: Carol, Age: 40
+Name: Dave, Age: 35
+</code></pre></div></div>
+
+<h2 id="using-the--operator-old-style">Using the <code class="language-plaintext highlighter-rouge">%</code> Operator (Old Style)</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">%</code> operator is an older way to format strings. While still supported, it’s generally not recommended for new code.</p>
+
+<h3 id="example-2">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Eve</span><span class="sh">"</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">28</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">My name is %s and I am %d years old.</span><span class="sh">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="output-4">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>My name is Eve and I am 28 years old.
 </code></pre></div></div>
 
 <h2 id="formatting-numbers">Formatting Numbers</h2>
 
-<p>You can format numbers for better readability, such as specifying decimal places or adding commas.</p>
+<p>You can format numbers to control their precision, width, or alignment.</p>
 
-<h3 id="example-formatting-numbers">Example: Formatting Numbers</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.141592653589793</span>
-<span class="n">large_number</span> <span class="o">=</span> <span class="mi">1234567890</span>
+<h3 id="example-f-strings">Example (f-strings):</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159265</span>
 
 <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Pi rounded to 2 decimal places: </span><span class="si">{</span><span class="n">pi</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Large number with commas: </span><span class="si">{</span><span class="n">large_number</span><span class="si">:</span><span class="p">,</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Pi padded to 10 characters: </span><span class="si">{</span><span class="n">pi</span><span class="si">:</span><span class="mf">10.2</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output-2">Output:</h3>
-
+<h3 id="output-5">Output:</h3>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pi rounded to 2 decimal places: 3.14
-Large number with commas: 1,234,567,890
+Pi padded to 10 characters:       3.14
 </code></pre></div></div>
 
-<h2 id="combining-formatted-strings-with-loops">Combining Formatted Strings with Loops</h2>
-
-<p>Formatted strings can be very useful when working with loops.</p>
-
-<h3 id="example-using-formatted-strings-in-a-loop">Example: Using Formatted Strings in a Loop</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Iteration </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s"> squared is </span><span class="si">{</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-3">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Iteration 1: 1 squared is 1.
-Iteration 2: 4 squared is 4.
-Iteration 3: 9 squared is 9.
-</code></pre></div></div>
-
-<h2 id="summary">Summary</h2>
+<h2 id="choosing-a-formatting-method">Choosing a Formatting Method</h2>
 
 <ul>
-  <li>Formatted strings (f-strings) allow you to include expressions directly within strings.</li>
-  <li>Use curly braces <code class="language-plaintext highlighter-rouge">{}</code> to embed variables, expressions, or method calls.</li>
-  <li>Format numbers with options like <code class="language-plaintext highlighter-rouge">:.2f</code> for decimal places or <code class="language-plaintext highlighter-rouge">:,</code> for commas.</li>
-  <li>f-strings simplify dynamic string creation and make your code more readable.</li>
+  <li>Use <strong>f-strings</strong> for new code due to their readability and efficiency.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">str.format()</code> for compatibility with older versions of Python (before 3.6).</li>
+  <li>Avoid the <code class="language-plaintext highlighter-rouge">%</code> operator for modern Python code.</li>
 </ul>
 
-<p>Practice using formatted strings to create dynamic and flexible outputs in your Python programs!</p>
+<hr />
+
+<p>In the next lesson, we’ll introduce the concept of functions and how to create reusable blocks of code.</p>
 
         <!-- Next Lesson Button -->
         

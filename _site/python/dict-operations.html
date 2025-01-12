@@ -366,124 +366,140 @@
 
     <main class="content">
         <h1>Dict Operations</h1>
-        <p>Dictionaries in Python offer various operations for managing key-value pairs efficiently. Let’s dive into some useful operations beyond adding, modifying, and removing key-value pairs.</p>
+        <p>Dictionaries in Python provide various operations for adding, updating, removing, and interacting with key-value pairs. These operations make dictionaries highly versatile.</p>
 
-<h2 id="what-are-keys-values-and-items">What Are Keys, Values, and Items?</h2>
+<h2 id="adding-and-updating-items">Adding and Updating Items</h2>
 
-<ul>
-  <li><strong>Keys</strong>: Unique identifiers in the dictionary used to access corresponding values.</li>
-  <li><strong>Values</strong>: The data associated with each key, which can be any data type.</li>
-  <li><strong>Items</strong>: Key-value pairs stored together as a single entity.</li>
-</ul>
-
-<h3 id="example-keys-values-and-items">Example: Keys, Values, and Items</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="sh">"</span><span class="s">city</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">New York</span><span class="sh">"</span><span class="p">}</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">.</span><span class="nf">keys</span><span class="p">())</span>   <span class="c1"># All keys
-</span><span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">.</span><span class="nf">values</span><span class="p">())</span> <span class="c1"># All values
-</span><span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">.</span><span class="nf">items</span><span class="p">())</span>  <span class="c1"># All items (key-value pairs)
-</span></code></pre></div></div>
-
-<h3 id="output">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dict_keys(['name', 'age', 'city'])
-dict_values(['Alice', 30, 'New York'])
-dict_items([('name', 'Alice'), ('age', 30), ('city', 'New York')])
-</code></pre></div></div>
-
-<h2 id="looping-through-a-dictionary">Looping Through a Dictionary</h2>
-
-<p>You can iterate over dictionaries to access keys, values, or items.</p>
-
-<h3 id="example-looping-through-keys">Example: Looping Through Keys</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">person</span><span class="p">.</span><span class="nf">keys</span><span class="p">():</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Key:</span><span class="sh">"</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-1">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Key: name
-Key: age
-Key: city
-</code></pre></div></div>
-
-<h3 id="example-looping-through-values">Example: Looping Through Values</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">person</span><span class="p">.</span><span class="nf">values</span><span class="p">():</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Value:</span><span class="sh">"</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-2">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Value: Alice
-Value: 30
-Value: New York
-</code></pre></div></div>
-
-<h3 id="example-looping-through-items">Example: Looping Through Items</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">person</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="sh">"</span><span class="s">:</span><span class="sh">"</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-3">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name : Alice
-age : 30
-city : New York
-</code></pre></div></div>
-
-<h2 id="checking-for-the-presence-of-a-key">Checking for the Presence of a Key</h2>
-
-<p>Use the <code class="language-plaintext highlighter-rouge">in</code> keyword to check if a key exists in a dictionary.</p>
-
-<h3 id="example-checking-for-a-key">Example: Checking for a Key</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="sh">"</span><span class="s">name</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">The key </span><span class="sh">'</span><span class="s">name</span><span class="sh">'</span><span class="s"> exists.</span><span class="sh">"</span><span class="p">)</span>
-<span class="k">if</span> <span class="sh">"</span><span class="s">salary</span><span class="sh">"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">The key </span><span class="sh">'</span><span class="s">salary</span><span class="sh">'</span><span class="s"> does not exist.</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-4">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The key 'name' exists.
-The key 'salary' does not exist.
-</code></pre></div></div>
-
-<h2 id="merging-dictionaries">Merging Dictionaries</h2>
-
-<p>You can combine two dictionaries into one using the <code class="language-plaintext highlighter-rouge">update()</code> method.</p>
-
-<h3 id="example-merging-dictionaries">Example: Merging Dictionaries</h3>
+<h3 id="adding-a-new-key-value-pair">Adding a New Key-Value Pair</h3>
+<p>You can add a new key-value pair by assigning a value to a key that doesn’t exist in the dictionary.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
-<span class="n">additional_info</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">city</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">New York</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">job</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Engineer</span><span class="sh">"</span><span class="p">}</span>
-
-<span class="n">person</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">additional_info</span><span class="p">)</span>
+<span class="n">person</span><span class="p">[</span><span class="sh">"</span><span class="s">city</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">New York</span><span class="sh">"</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output-5">Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'name': 'Alice', 'age': 30, 'city': 'New York', 'job': 'Engineer'}
+<h3 id="output">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'name': 'Alice', 'age': 30, 'city': 'New York'}
 </code></pre></div></div>
 
-<h2 id="summary">Summary</h2>
+<h3 id="updating-an-existing-key">Updating an Existing Key</h3>
+<p>If the key already exists, assigning a value to it will update the value.</p>
 
-<ul>
-  <li><strong>Keys</strong>: Unique identifiers for values in a dictionary.</li>
-  <li><strong>Values</strong>: Data associated with keys.</li>
-  <li><strong>Items</strong>: Key-value pairs stored as tuples.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">.keys()</code>, <code class="language-plaintext highlighter-rouge">.values()</code>, and <code class="language-plaintext highlighter-rouge">.items()</code> to access these components.</li>
-  <li>Iterate through keys, values, or items using loops.</li>
-  <li>Check for key existence with the <code class="language-plaintext highlighter-rouge">in</code> keyword.</li>
-  <li>Merge dictionaries with the <code class="language-plaintext highlighter-rouge">update()</code> method.</li>
-</ul>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="n">person</span><span class="p">[</span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">31</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>These operations make dictionaries a flexible and efficient way to store and manage structured data in Python.</p>
+<h3 id="output-1">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'name': 'Alice', 'age': 31}
+</code></pre></div></div>
+
+<h2 id="removing-items">Removing Items</h2>
+
+<h3 id="using-pop">Using <code class="language-plaintext highlighter-rouge">pop()</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">pop()</code> method removes a key-value pair and returns the value associated with the key.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="n">age</span> <span class="o">=</span> <span class="n">person</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-2">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>30
+{'name': 'Alice'}
+</code></pre></div></div>
+
+<h3 id="using-del">Using <code class="language-plaintext highlighter-rouge">del</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">del</code> statement removes a key-value pair by key.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="k">del</span> <span class="n">person</span><span class="p">[</span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-3">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'name': 'Alice'}
+</code></pre></div></div>
+
+<h3 id="using-clear">Using <code class="language-plaintext highlighter-rouge">clear()</code></h3>
+<p>The <code class="language-plaintext highlighter-rouge">clear()</code> method removes all items from the dictionary.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="n">person</span><span class="p">.</span><span class="nf">clear</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-4">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{}
+</code></pre></div></div>
+
+<h2 id="checking-for-keys">Checking for Keys</h2>
+
+<p>You can check if a key exists in a dictionary using the <code class="language-plaintext highlighter-rouge">in</code> keyword.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">person</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">city</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">person</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-5">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
+False
+</code></pre></div></div>
+
+<h2 id="iterating-over-a-dictionary">Iterating Over a Dictionary</h2>
+
+<h3 id="iterating-over-keys">Iterating Over Keys</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">person</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-6">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name
+age
+</code></pre></div></div>
+
+<h3 id="iterating-over-values">Iterating Over Values</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">person</span><span class="p">.</span><span class="nf">values</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-7">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Alice
+30
+</code></pre></div></div>
+
+<h3 id="iterating-over-key-value-pairs">Iterating Over Key-Value Pairs</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">person</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-8">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: Alice
+age: 30
+</code></pre></div></div>
+
+<h2 id="combining-dictionaries">Combining Dictionaries</h2>
+
+<p>You can combine two dictionaries using the <code class="language-plaintext highlighter-rouge">update()</code> method.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dict1</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">}</span>
+<span class="n">dict2</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="sh">"</span><span class="s">city</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">New York</span><span class="sh">"</span><span class="p">}</span>
+<span class="n">dict1</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">dict2</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">dict1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-9">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'name': 'Alice', 'age': 30, 'city': 'New York'}
+</code></pre></div></div>
+
+<hr />
+
+<p>In the next lesson, we’ll explore Python sets and their operations.</p>
 
         <!-- Next Lesson Button -->
         

@@ -4,110 +4,86 @@ title: "Intro to Sets"
 order: 24
 ---
 
-A set is an unordered collection of unique items. Sets are useful when you need to store distinct elements and perform operations like unions, intersections, and differences.
+Sets in Python are an unordered collection of unique elements. They are useful for storing data without duplicates and for performing mathematical set operations like union, intersection, and difference.
 
-## Creating a Set
+## What is a Set?
 
-You can create a set by placing items inside curly braces `{}`. Duplicate items are automatically removed, and the order of elements is not guaranteed.
+A set is defined using curly braces `{}` or the `set()` constructor. Unlike lists or tuples, sets do not allow duplicate elements, and their elements are unordered.
 
-### Example: Creating a Set
-
+### Example:
 ```python
-unique_numbers = {1, 2, 3, 4, 4, 5}
-print(unique_numbers)
+# Creating a set with unique elements
+fruits = {"apple", "banana", "cherry", "apple"}
+print(fruits)
+
+# Using the set() constructor
+numbers = set([1, 2, 3, 2, 1])
+print(numbers)
 ```
 
-### Output
-
+### Output:
 ```plaintext
-{1, 2, 3, 4, 5}
+{'apple', 'banana', 'cherry'}
+{1, 2, 3}
 ```
 
-### Creating an Empty Set
+## Key Characteristics of Sets
 
-To create an empty set, use the `set()` function. Using `{}` will create an empty dictionary instead.
+1. **Unique Elements**: Duplicate elements are automatically removed.
+2. **Unordered**: Sets do not preserve the order of elements.
+3. **Mutable**: You can add or remove elements from a set.
+
+## Creating Sets
+
+### Empty Set
+An empty set must be created using the `set()` constructor because `{}` creates an empty dictionary.
 
 ```python
 empty_set = set()
 print(empty_set)
 ```
 
-### Output
-
+### Output:
 ```plaintext
 set()
 ```
 
-## Adding and Removing Items
-
-You can modify sets by adding or removing items.
-
-### Adding Items
-
-Use the `add()` method to add a single item to a set.
-
+### Pre-Filled Set
 ```python
-unique_numbers.add(6)
-print(unique_numbers)
+colors = {"red", "blue", "green"}
+print(colors)
 ```
 
-### Output
-
+### Output:
 ```plaintext
-{1, 2, 3, 4, 5, 6}
+{'red', 'blue', 'green'}
 ```
 
-### Removing Items
+## Accessing Elements
 
-Use the `remove()` method to remove a specific item. If the item does not exist, it raises a `KeyError`.
+Since sets are unordered, you cannot access elements by index. Instead, you can iterate over the set.
 
 ```python
-unique_numbers.remove(3)
-print(unique_numbers)
+colors = {"red", "blue", "green"}
+for color in colors:
+    print(color)
 ```
 
-### Output
-
+### Output:
 ```plaintext
-{1, 2, 4, 5, 6}
+red
+blue
+green
 ```
 
-### Using `discard()`
+(Note: The order of elements in the output may vary.)
 
-If you want to remove an item without raising an error if it doesn’t exist, use the `discard()` method.
+## Why Use Sets?
 
-```python
-unique_numbers.discard(10)  # No error if 10 is not in the set
-```
+1. **Duplicate Removal**: Automatically removes duplicate items.
+2. **Membership Testing**: Quickly check if an item exists in the set using the `in` keyword.
+3. **Set Operations**: Perform mathematical operations like union, intersection, and difference.
 
-## Checking Membership
+---
 
-You can check if an item exists in a set using the `in` keyword.
-
-### Example: Membership Test
-
-```python
-if 4 in unique_numbers:
-    print("4 is in the set.")
-```
-
-### Output
-
-```plaintext
-4 is in the set.
-```
-
-## Key Characteristics of Sets
-
-1. **Unordered**: Sets do not preserve the order of elements.
-2. **Unique**: Duplicate items are automatically removed.
-3. **Mutable**: You can add or remove items, but the set itself is immutable if it contains immutable elements.
-
-## Summary
-
-- Create sets with `{}` or the `set()` function for empty sets.
-- Use `add()` to add items and `remove()` or `discard()` to remove them.
-- Check for membership with the `in` keyword.
-- Sets are ideal for tasks requiring uniqueness or performing mathematical set operations.
-
-In the next lesson, we’ll explore set operations like union, intersection, and difference.
+In the next lesson, we’ll dive deeper into performing operations on sets.
