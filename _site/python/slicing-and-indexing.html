@@ -68,7 +68,7 @@
         
         
         <li >
-            <a href="/python/print-function.html" ><b>5</b>. print() Function</a>
+            <a href="/python/print-function.html" ><b>5</b>. print Function</a>
         </li>
         
         
@@ -366,60 +366,84 @@
 
     <main class="content">
         <h1>Slicing and Indexing</h1>
-        <p>Slicing and indexing allow you to access parts of strings and other sequences like lists in Python.</p>
+        <p>Slicing and indexing allow you to access specific parts of a sequence, such as a string or a list. This lesson focuses on how to use these features effectively.</p>
 
 <h2 id="indexing">Indexing</h2>
 
-<p>Indexing retrieves individual elements from a sequence using their position. Python uses zero-based indexing, meaning the first element is at position <code class="language-plaintext highlighter-rouge">0</code>. Negative indices count from the end of the sequence.</p>
+<p>Indexing retrieves a single element from a sequence. Python uses zero-based indexing, meaning the first element has an index of <code class="language-plaintext highlighter-rouge">0</code>.</p>
 
-<h3 id="example-indexing-strings">Example: Indexing Strings</h3>
+<h3 id="example">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># First character: 'P'
-</span><span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Last character: 'n'
+<span class="c1"># Accessing characters by index
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>   <span class="c1"># Output: P (first character)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>   <span class="c1"># Output: y (second character)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Output: n (last character)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Output: o (second to last character)
 </span></code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P
-n
-</code></pre></div></div>
+<h3 id="key-points">Key Points:</h3>
+<ul>
+  <li>Positive indices count from the start (0, 1, 2, …).</li>
+  <li>Negative indices count from the end (-1, -2, -3, …).</li>
+</ul>
 
 <h2 id="slicing">Slicing</h2>
 
-<p>Slicing extracts a portion of a sequence using the syntax <code class="language-plaintext highlighter-rouge">[start:end:step]</code>.</p>
+<p>Slicing retrieves a portion (substring or sublist) of a sequence. Use the syntax <code class="language-plaintext highlighter-rouge">sequence[start:end]</code>, where:</p>
 <ul>
-  <li><strong>start</strong>: The index to start from (inclusive).</li>
-  <li><strong>end</strong>: The index to stop at (exclusive).</li>
-  <li><strong>step</strong>: The interval between indices (optional).</li>
+  <li><code class="language-plaintext highlighter-rouge">start</code> is the index where the slice begins (inclusive).</li>
+  <li><code class="language-plaintext highlighter-rouge">end</code> is the index where the slice ends (exclusive).</li>
 </ul>
 
-<h3 id="default-behavior-in-slicing">Default Behavior in Slicing</h3>
+<h3 id="example-1">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span>
 
-<ul>
-  <li>If <code class="language-plaintext highlighter-rouge">start</code> is omitted, slicing starts from the beginning of the sequence.</li>
-  <li>If <code class="language-plaintext highlighter-rouge">end</code> is omitted, slicing goes to the end of the sequence.</li>
-  <li>If <code class="language-plaintext highlighter-rouge">step</code> is omitted, the default step is <code class="language-plaintext highlighter-rouge">1</code>.</li>
-</ul>
-
-<h3 id="example-default-behavior-in-slicing">Example: Default Behavior in Slicing</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>   <span class="c1"># From the start to index 3: 'Pyth'
-</span><span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>   <span class="c1"># From index 2 to the end: 'thon'
-</span><span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[:])</span>    <span class="c1"># The entire string: 'Python'
-</span><span class="nf">print</span><span class="p">(</span><span class="n">word</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Every second character: 'Pto'
+<span class="c1"># Slicing the string
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># Output: Pyt (characters at indices 0, 1, 2)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># Output: tho (characters at indices 2, 3, 4)
 </span></code></pre></div></div>
 
-<h3 id="expected-output-1">Expected Output</h3>
+<h3 id="omitting-start-or-end">Omitting Start or End</h3>
+<ul>
+  <li>If you omit <code class="language-plaintext highlighter-rouge">start</code>, Python assumes the slice begins at the start of the sequence.</li>
+  <li>If you omit <code class="language-plaintext highlighter-rouge">end</code>, Python assumes the slice ends at the last element.</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Pyth
-thon
-Python
-Pto
-</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span>
 
-<p>Slicing and indexing are powerful tools that make it easy to manipulate strings and other sequences. Practice these operations to become comfortable with sequence handling in Python!</p>
+<span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>   <span class="c1"># Output: Pyt (from start to index 2)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>   <span class="c1"># Output: hon (from index 3 to the end)
+</span></code></pre></div></div>
+
+<h3 id="using-step">Using Step</h3>
+<p>You can include a third parameter, <code class="language-plaintext highlighter-rouge">step</code>, to specify the interval between indices.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Output: Pto (every second character)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Output: nohtyP (reversed string)
+</span></code></pre></div></div>
+
+<h2 id="practical-examples">Practical Examples</h2>
+
+<h3 id="extracting-substrings">Extracting Substrings</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="sh">"</span><span class="s">https://example.com</span><span class="sh">"</span>
+<span class="n">domain</span> <span class="o">=</span> <span class="n">url</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span>  <span class="c1"># Extract everything after the 8th character
+</span><span class="nf">print</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>  <span class="c1"># Output: example.com
+</span></code></pre></div></div>
+
+<h3 id="modifying-a-sequence">Modifying a Sequence</h3>
+<p>While strings are immutable (cannot be modified directly), you can create a new string using slicing.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Jython</span><span class="sh">"</span>
+<span class="n">corrected_text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">P</span><span class="sh">"</span> <span class="o">+</span> <span class="n">text</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>  <span class="c1"># Replace the first character
+</span><span class="nf">print</span><span class="p">(</span><span class="n">corrected_text</span><span class="p">)</span>  <span class="c1"># Output: Python
+</span></code></pre></div></div>
+
+<hr />
+
+<p>In the next lesson, we’ll learn how to gather input from users with the <code class="language-plaintext highlighter-rouge">input()</code> function.</p>
 
         <!-- Next Lesson Button -->
         

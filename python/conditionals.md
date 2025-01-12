@@ -4,60 +4,48 @@ title: "Conditionals"
 order: 13
 ---
 
-Conditional statements allow your program to make decisions based on certain conditions. Python uses `if`, `elif`, and `else` for this purpose.
+Conditionals allow your Python programs to make decisions based on certain conditions. They let you control the flow of your program using boolean logic.
 
-## The Role of Booleans in Conditionals
+## The `if` Statement
 
-Conditionals in Python rely on Boolean expressions to determine whether a block of code should execute. A Boolean expression evaluates to either `True` or `False`.
+The `if` statement executes a block of code only if a condition evaluates to `True`.
 
-For example, consider the expression `age >= 18`. This evaluates to `True` if `age` is 18 or greater; otherwise, it evaluates to `False`. The result of the expression determines which block of code runs.
+### Syntax:
+```python
+if condition:
+    # Code to execute if condition is True
+```
 
-## Basic `if` Statement
-
-The `if` statement runs a block of code only if the condition evaluates to `True`.
-
-### Example: `if` Statement
-
+### Example:
 ```python
 age = 18
+
 if age >= 18:
     print("You are an adult.")
 ```
 
-### Expected Output
+## The `else` Statement
 
-```plaintext
-You are an adult.
-```
+The `else` statement provides a block of code to execute when the condition in the `if` statement is `False`.
 
-## Adding `else`
-
-The `else` statement provides an alternative block of code to run when the condition in the `if` statement is `False`.
-
-### Example: `if` with `else`
-
+### Example:
 ```python
 age = 16
+
 if age >= 18:
     print("You are an adult.")
 else:
     print("You are a minor.")
 ```
 
-### Expected Output
+## The `elif` Statement
 
-```plaintext
-You are a minor.
-```
+The `elif` (short for "else if") statement checks additional conditions when the initial `if` condition is `False`. You can use multiple `elif` statements.
 
-## Using `elif`
-
-The `elif` (short for "else if") statement allows you to check additional conditions. Python evaluates conditions in order, and the first one that evaluates to `True` runs.
-
-### Example: `if`, `elif`, and `else`
-
+### Example:
 ```python
 age = 20
+
 if age < 13:
     print("You are a child.")
 elif age < 18:
@@ -66,34 +54,39 @@ else:
     print("You are an adult.")
 ```
 
-### Expected Output
+## Nested Conditionals
 
-```plaintext
-You are an adult.
-```
+Conditionals can be nested within each other to check multiple levels of conditions.
 
-## Indentation Matters
-
-In Python, indentation defines the blocks of code that belong to `if`, `elif`, or `else`. Improper indentation will result in an error.
-
-### Example: Indentation Error
-
+### Example:
 ```python
-age = 18
+age = 20
+has_id = True
+
 if age >= 18:
-print("You are an adult.")  # This line is not indented correctly
+    if has_id:
+        print("You can enter.")
+    else:
+        print("You need an ID to enter.")
+else:
+    print("You are not old enough to enter.")
 ```
 
-### Error Output
+## Logical Operators with Conditionals
 
-```plaintext
-IndentationError: expected an indented block
+You can combine multiple conditions using logical operators like `and`, `or`, and `not`.
+
+### Example:
+```python
+age = 20
+has_ticket = True
+
+if age >= 18 and has_ticket:
+    print("You can watch the movie.")
+else:
+    print("You cannot watch the movie.")
 ```
 
-## Summary
+---
 
-- Boolean expressions evaluate to `True` or `False` and determine which code block runs.
-- Use `if` for a single condition, `else` for an alternative case, and `elif` to check additional conditions.
-- Proper indentation is essential in Python for conditionals to work correctly.
-
-Practice creating conditions with `if`, `elif`, and `else` to make your programs dynamic and responsive!
+In the next lesson, we’ll learn how to use loops to repeat actions in Python.

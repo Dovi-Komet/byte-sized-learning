@@ -68,7 +68,7 @@
         
         
         <li >
-            <a href="/python/print-function.html" ><b>5</b>. print() Function</a>
+            <a href="/python/print-function.html" ><b>5</b>. print Function</a>
         </li>
         
         
@@ -366,119 +366,146 @@
 
     <main class="content">
         <h1>Boolean Logic</h1>
-        <p>Boolean logic is the foundation of decision-making in Python. It allows you to evaluate expressions as <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>.</p>
+        <p>Boolean logic forms the foundation of decision-making in Python programs. It allows you to compare values and evaluate conditions.</p>
 
-<h2 id="what-are-booleans">What Are Booleans?</h2>
+<h2 id="boolean-values">Boolean Values</h2>
 
-<p>Booleans are a data type in Python that represent one of two values: <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>. These values are used to express the truthfulness of a condition or statement.</p>
+<p>In Python, there are two boolean values: <code class="language-plaintext highlighter-rouge">True</code> and <code class="language-plaintext highlighter-rouge">False</code>. They are used to represent truth values.</p>
 
-<h3 id="examples-of-booleans">Examples of Booleans</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_python_fun</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">is_tired</span> <span class="o">=</span> <span class="bp">False</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">is_python_fun</span><span class="p">)</span>  <span class="c1"># True
-</span><span class="nf">print</span><span class="p">(</span><span class="n">is_tired</span><span class="p">)</span>       <span class="c1"># False
-</span></code></pre></div></div>
-
-<p>In Python:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">True</code> and <code class="language-plaintext highlighter-rouge">False</code> are case-sensitive and must be written with an uppercase first letter.</li>
-  <li>They are often the result of evaluating conditions or expressions.</li>
-</ul>
-
-<h2 id="boolean-operators">Boolean Operators</h2>
-
-<p>Boolean operators allow you to combine or modify boolean values to create more complex logical expressions.</p>
-
-<ol>
-  <li><strong>AND</strong>: Returns <code class="language-plaintext highlighter-rouge">True</code> if both conditions are <code class="language-plaintext highlighter-rouge">True</code>.</li>
-  <li><strong>OR</strong>: Returns <code class="language-plaintext highlighter-rouge">True</code> if at least one condition is <code class="language-plaintext highlighter-rouge">True</code>.</li>
-  <li><strong>NOT</strong>: Inverts the boolean value.</li>
-</ol>
-
-<h3 id="example-basic-boolean-operators">Example: Basic Boolean Operators</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">b</span> <span class="o">=</span> <span class="bp">False</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># False
-</span><span class="nf">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">or</span> <span class="n">b</span><span class="p">)</span>   <span class="c1"># True
-</span><span class="nf">print</span><span class="p">(</span><span class="ow">not</span> <span class="n">a</span><span class="p">)</span>    <span class="c1"># False
+<h3 id="example">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_sunny</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">is_raining</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">is_sunny</span><span class="p">)</span>   <span class="c1"># Output: True
+</span><span class="nf">print</span><span class="p">(</span><span class="n">is_raining</span><span class="p">)</span> <span class="c1"># Output: False
 </span></code></pre></div></div>
 
 <h2 id="comparison-operators">Comparison Operators</h2>
 
-<p>Comparison operators are used to compare two values and return a Boolean (<code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>) based on the comparison.</p>
+<p>Python provides comparison operators to compare values. These operators return a boolean result (<code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>).</p>
 
-<h3 id="common-comparison-operators">Common Comparison Operators</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+      <th>Example</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">==</code></td>
+      <td>Equal to</td>
+      <td><code class="language-plaintext highlighter-rouge">5 == 5</code></td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">!=</code></td>
+      <td>Not equal to</td>
+      <td><code class="language-plaintext highlighter-rouge">5 != 3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&gt;</code></td>
+      <td>Greater than</td>
+      <td><code class="language-plaintext highlighter-rouge">7 &gt; 3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;</code></td>
+      <td>Less than</td>
+      <td><code class="language-plaintext highlighter-rouge">3 &lt; 7</code></td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&gt;=</code></td>
+      <td>Greater than or equal to</td>
+      <td><code class="language-plaintext highlighter-rouge">7 &gt;= 7</code></td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;=</code></td>
+      <td>Less than or equal to</td>
+      <td><code class="language-plaintext highlighter-rouge">3 &lt;= 5</code></td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+  </tbody>
+</table>
 
-<ol>
-  <li><strong>Equal to (<code class="language-plaintext highlighter-rouge">==</code>)</strong>: Returns <code class="language-plaintext highlighter-rouge">True</code> if both values are equal.</li>
-  <li><strong>Not equal to (<code class="language-plaintext highlighter-rouge">!=</code>)</strong>: Returns <code class="language-plaintext highlighter-rouge">True</code> if the values are not equal.</li>
-  <li><strong>Greater than (<code class="language-plaintext highlighter-rouge">&gt;</code>)</strong>: Returns <code class="language-plaintext highlighter-rouge">True</code> if the left value is greater than the right value.</li>
-  <li><strong>Less than (<code class="language-plaintext highlighter-rouge">&lt;</code>)</strong>: Returns <code class="language-plaintext highlighter-rouge">True</code> if the left value is less than the right value.</li>
-  <li><strong>Greater than or equal to (<code class="language-plaintext highlighter-rouge">&gt;=</code>)</strong>: Returns <code class="language-plaintext highlighter-rouge">True</code> if the left value is greater than or equal to the right value.</li>
-  <li><strong>Less than or equal to (<code class="language-plaintext highlighter-rouge">&lt;=</code>)</strong>: Returns <code class="language-plaintext highlighter-rouge">True</code> if the left value is less than or equal to the right value.</li>
-</ol>
-
-<h3 id="example-comparison-operators">Example: Comparison Operators</h3>
-
+<h3 id="example-1">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>   <span class="c1"># False
-</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">)</span>   <span class="c1"># True
-</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span>    <span class="c1"># False
-</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>    <span class="c1"># True
-</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># True
-</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">)</span>   <span class="c1"># False
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># Output: True
+</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># Output: False
 </span></code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<h2 id="logical-operators">Logical Operators</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>False
-True
-False
-True
-True
-False
-</code></pre></div></div>
+<p>Logical operators are used to combine boolean expressions.</p>
 
-<h2 id="combining-comparison-and-boolean-operators">Combining Comparison and Boolean Operators</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+      <th>Example</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">and</code></td>
+      <td>Returns <code class="language-plaintext highlighter-rouge">True</code> if both are <code class="language-plaintext highlighter-rouge">True</code></td>
+      <td><code class="language-plaintext highlighter-rouge">True and False</code></td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">or</code></td>
+      <td>Returns <code class="language-plaintext highlighter-rouge">True</code> if at least one is <code class="language-plaintext highlighter-rouge">True</code></td>
+      <td><code class="language-plaintext highlighter-rouge">True or False</code></td>
+      <td><code class="language-plaintext highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">not</code></td>
+      <td>Negates a boolean value</td>
+      <td><code class="language-plaintext highlighter-rouge">not True</code></td>
+      <td><code class="language-plaintext highlighter-rouge">False</code></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>You can combine comparison operators and Boolean operators to create more complex conditions.</p>
+<h3 id="example-2">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">3</span>
 
-<h3 id="example-combining-operators">Example: Combining Operators</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="n">income</span> <span class="o">=</span> <span class="mi">50000</span>
-
-<span class="c1"># Check if age is between 18 and 30 and income is above 40000
-</span><span class="n">is_eligible</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span> <span class="o">&lt;=</span> <span class="n">age</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">income</span> <span class="o">&gt;</span> <span class="mi">40000</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">is_eligible</span><span class="p">)</span>  <span class="c1"># True
-</span>
-<span class="c1"># Check if age is below 18 or income is below 20000
-</span><span class="n">needs_support</span> <span class="o">=</span> <span class="p">(</span><span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">income</span> <span class="o">&lt;</span> <span class="mi">20000</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">needs_support</span><span class="p">)</span>  <span class="c1"># False
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="ow">and</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">z</span><span class="p">)</span> <span class="c1"># Output: True
+</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="ow">or</span> <span class="n">z</span> <span class="o">&lt;</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># Output: True
+</span><span class="nf">print</span><span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="p">))</span>     <span class="c1"># Output: False
 </span></code></pre></div></div>
 
-<h3 id="expected-output-1">Expected Output</h3>
+<h2 id="truthy-and-falsy-values">Truthy and Falsy Values</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>True
-False
-</code></pre></div></div>
-
-<h2 id="summary">Summary</h2>
+<p>In Python, some values are considered “truthy” (treated as <code class="language-plaintext highlighter-rouge">True</code>) or “falsy” (treated as <code class="language-plaintext highlighter-rouge">False</code>) in a boolean context.</p>
 
 <ul>
-  <li>Booleans (<code class="language-plaintext highlighter-rouge">True</code> and <code class="language-plaintext highlighter-rouge">False</code>) are a fundamental data type in Python.</li>
-  <li>Boolean operators (<code class="language-plaintext highlighter-rouge">and</code>, <code class="language-plaintext highlighter-rouge">or</code>, <code class="language-plaintext highlighter-rouge">not</code>) combine or modify Boolean values.</li>
-  <li>Comparison operators (<code class="language-plaintext highlighter-rouge">==</code>, <code class="language-plaintext highlighter-rouge">!=</code>, <code class="language-plaintext highlighter-rouge">&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;</code>, <code class="language-plaintext highlighter-rouge">&gt;=</code>, <code class="language-plaintext highlighter-rouge">&lt;=</code>) evaluate relationships between values and return Boolean results.</li>
-  <li>You can combine comparison and Boolean operators to evaluate complex conditions.</li>
+  <li><strong>Truthy</strong>: Non-zero numbers, non-empty strings, non-empty lists, etc.</li>
+  <li><strong>Falsy</strong>: <code class="language-plaintext highlighter-rouge">0</code>, <code class="language-plaintext highlighter-rouge">None</code>, empty strings (<code class="language-plaintext highlighter-rouge">""</code>), empty lists (<code class="language-plaintext highlighter-rouge">[]</code>), etc.</li>
 </ul>
 
-<p>Mastering Boolean logic and comparison operators will prepare you for creating dynamic and responsive code.</p>
+<h3 id="example-3">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="sh">"</span><span class="s">Hello</span><span class="sh">"</span><span class="p">:</span>  <span class="c1"># Non-empty string is truthy
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This is truthy!</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Zero is falsy
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This won’t print.</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This is falsy!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>In the next lesson, we’ll learn how to use boolean logic to create conditional statements.</p>
 
         <!-- Next Lesson Button -->
         

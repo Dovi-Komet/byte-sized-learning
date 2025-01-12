@@ -4,114 +4,80 @@ title: "Boolean Logic"
 order: 12
 ---
 
-Boolean logic is the foundation of decision-making in Python. It allows you to evaluate expressions as `True` or `False`.
+Boolean logic forms the foundation of decision-making in Python programs. It allows you to compare values and evaluate conditions.
 
-## What Are Booleans?
+## Boolean Values
 
-Booleans are a data type in Python that represent one of two values: `True` or `False`. These values are used to express the truthfulness of a condition or statement.
+In Python, there are two boolean values: `True` and `False`. They are used to represent truth values.
 
-### Examples of Booleans
-
+### Example:
 ```python
-is_python_fun = True
-is_tired = False
-
-print(is_python_fun)  # True
-print(is_tired)       # False
-```
-
-In Python:
-- `True` and `False` are case-sensitive and must be written with an uppercase first letter.
-- They are often the result of evaluating conditions or expressions.
-
-## Boolean Operators
-
-Boolean operators allow you to combine or modify boolean values to create more complex logical expressions.
-
-1. **AND**: Returns `True` if both conditions are `True`.
-2. **OR**: Returns `True` if at least one condition is `True`.
-3. **NOT**: Inverts the boolean value.
-
-### Example: Basic Boolean Operators
-
-```python
-a = True
-b = False
-
-print(a and b)  # False
-print(a or b)   # True
-print(not a)    # False
+is_sunny = True
+is_raining = False
+print(is_sunny)   # Output: True
+print(is_raining) # Output: False
 ```
 
 ## Comparison Operators
 
-Comparison operators are used to compare two values and return a Boolean (`True` or `False`) based on the comparison.
+Python provides comparison operators to compare values. These operators return a boolean result (`True` or `False`).
 
-### Common Comparison Operators
+| Operator | Description                  | Example             | Result  |
+|----------|------------------------------|---------------------|---------|
+| `==`     | Equal to                    | `5 == 5`           | `True`  |
+| `!=`     | Not equal to                | `5 != 3`           | `True`  |
+| `>`      | Greater than                | `7 > 3`            | `True`  |
+| `<`      | Less than                   | `3 < 7`            | `True`  |
+| `>=`     | Greater than or equal to    | `7 >= 7`           | `True`  |
+| `<=`     | Less than or equal to       | `3 <= 5`           | `True`  |
 
-1. **Equal to (`==`)**: Returns `True` if both values are equal.
-2. **Not equal to (`!=`)**: Returns `True` if the values are not equal.
-3. **Greater than (`>`)**: Returns `True` if the left value is greater than the right value.
-4. **Less than (`<`)**: Returns `True` if the left value is less than the right value.
-5. **Greater than or equal to (`>=`)**: Returns `True` if the left value is greater than or equal to the right value.
-6. **Less than or equal to (`<=`)**: Returns `True` if the left value is less than or equal to the right value.
-
-### Example: Comparison Operators
-
+### Example:
 ```python
 x = 10
-y = 20
-
-print(x == y)   # False
-print(x != y)   # True
-print(x > y)    # False
-print(x < y)    # True
-print(x >= 10)  # True
-print(x <= 5)   # False
+y = 5
+print(x > y)  # Output: True
+print(x == y) # Output: False
 ```
 
-### Expected Output
+## Logical Operators
 
-```plaintext
-False
-True
-False
-True
-True
-False
-```
+Logical operators are used to combine boolean expressions.
 
-## Combining Comparison and Boolean Operators
+| Operator | Description                      | Example                     | Result  |
+|----------|----------------------------------|-----------------------------|---------|
+| `and`    | Returns `True` if both are `True` | `True and False`           | `False` |
+| `or`     | Returns `True` if at least one is `True` | `True or False`    | `True`  |
+| `not`    | Negates a boolean value          | `not True`                 | `False` |
 
-You can combine comparison operators and Boolean operators to create more complex conditions.
-
-### Example: Combining Operators
-
+### Example:
 ```python
-age = 25
-income = 50000
+x = 10
+y = 5
+z = 3
 
-# Check if age is between 18 and 30 and income is above 40000
-is_eligible = (18 <= age <= 30) and (income > 40000)
-print(is_eligible)  # True
-
-# Check if age is below 18 or income is below 20000
-needs_support = (age < 18) or (income < 20000)
-print(needs_support)  # False
+print(x > y and y > z) # Output: True
+print(x < y or z < y)  # Output: True
+print(not (x > y))     # Output: False
 ```
 
-### Expected Output
+## Truthy and Falsy Values
 
-```plaintext
-True
-False
+In Python, some values are considered "truthy" (treated as `True`) or "falsy" (treated as `False`) in a boolean context.
+
+- **Truthy**: Non-zero numbers, non-empty strings, non-empty lists, etc.
+- **Falsy**: `0`, `None`, empty strings (`""`), empty lists (`[]`), etc.
+
+### Example:
+```python
+if "Hello":  # Non-empty string is truthy
+    print("This is truthy!")
+
+if 0:  # Zero is falsy
+    print("This won’t print.")
+else:
+    print("This is falsy!")
 ```
 
-## Summary
+---
 
-- Booleans (`True` and `False`) are a fundamental data type in Python.
-- Boolean operators (`and`, `or`, `not`) combine or modify Boolean values.
-- Comparison operators (`==`, `!=`, `>`, `<`, `>=`, `<=`) evaluate relationships between values and return Boolean results.
-- You can combine comparison and Boolean operators to evaluate complex conditions.
-
-Mastering Boolean logic and comparison operators will prepare you for creating dynamic and responsive code.
+In the next lesson, we’ll learn how to use boolean logic to create conditional statements.

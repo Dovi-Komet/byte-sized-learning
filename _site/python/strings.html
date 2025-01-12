@@ -68,7 +68,7 @@
         
         
         <li >
-            <a href="/python/print-function.html" ><b>5</b>. print() Function</a>
+            <a href="/python/print-function.html" ><b>5</b>. print Function</a>
         </li>
         
         
@@ -366,41 +366,135 @@
 
     <main class="content">
         <h1>Strings</h1>
-        <p>Strings are one of the most commonly used data types in Python. A string is a sequence of characters enclosed in either single quotes (<code class="language-plaintext highlighter-rouge">'</code>) or double quotes (<code class="language-plaintext highlighter-rouge">"</code>). Strings can represent text such as words, sentences, or any combination of characters.</p>
+        <p>Strings are sequences of characters enclosed in quotes. They are used to represent text in Python.</p>
 
-<h2 id="combining-strings-concatenation">Combining Strings (Concatenation)</h2>
+<h2 id="creating-strings">Creating Strings</h2>
 
-<p>You can combine two or more strings using the <code class="language-plaintext highlighter-rouge">+</code> operator.</p>
+<p>You can create strings using single quotes, double quotes, or triple quotes.</p>
 
-<h3 id="example">Example</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Single-quoted string
+</span><span class="n">single</span> <span class="o">=</span> <span class="sh">'</span><span class="s">Hello</span><span class="sh">'</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">first_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">John</span><span class="sh">"</span>
-<span class="n">last_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Doe</span><span class="sh">"</span>
-<span class="n">full_name</span> <span class="o">=</span> <span class="n">first_name</span> <span class="o">+</span> <span class="sh">"</span><span class="s"> </span><span class="sh">"</span> <span class="o">+</span> <span class="n">last_name</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
+<span class="c1"># Double-quoted string
+</span><span class="n">double</span> <span class="o">=</span> <span class="sh">"</span><span class="s">World</span><span class="sh">"</span>
+
+<span class="c1"># Triple-quoted string (used for multi-line strings)
+</span><span class="n">triple</span> <span class="o">=</span> <span class="sh">"""</span><span class="s">This is a
+multi-line string.</span><span class="sh">"""</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">single</span><span class="p">,</span> <span class="n">double</span><span class="p">,</span> <span class="n">triple</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<h2 id="string-operations">String Operations</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>John Doe
-</code></pre></div></div>
+<p>Strings in Python support many operations, including concatenation, repetition, and indexing.</p>
 
-<h2 id="string-length">String Length</h2>
+<h3 id="concatenation">Concatenation</h3>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">len()</code> function to find the number of characters in a string.</p>
+<p>You can combine strings using the <code class="language-plaintext highlighter-rouge">+</code> operator.</p>
 
-<h3 id="example-1">Example</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">greeting</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Hello, </span><span class="sh">"</span> <span class="o">+</span> <span class="sh">"</span><span class="s">World!</span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>  <span class="c1"># Output: Hello, World!
+</span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">message</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Hello</span><span class="sh">"</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">message</span><span class="p">))</span>
-</code></pre></div></div>
+<h3 id="repetition">Repetition</h3>
 
-<h3 id="expected-output-1">Expected Output</h3>
+<p>Use the <code class="language-plaintext highlighter-rouge">*</code> operator to repeat a string multiple times.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>5
-</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">repeat</span> <span class="o">=</span> <span class="sh">"</span><span class="s">ha</span><span class="sh">"</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">repeat</span><span class="p">)</span>  <span class="c1"># Output: hahaha
+</span></code></pre></div></div>
 
-<p>Strings are incredibly versatile and will be used extensively in this course. In the next lesson, we’ll learn how to work with slices and indices to manipulate strings further.</p>
+<h3 id="indexing-and-slicing">Indexing and Slicing</h3>
+
+<p>Strings are indexed starting from <code class="language-plaintext highlighter-rouge">0</code>. You can access individual characters or slices (substrings) of a string.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span>
+
+<span class="c1"># Indexing
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Output: P
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Output: n (last character)
+</span>
+<span class="c1"># Slicing
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># Output: Pyt (characters from index 0 to 2)
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>   <span class="c1"># Output: hon (characters from index 3 to end)
+</span></code></pre></div></div>
+
+<h2 id="common-string-methods">Common String Methods</h2>
+
+<p>Python provides several built-in methods to manipulate strings:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lower()</code></td>
+      <td>Converts all characters to lowercase.</td>
+      <td><code class="language-plaintext highlighter-rouge">"PYTHON".lower()</code> → <code class="language-plaintext highlighter-rouge">"python"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">upper()</code></td>
+      <td>Converts all characters to uppercase.</td>
+      <td><code class="language-plaintext highlighter-rouge">"python".upper()</code> → <code class="language-plaintext highlighter-rouge">"PYTHON"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">strip()</code></td>
+      <td>Removes leading and trailing whitespace.</td>
+      <td><code class="language-plaintext highlighter-rouge">"  hello  ".strip()</code> → <code class="language-plaintext highlighter-rouge">"hello"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">replace(a, b)</code></td>
+      <td>Replaces all occurrences of <code class="language-plaintext highlighter-rouge">a</code> with <code class="language-plaintext highlighter-rouge">b</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">"hello".replace("e", "a")</code> → <code class="language-plaintext highlighter-rouge">"hallo"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">split(delim)</code></td>
+      <td>Splits a string into a list using <code class="language-plaintext highlighter-rouge">delim</code>.</td>
+      <td><code class="language-plaintext highlighter-rouge">"a,b,c".split(",")</code> → <code class="language-plaintext highlighter-rouge">['a', 'b', 'c']</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">join(list)</code></td>
+      <td>Joins a list of strings into one string.</td>
+      <td><code class="language-plaintext highlighter-rouge">",".join(['a', 'b', 'c'])</code> → <code class="language-plaintext highlighter-rouge">"a,b,c"</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="examples">Examples</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s"> Python Programming </span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="nf">lower</span><span class="p">())</span>     <span class="c1"># Output: python programming
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="nf">upper</span><span class="p">())</span>     <span class="c1"># Output: PYTHON PROGRAMMING
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="nf">strip</span><span class="p">())</span>     <span class="c1"># Output: Python Programming
+</span><span class="nf">print</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">"</span><span class="s">Python</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Java</span><span class="sh">"</span><span class="p">))</span>  <span class="c1"># Output: Java Programming
+</span></code></pre></div></div>
+
+<h2 id="string-formatting">String Formatting</h2>
+
+<p>String formatting allows you to create dynamic strings by including variable values.</p>
+
+<h3 id="using-f-strings-recommended">Using f-strings (Recommended)</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s"> years old.</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># Output: My name is Alice and I am 25 years old.
+</span></code></pre></div></div>
+
+<h3 id="using-format">Using <code class="language-plaintext highlighter-rouge">.format()</code></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">template</span> <span class="o">=</span> <span class="sh">"</span><span class="s">My name is {} and I am {} years old.</span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">template</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+<span class="c1"># Output: My name is Alice and I am 25 years old.
+</span></code></pre></div></div>
+
+<hr />
+
+<p>In the next lesson, we’ll explore slicing and indexing in greater depth.</p>
 
         <!-- Next Lesson Button -->
         

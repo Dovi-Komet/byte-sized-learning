@@ -68,7 +68,7 @@
         
         
         <li >
-            <a href="/python/print-function.html" ><b>5</b>. print() Function</a>
+            <a href="/python/print-function.html" ><b>5</b>. print Function</a>
         </li>
         
         
@@ -366,55 +366,44 @@
 
     <main class="content">
         <h1>Conditionals</h1>
-        <p>Conditional statements allow your program to make decisions based on certain conditions. Python uses <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">elif</code>, and <code class="language-plaintext highlighter-rouge">else</code> for this purpose.</p>
+        <p>Conditionals allow your Python programs to make decisions based on certain conditions. They let you control the flow of your program using boolean logic.</p>
 
-<h2 id="the-role-of-booleans-in-conditionals">The Role of Booleans in Conditionals</h2>
+<h2 id="the-if-statement">The <code class="language-plaintext highlighter-rouge">if</code> Statement</h2>
 
-<p>Conditionals in Python rely on Boolean expressions to determine whether a block of code should execute. A Boolean expression evaluates to either <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">if</code> statement executes a block of code only if a condition evaluates to <code class="language-plaintext highlighter-rouge">True</code>.</p>
 
-<p>For example, consider the expression <code class="language-plaintext highlighter-rouge">age &gt;= 18</code>. This evaluates to <code class="language-plaintext highlighter-rouge">True</code> if <code class="language-plaintext highlighter-rouge">age</code> is 18 or greater; otherwise, it evaluates to <code class="language-plaintext highlighter-rouge">False</code>. The result of the expression determines which block of code runs.</p>
+<h3 id="syntax">Syntax:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># Code to execute if condition is True
+</span></code></pre></div></div>
 
-<h2 id="basic-if-statement">Basic <code class="language-plaintext highlighter-rouge">if</code> Statement</h2>
-
-<p>The <code class="language-plaintext highlighter-rouge">if</code> statement runs a block of code only if the condition evaluates to <code class="language-plaintext highlighter-rouge">True</code>.</p>
-
-<h3 id="example-if-statement">Example: <code class="language-plaintext highlighter-rouge">if</code> Statement</h3>
-
+<h3 id="example">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
+
 <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You are an adult.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<h2 id="the-else-statement">The <code class="language-plaintext highlighter-rouge">else</code> Statement</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You are an adult.
-</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">else</code> statement provides a block of code to execute when the condition in the <code class="language-plaintext highlighter-rouge">if</code> statement is <code class="language-plaintext highlighter-rouge">False</code>.</p>
 
-<h2 id="adding-else">Adding <code class="language-plaintext highlighter-rouge">else</code></h2>
-
-<p>The <code class="language-plaintext highlighter-rouge">else</code> statement provides an alternative block of code to run when the condition in the <code class="language-plaintext highlighter-rouge">if</code> statement is <code class="language-plaintext highlighter-rouge">False</code>.</p>
-
-<h3 id="example-if-with-else">Example: <code class="language-plaintext highlighter-rouge">if</code> with <code class="language-plaintext highlighter-rouge">else</code></h3>
-
+<h3 id="example-1">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="mi">16</span>
+
 <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You are an adult.</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You are a minor.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output-1">Expected Output</h3>
+<h2 id="the-elif-statement">The <code class="language-plaintext highlighter-rouge">elif</code> Statement</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You are a minor.
-</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">elif</code> (short for “else if”) statement checks additional conditions when the initial <code class="language-plaintext highlighter-rouge">if</code> condition is <code class="language-plaintext highlighter-rouge">False</code>. You can use multiple <code class="language-plaintext highlighter-rouge">elif</code> statements.</p>
 
-<h2 id="using-elif">Using <code class="language-plaintext highlighter-rouge">elif</code></h2>
-
-<p>The <code class="language-plaintext highlighter-rouge">elif</code> (short for “else if”) statement allows you to check additional conditions. Python evaluates conditions in order, and the first one that evaluates to <code class="language-plaintext highlighter-rouge">True</code> runs.</p>
-
-<h3 id="example-if-elif-and-else">Example: <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">elif</code>, and <code class="language-plaintext highlighter-rouge">else</code></h3>
-
+<h3 id="example-2">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="mi">20</span>
+
 <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">13</span><span class="p">:</span>
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You are a child.</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
@@ -423,36 +412,40 @@
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You are an adult.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output-2">Expected Output</h3>
+<h2 id="nested-conditionals">Nested Conditionals</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You are an adult.
-</code></pre></div></div>
+<p>Conditionals can be nested within each other to check multiple levels of conditions.</p>
 
-<h2 id="indentation-matters">Indentation Matters</h2>
+<h3 id="example-3">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">has_id</span> <span class="o">=</span> <span class="bp">True</span>
 
-<p>In Python, indentation defines the blocks of code that belong to <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">elif</code>, or <code class="language-plaintext highlighter-rouge">else</code>. Improper indentation will result in an error.</p>
-
-<h3 id="example-indentation-error">Example: Indentation Error</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
 <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You are an adult.</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># This line is not indented correctly
-</span></code></pre></div></div>
-
-<h3 id="error-output">Error Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IndentationError: expected an indented block
+    <span class="k">if</span> <span class="n">has_id</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You can enter.</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You need an ID to enter.</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You are not old enough to enter.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="summary">Summary</h2>
+<h2 id="logical-operators-with-conditionals">Logical Operators with Conditionals</h2>
 
-<ul>
-  <li>Boolean expressions evaluate to <code class="language-plaintext highlighter-rouge">True</code> or <code class="language-plaintext highlighter-rouge">False</code> and determine which code block runs.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">if</code> for a single condition, <code class="language-plaintext highlighter-rouge">else</code> for an alternative case, and <code class="language-plaintext highlighter-rouge">elif</code> to check additional conditions.</li>
-  <li>Proper indentation is essential in Python for conditionals to work correctly.</li>
-</ul>
+<p>You can combine multiple conditions using logical operators like <code class="language-plaintext highlighter-rouge">and</code>, <code class="language-plaintext highlighter-rouge">or</code>, and <code class="language-plaintext highlighter-rouge">not</code>.</p>
 
-<p>Practice creating conditions with <code class="language-plaintext highlighter-rouge">if</code>, <code class="language-plaintext highlighter-rouge">elif</code>, and <code class="language-plaintext highlighter-rouge">else</code> to make your programs dynamic and responsive!</p>
+<h3 id="example-4">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">has_ticket</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="ow">and</span> <span class="n">has_ticket</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You can watch the movie.</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You cannot watch the movie.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>In the next lesson, we’ll learn how to use loops to repeat actions in Python.</p>
 
         <!-- Next Lesson Button -->
         
