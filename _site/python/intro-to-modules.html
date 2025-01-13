@@ -366,26 +366,44 @@
 
     <main class="content">
         <h1>Intro to Modules</h1>
-        <p>Modules in Python allow you to organize your code into separate files and reuse functionality. Python provides a vast collection of built-in modules, and you can also create your own.</p>
-
-<h2 id="what-are-modules">What Are Modules?</h2>
-
-<p>A module is simply a file containing Python code (functions, variables, or classes) that you can import into other files or scripts to use its functionality.</p>
+        <p>A module in Python is a file that contains Python code, such as functions, variables, and classes. Modules allow you to organize your code into reusable components, making it easier to manage and maintain.</p>
 
 <hr />
 
-<h2 id="importing-a-module">Importing a Module</h2>
+<h2 id="what-are-modules">What Are Modules?</h2>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">import</code> statement to bring in a module and access its functions or variables using the module name.</p>
+<p>Modules are Python files with the extension <code class="language-plaintext highlighter-rouge">.py</code>. By importing modules, you can use the code they contain in your program.</p>
 
-<h3 id="example-importing-a-module">Example: Importing a Module</h3>
+<h3 id="example">Example:</h3>
+<p>If you have a file named <code class="language-plaintext highlighter-rouge">my_module.py</code> with the following code:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># my_module.py
+</span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!</span><span class="sh">"</span>
+</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># Access the sqrt function from the math module
-</span></code></pre></div></div>
+<p>You can use it in another file:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">my_module</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">my_module</span><span class="p">.</span><span class="nf">greet</span><span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">))</span>
+</code></pre></div></div>
 
 <h3 id="output">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, Alice!
+</code></pre></div></div>
 
+<hr />
+
+<h2 id="built-in-modules">Built-In Modules</h2>
+
+<p>Python comes with many built-in modules, such as <code class="language-plaintext highlighter-rouge">math</code>, <code class="language-plaintext highlighter-rouge">os</code>, and <code class="language-plaintext highlighter-rouge">random</code>. These modules provide pre-written code for common tasks.</p>
+
+<h3 id="example-using-the-math-module">Example: Using the <code class="language-plaintext highlighter-rouge">math</code> Module</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># Calculate the square root
+</span></code></pre></div></div>
+
+<h3 id="output-1">Output:</h3>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4.0
 </code></pre></div></div>
 
@@ -393,79 +411,70 @@
 
 <h2 id="importing-specific-functions-or-variables">Importing Specific Functions or Variables</h2>
 
-<p>You can import only the parts of a module you need using the <code class="language-plaintext highlighter-rouge">from ... import ...</code> syntax.</p>
+<p>You can import specific components from a module instead of the entire module.</p>
 
-<h3 id="example-importing-specific-functions">Example: Importing Specific Functions</h3>
-
+<h3 id="example-1">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sqrt</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Value of pi:</span><span class="sh">"</span><span class="p">,</span> <span class="n">pi</span><span class="p">)</span>  <span class="c1"># Use the imported pi variable
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Square root of 25:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>  <span class="c1"># Use the imported sqrt function
-</span></code></pre></div></div>
 
-<h3 id="output-1">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Value of pi: 3.141592653589793
-Square root of 25: 5.0
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="using-aliases-for-modules-or-functions">Using Aliases for Modules or Functions</h2>
-
-<p>You can give modules or their components shorter names using the <code class="language-plaintext highlighter-rouge">as</code> keyword, which can make your code more concise.</p>
-
-<h3 id="example-aliasing-a-module">Example: Aliasing a Module</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span> <span class="k">as</span> <span class="n">m</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># Access sqrt function using the alias "m"
+<span class="nf">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>          <span class="c1"># Print the value of π
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>    <span class="c1"># Calculate the square root
 </span></code></pre></div></div>
 
 <h3 id="output-2">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3.141592653589793
+5.0
 </code></pre></div></div>
 
-<h3 id="example-aliasing-functions">Example: Aliasing Functions</h3>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">math</span> <span class="kn">import</span> <span class="n">sqrt</span> <span class="k">as</span> <span class="n">square_root</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">square_root</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>  <span class="c1"># Access sqrt using the alias "square_root"
+<h2 id="renaming-modules-with-as">Renaming Modules with <code class="language-plaintext highlighter-rouge">as</code></h2>
+
+<p>You can use the <code class="language-plaintext highlighter-rouge">as</code> keyword to give a module or function an alias.</p>
+
+<h3 id="example-2">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span> <span class="k">as</span> <span class="n">m</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">49</span><span class="p">))</span>  <span class="c1"># Use the alias `m`
 </span></code></pre></div></div>
 
 <h3 id="output-3">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3.0
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7.0
 </code></pre></div></div>
 
 <hr />
 
-<h2 id="exploring-built-in-modules">Exploring Built-In Modules</h2>
+<h2 id="finding-available-functions-in-a-module">Finding Available Functions in a Module</h2>
 
-<p>Python comes with many built-in modules that you can use without installing anything. Some popular ones include:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">math</code>: Provides mathematical functions and constants.</li>
-  <li><code class="language-plaintext highlighter-rouge">random</code>: Offers functions to generate random numbers.</li>
-  <li><code class="language-plaintext highlighter-rouge">os</code>: Interacts with the operating system.</li>
-  <li><code class="language-plaintext highlighter-rouge">datetime</code>: Works with dates and times.</li>
-</ul>
+<p>The <code class="language-plaintext highlighter-rouge">dir()</code> function lists all attributes (functions, variables, etc.) of a module.</p>
 
-<h3 id="example-using-the-random-module">Example: Using the <code class="language-plaintext highlighter-rouge">random</code> Module</h3>
+<h3 id="example-3">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># Generate a random integer between 1 and 10
+<span class="nf">print</span><span class="p">(</span><span class="nf">dir</span><span class="p">(</span><span class="n">math</span><span class="p">))</span>  <span class="c1"># List all attributes of the math module
 </span></code></pre></div></div>
 
 <hr />
 
-<h2 id="summary">Summary</h2>
+<h2 id="writing-your-own-module">Writing Your Own Module</h2>
 
-<ul>
-  <li><strong>Modules</strong> are files with Python code that you can import into other programs.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">import</code> to bring in an entire module or <code class="language-plaintext highlighter-rouge">from ... import ...</code> to import specific components.</li>
-  <li>Use aliases with the <code class="language-plaintext highlighter-rouge">as</code> keyword to simplify module or function names.</li>
-  <li>Explore Python’s built-in modules to access powerful functionality without additional coding.</li>
-</ul>
+<p>You can create your own module by saving Python code in a <code class="language-plaintext highlighter-rouge">.py</code> file and importing it into another script.</p>
 
-<p>Modules help you write clean, reusable, and organized code. In future lessons, we’ll explore creating your own modules and using external libraries.</p>
+<h3 id="example-4">Example:</h3>
+<p>Create a file named <code class="language-plaintext highlighter-rouge">utilities.py</code>:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># utilities.py
+</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<p>Then use it in another file:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">utilities</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">utilities</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 8
+</span></code></pre></div></div>
+
+<hr />
+
+<p>Modules help you organize your code and reuse functionality efficiently. In the next lesson, we’ll explore how to create and use custom modules in more detail.</p>
 
         <!-- Next Lesson Button -->
         

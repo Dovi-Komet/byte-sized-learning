@@ -366,71 +366,109 @@
 
     <main class="content">
         <h1>Error Handling Basics</h1>
-        <p>Error handling allows you to manage errors gracefully, ensuring your program doesn’t crash unexpectedly. It also helps improve user experience by providing meaningful feedback during errors.</p>
+        <p>Errors and exceptions are inevitable when writing code. Python provides mechanisms to handle these situations gracefully, ensuring that your program doesn’t crash unexpectedly.</p>
 
-<h2 id="using-try-and-except">Using <code class="language-plaintext highlighter-rouge">try</code> and <code class="language-plaintext highlighter-rouge">except</code></h2>
+<h2 id="what-is-error-handling">What Is Error Handling?</h2>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">try</code> block to write code that might cause an error, and the <code class="language-plaintext highlighter-rouge">except</code> block to handle the error if it occurs.</p>
+<p>Error handling involves catching and managing errors that occur during program execution. Python uses <code class="language-plaintext highlighter-rouge">try</code>, <code class="language-plaintext highlighter-rouge">except</code>, <code class="language-plaintext highlighter-rouge">else</code>, and <code class="language-plaintext highlighter-rouge">finally</code> blocks to handle errors.</p>
 
-<h3 id="example-handling-input-errors">Example: Handling Input Errors</h3>
+<hr />
 
+<h2 id="the-try-and-except-blocks">The <code class="language-plaintext highlighter-rouge">try</code> and <code class="language-plaintext highlighter-rouge">except</code> Blocks</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">try</code> block contains code that might raise an error, and the <code class="language-plaintext highlighter-rouge">except</code> block specifies how to handle the error.</p>
+
+<h3 id="example">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
-    <span class="n">number</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter a number: </span><span class="sh">"</span><span class="p">))</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You entered:</span><span class="sh">"</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter a number: </span><span class="sh">"</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">You entered: </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">That</span><span class="sh">'</span><span class="s">s not a valid number!</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output-if-the-user-enters-abc">Output (if the user enters <code class="language-plaintext highlighter-rouge">"abc"</code>)</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>That's not a valid number!
+<h3 id="output-if-input-is-invalid">Output (if input is invalid):</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter a number: abc
+That's not a valid number!
 </code></pre></div></div>
 
-<p>In this example:</p>
-<ul>
-  <li>If the user enters something that cannot be converted to an integer, a <code class="language-plaintext highlighter-rouge">ValueError</code> occurs.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">except</code> block catches the error and provides a user-friendly message.</li>
-</ul>
+<hr />
+
+<h2 id="using-else-for-success">Using <code class="language-plaintext highlighter-rouge">else</code> for Success</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">else</code> block runs if no errors occur in the <code class="language-plaintext highlighter-rouge">try</code> block.</p>
+
+<h3 id="example-1">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter a number: </span><span class="sh">"</span><span class="p">))</span>
+<span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Invalid input!</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">You entered the number </span><span class="si">{</span><span class="n">num</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output">Output:</h3>
+<p>If valid input is provided:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter a number: 5
+You entered the number 5
+</code></pre></div></div>
+
+<p>If invalid input is provided:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter a number: xyz
+Invalid input!
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="the-finally-block">The <code class="language-plaintext highlighter-rouge">finally</code> Block</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">finally</code> block always runs, regardless of whether an error occurred. It’s commonly used for cleanup tasks.</p>
+
+<h3 id="example-2">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="nb">file</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">example.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">FileNotFoundError</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">File not found!</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Execution completed.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-if-file-does-not-exist">Output (if file does not exist):</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>File not found!
+Execution completed.
+</code></pre></div></div>
+
+<hr />
 
 <h2 id="catching-multiple-exceptions">Catching Multiple Exceptions</h2>
 
-<p>You can handle different types of errors by specifying multiple <code class="language-plaintext highlighter-rouge">except</code> blocks.</p>
+<p>You can handle different types of exceptions using multiple <code class="language-plaintext highlighter-rouge">except</code> blocks.</p>
 
-<h3 id="example-handling-multiple-errors">Example: Handling Multiple Errors</h3>
-
+<h3 id="example-3">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
-    <span class="n">number</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter a number: </span><span class="sh">"</span><span class="p">))</span>
-    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">number</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Result:</span><span class="sh">"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter a number: </span><span class="sh">"</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">num</span>
 <span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">That</span><span class="sh">'</span><span class="s">s not a valid number!</span><span class="sh">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Invalid input! Please enter a number.</span><span class="sh">"</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">ZeroDivisionError</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You can</span><span class="sh">'</span><span class="s">t divide by zero!</span><span class="sh">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Cannot divide by zero.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output-if-the-user-enters-0">Output (if the user enters <code class="language-plaintext highlighter-rouge">"0"</code>)</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You can't divide by zero!
+<h3 id="output-1">Output:</h3>
+<p>If invalid input:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter a number: abc
+Invalid input! Please enter a number.
 </code></pre></div></div>
 
-<h2 id="why-handle-errors">Why Handle Errors?</h2>
+<p>If dividing by zero:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Enter a number: 0
+Cannot divide by zero.
+</code></pre></div></div>
 
-<p>Error handling ensures your program can:</p>
-<ol>
-  <li><strong>Handle Unexpected Inputs</strong>: Provide meaningful feedback instead of crashing.</li>
-  <li><strong>Improve Reliability</strong>: Continue running smoothly even when errors occur.</li>
-  <li><strong>Enhance User Experience</strong>: Guide users on how to correct their mistakes.</li>
-</ol>
+<hr />
 
-<h2 id="summary">Summary</h2>
-
-<ul>
-  <li>Use <code class="language-plaintext highlighter-rouge">try</code> and <code class="language-plaintext highlighter-rouge">except</code> blocks to catch and handle errors gracefully.</li>
-  <li>Specify different <code class="language-plaintext highlighter-rouge">except</code> blocks to handle multiple types of exceptions.</li>
-  <li>Error handling ensures programs remain robust and user-friendly.</li>
-</ul>
-
-<p>Mastering error handling is essential for building reliable and user-friendly programs. Practice with different types of errors to solidify your understanding.</p>
+<p>Error handling is a fundamental skill for writing robust programs. In the next lesson, we’ll dive deeper into Python’s exception handling capabilities.</p>
 
         <!-- Next Lesson Button -->
         

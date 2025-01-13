@@ -4,27 +4,48 @@ title: "Intro to Modules"
 order: 32
 ---
 
-Modules in Python allow you to organize your code into separate files and reuse functionality. Python provides a vast collection of built-in modules, and you can also create your own.
-
-## What Are Modules?
-
-A module is simply a file containing Python code (functions, variables, or classes) that you can import into other files or scripts to use its functionality.
+A module in Python is a file that contains Python code, such as functions, variables, and classes. Modules allow you to organize your code into reusable components, making it easier to manage and maintain.
 
 ---
 
-## Importing a Module
+## What Are Modules?
 
-Use the `import` statement to bring in a module and access its functions or variables using the module name.
+Modules are Python files with the extension `.py`. By importing modules, you can use the code they contain in your program.
 
-### Example: Importing a Module
-
+### Example:
+If you have a file named `my_module.py` with the following code:
 ```python
-import math
-print(math.sqrt(16))  # Access the sqrt function from the math module
+# my_module.py
+def greet(name):
+    return f"Hello, {name}!"
+```
+
+You can use it in another file:
+```python
+import my_module
+
+print(my_module.greet("Alice"))
 ```
 
 ### Output:
+```plaintext
+Hello, Alice!
+```
 
+---
+
+## Built-In Modules
+
+Python comes with many built-in modules, such as `math`, `os`, and `random`. These modules provide pre-written code for common tasks.
+
+### Example: Using the `math` Module
+```python
+import math
+
+print(math.sqrt(16))  # Calculate the square root
+```
+
+### Output:
 ```plaintext
 4.0
 ```
@@ -33,79 +54,74 @@ print(math.sqrt(16))  # Access the sqrt function from the math module
 
 ## Importing Specific Functions or Variables
 
-You can import only the parts of a module you need using the `from ... import ...` syntax.
+You can import specific components from a module instead of the entire module.
 
-### Example: Importing Specific Functions
-
+### Example:
 ```python
 from math import pi, sqrt
-print("Value of pi:", pi)  # Use the imported pi variable
-print("Square root of 25:", sqrt(25))  # Use the imported sqrt function
+
+print(pi)          # Print the value of π
+print(sqrt(25))    # Calculate the square root
 ```
 
 ### Output:
-
 ```plaintext
-Value of pi: 3.141592653589793
-Square root of 25: 5.0
+3.141592653589793
+5.0
 ```
 
 ---
 
-## Using Aliases for Modules or Functions
+## Renaming Modules with `as`
 
-You can give modules or their components shorter names using the `as` keyword, which can make your code more concise.
+You can use the `as` keyword to give a module or function an alias.
 
-### Example: Aliasing a Module
-
+### Example:
 ```python
 import math as m
-print(m.sqrt(16))  # Access sqrt function using the alias "m"
+
+print(m.sqrt(49))  # Use the alias `m`
 ```
 
 ### Output:
-
 ```plaintext
-4.0
-```
-
-### Example: Aliasing Functions
-
-```python
-from math import sqrt as square_root
-print(square_root(9))  # Access sqrt using the alias "square_root"
-```
-
-### Output:
-
-```plaintext
-3.0
+7.0
 ```
 
 ---
 
-## Exploring Built-In Modules
+## Finding Available Functions in a Module
 
-Python comes with many built-in modules that you can use without installing anything. Some popular ones include:
-- `math`: Provides mathematical functions and constants.
-- `random`: Offers functions to generate random numbers.
-- `os`: Interacts with the operating system.
-- `datetime`: Works with dates and times.
+The `dir()` function lists all attributes (functions, variables, etc.) of a module.
 
-### Example: Using the `random` Module
-
+### Example:
 ```python
-import random
-print(random.randint(1, 10))  # Generate a random integer between 1 and 10
+import math
+
+print(dir(math))  # List all attributes of the math module
 ```
 
 ---
 
-## Summary
+## Writing Your Own Module
 
-- **Modules** are files with Python code that you can import into other programs.
-- Use `import` to bring in an entire module or `from ... import ...` to import specific components.
-- Use aliases with the `as` keyword to simplify module or function names.
-- Explore Python's built-in modules to access powerful functionality without additional coding.
+You can create your own module by saving Python code in a `.py` file and importing it into another script.
 
-Modules help you write clean, reusable, and organized code. In future lessons, we’ll explore creating your own modules and using external libraries.
+### Example:
+Create a file named `utilities.py`:
+```python
+# utilities.py
+def add(a, b):
+    return a + b
+```
+
+Then use it in another file:
+```python
+import utilities
+
+print(utilities.add(3, 5))  # Output: 8
+```
+
+---
+
+Modules help you organize your code and reuse functionality efficiently. In the next lesson, we’ll explore how to create and use custom modules in more detail.

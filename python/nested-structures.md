@@ -4,131 +4,125 @@ title: "Nested Structures"
 order: 26
 ---
 
-Nested data structures like lists of dictionaries, dictionaries of lists, and lists of lists are common in real-world applications. They allow for flexible and efficient data organization.
+Nested structures in Python are collections within collections. They allow you to organize data in complex and hierarchical ways. You can nest lists, dictionaries, tuples, and sets inside each other to represent structured data like tables, trees, or graphs.
 
-## Lists of Lists
+## Nested Lists
 
-A list of lists is useful when you need to organize data in a grid-like or tabular structure.
+A nested list is a list containing other lists as elements.
 
-### Example: Lists of Lists
-
+### Example:
 ```python
 matrix = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
 ]
-
-for row in matrix:
-    print(row)
+print(matrix[0])      # Access the first row
+print(matrix[1][2])   # Access the element at row 2, column 3
 ```
 
-### Output
-
+### Output:
 ```plaintext
 [1, 2, 3]
-[4, 5, 6]
-[7, 8, 9]
+6
 ```
 
-### Accessing Nested Items with Two Indices
-
-You can use two indices to access specific elements in a list of lists:
-- The **first index** specifies the position of the sub-list (row) in the main list.
-- The **second index** specifies the position of the element (column) in the chosen sub-list.
-
-#### Example: Accessing Specific Elements
+### Iterating Through Nested Lists
+You can use nested loops to iterate through a nested list.
 
 ```python
-print(matrix[0][1])  # Element in the first row, second column
-print(matrix[2][0])  # Element in the third row, first column
+for row in matrix:
+    for item in row:
+        print(item, end=" ")
 ```
 
-### Output
-
+### Output:
 ```plaintext
-2
-7
+1 2 3 4 5 6 7 8 9
 ```
 
-## Lists of Dictionaries
+---
 
-A list of dictionaries is useful for storing multiple records, where each record is represented as a dictionary.
+## Nested Dictionaries
 
-### Example: Lists of Dictionaries
+A nested dictionary is a dictionary where values are dictionaries themselves.
 
+### Example:
 ```python
-students = [
-    {"name": "Alice", "age": 20},
-    {"name": "Bob", "age": 22}
-]
-
-for student in students:
-    print(f"{student['name']} is {student['age']} years old")
-```
-
-### Output
-
-```plaintext
-Alice is 20 years old
-Bob is 22 years old
-```
-
-### Accessing Nested Items
-
-You can access specific data in a list of dictionaries using both list indexing and dictionary keys.
-
-```python
-print(students[0]["name"])  # Access the name of the first student
-```
-
-### Output
-
-```plaintext
-Alice
-```
-
-## Dictionaries of Lists
-
-A dictionary of lists groups multiple items under specific categories represented as keys.
-
-### Example: Dictionaries of Lists
-
-```python
-grades = {
-    "math": [90, 85, 88],
-    "science": [92, 80, 85]
+students = {
+    "Alice": {"age": 25, "grade": "A"},
+    "Bob": {"age": 22, "grade": "B"},
 }
-
-for subject, scores in grades.items():
-    print(f"{subject}: {scores}")
+print(students["Alice"])        # Access Alice's data
+print(students["Bob"]["grade"]) # Access Bob's grade
 ```
 
-### Output
-
+### Output:
 ```plaintext
-math: [90, 85, 88]
-science: [92, 80, 85]
+{'age': 25, 'grade': 'A'}
+B
 ```
 
-### Accessing Nested Items with Two Indices
-
-You can access specific items in a list within a dictionary by using a key and an index.
+### Iterating Through Nested Dictionaries
+Use loops to iterate through the keys and values of nested dictionaries.
 
 ```python
-print(grades["math"][1])  # Access the second score in math
+for name, details in students.items():
+    print(f"Student: {name}")
+    for key, value in details.items():
+        print(f"  {key}: {value}")
 ```
 
-### Output
-
+### Output:
 ```plaintext
-85
+Student: Alice
+  age: 25
+  grade: A
+Student: Bob
+  age: 22
+  grade: B
 ```
 
-## Summary
+---
 
-- **Lists of Lists**: Organize data in a grid-like structure and access specific elements using two indices.
-- **Lists of Dictionaries**: Store multiple records, each as a dictionary, and access elements with list indices and dictionary keys.
-- **Dictionaries of Lists**: Group items under categories, accessed using a key and list index.
+## Nested Tuples
 
-Understanding nested structures and indexing with multiple levels is essential for managing complex data. Practice these concepts to strengthen your ability to work with structured data.
+Tuples can also be nested, though their immutability means they’re often used for structured data that shouldn’t change.
+
+### Example:
+```python
+coordinates = ((1, 2), (3, 4), (5, 6))
+print(coordinates[0])  # Access the first tuple
+print(coordinates[1][1])  # Access the second element of the second tuple
+```
+
+### Output:
+```plaintext
+(1, 2)
+4
+```
+
+---
+
+## Nested Sets
+
+Sets can contain other sets only if the nested sets are frozen (immutable).
+
+### Example:
+```python
+outer_set = {frozenset({1, 2}), frozenset({3, 4})}
+print(outer_set)
+```
+
+### Output:
+```plaintext
+{frozenset({1, 2}), frozenset({3, 4})}
+```
+
+---
+
+Nested structures are a powerful way to represent and manipulate complex data. They are commonly used in applications such as data parsing, JSON manipulation, and more.
+
+---
+
+In the next lesson, we’ll learn how to read files in Python.

@@ -4,77 +4,99 @@ title: "The finally Block"
 order: 31
 ---
 
-The `finally` block allows you to execute code regardless of whether an exception occurs. It is typically used for cleanup tasks like closing files or releasing resources.
+The `finally` block in Python is used to execute code that should run regardless of whether an exception occurs in the `try` block. It’s commonly used for cleanup tasks like closing files, releasing resources, or disconnecting from a database.
+
+---
+
+## Structure of `finally`
+
+The `finally` block is used alongside `try` and optionally with `except` or `else`.
+
+### Syntax:
+```python
+try:
+    # Code that might raise an exception
+except SomeException:
+    # Code to handle the exception
+else:
+    # Code that runs if no exceptions occur
+finally:
+    # Code that always runs
+```
+
+---
 
 ## Using `finally`
 
-The `finally` block always runs after the `try` and any associated `except` blocks, even if an exception is raised.
+The `finally` block ensures that the code within it runs no matter what happens in the `try` block.
 
-### Example: Using `finally`
-
+### Example:
 ```python
 try:
     file = open("example.txt", "r")
     content = file.read()
     print(content)
 except FileNotFoundError:
-    print("File not found.")
+    print("File not found!")
 finally:
-    print("Execution completed.")
+    print("Closing file.")
 ```
 
-### Output (if `example.txt` does not exist)
-
+### Output (if file does not exist):
 ```plaintext
-File not found.
-Execution completed.
+File not found!
+Closing file.
 ```
 
-In this example:
-- If the file does not exist, the `except` block runs to handle the error.
-- Regardless of the outcome, the `finally` block executes, printing "Execution completed."
+### Output (if file exists):
+```plaintext
+<contents of the file>
+Closing file.
+```
 
 ---
 
-## Using `finally` for Cleanup
+## `finally` with Exceptions
 
-The `finally` block is ideal for tasks like closing files or releasing resources to ensure they are handled properly.
+Even if an exception occurs and isn’t caught, the `finally` block will execute.
 
-### Example: Closing a File Safely
-
+### Example:
 ```python
 try:
-    file = open("example.txt", "r")
-    content = file.read()
-    print(content)
-except FileNotFoundError:
-    print("File not found.")
+    print(10 / 0)  # This will raise ZeroDivisionError
 finally:
-    if 'file' in locals() and not file.closed:
-        file.close()
-        print("File closed.")
+    print("This will always run.")
 ```
 
-### Output (if `example.txt` does not exist)
-
+### Output:
 ```plaintext
-File not found.
-File closed.
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+ZeroDivisionError: division by zero
+This will always run.
 ```
 
-### Output (if `example.txt` exists and contains `"Hello, World!"`)
+---
 
+## Practical Use Case: Resource Cleanup
+
+The `finally` block is useful for cleaning up resources like closing files or releasing locks.
+
+### Example:
+```python
+try:
+    file = open("data.txt", "w")
+    file.write("Writing some data.")
+finally:
+    file.close()
+    print("File closed.")
+```
+
+### Output:
 ```plaintext
-Hello, World!
 File closed.
 ```
 
 ---
 
-## Summary
-
-- The `finally` block runs code after the `try` and `except` blocks, regardless of whether an exception occurs.
-- It is commonly used for cleanup tasks such as closing files or releasing resources.
-- Using `finally` ensures your program maintains proper resource management and avoids issues like unclosed files.
-
-Practice using the `finally` block with different tasks to understand its importance in maintaining program reliability.
+The `finally` block ensures that critical cleanup tasks are executed, making your code more robust. In the next lesson, we’ll learn about Python modules and how to use them to organize and reuse code.

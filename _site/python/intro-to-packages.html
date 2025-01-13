@@ -366,129 +366,113 @@
 
     <main class="content">
         <h1>Intro to Packages</h1>
-        <p>A package is a collection of modules organized into directories with a special <code class="language-plaintext highlighter-rouge">__init__.py</code> file. Packages allow you to structure larger projects by grouping related modules together.</p>
+        <p>A package in Python is a way to organize related modules into a directory structure. Packages help manage larger projects by grouping modules into logical collections.</p>
+
+<hr />
 
 <h2 id="what-is-a-package">What Is a Package?</h2>
 
+<p>A package is simply a directory that contains an <code class="language-plaintext highlighter-rouge">__init__.py</code> file and one or more module files. The <code class="language-plaintext highlighter-rouge">__init__.py</code> file marks the directory as a Python package and can also include initialization code for the package.</p>
+
+<h3 id="example">Example:</h3>
+
+<p><strong>Directory Structure:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_package/
+    __init__.py
+    module1.py
+    module2.py
+</code></pre></div></div>
+
 <ul>
-  <li>A <strong>module</strong> is a single Python file containing code.</li>
-  <li>A <strong>package</strong> is a directory containing one or more modules, along with an <code class="language-plaintext highlighter-rouge">__init__.py</code> file that identifies the directory as a package.</li>
+  <li><code class="language-plaintext highlighter-rouge">my_package</code>: The package directory.</li>
+  <li><code class="language-plaintext highlighter-rouge">__init__.py</code>: Initializes the package.</li>
+  <li><code class="language-plaintext highlighter-rouge">module1.py</code> and <code class="language-plaintext highlighter-rouge">module2.py</code>: Modules within the package.</li>
 </ul>
 
 <hr />
 
 <h2 id="creating-a-package">Creating a Package</h2>
 
-<h3 id="steps-to-create-a-package">Steps to Create a Package</h3>
-
 <ol>
-  <li>Create a directory to serve as the package (e.g., <code class="language-plaintext highlighter-rouge">my_package</code>).</li>
-  <li>Add an <code class="language-plaintext highlighter-rouge">__init__.py</code> file inside the directory. This file can be empty or include initialization code for the package.</li>
-  <li>Add one or more Python files (modules) inside the package directory.</li>
+  <li>Create a directory for your package.</li>
+  <li>Add an empty <code class="language-plaintext highlighter-rouge">__init__.py</code> file inside the directory.</li>
+  <li>Add module files to the directory.</li>
 </ol>
-
-<h3 id="example-directory-structure">Example Directory Structure</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_package/
-    __init__.py
-    math_utils.py
-    string_utils.py
-</code></pre></div></div>
 
 <hr />
 
-<h2 id="example-package-creation">Example: Package Creation</h2>
+<h3 id="example-1">Example:</h3>
 
-<h3 id="math_utilspy"><code class="language-plaintext highlighter-rouge">math_utils.py</code></h3>
+<p><strong>Step 1: Create a Directory</strong>
+Create a directory named <code class="language-plaintext highlighter-rouge">my_package</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># File: my_package/math_utils.py
+<p><strong>Step 2: Add Modules</strong>
+Add two files: <code class="language-plaintext highlighter-rouge">math_tools.py</code> and <code class="language-plaintext highlighter-rouge">string_tools.py</code>.</p>
+
+<p><strong>File: <code class="language-plaintext highlighter-rouge">math_tools.py</code></strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># math_tools.py
 </span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
-<span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 </code></pre></div></div>
 
-<h3 id="string_utilspy"><code class="language-plaintext highlighter-rouge">string_utils.py</code></h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># File: my_package/string_utils.py
-</span><span class="k">def</span> <span class="nf">capitalize_words</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-    <span class="k">return</span> <span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">word</span><span class="p">.</span><span class="nf">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="p">.</span><span class="nf">split</span><span class="p">())</span>
+<p><strong>File: <code class="language-plaintext highlighter-rouge">string_tools.py</code></strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># string_tools.py
+</span><span class="k">def</span> <span class="nf">capitalize_words</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">word</span><span class="p">.</span><span class="nf">capitalize</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">.</span><span class="nf">split</span><span class="p">())</span>
 </code></pre></div></div>
 
-<h3 id="__init__py"><code class="language-plaintext highlighter-rouge">__init__.py</code></h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># File: my_package/__init__.py
-# Initialize the package (optional)
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">my_package has been imported.</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
+<p><strong>Step 3: Add an <code class="language-plaintext highlighter-rouge">__init__.py</code> File</strong>
+Create an empty <code class="language-plaintext highlighter-rouge">__init__.py</code> file. This file can remain empty or include package initialization code.</p>
 
 <hr />
 
 <h2 id="using-a-package">Using a Package</h2>
 
-<p>To use the package, ensure that the package directory is in the same directory as your script or is part of your Python path.</p>
+<p>You can import modules from the package using the <code class="language-plaintext highlighter-rouge">import</code> statement.</p>
 
-<h3 id="example-importing-from-a-package">Example: Importing from a Package</h3>
+<h3 id="example-2">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">my_package</span> <span class="kn">import</span> <span class="n">math_tools</span><span class="p">,</span> <span class="n">string_tools</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">my_package</span> <span class="kn">import</span> <span class="n">math_utils</span><span class="p">,</span> <span class="n">string_utils</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="n">math_utils</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">formatted_text</span> <span class="o">=</span> <span class="n">string_utils</span><span class="p">.</span><span class="nf">capitalize_words</span><span class="p">(</span><span class="sh">"</span><span class="s">hello world</span><span class="sh">"</span><span class="p">)</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Addition Result:</span><span class="sh">"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Formatted Text:</span><span class="sh">"</span><span class="p">,</span> <span class="n">formatted_text</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_package has been imported.
-Addition Result: 5
-Formatted Text: Hello World
-</code></pre></div></div>
+<span class="nf">print</span><span class="p">(</span><span class="n">math_tools</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 8
+</span><span class="nf">print</span><span class="p">(</span><span class="n">string_tools</span><span class="p">.</span><span class="nf">capitalize_words</span><span class="p">(</span><span class="sh">"</span><span class="s">hello world</span><span class="sh">"</span><span class="p">))</span>  <span class="c1"># Output: Hello World
+</span></code></pre></div></div>
 
 <hr />
 
-<h2 id="importing-all-modules">Importing All Modules</h2>
+<h2 id="importing-specific-functions">Importing Specific Functions</h2>
 
-<p>You can use the <code class="language-plaintext highlighter-rouge">*</code> syntax to import all modules from a package if the <code class="language-plaintext highlighter-rouge">__init__.py</code> file specifies an <code class="language-plaintext highlighter-rouge">__all__</code> list.</p>
+<p>You can also import specific components from the modules.</p>
 
-<h3 id="example-__init__py-with-__all__">Example: <code class="language-plaintext highlighter-rouge">__init__.py</code> with <code class="language-plaintext highlighter-rouge">__all__</code></h3>
+<h3 id="example-3">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">my_package.math_tools</span> <span class="kn">import</span> <span class="n">multiply</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># File: my_package/__init__.py
-</span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">math_utils</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">string_utils</span><span class="sh">"</span><span class="p">]</span>
-</code></pre></div></div>
+<span class="nf">print</span><span class="p">(</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>  <span class="c1"># Output: 28
+</span></code></pre></div></div>
 
 <hr />
 
-<h2 id="organizing-large-projects">Organizing Large Projects</h2>
+<h2 id="nested-packages">Nested Packages</h2>
 
-<p>Packages make it easy to organize code in larger projects by grouping related functionality. For example, you might have:</p>
+<p>Packages can contain sub-packages, allowing for even more organization.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ecommerce/
+<p><strong>Directory Structure:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_package/
     __init__.py
-    products/
+    sub_package/
         __init__.py
-        product.py
-        inventory.py
-    orders/
-        __init__.py
-        order.py
-        payment.py
+        module3.py
+</code></pre></div></div>
+
+<p>You can access <code class="language-plaintext highlighter-rouge">module3</code> using:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">my_package.sub_package</span> <span class="kn">import</span> <span class="n">module3</span>
 </code></pre></div></div>
 
 <hr />
 
-<h2 id="summary">Summary</h2>
-
-<ul>
-  <li>A package is a directory containing modules and an <code class="language-plaintext highlighter-rouge">__init__.py</code> file.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">from package_name import module_name</code> to access modules within a package.</li>
-  <li>Organize related functionality into packages for better project structure.</li>
-  <li>Use the <code class="language-plaintext highlighter-rouge">__init__.py</code> file for initialization or to define the package’s public API.</li>
-</ul>
-
-<p>Packages help you manage and organize code effectively in larger projects. Practice creating and using packages to improve your ability to structure complex applications.</p>
+<p>Packages are essential for organizing large codebases and making them maintainable. In the next lesson, we’ll explore Python’s standard library and how to use its built-in packages.</p>
 
         <!-- Next Lesson Button -->
         

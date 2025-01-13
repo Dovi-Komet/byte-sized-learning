@@ -4,128 +4,113 @@ title: "Intro to Packages"
 order: 34
 ---
 
-A package is a collection of modules organized into directories with a special `__init__.py` file. Packages allow you to structure larger projects by grouping related modules together.
+A package in Python is a way to organize related modules into a directory structure. Packages help manage larger projects by grouping modules into logical collections.
+
+---
 
 ## What Is a Package?
 
-- A **module** is a single Python file containing code.
-- A **package** is a directory containing one or more modules, along with an `__init__.py` file that identifies the directory as a package.
+A package is simply a directory that contains an `__init__.py` file and one or more module files. The `__init__.py` file marks the directory as a Python package and can also include initialization code for the package.
+
+### Example:
+
+**Directory Structure:**
+```plaintext
+my_package/
+    __init__.py
+    module1.py
+    module2.py
+```
+
+- `my_package`: The package directory.
+- `__init__.py`: Initializes the package.
+- `module1.py` and `module2.py`: Modules within the package.
 
 ---
 
 ## Creating a Package
 
-### Steps to Create a Package
-
-1. Create a directory to serve as the package (e.g., `my_package`).
-2. Add an `__init__.py` file inside the directory. This file can be empty or include initialization code for the package.
-3. Add one or more Python files (modules) inside the package directory.
-
-### Example Directory Structure
-
-```plaintext
-my_package/
-    __init__.py
-    math_utils.py
-    string_utils.py
-```
+1. Create a directory for your package.
+2. Add an empty `__init__.py` file inside the directory.
+3. Add module files to the directory.
 
 ---
 
-## Example: Package Creation
+### Example:
 
-### `math_utils.py`
+**Step 1: Create a Directory**
+Create a directory named `my_package`.
 
+**Step 2: Add Modules**
+Add two files: `math_tools.py` and `string_tools.py`.
+
+**File: `math_tools.py`**
 ```python
-# File: my_package/math_utils.py
+# math_tools.py
 def add(a, b):
     return a + b
 
-def subtract(a, b):
-    return a - b
+def multiply(a, b):
+    return a * b
 ```
 
-### `string_utils.py`
-
+**File: `string_tools.py`**
 ```python
-# File: my_package/string_utils.py
-def capitalize_words(text):
-    return " ".join(word.capitalize() for word in text.split())
+# string_tools.py
+def capitalize_words(sentence):
+    return " ".join(word.capitalize() for word in sentence.split())
 ```
 
-### `__init__.py`
-
-```python
-# File: my_package/__init__.py
-# Initialize the package (optional)
-print("my_package has been imported.")
-```
+**Step 3: Add an `__init__.py` File**
+Create an empty `__init__.py` file. This file can remain empty or include package initialization code.
 
 ---
 
 ## Using a Package
 
-To use the package, ensure that the package directory is in the same directory as your script or is part of your Python path.
+You can import modules from the package using the `import` statement.
 
-### Example: Importing from a Package
-
+### Example:
 ```python
-from my_package import math_utils, string_utils
+from my_package import math_tools, string_tools
 
-result = math_utils.add(2, 3)
-formatted_text = string_utils.capitalize_words("hello world")
-
-print("Addition Result:", result)
-print("Formatted Text:", formatted_text)
-```
-
-### Output:
-
-```plaintext
-my_package has been imported.
-Addition Result: 5
-Formatted Text: Hello World
+print(math_tools.add(3, 5))  # Output: 8
+print(string_tools.capitalize_words("hello world"))  # Output: Hello World
 ```
 
 ---
 
-## Importing All Modules
+## Importing Specific Functions
 
-You can use the `*` syntax to import all modules from a package if the `__init__.py` file specifies an `__all__` list.
+You can also import specific components from the modules.
 
-### Example: `__init__.py` with `__all__`
-
+### Example:
 ```python
-# File: my_package/__init__.py
-__all__ = ["math_utils", "string_utils"]
+from my_package.math_tools import multiply
+
+print(multiply(4, 7))  # Output: 28
 ```
 
 ---
 
-## Organizing Large Projects
+## Nested Packages
 
-Packages make it easy to organize code in larger projects by grouping related functionality. For example, you might have:
+Packages can contain sub-packages, allowing for even more organization.
 
+**Directory Structure:**
 ```plaintext
-ecommerce/
+my_package/
     __init__.py
-    products/
+    sub_package/
         __init__.py
-        product.py
-        inventory.py
-    orders/
-        __init__.py
-        order.py
-        payment.py
+        module3.py
+```
+
+You can access `module3` using:
+```python
+from my_package.sub_package import module3
 ```
 
 ---
 
-## Summary
-
-- A package is a directory containing modules and an `__init__.py` file.
-- Use `from package_name import module_name` to access modules within a package.
-- Organize related functionality into packages for better project structure.
-- Use the `__init__.py` file for initialization or to define the package's public API.
-
-Packages help you manage and organize code effectively in larger projects. Practice creating and using packages to improve your ability to structure complex applications.
+Packages are essential for organizing large codebases and making them maintainable. In the next lesson, we’ll explore Python’s standard library and how to use its built-in packages.

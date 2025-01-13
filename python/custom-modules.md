@@ -4,118 +4,94 @@ title: "Custom Modules"
 order: 33
 ---
 
-Creating custom modules allows you to organize your code into reusable components, making your programs easier to manage and maintain.
-
-## What Is a Custom Module?
-
-A custom module is simply a Python file (`.py`) containing code such as functions, classes, or variables. You can import this file into other Python files to reuse its functionality.
+Creating custom modules allows you to organize and reuse your own Python code across multiple programs. A custom module is simply a `.py` file containing functions, variables, or classes that can be imported and used in other files.
 
 ---
 
-## Creating a Module
+## Creating a Custom Module
 
-1. Create a new file named `my_module.py`.
-2. Add the following code to define a simple function:
+1. Create a Python file (e.g., `my_module.py`) with your desired code.
+2. Save it in the same directory as your main script or ensure it’s in the Python path.
+3. Import the module in your main script to use its contents.
 
+### Example:
+
+**File: `my_module.py`**
 ```python
-# File: my_module.py
+# my_module.py
 def greet(name):
     return f"Hello, {name}!"
+
+def add_numbers(a, b):
+    return a + b
 ```
 
----
-
-## Using Your Module
-
-To use the custom module, create another file (e.g., `main.py`) in the same directory and import your module using the `import` statement.
-
-### Example: Importing a Custom Module
-
+**File: `main.py`**
 ```python
-# File: main.py
+# main.py
 import my_module
 
-message = my_module.greet("Alice")
-print(message)
-```
-
-### Output:
-
-```plaintext
-Hello, Alice!
+print(my_module.greet("Alice"))  # Output: Hello, Alice!
+print(my_module.add_numbers(5, 7))  # Output: 12
 ```
 
 ---
 
-## Importing Specific Functions
+## Importing Specific Functions or Variables
 
-If you only need certain functions from your module, you can use the `from ... import ...` syntax.
+You can import only the components you need using the `from ... import ...` syntax.
 
-### Example: Importing a Specific Function
-
+### Example:
 ```python
 from my_module import greet
 
-print(greet("Bob"))
-```
-
-### Output:
-
-```plaintext
-Hello, Bob!
+print(greet("Bob"))  # Output: Hello, Bob!
 ```
 
 ---
 
-## Adding More Functions or Variables
+## Using Aliases for Modules
 
-You can expand your custom module by adding more functionality.
+You can rename your custom module using the `as` keyword for convenience.
 
-### Example: Expanded `my_module.py`
-
+### Example:
 ```python
-# File: my_module.py
-def greet(name):
-    return f"Hello, {name}!"
+import my_module as mm
 
-def add(a, b):
-    return a + b
-
-PI = 3.14159
+print(mm.greet("Charlie"))  # Output: Hello, Charlie!
 ```
 
-### Using the Expanded Module
+---
 
-```python
-# File: main.py
-import my_module
+## Organizing Modules in Directories
 
-print(my_module.greet("Alice"))
-print("Sum:", my_module.add(5, 3))
-print("Value of PI:", my_module.PI)
-```
+To structure larger projects, you can organize modules into directories. These directories must contain an `__init__.py` file to be recognized as a package.
 
-### Output:
+### Example:
 
+**Directory Structure:**
 ```plaintext
-Hello, Alice!
-Sum: 8
-Value of PI: 3.14159
+my_package/
+    __init__.py
+    helpers.py
+    utilities.py
+```
+
+**File: `helpers.py`**
+```python
+# helpers.py
+def say_hello():
+    return "Hello from helpers!"
+```
+
+**File: `main.py`**
+```python
+# main.py
+from my_package.helpers import say_hello
+
+print(say_hello())  # Output: Hello from helpers!
 ```
 
 ---
 
-## Organizing Custom Modules
-
-If your project grows, you can organize modules into folders. Create a folder (e.g., `my_package`) and add an `__init__.py` file to make it a package. We’ll explore this in a future lesson.
-
----
-
-## Summary
-
-- A custom module is any Python file that you can import into another script.
-- Use `import` to bring in the entire module or `from ... import ...` to import specific components.
-- Expand your modules to include multiple functions, variables, or classes for reusability.
-- Organize modules into folders for better project structure as your codebase grows.
-
-Creating custom modules helps you write modular and reusable code. Practice making and importing your own modules to enhance your coding efficiency.
+Custom modules make your code more reusable and maintainable. In the next lesson, we’ll dive deeper into organizing modules into packages and using them effectively.

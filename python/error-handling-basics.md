@@ -4,66 +4,116 @@ title: "Error Handling Basics"
 order: 29
 ---
 
-Error handling allows you to manage errors gracefully, ensuring your program doesn't crash unexpectedly. It also helps improve user experience by providing meaningful feedback during errors.
+Errors and exceptions are inevitable when writing code. Python provides mechanisms to handle these situations gracefully, ensuring that your program doesn’t crash unexpectedly.
 
-## Using `try` and `except`
+## What Is Error Handling?
 
-Use the `try` block to write code that might cause an error, and the `except` block to handle the error if it occurs.
+Error handling involves catching and managing errors that occur during program execution. Python uses `try`, `except`, `else`, and `finally` blocks to handle errors.
 
-### Example: Handling Input Errors
+---
 
+## The `try` and `except` Blocks
+
+The `try` block contains code that might raise an error, and the `except` block specifies how to handle the error.
+
+### Example:
 ```python
 try:
-    number = int(input("Enter a number: "))
-    print("You entered:", number)
+    num = int(input("Enter a number: "))
+    print(f"You entered: {num}")
 except ValueError:
     print("That's not a valid number!")
 ```
 
-### Output (if the user enters `"abc"`)
-
+### Output (if input is invalid):
 ```plaintext
+Enter a number: abc
 That's not a valid number!
 ```
 
-In this example:
-- If the user enters something that cannot be converted to an integer, a `ValueError` occurs.
-- The `except` block catches the error and provides a user-friendly message.
+---
+
+## Using `else` for Success
+
+The `else` block runs if no errors occur in the `try` block.
+
+### Example:
+```python
+try:
+    num = int(input("Enter a number: "))
+except ValueError:
+    print("Invalid input!")
+else:
+    print(f"You entered the number {num}")
+```
+
+### Output:
+If valid input is provided:
+```plaintext
+Enter a number: 5
+You entered the number 5
+```
+
+If invalid input is provided:
+```plaintext
+Enter a number: xyz
+Invalid input!
+```
+
+---
+
+## The `finally` Block
+
+The `finally` block always runs, regardless of whether an error occurred. It’s commonly used for cleanup tasks.
+
+### Example:
+```python
+try:
+    file = open("example.txt", "r")
+    content = file.read()
+    print(content)
+except FileNotFoundError:
+    print("File not found!")
+finally:
+    print("Execution completed.")
+```
+
+### Output (if file does not exist):
+```plaintext
+File not found!
+Execution completed.
+```
+
+---
 
 ## Catching Multiple Exceptions
 
-You can handle different types of errors by specifying multiple `except` blocks.
+You can handle different types of exceptions using multiple `except` blocks.
 
-### Example: Handling Multiple Errors
-
+### Example:
 ```python
 try:
-    number = int(input("Enter a number: "))
-    result = 10 / number
-    print("Result:", result)
+    num = int(input("Enter a number: "))
+    result = 10 / num
 except ValueError:
-    print("That's not a valid number!")
+    print("Invalid input! Please enter a number.")
 except ZeroDivisionError:
-    print("You can't divide by zero!")
+    print("Cannot divide by zero.")
 ```
 
-### Output (if the user enters `"0"`)
-
+### Output:
+If invalid input:
 ```plaintext
-You can't divide by zero!
+Enter a number: abc
+Invalid input! Please enter a number.
 ```
 
-## Why Handle Errors?
+If dividing by zero:
+```plaintext
+Enter a number: 0
+Cannot divide by zero.
+```
 
-Error handling ensures your program can:
-1. **Handle Unexpected Inputs**: Provide meaningful feedback instead of crashing.
-2. **Improve Reliability**: Continue running smoothly even when errors occur.
-3. **Enhance User Experience**: Guide users on how to correct their mistakes.
+---
 
-## Summary
-
-- Use `try` and `except` blocks to catch and handle errors gracefully.
-- Specify different `except` blocks to handle multiple types of exceptions.
-- Error handling ensures programs remain robust and user-friendly.
-
-Mastering error handling is essential for building reliable and user-friendly programs. Practice with different types of errors to solidify your understanding.
+Error handling is a fundamental skill for writing robust programs. In the next lesson, we’ll dive deeper into Python’s exception handling capabilities.

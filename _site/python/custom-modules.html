@@ -366,117 +366,92 @@
 
     <main class="content">
         <h1>Custom Modules</h1>
-        <p>Creating custom modules allows you to organize your code into reusable components, making your programs easier to manage and maintain.</p>
-
-<h2 id="what-is-a-custom-module">What Is a Custom Module?</h2>
-
-<p>A custom module is simply a Python file (<code class="language-plaintext highlighter-rouge">.py</code>) containing code such as functions, classes, or variables. You can import this file into other Python files to reuse its functionality.</p>
+        <p>Creating custom modules allows you to organize and reuse your own Python code across multiple programs. A custom module is simply a <code class="language-plaintext highlighter-rouge">.py</code> file containing functions, variables, or classes that can be imported and used in other files.</p>
 
 <hr />
 
-<h2 id="creating-a-module">Creating a Module</h2>
+<h2 id="creating-a-custom-module">Creating a Custom Module</h2>
 
 <ol>
-  <li>Create a new file named <code class="language-plaintext highlighter-rouge">my_module.py</code>.</li>
-  <li>Add the following code to define a simple function:</li>
+  <li>Create a Python file (e.g., <code class="language-plaintext highlighter-rouge">my_module.py</code>) with your desired code.</li>
+  <li>Save it in the same directory as your main script or ensure it’s in the Python path.</li>
+  <li>Import the module in your main script to use its contents.</li>
 </ol>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># File: my_module.py
+<h3 id="example">Example:</h3>
+
+<p><strong>File: <code class="language-plaintext highlighter-rouge">my_module.py</code></strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># my_module.py
 </span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!</span><span class="sh">"</span>
+
+<span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </code></pre></div></div>
 
-<hr />
-
-<h2 id="using-your-module">Using Your Module</h2>
-
-<p>To use the custom module, create another file (e.g., <code class="language-plaintext highlighter-rouge">main.py</code>) in the same directory and import your module using the <code class="language-plaintext highlighter-rouge">import</code> statement.</p>
-
-<h3 id="example-importing-a-custom-module">Example: Importing a Custom Module</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># File: main.py
+<p><strong>File: <code class="language-plaintext highlighter-rouge">main.py</code></strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># main.py
 </span><span class="kn">import</span> <span class="n">my_module</span>
 
-<span class="n">message</span> <span class="o">=</span> <span class="n">my_module</span><span class="p">.</span><span class="nf">greet</span><span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, Alice!
-</code></pre></div></div>
+<span class="nf">print</span><span class="p">(</span><span class="n">my_module</span><span class="p">.</span><span class="nf">greet</span><span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">))</span>  <span class="c1"># Output: Hello, Alice!
+</span><span class="nf">print</span><span class="p">(</span><span class="n">my_module</span><span class="p">.</span><span class="nf">add_numbers</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>  <span class="c1"># Output: 12
+</span></code></pre></div></div>
 
 <hr />
 
-<h2 id="importing-specific-functions">Importing Specific Functions</h2>
+<h2 id="importing-specific-functions-or-variables">Importing Specific Functions or Variables</h2>
 
-<p>If you only need certain functions from your module, you can use the <code class="language-plaintext highlighter-rouge">from ... import ...</code> syntax.</p>
+<p>You can import only the components you need using the <code class="language-plaintext highlighter-rouge">from ... import ...</code> syntax.</p>
 
-<h3 id="example-importing-a-specific-function">Example: Importing a Specific Function</h3>
-
+<h3 id="example-1">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">my_module</span> <span class="kn">import</span> <span class="n">greet</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="nf">greet</span><span class="p">(</span><span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">))</span>
-</code></pre></div></div>
-
-<h3 id="output-1">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, Bob!
-</code></pre></div></div>
+<span class="nf">print</span><span class="p">(</span><span class="nf">greet</span><span class="p">(</span><span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">))</span>  <span class="c1"># Output: Hello, Bob!
+</span></code></pre></div></div>
 
 <hr />
 
-<h2 id="adding-more-functions-or-variables">Adding More Functions or Variables</h2>
+<h2 id="using-aliases-for-modules">Using Aliases for Modules</h2>
 
-<p>You can expand your custom module by adding more functionality.</p>
+<p>You can rename your custom module using the <code class="language-plaintext highlighter-rouge">as</code> keyword for convenience.</p>
 
-<h3 id="example-expanded-my_modulepy">Example: Expanded <code class="language-plaintext highlighter-rouge">my_module.py</code></h3>
+<h3 id="example-2">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">my_module</span> <span class="k">as</span> <span class="n">mm</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># File: my_module.py
-</span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!</span><span class="sh">"</span>
-
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-
-<span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14159</span>
-</code></pre></div></div>
-
-<h3 id="using-the-expanded-module">Using the Expanded Module</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># File: main.py
-</span><span class="kn">import</span> <span class="n">my_module</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">my_module</span><span class="p">.</span><span class="nf">greet</span><span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Sum:</span><span class="sh">"</span><span class="p">,</span> <span class="n">my_module</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Value of PI:</span><span class="sh">"</span><span class="p">,</span> <span class="n">my_module</span><span class="p">.</span><span class="n">PI</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-2">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, Alice!
-Sum: 8
-Value of PI: 3.14159
-</code></pre></div></div>
+<span class="nf">print</span><span class="p">(</span><span class="n">mm</span><span class="p">.</span><span class="nf">greet</span><span class="p">(</span><span class="sh">"</span><span class="s">Charlie</span><span class="sh">"</span><span class="p">))</span>  <span class="c1"># Output: Hello, Charlie!
+</span></code></pre></div></div>
 
 <hr />
 
-<h2 id="organizing-custom-modules">Organizing Custom Modules</h2>
+<h2 id="organizing-modules-in-directories">Organizing Modules in Directories</h2>
 
-<p>If your project grows, you can organize modules into folders. Create a folder (e.g., <code class="language-plaintext highlighter-rouge">my_package</code>) and add an <code class="language-plaintext highlighter-rouge">__init__.py</code> file to make it a package. We’ll explore this in a future lesson.</p>
+<p>To structure larger projects, you can organize modules into directories. These directories must contain an <code class="language-plaintext highlighter-rouge">__init__.py</code> file to be recognized as a package.</p>
+
+<h3 id="example-3">Example:</h3>
+
+<p><strong>Directory Structure:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_package/
+    __init__.py
+    helpers.py
+    utilities.py
+</code></pre></div></div>
+
+<p><strong>File: <code class="language-plaintext highlighter-rouge">helpers.py</code></strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># helpers.py
+</span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="sh">"</span><span class="s">Hello from helpers!</span><span class="sh">"</span>
+</code></pre></div></div>
+
+<p><strong>File: <code class="language-plaintext highlighter-rouge">main.py</code></strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># main.py
+</span><span class="kn">from</span> <span class="n">my_package.helpers</span> <span class="kn">import</span> <span class="n">say_hello</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">say_hello</span><span class="p">())</span>  <span class="c1"># Output: Hello from helpers!
+</span></code></pre></div></div>
 
 <hr />
 
-<h2 id="summary">Summary</h2>
-
-<ul>
-  <li>A custom module is any Python file that you can import into another script.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">import</code> to bring in the entire module or <code class="language-plaintext highlighter-rouge">from ... import ...</code> to import specific components.</li>
-  <li>Expand your modules to include multiple functions, variables, or classes for reusability.</li>
-  <li>Organize modules into folders for better project structure as your codebase grows.</li>
-</ul>
-
-<p>Creating custom modules helps you write modular and reusable code. Practice making and importing your own modules to enhance your coding efficiency.</p>
+<p>Custom modules make your code more reusable and maintainable. In the next lesson, we’ll dive deeper into organizing modules into packages and using them effectively.</p>
 
         <!-- Next Lesson Button -->
         

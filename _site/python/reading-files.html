@@ -366,84 +366,106 @@
 
     <main class="content">
         <h1>Reading Files</h1>
-        <p>Python allows you to read data from files, making it easy to work with external data sources such as text files, logs, or configuration files.</p>
+        <p>Python provides built-in functions for working with files, allowing you to read data from files for further processing. The <code class="language-plaintext highlighter-rouge">open()</code> function is commonly used to open files.</p>
 
-<h2 id="reading-a-file">Reading a File</h2>
+<h2 id="opening-a-file">Opening a File</h2>
 
-<p>To read a file, use the <code class="language-plaintext highlighter-rouge">open()</code> function and the <code class="language-plaintext highlighter-rouge">read()</code> method. The <code class="language-plaintext highlighter-rouge">open()</code> function requires the file name and mode. For reading, use mode <code class="language-plaintext highlighter-rouge">"r"</code>.</p>
+<p>To read a file, use the <code class="language-plaintext highlighter-rouge">open()</code> function. It requires the file name and mode. The most common mode for reading is <code class="language-plaintext highlighter-rouge">"r"</code> (read mode).</p>
 
-<h3 id="example-reading-a-file">Example: Reading a File</h3>
+<h3 id="example">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">file</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">example.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Open file in read mode
+</span><span class="n">content</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>           <span class="c1"># Read the entire file
+</span><span class="nf">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="nb">file</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>                    <span class="c1"># Close the file
+</span></code></pre></div></div>
+
+<h3 id="output">Output:</h3>
+<p>Assuming <code class="language-plaintext highlighter-rouge">example.txt</code> contains:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, World!
+This is a sample file.
+</code></pre></div></div>
+
+<p>The output would be:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, World!
+This is a sample file.
+</code></pre></div></div>
+
+<h3 id="best-practice-using-with-statement">Best Practice: Using <code class="language-plaintext highlighter-rouge">with</code> Statement</h3>
+<p>The <code class="language-plaintext highlighter-rouge">with</code> statement ensures that the file is properly closed after its block of code is executed.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">example.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
     <span class="n">content</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output-if-exampletxt-contains-hello-world">Output (if <code class="language-plaintext highlighter-rouge">example.txt</code> contains <code class="language-plaintext highlighter-rouge">"Hello, World!"</code>)</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, World!
-</code></pre></div></div>
-
-<h3 id="why-use-with">Why Use <code class="language-plaintext highlighter-rouge">with</code>?</h3>
-
-<p>The <code class="language-plaintext highlighter-rouge">with</code> statement ensures the file is properly closed after it is read, even if an error occurs. This prevents resource leaks and keeps your code safe and efficient.</p>
+<hr />
 
 <h2 id="reading-line-by-line">Reading Line by Line</h2>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">readline()</code> or <code class="language-plaintext highlighter-rouge">readlines()</code> methods to read files line by line, especially for large files.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">readline()</code> method to read one line at a time.</p>
 
-<h3 id="example-reading-lines-with-readlines">Example: Reading Lines with <code class="language-plaintext highlighter-rouge">readlines()</code></h3>
-
+<h3 id="example-1">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">example.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">readlines</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-        <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="nf">strip</span><span class="p">())</span>  <span class="c1"># Remove extra whitespace
-</span></code></pre></div></div>
-
-<h3 id="output-if-exampletxt-contains-two-lines-hello-world-and-python-is-fun">Output (if <code class="language-plaintext highlighter-rouge">example.txt</code> contains two lines: <code class="language-plaintext highlighter-rouge">"Hello, World!"</code> and <code class="language-plaintext highlighter-rouge">"Python is fun!"</code>)</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, World!
-Python is fun!
+    <span class="n">line1</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">readline</span><span class="p">()</span>
+    <span class="n">line2</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">readline</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">line1</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">line2</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h2 id="file-modes-for-reading">File Modes for Reading</h2>
+<h3 id="output-1">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, World!
+This is a sample file.
+</code></pre></div></div>
 
-<p>When opening files, you can specify modes to control how they are accessed:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">"r"</code>: Read mode (default). Opens the file for reading and raises an error if the file does not exist.</li>
-  <li><code class="language-plaintext highlighter-rouge">"rb"</code>: Read mode in binary. Used for non-text files like images or PDFs.</li>
-</ul>
+<hr />
 
-<h2 id="handling-missing-files">Handling Missing Files</h2>
+<h2 id="reading-all-lines-as-a-list">Reading All Lines as a List</h2>
 
-<p>If you try to open a file that does not exist, Python raises a <code class="language-plaintext highlighter-rouge">FileNotFoundError</code>. You can handle this error to make your program more robust.</p>
+<p>Use the <code class="language-plaintext highlighter-rouge">readlines()</code> method to read all lines at once and return them as a list.</p>
 
-<h3 id="example-handling-missing-files">Example: Handling Missing Files</h3>
+<h3 id="example-2">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">example.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">readlines</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</code></pre></div></div>
 
+<h3 id="output-2">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['Hello, World!\n', 'This is a sample file.\n']
+</code></pre></div></div>
+
+<h3 id="stripping-newlines">Stripping Newlines</h3>
+<p>You can remove newline characters using a list comprehension.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">example.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="p">.</span><span class="nf">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">file</span><span class="p">.</span><span class="nf">readlines</span><span class="p">()]</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="output-3">Output:</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['Hello, World!', 'This is a sample file.']
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="handling-file-not-found-errors">Handling File Not Found Errors</h2>
+
+<p>If the file does not exist, Python raises a <code class="language-plaintext highlighter-rouge">FileNotFoundError</code>. You can handle this using a <code class="language-plaintext highlighter-rouge">try</code> block.</p>
+
+<h3 id="example-3">Example:</h3>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
-    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">example.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">nonexistent.txt</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
         <span class="n">content</span> <span class="o">=</span> <span class="nb">file</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
-        <span class="nf">print</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
 <span class="k">except</span> <span class="nb">FileNotFoundError</span><span class="p">:</span>
     <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">The file does not exist.</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output-if-the-file-does-not-exist">Output (if the file does not exist)</h3>
-
+<h3 id="output-4">Output:</h3>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The file does not exist.
 </code></pre></div></div>
 
-<h2 id="summary">Summary</h2>
+<hr />
 
-<ul>
-  <li>Use <code class="language-plaintext highlighter-rouge">open()</code> with mode <code class="language-plaintext highlighter-rouge">"r"</code> to read files.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">with</code> statement ensures files are closed properly after use.</li>
-  <li>Read the entire file with <code class="language-plaintext highlighter-rouge">read()</code> or line by line with <code class="language-plaintext highlighter-rouge">readlines()</code> or <code class="language-plaintext highlighter-rouge">readline()</code>.</li>
-  <li>Handle missing files with a <code class="language-plaintext highlighter-rouge">try</code> and <code class="language-plaintext highlighter-rouge">except</code> block to avoid program crashes.</li>
-  <li>Understand file modes to handle text and binary files appropriately.</li>
-</ul>
-
-<p>Reading files is a critical skill for working with external data. Practice with different file contents and methods to solidify your understanding.</p>
+<p>Reading files is a crucial skill for processing and analyzing data. In the next lesson, we’ll learn how to write data to files.</p>
 
         <!-- Next Lesson Button -->
         
