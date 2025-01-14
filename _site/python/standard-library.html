@@ -366,116 +366,93 @@
 
     <main class="content">
         <h1>Standard Library</h1>
-        <p>Python includes a vast standard library that provides modules and functions for common tasks, eliminating the need to write everything from scratch. These built-in modules make Python versatile and powerful.</p>
+        <p>The Python Standard Library is a collection of modules and packages that come pre-installed with Python. It provides a wide range of functionality, such as handling file I/O, working with data formats, network communication, and more. By using the standard library, you can avoid reinventing the wheel and speed up development.</p>
 
 <hr />
 
 <h2 id="what-is-the-standard-library">What Is the Standard Library?</h2>
 
-<p>The standard library is a collection of modules that come pre-installed with Python. These modules provide functionality for:</p>
+<p>The standard library includes modules for various tasks, such as:</p>
+
 <ul>
-  <li>File handling</li>
-  <li>System operations</li>
-  <li>Math and random operations</li>
-  <li>Working with dates and times</li>
-  <li>Networking, and much more</li>
+  <li>File I/O (<code class="language-plaintext highlighter-rouge">open()</code>, <code class="language-plaintext highlighter-rouge">os</code> module)</li>
+  <li>Data manipulation (<code class="language-plaintext highlighter-rouge">json</code>, <code class="language-plaintext highlighter-rouge">csv</code>)</li>
+  <li>String handling (<code class="language-plaintext highlighter-rouge">re</code> for regular expressions)</li>
+  <li>Date and time (<code class="language-plaintext highlighter-rouge">datetime</code>, <code class="language-plaintext highlighter-rouge">time</code>)</li>
+  <li>Mathematical operations (<code class="language-plaintext highlighter-rouge">math</code>, <code class="language-plaintext highlighter-rouge">random</code>)</li>
 </ul>
 
-<hr />
-
-<h2 id="commonly-used-modules">Commonly Used Modules</h2>
-
-<p>Here are some popular modules from the standard library:</p>
-
-<ol>
-  <li><strong><code class="language-plaintext highlighter-rouge">os</code></strong>: Interact with the operating system (e.g., file and directory manipulation).</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">sys</code></strong>: Access system-specific parameters and functions.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">datetime</code></strong>: Work with dates and times.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">random</code></strong>: Generate random numbers.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">json</code></strong>: Parse and write JSON data for working with structured information.</li>
-</ol>
+<p>These modules are included with Python and are available for immediate use without needing to install anything extra.</p>
 
 <hr />
 
-<h2 id="example-using-the-random-module">Example: Using the <code class="language-plaintext highlighter-rouge">random</code> Module</h2>
+<h2 id="how-to-use-the-standard-library">How to Use the Standard Library</h2>
 
-<p>The <code class="language-plaintext highlighter-rouge">random</code> module provides functions to generate random numbers and perform random operations.</p>
+<p>You can import and use the standard library modules like you would any other Python module.</p>
 
-<h3 id="example-generate-a-random-integer">Example: Generate a Random Integer</h3>
+<h3 id="example-using-the-os-module">Example: Using the <code class="language-plaintext highlighter-rouge">os</code> Module</h3>
+<p>The <code class="language-plaintext highlighter-rouge">os</code> module provides functions to interact with the operating system, such as working with files and directories.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
 
-<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Generate a random integer between 1 and 10
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Random number:</span><span class="sh">"</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+<span class="c1"># Get the current working directory
+</span><span class="n">current_directory</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="nf">getcwd</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">current_directory</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="output">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Random number: 7  # (The actual number will vary.)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/path/to/your/current/directory
 </code></pre></div></div>
 
 <hr />
 
-<h2 id="example-using-the-datetime-module">Example: Using the <code class="language-plaintext highlighter-rouge">datetime</code> Module</h2>
-
+<h3 id="example-using-the-datetime-module">Example: Using the <code class="language-plaintext highlighter-rouge">datetime</code> Module</h3>
 <p>The <code class="language-plaintext highlighter-rouge">datetime</code> module allows you to work with dates and times.</p>
 
-<h3 id="example-getting-the-current-date-and-time">Example: Getting the Current Date and Time</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">datetime</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-
-<span class="n">current_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>  <span class="c1"># Get the current date and time
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Current time:</span><span class="sh">"</span><span class="p">,</span> <span class="n">current_time</span><span class="p">)</span>
+<span class="c1"># Get the current date and time
+</span><span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="output-1">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Current time: 2025-01-03 12:34:56.789012  # (The actual output will vary.)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2025-01-14 10:30:45.123456
 </code></pre></div></div>
 
 <hr />
 
-<h2 id="example-using-the-json-module">Example: Using the <code class="language-plaintext highlighter-rouge">json</code> Module</h2>
+<h2 id="useful-modules-in-the-standard-library">Useful Modules in the Standard Library</h2>
 
-<p>The <code class="language-plaintext highlighter-rouge">json</code> module is used to parse JSON strings or write JSON data.</p>
-
-<h3 id="example-parsing-json-data">Example: Parsing JSON Data</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">json</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="sh">'</span><span class="s">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="s">: </span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="s">, </span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="s">: 25}</span><span class="sh">'</span>
-<span class="n">parsed_data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># Parse the JSON string into a Python dictionary
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Name:</span><span class="sh">"</span><span class="p">,</span> <span class="n">parsed_data</span><span class="p">[</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">])</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Age:</span><span class="sh">"</span><span class="p">,</span> <span class="n">parsed_data</span><span class="p">[</span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">])</span>
-</code></pre></div></div>
-
-<h3 id="output-2">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name: Alice
-Age: 25
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="why-use-the-standard-library">Why Use the Standard Library?</h2>
+<p>Here are some commonly used modules in the standard library:</p>
 
 <ul>
-  <li><strong>Saves Time</strong>: Avoid writing code for common tasks.</li>
-  <li><strong>Reliable</strong>: Pre-tested and optimized modules ensure stability.</li>
-  <li><strong>Accessible</strong>: No need for additional installations; included with Python.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">os</code></strong>: Provides functions for interacting with the operating system (e.g., file operations, environment variables).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">datetime</code></strong>: Supplies classes for working with dates and times.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">math</code></strong>: Offers mathematical functions like trigonometric operations, logarithms, etc.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">random</code></strong>: Used to generate random numbers and perform random selections.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">json</code></strong>: Allows working with JSON data, which is often used in web applications.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">sys</code></strong>: Provides access to system-specific parameters and functions.</li>
 </ul>
 
 <hr />
 
-<h2 id="summary">Summary</h2>
+<h2 id="finding-modules-in-the-standard-library">Finding Modules in the Standard Library</h2>
+
+<p>You can check the official Python documentation to explore more about the standard library:</p>
 
 <ul>
-  <li>The Python standard library provides a wide range of modules for various tasks, such as file handling, system operations, and data processing.</li>
-  <li>Popular modules include <code class="language-plaintext highlighter-rouge">os</code>, <code class="language-plaintext highlighter-rouge">sys</code>, <code class="language-plaintext highlighter-rouge">datetime</code>, <code class="language-plaintext highlighter-rouge">random</code>, and <code class="language-plaintext highlighter-rouge">json</code>.</li>
-  <li>Using these built-in modules simplifies your code and speeds up development.</li>
+  <li><a href="https://docs.python.org/3/library/" target="_blank">Python Standard Library Documentation</a></li>
 </ul>
 
-<p>Exploring the standard library is essential for efficient Python programming. Practice using these modules to discover their full potential.</p>
+<p>Alternatively, you can list the available modules on your system using the <code class="language-plaintext highlighter-rouge">help()</code> function in the Python shell:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">help</span><span class="p">(</span><span class="sh">"</span><span class="s">modules</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>The Python standard library is vast and extremely useful, offering built-in tools to help solve common problems. In the next lesson, we’ll dive into some of the most commonly used modules, starting with <code class="language-plaintext highlighter-rouge">os</code>, to explore their capabilities in more detail.</p>
 
         <!-- Next Lesson Button -->
         

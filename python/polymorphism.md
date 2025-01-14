@@ -1,106 +1,107 @@
 ---
 layout: default
 title: "Polymorphism"
-order: 49
+order: 47
 ---
 
-Polymorphism is a core concept in Object-Oriented Programming (OOP). It allows objects of different classes to be treated as objects of a common parent class, enabling a single interface to work with different types.
-
----
-
-## What Is Polymorphism?
-
-- **Definition**: Polymorphism means "many forms." It allows the same method or operation to behave differently based on the object that invokes it.
-- **Key Benefit**: Write code that can work with objects of different types, making it more flexible and reusable.
+Polymorphism is a key concept in object-oriented programming (OOP) that allows objects of different classes to be treated as objects of a common superclass. It enables a single interface to represent different types of objects, making code more flexible and reusable.
 
 ---
 
-## Example: Polymorphism with Methods
+## Polymorphism with Methods
 
-Different classes can implement the same method in their own way. When you call the method, the appropriate version is executed based on the object.
+In Python, polymorphism is typically achieved by defining methods with the same name in different classes. These methods can perform different operations depending on the class of the object.
 
-### Example: Overriding Methods for Polymorphism
+### Example: Polymorphism with Methods
 
 ```python
-class Animal:
-    def speak(self):
-        return "I make a sound."
-
-class Dog(Animal):
+class Dog:
     def speak(self):
         return "Woof!"
 
-class Cat(Animal):
+class Cat:
     def speak(self):
         return "Meow!"
 
-# Function that uses polymorphism
-def animal_sound(animal):
+def animal_speak(animal):
     print(animal.speak())
 
+# Using the animal_speak function
 dog = Dog()
 cat = Cat()
 
-animal_sound(dog)  # Calls Dog's speak method
-animal_sound(cat)  # Calls Cat's speak method
-```
-
-### Output:
-
-```plaintext
-Woof!
-Meow!
+animal_speak(dog)  # Output: Woof!
+animal_speak(cat)  # Output: Meow!
 ```
 
 ---
 
-## Polymorphism with Functions
+## Polymorphism with Inheritance
 
-Polymorphism is not limited to methods. It also applies to functions that can accept objects of different types and call their respective methods.
+Polymorphism is often used with inheritance. A subclass can override methods of the superclass, and the overridden method is called depending on the object type.
 
-### Example: Using Polymorphism in a Function
+### Example: Polymorphism with Inheritance
 
 ```python
-animals = [Dog(), Cat(), Animal()]
+class Shape:
+    def area(self):
+        raise NotImplementedError("Subclasses must implement this method")
 
-for animal in animals:
-    print(animal.speak())
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+# Using polymorphism with shapes
+shapes = [Rectangle(4, 5), Circle(3)]
+
+for shape in shapes:
+    print(shape.area())
+# Output:
+# 20
+# 28.26
 ```
 
-### Output:
+---
 
-```plaintext
-Woof!
-Meow!
-I make a sound.
+## Polymorphism with Built-in Functions
+
+Python’s built-in functions like `len`, `sorted`, and `max` demonstrate polymorphism by working with different types of objects.
+
+### Example: Polymorphism with `len`
+
+```python
+print(len("Hello"))  # Output: 5
+print(len([1, 2, 3, 4]))  # Output: 4
+print(len({"a": 1, "b": 2}))  # Output: 2
 ```
 
 ---
 
-## Polymorphism with Abstract Classes (Preview)
+## Advantages of Polymorphism
 
-Polymorphism often works with abstract classes and interfaces. Abstract classes define a common interface, and derived classes provide specific implementations. This will be covered in detail in the next lesson.
-
----
-
-## Why Use Polymorphism?
-
-1. **Code Reusability**:
-   - Write generic functions or methods that work with multiple types of objects.
-
-2. **Flexibility**:
-   - Add new classes or types without modifying existing code.
-
-3. **Scalability**:
-   - Handle more complex hierarchies or systems with a single interface.
+1. **Flexibility**: Allows functions to use objects of different types.
+2. **Reusability**: Encourages the use of generalized code.
+3. **Scalability**: Makes it easy to add new classes with the same interface.
 
 ---
 
-## Summary
+## Key Takeaways
 
-- **Polymorphism**:
-  - Enables objects of different classes to be treated as objects of a common parent class.
-  - Allows methods with the same name to behave differently depending on the object.
-- Polymorphism is key to writing flexible and reusable code, especially in systems with complex class hierarchies.
+- Polymorphism allows objects of different classes to be used interchangeably if they implement the same method interface.
+- It enhances code readability, scalability, and reusability.
+- Polymorphism is commonly used with methods, inheritance, and built-in functions.
 
-Practice implementing polymorphism to see how it simplifies and enhances your programs.
+---
+
+In the next lesson, we’ll explore lambda functions and how they enable concise and functional programming in Python.

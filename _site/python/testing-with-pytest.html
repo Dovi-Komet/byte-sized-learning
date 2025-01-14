@@ -366,40 +366,126 @@
 
     <main class="content">
         <h1>Testing with pytest</h1>
-        <p><code class="language-plaintext highlighter-rouge">pytest</code> is a popular testing framework that is more flexible than <code class="language-plaintext highlighter-rouge">unittest</code>.</p>
+        <p><code class="language-plaintext highlighter-rouge">pytest</code> is a popular Python testing framework that makes writing and running tests simple and efficient. It offers more flexibility than <code class="language-plaintext highlighter-rouge">unittest</code> and is widely used in the Python community.</p>
 
-<h3 id="installing-pytest">Installing pytest</h3>
+<hr />
 
-<p>Install with pip:</p>
+<h2 id="why-use-pytest">Why Use <code class="language-plaintext highlighter-rouge">pytest</code>?</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install pytest
+<ol>
+  <li><strong>Simple Syntax</strong>: No need to write test classes; use plain functions instead.</li>
+  <li><strong>Powerful Features</strong>: Supports fixtures, parameterized tests, and plugins.</li>
+  <li><strong>Detailed Reporting</strong>: Provides clear output and debugging information.</li>
+</ol>
+
+<hr />
+
+<h2 id="installing-pytest">Installing <code class="language-plaintext highlighter-rouge">pytest</code></h2>
+
+<p>Install <code class="language-plaintext highlighter-rouge">pytest</code> using <code class="language-plaintext highlighter-rouge">pip</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>pytest
 </code></pre></div></div>
 
-<h3 id="writing-a-simple-test-with-pytest">Writing a Simple Test with pytest</h3>
+<hr />
 
-<p>Example:</p>
+<h2 id="writing-tests-with-pytest">Writing Tests with <code class="language-plaintext highlighter-rouge">pytest</code></h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<p>Tests in <code class="language-plaintext highlighter-rouge">pytest</code> are simple functions that start with <code class="language-plaintext highlighter-rouge">test_</code>.</p>
+
+<h3 id="example-basic-test">Example: Basic Test</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># math_operations.py
+</span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test_math_operations.py
+</span><span class="kn">from</span> <span class="n">math_operations</span> <span class="kn">import</span> <span class="n">add</span>
 
 <span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
-    <span class="k">assert</span> <span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
-    <span class="k">assert</span> <span class="nf">add</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
-
-<span class="c1"># Run with: pytest script.py
+    <span class="k">assert</span> <span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>  <span class="c1"># Check if add(2, 3) returns 5
+</span>    <span class="k">assert</span> <span class="nf">add</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="c1"># Check if add(-1, 1) returns 0
 </span></code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<h3 id="explanation">Explanation:</h3>
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">add</code> function is defined in <code class="language-plaintext highlighter-rouge">math_operations.py</code>.</li>
+  <li>The test file, <code class="language-plaintext highlighter-rouge">test_math_operations.py</code>, contains tests for the <code class="language-plaintext highlighter-rouge">add</code> function.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">assert</code> keyword checks if the condition is true.</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>================== test session starts ==================
-collected 1 item
+<hr />
 
-script.py .                                          [100%]
+<h2 id="running-tests-with-pytest">Running Tests with <code class="language-plaintext highlighter-rouge">pytest</code></h2>
 
-================== 1 passed in 0.01s ==================
+<p>Run tests in a directory or file by using the <code class="language-plaintext highlighter-rouge">pytest</code> command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pytest
 </code></pre></div></div>
 
-<p>pytest simplifies testing and offers advanced features like fixtures.</p>
+<p>To run tests in a specific file:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pytest test_math_operations.py
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="output-example">Output Example</h3>
+
+<p>If all tests pass, you’ll see:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>============================= test session starts =============================
+collected 2 items
+
+test_math_operations.py ..                                            [100%]
+
+============================== 2 passed in 0.01s ==============================
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="advanced-features-of-pytest">Advanced Features of <code class="language-plaintext highlighter-rouge">pytest</code></h2>
+
+<h3 id="using-fixtures">Using Fixtures</h3>
+
+<p>Fixtures provide setup and teardown logic for tests.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pytest</span>
+
+<span class="nd">@pytest.fixture</span>
+<span class="k">def</span> <span class="nf">sample_data</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="sh">"</span><span class="s">b</span><span class="sh">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="sh">"</span><span class="s">c</span><span class="sh">"</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">test_sample_data</span><span class="p">(</span><span class="n">sample_data</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">sample_data</span><span class="p">[</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">assert</span> <span class="sh">"</span><span class="s">b</span><span class="sh">"</span> <span class="ow">in</span> <span class="n">sample_data</span>
+</code></pre></div></div>
+
+<h3 id="parameterized-tests">Parameterized Tests</h3>
+
+<p>Run the same test with multiple inputs:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pytest</span>
+
+<span class="nd">@pytest.mark.parametrize</span><span class="p">(</span><span class="sh">"</span><span class="s">a, b, expected</span><span class="sh">"</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)])</span>
+<span class="k">def</span> <span class="nf">test_add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">==</span> <span class="n">expected</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pytest</code> simplifies writing and running tests.</li>
+  <li>Use plain functions and <code class="language-plaintext highlighter-rouge">assert</code> statements for test cases.</li>
+  <li>Leverage powerful features like fixtures and parameterized tests.</li>
+</ul>
+
+<hr />
+
+<p>In the next lesson, we’ll explore logging in Python and how it helps in debugging and monitoring applications.</p>
 
         <!-- Next Lesson Button -->
         

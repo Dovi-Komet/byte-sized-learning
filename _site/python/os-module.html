@@ -366,105 +366,102 @@
 
     <main class="content">
         <h1>os Module</h1>
-        <p>The <code class="language-plaintext highlighter-rouge">os</code> module allows you to interact with the operating system. It provides functions to work with directories, files, and environment variables, making it a versatile tool for file system management.</p>
+        <p>The <code class="language-plaintext highlighter-rouge">os</code> module in Python provides a way to interact with the operating system. It offers functionality for file and directory management, environment variables, and executing system commands. This module is part of the Python Standard Library and is available without any additional installation.</p>
 
 <hr />
 
 <h2 id="importing-the-os-module">Importing the <code class="language-plaintext highlighter-rouge">os</code> Module</h2>
 
-<p>To use the <code class="language-plaintext highlighter-rouge">os</code> module, you must import it:</p>
+<p>To use the <code class="language-plaintext highlighter-rouge">os</code> module, you need to import it into your Python program:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
 </code></pre></div></div>
 
 <hr />
 
-<h2 id="getting-the-current-working-directory">Getting the Current Working Directory</h2>
+<h2 id="commonly-used-functions-in-the-os-module">Commonly Used Functions in the <code class="language-plaintext highlighter-rouge">os</code> Module</h2>
 
-<p>The <code class="language-plaintext highlighter-rouge">os.getcwd()</code> function retrieves the current working directory (the folder your Python script is running in).</p>
+<h3 id="get-current-working-directory">Get Current Working Directory</h3>
 
-<h3 id="example-getting-the-current-directory">Example: Getting the Current Directory</h3>
+<p>The <code class="language-plaintext highlighter-rouge">os.getcwd()</code> function returns the current working directory.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Current directory:</span><span class="sh">"</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="nf">getcwd</span><span class="p">())</span>
+<span class="c1"># Get and print the current working directory
+</span><span class="n">current_dir</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="nf">getcwd</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Current Directory:</span><span class="sh">"</span><span class="p">,</span> <span class="n">current_dir</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output-varies-based-on-your-system">Output (varies based on your system):</h3>
+<h3 id="change-directory">Change Directory</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Current directory: /path/to/your/directory
+<p>The <code class="language-plaintext highlighter-rouge">os.chdir(path)</code> function changes the current working directory.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Change to a new directory
+</span><span class="n">os</span><span class="p">.</span><span class="nf">chdir</span><span class="p">(</span><span class="sh">"</span><span class="s">/path/to/new/directory</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Directory changed to:</span><span class="sh">"</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="nf">getcwd</span><span class="p">())</span>
 </code></pre></div></div>
 
-<hr />
+<h3 id="list-files-and-directories">List Files and Directories</h3>
 
-<h2 id="listing-files-and-directories">Listing Files and Directories</h2>
+<p>The <code class="language-plaintext highlighter-rouge">os.listdir(path)</code> function lists all files and directories in the specified path.</p>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">os.listdir()</code> function to list all files and subdirectories in a directory.</p>
-
-<h3 id="example-listing-files">Example: Listing Files</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="nf">listdir</span><span class="p">()</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Files and directories:</span><span class="sh">"</span><span class="p">,</span> <span class="n">files</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-varies-based-on-your-system-1">Output (varies based on your system):</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Files and directories: ['file1.py', 'file2.txt', 'example.py']
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># List files and directories in the current directory
+</span><span class="n">contents</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="nf">listdir</span><span class="p">(</span><span class="sh">"</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Contents:</span><span class="sh">"</span><span class="p">,</span> <span class="n">contents</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="creating-and-removing-directories">Creating and Removing Directories</h2>
 
-<p>The <code class="language-plaintext highlighter-rouge">os.mkdir()</code> function creates a new directory, while <code class="language-plaintext highlighter-rouge">os.rmdir()</code> removes an empty directory.</p>
+<h3 id="create-a-directory">Create a Directory</h3>
 
-<h3 id="example-creating-and-removing-directories">Example: Creating and Removing Directories</h3>
+<p>Use <code class="language-plaintext highlighter-rouge">os.mkdir(path)</code> to create a new directory.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">os</span><span class="p">.</span><span class="nf">mkdir</span><span class="p">(</span><span class="sh">"</span><span class="s">test_folder</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Create a new directory
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">After creation:</span><span class="sh">"</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="nf">listdir</span><span class="p">())</span>
-
-<span class="n">os</span><span class="p">.</span><span class="nf">rmdir</span><span class="p">(</span><span class="sh">"</span><span class="s">test_folder</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Remove the directory
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">After removal:</span><span class="sh">"</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="nf">listdir</span><span class="p">())</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a new directory
+</span><span class="n">os</span><span class="p">.</span><span class="nf">mkdir</span><span class="p">(</span><span class="sh">"</span><span class="s">example_directory</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Directory </span><span class="sh">'</span><span class="s">example_directory</span><span class="sh">'</span><span class="s"> created!</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output-before-and-after">Output (before and after):</h3>
+<h3 id="remove-a-directory">Remove a Directory</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>After creation: ['test_folder', 'file1.py', 'file2.txt']
-After removal: ['file1.py', 'file2.txt']
-</code></pre></div></div>
+<p>Use <code class="language-plaintext highlighter-rouge">os.rmdir(path)</code> to remove an empty directory.</p>
 
-<hr />
-
-<h2 id="checking-if-a-path-exists">Checking If a Path Exists</h2>
-
-<p>Use the <code class="language-plaintext highlighter-rouge">os.path.exists()</code> function to check if a file or directory exists.</p>
-
-<h3 id="example-checking-path-existence">Example: Checking Path Existence</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">path</span> <span class="o">=</span> <span class="sh">"</span><span class="s">file1.py</span><span class="sh">"</span>
-<span class="k">if</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s"> exists.</span><span class="sh">"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s"> does not exist.</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-varies-based-on-your-system-2">Output (varies based on your system):</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>file1.py exists.
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Remove the directory
+</span><span class="n">os</span><span class="p">.</span><span class="nf">rmdir</span><span class="p">(</span><span class="sh">"</span><span class="s">example_directory</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Directory </span><span class="sh">'</span><span class="s">example_directory</span><span class="sh">'</span><span class="s"> removed!</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />
 
-<h2 id="summary">Summary</h2>
+<h2 id="environment-variables">Environment Variables</h2>
 
-<ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">os.getcwd()</code></strong>: Get the current working directory.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">os.listdir()</code></strong>: List files and directories in a folder.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">os.mkdir()</code> and <code class="language-plaintext highlighter-rouge">os.rmdir()</code></strong>: Create and remove directories.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">os.path.exists()</code></strong>: Check if a path exists.</li>
-</ul>
+<p>The <code class="language-plaintext highlighter-rouge">os.environ</code> object allows you to access environment variables.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">os</code> module is a powerful tool for interacting with the file system. Practice these functions to understand how to navigate and manipulate files and directories programmatically.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Get the value of the PATH environment variable
+</span><span class="n">path_env</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">environ</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">PATH</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">PATH:</span><span class="sh">"</span><span class="p">,</span> <span class="n">path_env</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="executing-system-commands">Executing System Commands</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">os.system(command)</code> function runs a system command.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Execute a system command
+</span><span class="n">os</span><span class="p">.</span><span class="nf">system</span><span class="p">(</span><span class="sh">"</span><span class="s">echo Hello from the os module!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="documentation">Documentation</h2>
+
+<p>For a full list of functions provided by the <code class="language-plaintext highlighter-rouge">os</code> module, visit the <a href="https://docs.python.org/3/library/os.html" target="_blank">official Python documentation</a>.</p>
+
+<hr />
+
+<p>The <code class="language-plaintext highlighter-rouge">os</code> module is a powerful tool for interacting with the operating system. In the next lesson, we’ll explore the <code class="language-plaintext highlighter-rouge">datetime</code> module, which provides tools for working with dates and times.</p>
 
         <!-- Next Lesson Button -->
         

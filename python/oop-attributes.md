@@ -4,87 +4,97 @@ title: "OOP Attributes"
 order: 41
 ---
 
-Attributes are variables associated with an object. They store the state of an object and can be used to hold information specific to that object.
+Attributes in Object-Oriented Programming (OOP) are variables that store data related to an object. Python provides flexibility in defining and accessing attributes. These attributes are either associated with the class or specific to an instance of the class.
 
 ---
 
 ## Types of Attributes
 
 ### 1. Instance Attributes
-- Defined inside the `__init__` method.
-- Specific to each object (instance) of the class.
-- Accessed and modified using the `self` keyword.
-
-### Example: Instance Attributes
+- Specific to an object.
+- Defined within the `__init__` method or other instance methods.
+- Use `self` to refer to the object’s attributes.
 
 ```python
-class Person:
-    def __init__(self, name, age):
+class Dog:
+    def __init__(self, name, breed):
         self.name = name  # Instance attribute
-        self.age = age    # Instance attribute
+        self.breed = breed  # Instance attribute
 
-# Create objects with their own attributes
-person1 = Person("Alice", 30)
-person2 = Person("Bob", 25)
+# Create an object
+dog1 = Dog("Buddy", "Golden Retriever")
+dog2 = Dog("Max", "Poodle")
 
-print(person1.name, person1.age)  # Alice 30
-print(person2.name, person2.age)  # Bob 25
+# Access instance attributes
+print(dog1.name)  # Output: Buddy
+print(dog2.breed)  # Output: Poodle
 ```
 
 ---
 
-## Modifying Instance Attributes
-
-You can modify instance attributes directly by accessing them through the object.
-
-### Example: Modifying Attributes
+### 2. Class Attributes
+- Shared across all objects of the class.
+- Defined directly within the class body.
+- Accessed using the class name or any instance of the class.
 
 ```python
-person1.age = 31  # Update the age attribute of person1
-print(person1.age)  # 31
-```
+class Dog:
+    species = "Canis lupus familiaris"  # Class attribute
 
-### Output:
+    def __init__(self, name, breed):
+        self.name = name  # Instance attribute
+        self.breed = breed  # Instance attribute
 
-```plaintext
-31
+# Access class attribute
+print(Dog.species)  # Output: Canis lupus familiaris
+
+# Objects can also access the class attribute
+dog1 = Dog("Buddy", "Golden Retriever")
+print(dog1.species)  # Output: Canis lupus familiaris
 ```
 
 ---
 
-## Adding New Attributes Dynamically
+## Modifying Attributes
 
-You can add attributes to an object dynamically, but this practice should be used cautiously to maintain code clarity.
-
-### Example: Adding Attributes Dynamically
+### Modifying Instance Attributes
+Instance attributes can be modified by directly accessing them via the object.
 
 ```python
-person1.height = 170  # Add a new attribute to person1
-print(person1.height)  # 170
+dog1 = Dog("Buddy", "Golden Retriever")
+print(dog1.name)  # Output: Buddy
+
+dog1.name = "Charlie"  # Modify attribute
+print(dog1.name)  # Output: Charlie
 ```
-
-### Output:
-
-```plaintext
-170
-```
-
-Note: Dynamically added attributes are specific to the object and not shared across other instances.
 
 ---
 
-## Class Attributes (Preview)
+### Modifying Class Attributes
+Class attributes can be modified using the class name.
 
-Unlike instance attributes, class attributes are shared across all objects of the class. We’ll explore class attributes in detail in the next lesson.
+```python
+Dog.species = "Canis lupus"
+print(Dog.species)  # Output: Canis lupus
+```
+
+---
+
+## Dynamic Attributes
+
+Attributes can also be added dynamically to objects.
+
+```python
+dog1.color = "Golden"  # Adding a new attribute dynamically
+print(dog1.color)  # Output: Golden
+```
 
 ---
 
 ## Summary
 
-- **Instance Attributes**:
-  - Defined within the `__init__` method using `self`.
-  - Specific to each object and can be accessed or modified individually.
-- **Dynamic Attributes**:
-  - Attributes can be added dynamically, but this practice should be limited to maintain clarity.
+- **Instance Attributes**: Unique to each object, defined using `self`.
+- **Class Attributes**: Shared across all instances, defined in the class body.
+- **Dynamic Attributes**: Can be added to objects at runtime.
 
-Attributes allow you to represent the unique state of each object. Practice defining, accessing, and modifying attributes to understand their role in OOP.
+Understanding attributes is crucial for designing flexible and reusable classes. In the next lesson, we’ll dive deeper into class attributes and their behavior.

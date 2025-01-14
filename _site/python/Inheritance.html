@@ -366,150 +366,147 @@
 
     <main class="content">
         <h1>Inheritance</h1>
-        <p>Inheritance is a fundamental concept in Object-Oriented Programming (OOP) that allows one class (child class) to inherit the attributes and methods of another class (parent class). This promotes code reuse and helps create a hierarchy of classes.</p>
+        <p>Inheritance is a fundamental concept in object-oriented programming (OOP) that allows one class (the child class) to inherit attributes and methods from another class (the parent class). This promotes code reuse and establishes a relationship between the classes.</p>
 
 <hr />
 
-<h2 id="what-is-inheritance">What Is Inheritance?</h2>
+<h2 id="defining-a-parent-class">Defining a Parent Class</h2>
 
-<ul>
-  <li><strong>Parent Class (Base Class)</strong>: The class being inherited from.</li>
-  <li><strong>Child Class (Derived Class)</strong>: The class that inherits from the parent class.</li>
-</ul>
+<p>A parent class is the base class that contains common attributes and methods. Child classes inherit from the parent class.</p>
 
-<p>Inheritance enables the child class to:</p>
-<ol>
-  <li>Use the attributes and methods of the parent class.</li>
-  <li>Override or extend the functionality of the parent class.</li>
-</ol>
-
-<hr />
-
-<h2 id="defining-a-child-class">Defining a Child Class</h2>
-
-<p>To create a child class, use the syntax:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ChildClass</span><span class="p">(</span><span class="n">ParentClass</span><span class="p">):</span>
-    <span class="k">pass</span>
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="example-basic-inheritance">Example: Basic Inheritance</h2>
+<h3 id="example-creating-a-parent-class">Example: Creating a Parent Class</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 
     <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sh">"</span><span class="s">I make a sound.</span><span class="sh">"</span>
-
-<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>  <span class="c1"># Dog inherits from Animal
-</span>    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>  <span class="c1"># Method override
-</span>        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> says Woof!</span><span class="sh">"</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> makes a sound.</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <hr />
 
-<h2 id="creating-an-object-of-the-child-class">Creating an Object of the Child Class</h2>
+<h2 id="creating-a-child-class">Creating a Child Class</h2>
 
-<p>You can create an object of the child class just like you would for the parent class.</p>
+<p>To create a child class, specify the parent class in parentheses during the definition.</p>
 
-<h3 id="example-using-the-child-class">Example: Using the Child Class</h3>
+<h3 id="example-inheriting-from-a-parent-class">Example: Inheriting from a Parent Class</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dog</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Buddy</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Create an instance of Dog
-</span><span class="nf">print</span><span class="p">(</span><span class="n">dog</span><span class="p">.</span><span class="nf">speak</span><span class="p">())</span>  <span class="c1"># Call the speak method
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> barks.</span><span class="sh">"</span>
+
+<span class="c1"># Create instances of the parent and child classes
+</span><span class="n">generic_animal</span> <span class="o">=</span> <span class="nc">Animal</span><span class="p">(</span><span class="sh">"</span><span class="s">Animal</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">dog</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Buddy</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">generic_animal</span><span class="p">.</span><span class="nf">speak</span><span class="p">())</span>  <span class="c1"># Output: Animal makes a sound.
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog</span><span class="p">.</span><span class="nf">speak</span><span class="p">())</span>            <span class="c1"># Output: Buddy barks.
 </span></code></pre></div></div>
 
-<h3 id="output">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Buddy says Woof!
-</code></pre></div></div>
+<ul>
+  <li><strong>Explanation</strong>:
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">Dog</code> class inherits from the <code class="language-plaintext highlighter-rouge">Animal</code> class.</li>
+      <li>The <code class="language-plaintext highlighter-rouge">speak</code> method is overridden in the <code class="language-plaintext highlighter-rouge">Dog</code> class.</li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
 <h2 id="overriding-methods">Overriding Methods</h2>
 
-<p>The child class can provide its own implementation of a method defined in the parent class. This is called <strong>method overriding</strong>.</p>
+<p>Child classes can modify or extend methods from the parent class. This is known as method overriding.</p>
 
 <h3 id="example-overriding-a-method">Example: Overriding a Method</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>  <span class="c1"># Cat inherits from Animal
-</span>    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>  <span class="c1"># Override the speak method
-</span>        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> says Meow!</span><span class="sh">"</span>
-</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> meows.</span><span class="sh">"</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cat</span> <span class="o">=</span> <span class="nc">Cat</span><span class="p">(</span><span class="sh">"</span><span class="s">Whiskers</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">cat</span><span class="p">.</span><span class="nf">speak</span><span class="p">())</span>
-</code></pre></div></div>
-
-<h3 id="output-1">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Whiskers says Meow!
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="extending-functionality">Extending Functionality</h2>
-
-<p>The child class can add new attributes and methods in addition to those inherited from the parent class.</p>
-
-<h3 id="example-adding-new-functionality">Example: Adding New Functionality</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Bird</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> is flying!</span><span class="sh">"</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bird</span> <span class="o">=</span> <span class="nc">Bird</span><span class="p">(</span><span class="sh">"</span><span class="s">Tweety</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">bird</span><span class="p">.</span><span class="nf">speak</span><span class="p">())</span>  <span class="c1"># Inherited method
-</span><span class="nf">print</span><span class="p">(</span><span class="n">bird</span><span class="p">.</span><span class="nf">fly</span><span class="p">())</span>    <span class="c1"># New method
+<span class="n">cat</span> <span class="o">=</span> <span class="nc">Cat</span><span class="p">(</span><span class="sh">"</span><span class="s">Whiskers</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">cat</span><span class="p">.</span><span class="nf">speak</span><span class="p">())</span>  <span class="c1"># Output: Whiskers meows.
 </span></code></pre></div></div>
 
-<h3 id="output-2">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I make a sound.
-Tweety is flying!
-</code></pre></div></div>
+<ul>
+  <li><strong>Explanation</strong>:
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">Cat</code> class overrides the <code class="language-plaintext highlighter-rouge">speak</code> method to provide its own implementation.</li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
-<h2 id="using-super-to-call-parent-methods">Using <code class="language-plaintext highlighter-rouge">super()</code> to Call Parent Methods</h2>
+<h2 id="using-super">Using <code class="language-plaintext highlighter-rouge">super()</code></h2>
 
-<p>The <code class="language-plaintext highlighter-rouge">super()</code> function is used to call a method from the parent class. This is useful when you want to retain some functionality from the parent class while extending or modifying it.</p>
+<p>The <code class="language-plaintext highlighter-rouge">super()</code> function allows child classes to access methods and attributes of the parent class.</p>
 
 <h3 id="example-using-super">Example: Using <code class="language-plaintext highlighter-rouge">super()</code></h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Puppy</span><span class="p">(</span><span class="n">Dog</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="nf">super</span><span class="p">().</span><span class="nf">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Call the parent class's __init__ method
-</span>        <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
-
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Bird</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">, who is </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">age</span><span class="si">}</span><span class="s"> months old, says Woof!</span><span class="sh">"</span>
-</code></pre></div></div>
+        <span class="n">parent_speech</span> <span class="o">=</span> <span class="nf">super</span><span class="p">().</span><span class="nf">speak</span><span class="p">()</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">parent_speech</span><span class="si">}</span><span class="s"> Chirp chirp!</span><span class="sh">"</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">puppy</span> <span class="o">=</span> <span class="nc">Puppy</span><span class="p">(</span><span class="sh">"</span><span class="s">Charlie</span><span class="sh">"</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">puppy</span><span class="p">.</span><span class="nf">speak</span><span class="p">())</span>
-</code></pre></div></div>
+<span class="n">bird</span> <span class="o">=</span> <span class="nc">Bird</span><span class="p">(</span><span class="sh">"</span><span class="s">Tweety</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bird</span><span class="p">.</span><span class="nf">speak</span><span class="p">())</span>  <span class="c1"># Output: Tweety makes a sound. Chirp chirp!
+</span></code></pre></div></div>
 
-<h3 id="output-3">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Charlie, who is 6 months old, says Woof!
-</code></pre></div></div>
+<ul>
+  <li><strong>Explanation</strong>:
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">Bird</code> class calls the <code class="language-plaintext highlighter-rouge">speak</code> method of the <code class="language-plaintext highlighter-rouge">Animal</code> class using <code class="language-plaintext highlighter-rouge">super()</code>.</li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
-<h2 id="summary">Summary</h2>
+<h2 id="multiple-inheritance">Multiple Inheritance</h2>
+
+<p>Python supports multiple inheritance, where a class can inherit from multiple parent classes.</p>
+
+<h3 id="example-multiple-inheritance">Example: Multiple Inheritance</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Walker</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">walk</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">This animal can walk.</span><span class="sh">"</span>
+
+<span class="k">class</span> <span class="nc">Flyer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">This animal can fly.</span><span class="sh">"</span>
+
+<span class="k">class</span> <span class="nc">Bird</span><span class="p">(</span><span class="n">Walker</span><span class="p">,</span> <span class="n">Flyer</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">bird</span> <span class="o">=</span> <span class="nc">Bird</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">bird</span><span class="p">.</span><span class="nf">walk</span><span class="p">())</span>  <span class="c1"># Output: This animal can walk.
+</span><span class="nf">print</span><span class="p">(</span><span class="n">bird</span><span class="p">.</span><span class="nf">fly</span><span class="p">())</span>   <span class="c1"># Output: This animal can fly.
+</span></code></pre></div></div>
 
 <ul>
-  <li><strong>Inheritance</strong> allows a child class to inherit attributes and methods from a parent class.</li>
-  <li><strong>Method overriding</strong> lets you redefine parent methods in the child class.</li>
-  <li><strong>Extending functionality</strong> enables child classes to add new methods and attributes.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">super()</code> to call parent methods when needed.</li>
+  <li><strong>Explanation</strong>:
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">Bird</code> class inherits methods from both <code class="language-plaintext highlighter-rouge">Walker</code> and <code class="language-plaintext highlighter-rouge">Flyer</code>.</li>
+    </ul>
+  </li>
 </ul>
 
-<p>Inheritance helps create reusable and extensible code. Practice creating parent and child classes to understand this concept deeply.</p>
+<hr />
+
+<h2 id="why-use-inheritance">Why Use Inheritance?</h2>
+
+<ol>
+  <li><strong>Code Reuse</strong>: Avoid duplicating code in multiple classes.</li>
+  <li><strong>Logical Hierarchy</strong>: Establish relationships between classes, such as “is-a” relationships.</li>
+  <li><strong>Extensibility</strong>: Easily add or modify functionality in child classes.</li>
+</ol>
+
+<hr />
+
+<p>In the next lesson, we’ll explore encapsulation and how it helps protect data in classes.</p>
 
         <!-- Next Lesson Button -->
         

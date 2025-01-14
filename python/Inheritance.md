@@ -4,33 +4,15 @@ title: "Inheritance"
 order: 45
 ---
 
-Inheritance is a fundamental concept in Object-Oriented Programming (OOP) that allows one class (child class) to inherit the attributes and methods of another class (parent class). This promotes code reuse and helps create a hierarchy of classes.
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows one class (the child class) to inherit attributes and methods from another class (the parent class). This promotes code reuse and establishes a relationship between the classes.
 
 ---
 
-## What Is Inheritance?
+## Defining a Parent Class
 
-- **Parent Class (Base Class)**: The class being inherited from.
-- **Child Class (Derived Class)**: The class that inherits from the parent class.
+A parent class is the base class that contains common attributes and methods. Child classes inherit from the parent class.
 
-Inheritance enables the child class to:
-1. Use the attributes and methods of the parent class.
-2. Override or extend the functionality of the parent class.
-
----
-
-## Defining a Child Class
-
-To create a child class, use the syntax:
-
-```python
-class ChildClass(ParentClass):
-    pass
-```
-
----
-
-## Example: Basic Inheritance
+### Example: Creating a Parent Class
 
 ```python
 class Animal:
@@ -38,120 +20,111 @@ class Animal:
         self.name = name
 
     def speak(self):
-        return "I make a sound."
-
-class Dog(Animal):  # Dog inherits from Animal
-    def speak(self):  # Method override
-        return f"{self.name} says Woof!"
+        return f"{self.name} makes a sound."
 ```
 
 ---
 
-## Creating an Object of the Child Class
+## Creating a Child Class
 
-You can create an object of the child class just like you would for the parent class.
+To create a child class, specify the parent class in parentheses during the definition.
 
-### Example: Using the Child Class
+### Example: Inheriting from a Parent Class
 
 ```python
-dog = Dog("Buddy")  # Create an instance of Dog
-print(dog.speak())  # Call the speak method
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} barks."
+
+# Create instances of the parent and child classes
+generic_animal = Animal("Animal")
+dog = Dog("Buddy")
+
+print(generic_animal.speak())  # Output: Animal makes a sound.
+print(dog.speak())            # Output: Buddy barks.
 ```
 
-### Output:
-
-```plaintext
-Buddy says Woof!
-```
+- **Explanation**:
+  - The `Dog` class inherits from the `Animal` class.
+  - The `speak` method is overridden in the `Dog` class.
 
 ---
 
 ## Overriding Methods
 
-The child class can provide its own implementation of a method defined in the parent class. This is called **method overriding**.
+Child classes can modify or extend methods from the parent class. This is known as method overriding.
 
 ### Example: Overriding a Method
 
 ```python
-class Cat(Animal):  # Cat inherits from Animal
-    def speak(self):  # Override the speak method
-        return f"{self.name} says Meow!"
-```
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} meows."
 
-```python
 cat = Cat("Whiskers")
-print(cat.speak())
+print(cat.speak())  # Output: Whiskers meows.
 ```
 
-### Output:
-
-```plaintext
-Whiskers says Meow!
-```
+- **Explanation**:
+  - The `Cat` class overrides the `speak` method to provide its own implementation.
 
 ---
 
-## Extending Functionality
+## Using `super()`
 
-The child class can add new attributes and methods in addition to those inherited from the parent class.
-
-### Example: Adding New Functionality
-
-```python
-class Bird(Animal):
-    def fly(self):
-        return f"{self.name} is flying!"
-```
-
-```python
-bird = Bird("Tweety")
-print(bird.speak())  # Inherited method
-print(bird.fly())    # New method
-```
-
-### Output:
-
-```plaintext
-I make a sound.
-Tweety is flying!
-```
-
----
-
-## Using `super()` to Call Parent Methods
-
-The `super()` function is used to call a method from the parent class. This is useful when you want to retain some functionality from the parent class while extending or modifying it.
+The `super()` function allows child classes to access methods and attributes of the parent class.
 
 ### Example: Using `super()`
 
 ```python
-class Puppy(Dog):
-    def __init__(self, name, age):
-        super().__init__(name)  # Call the parent class's __init__ method
-        self.age = age
-
+class Bird(Animal):
     def speak(self):
-        return f"{self.name}, who is {self.age} months old, says Woof!"
+        parent_speech = super().speak()
+        return f"{parent_speech} Chirp chirp!"
+
+bird = Bird("Tweety")
+print(bird.speak())  # Output: Tweety makes a sound. Chirp chirp!
 ```
 
-```python
-puppy = Puppy("Charlie", 6)
-print(puppy.speak())
-```
-
-### Output:
-
-```plaintext
-Charlie, who is 6 months old, says Woof!
-```
+- **Explanation**:
+  - The `Bird` class calls the `speak` method of the `Animal` class using `super()`.
 
 ---
 
-## Summary
+## Multiple Inheritance
 
-- **Inheritance** allows a child class to inherit attributes and methods from a parent class.
-- **Method overriding** lets you redefine parent methods in the child class.
-- **Extending functionality** enables child classes to add new methods and attributes.
-- Use `super()` to call parent methods when needed.
+Python supports multiple inheritance, where a class can inherit from multiple parent classes.
 
-Inheritance helps create reusable and extensible code. Practice creating parent and child classes to understand this concept deeply.
+### Example: Multiple Inheritance
+
+```python
+class Walker:
+    def walk(self):
+        return "This animal can walk."
+
+class Flyer:
+    def fly(self):
+        return "This animal can fly."
+
+class Bird(Walker, Flyer):
+    pass
+
+bird = Bird()
+print(bird.walk())  # Output: This animal can walk.
+print(bird.fly())   # Output: This animal can fly.
+```
+
+- **Explanation**:
+  - The `Bird` class inherits methods from both `Walker` and `Flyer`.
+
+---
+
+## Why Use Inheritance?
+
+1. **Code Reuse**: Avoid duplicating code in multiple classes.
+2. **Logical Hierarchy**: Establish relationships between classes, such as "is-a" relationships.
+3. **Extensibility**: Easily add or modify functionality in child classes.
+
+---
+
+In the next lesson, we’ll explore encapsulation and how it helps protect data in classes.

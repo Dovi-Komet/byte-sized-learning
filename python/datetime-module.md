@@ -4,105 +4,113 @@ title: "datetime Module"
 order: 37
 ---
 
-The `datetime` module allows you to work with dates and times, making it easy to handle tasks like displaying the current time, formatting dates, or performing calculations with time.
+The `datetime` module in Python provides classes and functions for working with dates and times. It allows you to handle operations like getting the current date and time, formatting dates, and performing date arithmetic.
 
 ---
 
-## Getting the Current Date and Time
+## Importing the `datetime` Module
 
-Use `datetime.now()` to get the current date and time.
-
-### Example: Getting Current Date and Time
+To use the `datetime` module, import it into your program:
 
 ```python
-from datetime import datetime
-
-now = datetime.now()
-print("Current date and time:", now)
-```
-
-### Output (varies based on your system):
-
-```plaintext
-Current date and time: 2024-12-29 14:35:00.123456  # (The actual output will vary.)
+import datetime
 ```
 
 ---
 
-## Formatting Dates
+## Commonly Used Classes in the `datetime` Module
 
-Use the `strftime()` method to format dates and times into a readable string based on a specified pattern.
+### `datetime.datetime`: Working with Dates and Times
 
-### Example: Formatting Dates
+#### Get the Current Date and Time
+
+The `now()` method returns the current local date and time.
 
 ```python
-formatted_date = now.strftime("%Y-%m-%d %H:%M:%S")
-print("Formatted date:", formatted_date)
+import datetime
+
+# Get the current date and time
+current_time = datetime.datetime.now()
+print("Current Date and Time:", current_time)
 ```
 
-### Output:
+#### Create a Specific Date and Time
 
-```plaintext
-Formatted date: 2024-12-29 14:35:00  # (The format will match the string pattern.)
-```
-
-### Common Formatting Codes:
-
-- `%Y`: Year with century (e.g., `2024`).
-- `%m`: Month as a zero-padded decimal number (e.g., `01`).
-- `%d`: Day of the month (e.g., `29`).
-- `%H`: Hour (24-hour clock) (e.g., `14`).
-- `%M`: Minute (e.g., `35`).
-- `%S`: Second (e.g., `00`).
-
----
-
-## Parsing Dates from Strings
-
-Use the `strptime()` method to convert a date string into a `datetime` object.
-
-### Example: Parsing a Date String
+You can create a custom date and time using the `datetime()` constructor.
 
 ```python
-date_string = "2024-12-29 14:35:00"
-parsed_date = datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S")
-print("Parsed date:", parsed_date)
+# Create a custom date and time
+custom_date = datetime.datetime(2025, 1, 1, 10, 30)
+print("Custom Date and Time:", custom_date)
 ```
 
-### Output:
+#### Format Dates and Times
 
-```plaintext
-Parsed date: 2024-12-29 14:35:00
-```
-
----
-
-## Performing Date Arithmetic
-
-The `timedelta` class allows you to perform operations like adding or subtracting days, hours, or minutes.
-
-### Example: Adding Days to a Date
+The `strftime()` method formats a `datetime` object into a string.
 
 ```python
-from datetime import timedelta
-
-future_date = now + timedelta(days=7)
-print("Date one week from now:", future_date)
-```
-
-### Output:
-
-```plaintext
-Date one week from now: 2025-01-05 14:35:00.123456  # (The actual output will vary.)
+# Format the current date and time
+formatted_time = current_time.strftime("%Y-%m-%d %H:%M:%S")
+print("Formatted Date and Time:", formatted_time)
 ```
 
 ---
 
-## Summary
+### `datetime.date`: Working with Dates
 
-- **`datetime.now()`**: Get the current date and time.
-- **`strftime()`**: Format dates and times into a readable string.
-- **`strptime()`**: Parse a date string into a `datetime` object.
-- **`timedelta`**: Perform arithmetic with dates and times.
+#### Get the Current Date
 
-The `datetime` module is a versatile tool for working with dates and times. Practice formatting, parsing, and manipulating dates to handle time-based operations effectively.
+The `today()` method returns the current date.
+
+```python
+# Get the current date
+current_date = datetime.date.today()
+print("Current Date:", current_date)
+```
+
+#### Create a Specific Date
+
+You can create a custom date using the `date()` constructor.
+
+```python
+# Create a custom date
+custom_date = datetime.date(2025, 1, 1)
+print("Custom Date:", custom_date)
+```
+
+---
+
+### `datetime.timedelta`: Performing Date Arithmetic
+
+The `timedelta` class represents a duration or difference between two dates or times.
+
+#### Add or Subtract Days
+
+```python
+# Add 7 days to the current date
+future_date = current_date + datetime.timedelta(days=7)
+print("Date After 7 Days:", future_date)
+
+# Subtract 7 days from the current date
+past_date = current_date - datetime.timedelta(days=7)
+print("Date 7 Days Ago:", past_date)
+```
+
+---
+
+## Common Formatting Codes for `strftime`
+
+Here are some useful formatting codes for dates and times:
+
+- `%Y`: Year (e.g., 2025)
+- `%m`: Month (01-12)
+- `%d`: Day of the month (01-31)
+- `%H`: Hour (00-23)
+- `%M`: Minute (00-59)
+- `%S`: Second (00-59)
+
+For a complete list, refer to the [official Python documentation](https://docs.python.org/3/library/datetime.html){:target="_blank"}.
+
+---
+
+The `datetime` module is essential for handling dates and times in Python. In the next lesson, we’ll dive into the `json` module, which is used for working with JSON data.

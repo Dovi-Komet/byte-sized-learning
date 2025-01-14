@@ -366,39 +366,102 @@
 
     <main class="content">
         <h1>Virtual Environments</h1>
-        <p>Python’s <code class="language-plaintext highlighter-rouge">venv</code> module helps you create isolated environments for projects.</p>
+        <p>Virtual environments are a way to create isolated Python environments for different projects. Each environment has its own set of libraries and dependencies, so you can avoid conflicts between different projects. This is especially useful when working on multiple projects that require different versions of libraries.</p>
 
-<h3 id="creating-a-virtual-environment">Creating a Virtual Environment</h3>
+<hr />
 
-<p>Example:</p>
+<h2 id="installing-virtualenv">Installing <code class="language-plaintext highlighter-rouge">virtualenv</code></h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python -m venv myenv
+<p>To create virtual environments, you’ll need the <code class="language-plaintext highlighter-rouge">virtualenv</code> package. If you don’t have it installed yet, you can install it using pip:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>virtualenv
 </code></pre></div></div>
 
-<h3 id="activating-the-environment">Activating the Environment</h3>
+<p>Alternatively, if you’re using Python 3.3 or higher, you can use the built-in <code class="language-plaintext highlighter-rouge">venv</code> module to create virtual environments without needing to install any additional packages.</p>
+
+<hr />
+
+<h2 id="creating-a-virtual-environment">Creating a Virtual Environment</h2>
+
+<p>Once you have <code class="language-plaintext highlighter-rouge">virtualenv</code> installed, you can create a new virtual environment by running:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> venv myenv
+</code></pre></div></div>
+
+<p>This will create a new directory called <code class="language-plaintext highlighter-rouge">myenv</code> (or any other name you choose) in your current directory. Inside the <code class="language-plaintext highlighter-rouge">myenv</code> folder, you’ll find a complete Python environment, including the Python interpreter and the <code class="language-plaintext highlighter-rouge">lib</code> directory for installed packages.</p>
+
+<hr />
+
+<h2 id="activating-the-virtual-environment">Activating the Virtual Environment</h2>
+
+<p>Before you can use the virtual environment, you’ll need to activate it. The activation command depends on your operating system:</p>
 
 <ul>
-  <li>On Windows:</li>
+  <li><strong>On Windows</strong>:</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>myenv\Scripts\activate
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>myenv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 </code></pre></div></div>
 
 <ul>
-  <li>On macOS/Linux:</li>
+  <li><strong>On macOS/Linux</strong>:</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source myenv/bin/activate
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source </span>myenv/bin/activate
 </code></pre></div></div>
 
-<h3 id="deactivating-the-environment">Deactivating the Environment</h3>
+<p>Once the virtual environment is activated, you’ll see the name of the environment in your terminal prompt (e.g., <code class="language-plaintext highlighter-rouge">(myenv)</code>).</p>
 
-<p>Run:</p>
+<hr />
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deactivate
+<h2 id="installing-packages-in-the-virtual-environment">Installing Packages in the Virtual Environment</h2>
+
+<p>With the virtual environment activated, you can install Python packages using <code class="language-plaintext highlighter-rouge">pip</code>. These packages will only be available inside the virtual environment.</p>
+
+<p>For example, to install the <code class="language-plaintext highlighter-rouge">requests</code> library:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>requests
 </code></pre></div></div>
 
-<p>Virtual environments are essential for managing dependencies separately for each project.</p>
+<hr />
+
+<h2 id="deactivating-the-virtual-environment">Deactivating the Virtual Environment</h2>
+
+<p>When you’re done working in the virtual environment, you can deactivate it by running:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deactivate
+</code></pre></div></div>
+
+<p>This will return you to the global Python environment.</p>
+
+<hr />
+
+<h2 id="using-requirementstxt-for-dependencies">Using <code class="language-plaintext highlighter-rouge">requirements.txt</code> for Dependencies</h2>
+
+<p>When you’re working with a project that uses a virtual environment, it’s a good practice to list the packages and their versions in a <code class="language-plaintext highlighter-rouge">requirements.txt</code> file. This allows others to recreate the same environment.</p>
+
+<p>To generate a <code class="language-plaintext highlighter-rouge">requirements.txt</code> file with all the installed packages:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip freeze <span class="o">&gt;</span> requirements.txt
+</code></pre></div></div>
+
+<p>To install the packages from a <code class="language-plaintext highlighter-rouge">requirements.txt</code> file:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ol>
+  <li><strong>Isolation</strong>: Virtual environments allow you to keep your project dependencies isolated from other projects.</li>
+  <li><strong>Installing Packages</strong>: Install packages within the virtual environment using <code class="language-plaintext highlighter-rouge">pip</code>.</li>
+  <li><strong>Deactivation</strong>: You can deactivate the virtual environment when you’re done working.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">requirements.txt</code></strong>: Use this file to list and share project dependencies.</li>
+</ol>
+
+<hr />
 
         <!-- Next Lesson Button -->
         

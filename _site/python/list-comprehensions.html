@@ -366,39 +366,105 @@
 
     <main class="content">
         <h1>List Comprehensions</h1>
-        <p>List comprehensions offer a concise way to create lists in Python.</p>
+        <p>List comprehensions in Python provide a concise way to create lists. They allow you to generate a new list by applying an expression to each item in an iterable, optionally filtering items with a condition.</p>
 
-<h3 id="basic-list-comprehension">Basic List Comprehension</h3>
+<hr />
 
-<p>Syntax:</p>
+<h2 id="syntax-of-list-comprehensions">Syntax of List Comprehensions</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">expression</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">]</span>
-<span class="n">Example</span><span class="p">:</span>
-<span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">expression</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span> <span class="k">if</span> <span class="n">condition</span><span class="p">]</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">expression</code></strong>: Defines how each element should be transformed or included in the new list.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">item</code></strong>: Represents the current element being processed.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">iterable</code></strong>: Any iterable (e.g., list, range, or string) to process.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">condition</code></strong> <em>(optional)</em>: A filter to include only certain items.</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0, 1, 4, 9, 16]
-</code></pre></div></div>
+<hr />
 
-<h3 id="conditional-list-comprehension">Conditional List Comprehension</h3>
+<h2 id="basic-examples">Basic Examples</h2>
 
-<p>Add conditions to filter items.</p>
+<h3 id="creating-a-list-from-a-range">Creating a List from a Range</h3>
 
-<p>Example:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>  <span class="c1"># Output: [0, 1, 4, 9, 16]
+</span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">even_squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">even_squares</span><span class="p">)</span>
-</code></pre></div></div>
+<hr />
 
-<h3 id="expected-output-1">Expected Output</h3>
+<h3 id="filtering-items">Filtering Items</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0, 4, 16, 36, 64]
-</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">even_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">even_numbers</span><span class="p">)</span>  <span class="c1"># Output: [0, 2, 4, 6, 8]
+</span></code></pre></div></div>
 
-<p>List comprehensions improve code readability and reduce the need for loops.</p>
+<hr />
+
+<h3 id="transforming-items">Transforming Items</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Charlie</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">uppercase_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="p">.</span><span class="nf">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">uppercase_names</span><span class="p">)</span>  <span class="c1"># Output: ['ALICE', 'BOB', 'CHARLIE']
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="nested-list-comprehensions">Nested List Comprehensions</h2>
+
+<p>List comprehensions can be nested to handle multi-dimensional data.</p>
+
+<h3 id="example-flattening-a-list-of-lists">Example: Flattening a List of Lists</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
+<span class="n">flattened</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">matrix</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">flattened</span><span class="p">)</span>  <span class="c1"># Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="conditional-list-comprehensions">Conditional List Comprehensions</h2>
+
+<p>You can include an <code class="language-plaintext highlighter-rouge">if-else</code> expression within the list comprehension.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">Even</span><span class="sh">"</span> <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="sh">"</span><span class="s">Odd</span><span class="sh">"</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: ['Odd', 'Even', 'Odd', 'Even', 'Odd']
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="benefits-of-list-comprehensions">Benefits of List Comprehensions</h2>
+
+<ol>
+  <li><strong>Concise</strong>: Shorter and more readable than traditional loops.</li>
+  <li><strong>Performance</strong>: Faster than equivalent for-loops in many cases.</li>
+  <li><strong>Flexibility</strong>: Can handle transformations and filtering in a single line.</li>
+</ol>
+
+<hr />
+
+<h2 id="when-to-avoid-list-comprehensions">When to Avoid List Comprehensions</h2>
+
+<ul>
+  <li>Avoid using them for complex operations that reduce readability.</li>
+  <li>Prefer traditional for-loops when more than one step is needed.</li>
+</ul>
+
+<hr />
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ul>
+  <li>List comprehensions are a powerful feature for generating lists in Python.</li>
+  <li>They enhance readability for simple transformations and filters.</li>
+  <li>Use them wisely to balance conciseness and clarity.</li>
+</ul>
+
+<hr />
+
+<p>In the next lesson, we’ll explore sorting techniques and how to use custom keys with the <code class="language-plaintext highlighter-rouge">sorted()</code> function.</p>
 
         <!-- Next Lesson Button -->
         

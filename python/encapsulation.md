@@ -1,156 +1,111 @@
 ---
 layout: default
 title: "Encapsulation"
-order: 48
+order: 46
 ---
 
-Encapsulation is a key principle of Object-Oriented Programming (OOP). It involves restricting access to certain parts of an object and exposing only the necessary functionality. This helps protect the internal state of an object and enforces controlled access to its data.
-
----
-
-## What Is Encapsulation?
-
-Encapsulation allows you to:
-1. **Hide implementation details** from the outside world.
-2. **Expose a public interface** for interacting with the object.
-3. **Control access** to attributes and methods to ensure data integrity.
+Encapsulation is a principle in object-oriented programming (OOP) that restricts direct access to some of an object's components, protecting the data and ensuring it is accessed and modified in a controlled way. It is implemented using access modifiers in Python.
 
 ---
 
-## Public Attributes and Methods
+## Public, Protected, and Private Attributes
 
-By default, all attributes and methods in Python are public, meaning they can be accessed directly from outside the class.
+### Public Attributes
 
-### Example: Public Attributes
+Attributes that can be accessed from anywhere in the program.
+
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name  # Public attribute
+
+person = Person("Alice")
+print(person.name)  # Output: Alice
+```
+
+---
+
+### Protected Attributes
+
+Attributes prefixed with a single underscore (`_`) are treated as protected. They can still be accessed directly but are intended to be accessed only within the class and its subclasses.
 
 ```python
 class Person:
     def __init__(self, name, age):
-        self.name = name  # Public attribute
-        self.age = age    # Public attribute
+        self.name = name
+        self._age = age  # Protected attribute
+
+    def get_age(self):
+        return self._age
 
 person = Person("Alice", 30)
-print(person.name)  # Accessing public attribute
-print(person.age)   # Accessing public attribute
-```
-
-### Output:
-
-```plaintext
-Alice
-30
+print(person._age)  # Output: 30 (direct access, but not recommended)
 ```
 
 ---
 
-## Private Attributes
+### Private Attributes
 
-Private attributes are prefixed with a double underscore (`__`). They cannot be accessed directly from outside the class.
-
-### Example: Private Attributes
+Attributes prefixed with double underscores (`__`) are private and cannot be accessed directly outside the class. This enforces stricter encapsulation.
 
 ```python
 class Person:
     def __init__(self, name, age):
-        self.__name = name  # Private attribute
-        self.__age = age    # Private attribute
+        self.name = name
+        self.__age = age  # Private attribute
 
-    def get_info(self):  # Public method to access private attributes
-        return f"{self.__name} is {self.__age} years old."
+    def get_age(self):
+        return self.__age  # Controlled access through a method
 
-person = Person("Bob", 25)
-print(person.get_info())
-# print(person.__name)  # This will raise an AttributeError
+person = Person("Alice", 30)
+# print(person.__age)  # Raises AttributeError
+print(person.get_age())  # Output: 30
 ```
 
-### Output:
-
-```plaintext
-Bob is 25 years old.
-```
-
-### Why Use Private Attributes?
-
-- To prevent external modification of sensitive data.
-- To enforce validation or specific behavior when accessing or modifying attributes.
+- **Explanation**:
+  - The private attribute `__age` is accessed using the `get_age` method.
+  - Direct access to `__age` raises an `AttributeError`.
 
 ---
 
-## Accessing Private Attributes Indirectly
+## Benefits of Encapsulation
 
-You can provide **getter** and **setter** methods to access and modify private attributes indirectly.
+1. **Data Protection**: Prevents unauthorized access or modification of data.
+2. **Controlled Access**: Allows data to be accessed or modified only through specific methods.
+3. **Flexibility**: Implementation details can be changed without affecting external code.
 
-### Example: Getter and Setter Methods
+---
+
+## Example: Encapsulation in Action
 
 ```python
-class Person:
-    def __init__(self, name, age):
-        self.__name = name
-        self.__age = age
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
 
-    # Getter for name
-    def get_name(self):
-        return self.__name
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            return f"Deposited {amount}. New balance: {self.__balance}"
+        return "Invalid deposit amount."
 
-    # Setter for name
-    def set_name(self, name):
-        if name:  # Simple validation
-            self.__name = name
-        else:
-            print("Name cannot be empty.")
+    def withdraw(self, amount):
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+            return f"Withdrew {amount}. New balance: {self.__balance}"
+        return "Invalid withdrawal amount or insufficient funds."
 
-person = Person("Charlie", 40)
-print(person.get_name())  # Access private attribute via getter
+    def get_balance(self):
+        return self.__balance
 
-person.set_name("Charles")  # Modify private attribute via setter
-print(person.get_name())
-```
-
-### Output:
-
-```plaintext
-Charlie
-Charles
+# Using the BankAccount class
+account = BankAccount(100)
+print(account.get_balance())  # Output: 100
+print(account.deposit(50))    # Output: Deposited 50. New balance: 150
+print(account.withdraw(30))   # Output: Withdrew 30. New balance: 120
+# print(account.__balance)    # Raises AttributeError
 ```
 
 ---
 
-## Name Mangling in Python
-
-Private attributes in Python are not truly private; they are "name-mangled" to prevent accidental access. This means the attribute's actual name is changed internally.
-
-### Example: Name Mangling
-
-```python
-class Example:
-    def __init__(self):
-        self.__private = "This is private"
-
-obj = Example()
-# Access using name mangling
-print(obj._Example__private)
-```
-
-### Output:
-
-```plaintext
-This is private
-```
-
-While name mangling allows access to private attributes, it is not recommended. Use public methods instead.
-
----
-
-## Summary
-
-- **Public Attributes**:
-  - Accessible directly from outside the class.
-  - Suitable for non-sensitive data.
-- **Private Attributes**:
-  - Prefixed with `__` to restrict direct access.
-  - Accessed and modified via getter and setter methods.
-- **Encapsulation Benefits**:
-  - Protects the internal state of an object.
-  - Ensures controlled and validated access to data.
-
-Encapsulation is essential for creating secure and maintainable code. Practice using private attributes and methods to understand how encapsulation enhances your programs.
+Encapsulation ensures that the internal state of an object is protected and managed properly. In the next lesson, we’ll explore polymorphism and how it allows objects to be used interchangeably.

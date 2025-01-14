@@ -4,13 +4,13 @@ title: "os Module"
 order: 36
 ---
 
-The `os` module allows you to interact with the operating system. It provides functions to work with directories, files, and environment variables, making it a versatile tool for file system management.
+The `os` module in Python provides a way to interact with the operating system. It offers functionality for file and directory management, environment variables, and executing system commands. This module is part of the Python Standard Library and is available without any additional installation.
 
 ---
 
 ## Importing the `os` Module
 
-To use the `os` module, you must import it:
+To use the `os` module, you need to import it into your Python program:
 
 ```python
 import os
@@ -18,95 +18,93 @@ import os
 
 ---
 
-## Getting the Current Working Directory
+## Commonly Used Functions in the `os` Module
 
-The `os.getcwd()` function retrieves the current working directory (the folder your Python script is running in).
+### Get Current Working Directory
 
-### Example: Getting the Current Directory
+The `os.getcwd()` function returns the current working directory.
 
 ```python
 import os
 
-print("Current directory:", os.getcwd())
+# Get and print the current working directory
+current_dir = os.getcwd()
+print("Current Directory:", current_dir)
 ```
 
-### Output (varies based on your system):
+### Change Directory
 
-```plaintext
-Current directory: /path/to/your/directory
-```
-
----
-
-## Listing Files and Directories
-
-Use the `os.listdir()` function to list all files and subdirectories in a directory.
-
-### Example: Listing Files
+The `os.chdir(path)` function changes the current working directory.
 
 ```python
-files = os.listdir()
-print("Files and directories:", files)
+# Change to a new directory
+os.chdir("/path/to/new/directory")
+print("Directory changed to:", os.getcwd())
 ```
 
-### Output (varies based on your system):
+### List Files and Directories
 
-```plaintext
-Files and directories: ['file1.py', 'file2.txt', 'example.py']
+The `os.listdir(path)` function lists all files and directories in the specified path.
+
+```python
+# List files and directories in the current directory
+contents = os.listdir(".")
+print("Contents:", contents)
 ```
 
 ---
 
 ## Creating and Removing Directories
 
-The `os.mkdir()` function creates a new directory, while `os.rmdir()` removes an empty directory.
+### Create a Directory
 
-### Example: Creating and Removing Directories
+Use `os.mkdir(path)` to create a new directory.
 
 ```python
-os.mkdir("test_folder")  # Create a new directory
-print("After creation:", os.listdir())
-
-os.rmdir("test_folder")  # Remove the directory
-print("After removal:", os.listdir())
+# Create a new directory
+os.mkdir("example_directory")
+print("Directory 'example_directory' created!")
 ```
 
-### Output (before and after):
+### Remove a Directory
 
-```plaintext
-After creation: ['test_folder', 'file1.py', 'file2.txt']
-After removal: ['file1.py', 'file2.txt']
+Use `os.rmdir(path)` to remove an empty directory.
+
+```python
+# Remove the directory
+os.rmdir("example_directory")
+print("Directory 'example_directory' removed!")
 ```
 
 ---
 
-## Checking If a Path Exists
+## Environment Variables
 
-Use the `os.path.exists()` function to check if a file or directory exists.
-
-### Example: Checking Path Existence
+The `os.environ` object allows you to access environment variables.
 
 ```python
-path = "file1.py"
-if os.path.exists(path):
-    print(f"{path} exists.")
-else:
-    print(f"{path} does not exist.")
-```
-
-### Output (varies based on your system):
-
-```plaintext
-file1.py exists.
+# Get the value of the PATH environment variable
+path_env = os.environ.get("PATH")
+print("PATH:", path_env)
 ```
 
 ---
 
-## Summary
+## Executing System Commands
 
-- **`os.getcwd()`**: Get the current working directory.
-- **`os.listdir()`**: List files and directories in a folder.
-- **`os.mkdir()` and `os.rmdir()`**: Create and remove directories.
-- **`os.path.exists()`**: Check if a path exists.
+The `os.system(command)` function runs a system command.
 
-The `os` module is a powerful tool for interacting with the file system. Practice these functions to understand how to navigate and manipulate files and directories programmatically.
+```python
+# Execute a system command
+os.system("echo Hello from the os module!")
+```
+
+---
+
+## Documentation
+
+For a full list of functions provided by the `os` module, visit the [official Python documentation](https://docs.python.org/3/library/os.html){:target="_blank"}.
+
+---
+
+The `os` module is a powerful tool for interacting with the operating system. In the next lesson, we’ll explore the `datetime` module, which provides tools for working with dates and times.

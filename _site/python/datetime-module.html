@@ -366,104 +366,111 @@
 
     <main class="content">
         <h1>datetime Module</h1>
-        <p>The <code class="language-plaintext highlighter-rouge">datetime</code> module allows you to work with dates and times, making it easy to handle tasks like displaying the current time, formatting dates, or performing calculations with time.</p>
+        <p>The <code class="language-plaintext highlighter-rouge">datetime</code> module in Python provides classes and functions for working with dates and times. It allows you to handle operations like getting the current date and time, formatting dates, and performing date arithmetic.</p>
 
 <hr />
 
-<h2 id="getting-the-current-date-and-time">Getting the Current Date and Time</h2>
+<h2 id="importing-the-datetime-module">Importing the <code class="language-plaintext highlighter-rouge">datetime</code> Module</h2>
 
-<p>Use <code class="language-plaintext highlighter-rouge">datetime.now()</code> to get the current date and time.</p>
+<p>To use the <code class="language-plaintext highlighter-rouge">datetime</code> module, import it into your program:</p>
 
-<h3 id="example-getting-current-date-and-time">Example: Getting Current Date and Time</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-
-<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Current date and time:</span><span class="sh">"</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-varies-based-on-your-system">Output (varies based on your system):</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Current date and time: 2024-12-29 14:35:00.123456  # (The actual output will vary.)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">datetime</span>
 </code></pre></div></div>
 
 <hr />
 
-<h2 id="formatting-dates">Formatting Dates</h2>
+<h2 id="commonly-used-classes-in-the-datetime-module">Commonly Used Classes in the <code class="language-plaintext highlighter-rouge">datetime</code> Module</h2>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">strftime()</code> method to format dates and times into a readable string based on a specified pattern.</p>
+<h3 id="datetimedatetime-working-with-dates-and-times"><code class="language-plaintext highlighter-rouge">datetime.datetime</code>: Working with Dates and Times</h3>
 
-<h3 id="example-formatting-dates">Example: Formatting Dates</h3>
+<h4 id="get-the-current-date-and-time">Get the Current Date and Time</h4>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">formatted_date</span> <span class="o">=</span> <span class="n">now</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="sh">"</span><span class="s">%Y-%m-%d %H:%M:%S</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Formatted date:</span><span class="sh">"</span><span class="p">,</span> <span class="n">formatted_date</span><span class="p">)</span>
+<p>The <code class="language-plaintext highlighter-rouge">now()</code> method returns the current local date and time.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Get the current date and time
+</span><span class="n">current_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Current Date and Time:</span><span class="sh">"</span><span class="p">,</span> <span class="n">current_time</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output">Output:</h3>
+<h4 id="create-a-specific-date-and-time">Create a Specific Date and Time</h4>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Formatted date: 2024-12-29 14:35:00  # (The format will match the string pattern.)
+<p>You can create a custom date and time using the <code class="language-plaintext highlighter-rouge">datetime()</code> constructor.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a custom date and time
+</span><span class="n">custom_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">datetime</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Custom Date and Time:</span><span class="sh">"</span><span class="p">,</span> <span class="n">custom_date</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="common-formatting-codes">Common Formatting Codes:</h3>
+<h4 id="format-dates-and-times">Format Dates and Times</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">strftime()</code> method formats a <code class="language-plaintext highlighter-rouge">datetime</code> object into a string.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Format the current date and time
+</span><span class="n">formatted_time</span> <span class="o">=</span> <span class="n">current_time</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="sh">"</span><span class="s">%Y-%m-%d %H:%M:%S</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Formatted Date and Time:</span><span class="sh">"</span><span class="p">,</span> <span class="n">formatted_time</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="datetimedate-working-with-dates"><code class="language-plaintext highlighter-rouge">datetime.date</code>: Working with Dates</h3>
+
+<h4 id="get-the-current-date">Get the Current Date</h4>
+
+<p>The <code class="language-plaintext highlighter-rouge">today()</code> method returns the current date.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Get the current date
+</span><span class="n">current_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">.</span><span class="nf">today</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Current Date:</span><span class="sh">"</span><span class="p">,</span> <span class="n">current_date</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="create-a-specific-date">Create a Specific Date</h4>
+
+<p>You can create a custom date using the <code class="language-plaintext highlighter-rouge">date()</code> constructor.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create a custom date
+</span><span class="n">custom_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">date</span><span class="p">(</span><span class="mi">2025</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Custom Date:</span><span class="sh">"</span><span class="p">,</span> <span class="n">custom_date</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="datetimetimedelta-performing-date-arithmetic"><code class="language-plaintext highlighter-rouge">datetime.timedelta</code>: Performing Date Arithmetic</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">timedelta</code> class represents a duration or difference between two dates or times.</p>
+
+<h4 id="add-or-subtract-days">Add or Subtract Days</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Add 7 days to the current date
+</span><span class="n">future_date</span> <span class="o">=</span> <span class="n">current_date</span> <span class="o">+</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Date After 7 Days:</span><span class="sh">"</span><span class="p">,</span> <span class="n">future_date</span><span class="p">)</span>
+
+<span class="c1"># Subtract 7 days from the current date
+</span><span class="n">past_date</span> <span class="o">=</span> <span class="n">current_date</span> <span class="o">-</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Date 7 Days Ago:</span><span class="sh">"</span><span class="p">,</span> <span class="n">past_date</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="common-formatting-codes-for-strftime">Common Formatting Codes for <code class="language-plaintext highlighter-rouge">strftime</code></h2>
+
+<p>Here are some useful formatting codes for dates and times:</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">%Y</code>: Year with century (e.g., <code class="language-plaintext highlighter-rouge">2024</code>).</li>
-  <li><code class="language-plaintext highlighter-rouge">%m</code>: Month as a zero-padded decimal number (e.g., <code class="language-plaintext highlighter-rouge">01</code>).</li>
-  <li><code class="language-plaintext highlighter-rouge">%d</code>: Day of the month (e.g., <code class="language-plaintext highlighter-rouge">29</code>).</li>
-  <li><code class="language-plaintext highlighter-rouge">%H</code>: Hour (24-hour clock) (e.g., <code class="language-plaintext highlighter-rouge">14</code>).</li>
-  <li><code class="language-plaintext highlighter-rouge">%M</code>: Minute (e.g., <code class="language-plaintext highlighter-rouge">35</code>).</li>
-  <li><code class="language-plaintext highlighter-rouge">%S</code>: Second (e.g., <code class="language-plaintext highlighter-rouge">00</code>).</li>
+  <li><code class="language-plaintext highlighter-rouge">%Y</code>: Year (e.g., 2025)</li>
+  <li><code class="language-plaintext highlighter-rouge">%m</code>: Month (01-12)</li>
+  <li><code class="language-plaintext highlighter-rouge">%d</code>: Day of the month (01-31)</li>
+  <li><code class="language-plaintext highlighter-rouge">%H</code>: Hour (00-23)</li>
+  <li><code class="language-plaintext highlighter-rouge">%M</code>: Minute (00-59)</li>
+  <li><code class="language-plaintext highlighter-rouge">%S</code>: Second (00-59)</li>
 </ul>
 
-<hr />
-
-<h2 id="parsing-dates-from-strings">Parsing Dates from Strings</h2>
-
-<p>Use the <code class="language-plaintext highlighter-rouge">strptime()</code> method to convert a date string into a <code class="language-plaintext highlighter-rouge">datetime</code> object.</p>
-
-<h3 id="example-parsing-a-date-string">Example: Parsing a Date String</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">date_string</span> <span class="o">=</span> <span class="sh">"</span><span class="s">2024-12-29 14:35:00</span><span class="sh">"</span>
-<span class="n">parsed_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">strptime</span><span class="p">(</span><span class="n">date_string</span><span class="p">,</span> <span class="sh">"</span><span class="s">%Y-%m-%d %H:%M:%S</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Parsed date:</span><span class="sh">"</span><span class="p">,</span> <span class="n">parsed_date</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-1">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Parsed date: 2024-12-29 14:35:00
-</code></pre></div></div>
+<p>For a complete list, refer to the <a href="https://docs.python.org/3/library/datetime.html" target="_blank">official Python documentation</a>.</p>
 
 <hr />
 
-<h2 id="performing-date-arithmetic">Performing Date Arithmetic</h2>
-
-<p>The <code class="language-plaintext highlighter-rouge">timedelta</code> class allows you to perform operations like adding or subtracting days, hours, or minutes.</p>
-
-<h3 id="example-adding-days-to-a-date">Example: Adding Days to a Date</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
-
-<span class="n">future_date</span> <span class="o">=</span> <span class="n">now</span> <span class="o">+</span> <span class="nf">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Date one week from now:</span><span class="sh">"</span><span class="p">,</span> <span class="n">future_date</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-2">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Date one week from now: 2025-01-05 14:35:00.123456  # (The actual output will vary.)
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="summary">Summary</h2>
-
-<ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">datetime.now()</code></strong>: Get the current date and time.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">strftime()</code></strong>: Format dates and times into a readable string.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">strptime()</code></strong>: Parse a date string into a <code class="language-plaintext highlighter-rouge">datetime</code> object.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">timedelta</code></strong>: Perform arithmetic with dates and times.</li>
-</ul>
-
-<p>The <code class="language-plaintext highlighter-rouge">datetime</code> module is a versatile tool for working with dates and times. Practice formatting, parsing, and manipulating dates to handle time-based operations effectively.</p>
+<p>The <code class="language-plaintext highlighter-rouge">datetime</code> module is essential for handling dates and times in Python. In the next lesson, we’ll dive into the <code class="language-plaintext highlighter-rouge">json</code> module, which is used for working with JSON data.</p>
 
         <!-- Next Lesson Button -->
         

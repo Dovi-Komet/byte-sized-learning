@@ -4,145 +4,110 @@ title: "OOP Methods"
 order: 43
 ---
 
-Methods are functions defined inside a class that operate on objects. They allow objects to perform actions and interact with their attributes.
+Methods in Object-Oriented Programming (OOP) are functions defined within a class that operate on its attributes. They allow objects to interact with their data and implement behavior.
 
 ---
 
-## What Are Methods?
+## Types of Methods
 
-- **Methods** are defined within a class and typically operate on the attributes of the object they belong to.
-- They use the `self` parameter to refer to the current instance of the class.
-
----
-
-## Defining a Method
-
-Use the `def` keyword inside the class to define a method. Methods are similar to regular functions but must include `self` as their first parameter.
-
-### Example: Defining a Method
+### 1. Instance Methods
+Instance methods operate on instance attributes and require `self` as the first parameter.
 
 ```python
-class Person:
-    def __init__(self, name, age):
-        self.name = name  # Attribute
-        self.age = age    # Attribute
-
-    def greet(self):  # Method
-        return f"Hello, my name is {self.name}."
-```
-
----
-
-## Using a Method
-
-Call a method on an object using the dot (`.`) operator.
-
-### Example: Calling a Method
-
-```python
-person = Person("Alice", 30)  # Create an instance of Person
-print(person.greet())         # Call the greet method
-```
-
-### Output:
-
-```plaintext
-Hello, my name is Alice.
-```
-
----
-
-## Methods with Parameters
-
-Methods can accept additional parameters to perform more specific actions.
-
-### Example: Method with Parameters
-
-```python
-class Calculator:
-    def add(self, a, b):
-        return a + b
-```
-
-```python
-calc = Calculator()
-result = calc.add(5, 3)
-print("Sum:", result)
-```
-
-### Output:
-
-```plaintext
-Sum: 8
-```
-
----
-
-## Modifying Attributes with Methods
-
-Methods can modify the attributes of an object.
-
-### Example: Modifying Attributes
-
-```python
-class Person:
-    def __init__(self, name, age):
+class Dog:
+    def __init__(self, name, breed):
         self.name = name
-        self.age = age
+        self.breed = breed
 
-    def have_birthday(self):
-        self.age += 1  # Increment the age attribute
+    def bark(self):
+        return f"{self.name} says Woof!"
 
-person = Person("Alice", 30)
-person.have_birthday()
-print(f"{person.name} is now {person.age} years old.")
+# Create an object
+dog = Dog("Buddy", "Golden Retriever")
+
+# Call an instance method
+print(dog.bark())  # Output: Buddy says Woof!
 ```
 
-### Output:
-
-```plaintext
-Alice is now 31 years old.
-```
+- **Explanation**:
+  - The `bark` method uses `self` to access the instance attribute `name`.
+  - Each object has its own `name`, so the output is specific to the instance.
 
 ---
 
-## The `self` Keyword
-
-The `self` keyword refers to the current instance of the class. It is used to access attributes and other methods within the class.
-
-### Example: Using `self` to Call Another Method
+### 2. Class Methods
+Class methods operate on class attributes and require `@classmethod` decorator. They take `cls` as the first parameter.
 
 ```python
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+class Dog:
+    species = "Canis lupus familiaris"
 
-    def greet(self):
-        return f"Hello, my name is {self.name}."
+    @classmethod
+    def common_species(cls):
+        return f"All dogs belong to {cls.species}."
 
-    def introduce(self):
-        return self.greet() + f" I am {self.age} years old."
+# Call a class method
+print(Dog.common_species())  # Output: All dogs belong to Canis lupus familiaris.
 ```
+
+- **Explanation**:
+  - Class methods can modify or access class attributes using `cls`.
+
+---
+
+### 3. Static Methods
+Static methods do not operate on instance or class attributes. They are utility functions within the class, marked by `@staticmethod`.
 
 ```python
-person = Person("Bob", 25)
-print(person.introduce())
+class Dog:
+    @staticmethod
+    def is_puppy(age):
+        return age < 1
+
+# Call a static method
+print(Dog.is_puppy(0.5))  # Output: True
+print(Dog.is_puppy(2))    # Output: False
 ```
 
-### Output:
+- **Explanation**:
+  - Static methods do not take `self` or `cls` as a parameter.
+  - They are called directly on the class and are independent of any instance.
 
-```plaintext
-Hello, my name is Bob. I am 25 years old.
+---
+
+## Defining and Using Methods
+
+### Example: Combining Instance and Class Methods
+
+```python
+class Circle:
+    pi = 3.14159  # Class attribute
+
+    def __init__(self, radius):
+        self.radius = radius  # Instance attribute
+
+    def area(self):
+        return Circle.pi * (self.radius ** 2)  # Instance method
+
+    @classmethod
+    def from_diameter(cls, diameter):
+        return cls(diameter / 2)  # Class method
+
+# Create a Circle using the instance method
+circle = Circle(5)
+print(circle.area())  # Output: 78.53975
+
+# Create a Circle using the class method
+circle_from_diameter = Circle.from_diameter(10)
+print(circle_from_diameter.area())  # Output: 78.53975
 ```
 
 ---
 
 ## Summary
 
-- **Methods** are functions defined inside a class to operate on objects.
-- Use `self` to refer to the instance and access its attributes or methods.
-- Methods can accept parameters to perform specific actions or calculations.
-- Methods can modify an object's attributes to reflect changes in its state.
+- **Instance Methods**: Operate on instance attributes, take `self` as the first parameter.
+- **Class Methods**: Operate on class attributes, take `cls` as the first parameter, and are defined using `@classmethod`.
+- **Static Methods**: Do not depend on instance or class attributes, use `@staticmethod`.
 
-Practice creating classes with methods to understand how they define the behavior of objects.
+In the next lesson, we’ll delve into the role of the `self` parameter in instance methods and how it works behind the scenes.

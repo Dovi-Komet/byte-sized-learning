@@ -366,110 +366,120 @@
 
     <main class="content">
         <h1>random Module</h1>
-        <p>The <code class="language-plaintext highlighter-rouge">random</code> module provides functions for generating random numbers, selecting random items, and performing random operations. It is a powerful tool for simulations, games, and testing.</p>
+        <p>The <code class="language-plaintext highlighter-rouge">random</code> module in Python provides functions for generating random numbers and performing random operations. It is commonly used in simulations, games, data sampling, and testing.</p>
 
 <hr />
 
-<h2 id="generating-random-numbers">Generating Random Numbers</h2>
+<h2 id="importing-the-random-module">Importing the <code class="language-plaintext highlighter-rouge">random</code> Module</h2>
 
-<p>Use <code class="language-plaintext highlighter-rouge">random.randint()</code> to generate a random integer within a specified range (inclusive of both ends).</p>
+<p>To use the <code class="language-plaintext highlighter-rouge">random</code> module, import it into your program:</p>
 
-<h3 id="example-generating-a-random-integer">Example: Generating a Random Integer</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="common-functions-in-the-random-module">Common Functions in the <code class="language-plaintext highlighter-rouge">random</code> Module</h2>
+
+<h3 id="randomrandom-generate-a-random-float"><code class="language-plaintext highlighter-rouge">random.random()</code>: Generate a Random Float</h3>
+
+<p>This function generates a random floating-point number between <code class="language-plaintext highlighter-rouge">0.0</code> (inclusive) and <code class="language-plaintext highlighter-rouge">1.0</code> (exclusive).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Generate a random float
+</span><span class="n">random_float</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">random</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Random Float:</span><span class="sh">"</span><span class="p">,</span> <span class="n">random_float</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="randomrandint-generate-a-random-integer"><code class="language-plaintext highlighter-rouge">random.randint()</code>: Generate a Random Integer</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">randint(a, b)</code> function generates a random integer between <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code> (both inclusive).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Generate a random integer between 1 and 10
+</span><span class="n">random_int</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Random Integer:</span><span class="sh">"</span><span class="p">,</span> <span class="n">random_int</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="randomchoice-choose-a-random-element-from-a-sequence"><code class="language-plaintext highlighter-rouge">random.choice()</code>: Choose a Random Element from a Sequence</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">choice()</code> function selects a random element from a sequence like a list or tuple.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Randomly select an element from a list
+</span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">banana</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">cherry</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">random_fruit</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">(</span><span class="n">fruits</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Random Fruit:</span><span class="sh">"</span><span class="p">,</span> <span class="n">random_fruit</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="randomshuffle-shuffle-a-list"><code class="language-plaintext highlighter-rouge">random.shuffle()</code>: Shuffle a List</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">shuffle()</code> function shuffles a list in place, randomly reordering its elements.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Shuffle a list
+</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">random</span><span class="p">.</span><span class="nf">shuffle</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Shuffled List:</span><span class="sh">"</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="randomsample-random-sampling"><code class="language-plaintext highlighter-rouge">random.sample()</code>: Random Sampling</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">sample()</code> function selects a specified number of unique elements from a sequence.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Select 3 unique elements from a list
+</span><span class="n">sampled_numbers</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">sample</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Random Sample:</span><span class="sh">"</span><span class="p">,</span> <span class="n">sampled_numbers</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="randomuniform-generate-a-random-float-in-a-range"><code class="language-plaintext highlighter-rouge">random.uniform()</code>: Generate a Random Float in a Range</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">uniform(a, b)</code> function generates a random floating-point number between <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Generate a random float between 5.5 and 10.5
+</span><span class="n">random_float_range</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="mf">5.5</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Random Float in Range:</span><span class="sh">"</span><span class="p">,</span> <span class="n">random_float_range</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="randomseed-reproducible-randomness"><code class="language-plaintext highlighter-rouge">random.seed()</code>: Reproducible Randomness</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">seed()</code> function initializes the random number generator to produce reproducible results.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Set a seed for reproducibility
+</span><span class="n">random</span><span class="p">.</span><span class="nf">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Random Integer (with seed):</span><span class="sh">"</span><span class="p">,</span> <span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="example-simulating-a-dice-roll">Example: Simulating a Dice Roll</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span>
 
-<span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Random integer between 1 and 100
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Random number:</span><span class="sh">"</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
-</code></pre></div></div>
+<span class="c1"># Simulate rolling a dice
+</span><span class="k">def</span> <span class="nf">roll_dice</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="p">.</span><span class="nf">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 
-<h3 id="output-varies">Output (varies):</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Random number: 42  # (The actual number will vary.)
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="generating-random-floating-point-numbers">Generating Random Floating-Point Numbers</h2>
-
-<p>Use <code class="language-plaintext highlighter-rouge">random.uniform()</code> to generate a random floating-point number within a range.</p>
-
-<h3 id="example-generating-a-random-float">Example: Generating a Random Float</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">random_float</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Random float between 0 and 1
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Random float:</span><span class="sh">"</span><span class="p">,</span> <span class="n">random_float</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-varies-1">Output (varies):</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Random float: 0.572391  # (The actual output will vary.)
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">You rolled a:</span><span class="sh">"</span><span class="p">,</span> <span class="nf">roll_dice</span><span class="p">())</span>
 </code></pre></div></div>
 
 <hr />
 
-<h2 id="choosing-random-items">Choosing Random Items</h2>
+<h2 id="documentation">Documentation</h2>
 
-<p>Use <code class="language-plaintext highlighter-rouge">random.choice()</code> to select a random item from a sequence like a list.</p>
-
-<h3 id="example-choosing-a-random-item">Example: Choosing a Random Item</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">red</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">blue</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">green</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">yellow</span><span class="sh">"</span><span class="p">]</span>
-<span class="n">random_color</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">(</span><span class="n">colors</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Random color:</span><span class="sh">"</span><span class="p">,</span> <span class="n">random_color</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-varies-2">Output (varies):</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Random color: blue  # (The actual output will vary.)
-</code></pre></div></div>
+<p>For a full list of functions, visit the <a href="https://docs.python.org/3/library/random.html" target="_blank">official Python documentation</a>.</p>
 
 <hr />
 
-<h2 id="shuffling-a-list">Shuffling a List</h2>
-
-<p>Use <code class="language-plaintext highlighter-rouge">random.shuffle()</code> to randomly reorder the items in a list.</p>
-
-<h3 id="example-shuffling-a-list">Example: Shuffling a List</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="n">random</span><span class="p">.</span><span class="nf">shuffle</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Shuffled list:</span><span class="sh">"</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-varies-3">Output (varies):</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Shuffled list: [3, 1, 5, 2, 4]  # (The actual output will vary.)
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="generating-random-samples">Generating Random Samples</h2>
-
-<p>Use <code class="language-plaintext highlighter-rouge">random.sample()</code> to select multiple unique random items from a sequence.</p>
-
-<h3 id="example-random-sampling">Example: Random Sampling</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sample</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">sample</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Select 3 unique numbers from 1 to 9
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Random sample:</span><span class="sh">"</span><span class="p">,</span> <span class="n">sample</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-varies-4">Output (varies):</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Random sample: [7, 2, 5]  # (The actual output will vary.)
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="summary">Summary</h2>
-
-<ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">random.randint(a, b)</code></strong>: Generate a random integer between <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code> (inclusive).</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">random.uniform(a, b)</code></strong>: Generate a random float between <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">random.choice(seq)</code></strong>: Select a random item from a sequence.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">random.shuffle(seq)</code></strong>: Shuffle the items in a list randomly.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">random.sample(seq, k)</code></strong>: Select <code class="language-plaintext highlighter-rouge">k</code> unique random items from a sequence.</li>
-</ul>
-
-<p>The <code class="language-plaintext highlighter-rouge">random</code> module is a versatile tool for adding randomness to your programs. Practice using these functions to understand their applications in various scenarios.</p>
+<p>The <code class="language-plaintext highlighter-rouge">random</code> module is a versatile tool for generating random data in Python. In the next lesson, we’ll begin our journey into Object-Oriented Programming (OOP) with the basics.</p>
 
         <!-- Next Lesson Button -->
         

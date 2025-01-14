@@ -366,49 +366,99 @@
 
     <main class="content">
         <h1>Unit Testing</h1>
-        <p>Python’s <code class="language-plaintext highlighter-rouge">unittest</code> module is used for writing and running tests.</p>
+        <p>Unit testing is the process of testing individual units of code (e.g., functions, methods, or classes) to ensure they work as expected. Python provides the <code class="language-plaintext highlighter-rouge">unittest</code> module for writing and running tests.</p>
 
-<h3 id="basic-test-case">Basic Test Case</h3>
+<hr />
 
-<p>Example:</p>
+<h2 id="why-unit-testing">Why Unit Testing?</h2>
+
+<ol>
+  <li><strong>Catch Bugs Early</strong>: Identify issues in small, isolated parts of your code.</li>
+  <li><strong>Maintain Code Quality</strong>: Ensure changes don’t break existing functionality.</li>
+  <li><strong>Improve Confidence</strong>: Make it easier to refactor or extend your code.</li>
+</ol>
+
+<hr />
+
+<h2 id="writing-a-test-case">Writing a Test Case</h2>
+
+<p>A test case in Python is a class that inherits from <code class="language-plaintext highlighter-rouge">unittest.TestCase</code>. Each test method inside the class should start with <code class="language-plaintext highlighter-rouge">test_</code>.</p>
+
+<h3 id="example-basic-test-case">Example: Basic Test Case</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">unittest</span>
 
 <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
-<span class="k">class</span> <span class="nc">TestMath</span><span class="p">(</span><span class="n">unittest</span><span class="p">.</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">TestMathOperations</span><span class="p">(</span><span class="n">unittest</span><span class="p">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_add</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
-
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># Check if add(2, 3) returns 5
+</span>        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">add</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Check if add(-1, 1) returns 0
+</span>
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">"</span><span class="s">__main__</span><span class="sh">"</span><span class="p">:</span>
     <span class="n">unittest</span><span class="p">.</span><span class="nf">main</span><span class="p">()</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<h3 id="explanation">Explanation:</h3>
+<ol>
+  <li>The <code class="language-plaintext highlighter-rouge">add</code> function is the unit being tested.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">TestMathOperations</code> class defines test methods.</li>
+  <li><code class="language-plaintext highlighter-rouge">self.assertEqual()</code> checks if the actual result matches the expected result.</li>
+</ol>
+
+<hr />
+
+<h2 id="running-unit-tests">Running Unit Tests</h2>
+
+<p>Save the test case in a file (e.g., <code class="language-plaintext highlighter-rouge">test_math.py</code>) and run it using the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> unittest test_math.py
+</code></pre></div></div>
+
+<p>You’ll see output like this if all tests pass:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
 ----------------------------------------------------------------------
-Ran 1 test in 0.000s
+Ran 1 test in 0.001s
 
 OK
 </code></pre></div></div>
 
-<h3 id="running-multiple-tests">Running Multiple Tests</h3>
+<hr />
 
-<p>Add more test methods for comprehensive testing.</p>
+<h2 id="common-assertions-in-unittest">Common Assertions in <code class="language-plaintext highlighter-rouge">unittest</code></h2>
 
-<p>Example:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">self.assertEqual(a, b)</code>: Check if <code class="language-plaintext highlighter-rouge">a</code> equals <code class="language-plaintext highlighter-rouge">b</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">self.assertNotEqual(a, b)</code>: Check if <code class="language-plaintext highlighter-rouge">a</code> does not equal <code class="language-plaintext highlighter-rouge">b</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">self.assertTrue(expr)</code>: Check if <code class="language-plaintext highlighter-rouge">expr</code> is <code class="language-plaintext highlighter-rouge">True</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">self.assertFalse(expr)</code>: Check if <code class="language-plaintext highlighter-rouge">expr</code> is <code class="language-plaintext highlighter-rouge">False</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">self.assertIn(item, container)</code>: Check if <code class="language-plaintext highlighter-rouge">item</code> is in <code class="language-plaintext highlighter-rouge">container</code>.</li>
+</ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TestMath</span><span class="p">(</span><span class="n">unittest</span><span class="p">.</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_add</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+<hr />
 
-    <span class="k">def</span> <span class="nf">test_add_negative</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">add</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div></div>
+<h2 id="organizing-tests">Organizing Tests</h2>
 
-<p>Unit testing ensures your code works as expected.</p>
+<ol>
+  <li><strong>Separate Files</strong>: Keep test files in a dedicated directory (e.g., <code class="language-plaintext highlighter-rouge">tests/</code>).</li>
+  <li><strong>Consistent Naming</strong>: Use <code class="language-plaintext highlighter-rouge">test_</code> as a prefix for all test files and methods.</li>
+</ol>
+
+<hr />
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ul>
+  <li>Unit testing ensures your code behaves as expected.</li>
+  <li>Use the <code class="language-plaintext highlighter-rouge">unittest</code> module to define and run tests.</li>
+  <li>Write small, focused test cases for each function or method.</li>
+</ul>
+
+<hr />
+
+<p>In the next lesson, we’ll learn about testing with <code class="language-plaintext highlighter-rouge">pytest</code>, a powerful and user-friendly testing framework.</p>
 
         <!-- Next Lesson Button -->
         

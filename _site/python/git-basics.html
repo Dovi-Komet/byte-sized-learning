@@ -366,46 +366,171 @@
 
     <main class="content">
         <h1>Git Basics</h1>
-        <p>Git is a version control system that tracks changes in code and allows collaboration.</p>
+        <p>Git is a version control system that helps you track changes in your code and collaborate with others. It allows you to manage different versions of your project, keep a history of changes, and even revert to previous versions if needed.</p>
 
-<h3 id="installing-git">Installing Git</h3>
+<hr />
 
-<p>Download and install Git from <a href="https://git-scm.com" target="_blank">git-scm.com</a>.</p>
+<h2 id="installing-git">Installing Git</h2>
 
-<h3 id="setting-up-a-git-repository">Setting Up a Git Repository</h3>
+<p>Before you can start using Git, you’ll need to install it. You can download Git from the official website:</p>
 
-<p>Example:</p>
+<p><a href="https://git-scm.com/downloads" target="_blank">Download Git</a></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+<p>Follow the installation instructions for your operating system.</p>
+
+<hr />
+
+<h2 id="setting-up-git">Setting Up Git</h2>
+
+<p>Once Git is installed, you’ll need to configure it with your name and email address. These will be associated with the commits you make.</p>
+
+<h3 id="configuring-your-identity">Configuring Your Identity</h3>
+
+<p>Run the following commands in your terminal to set your name and email:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.name <span class="s2">"Your Name"</span>
+git config <span class="nt">--global</span> user.email <span class="s2">"your.email@example.com"</span>
 </code></pre></div></div>
 
-<h3 id="tracking-changes">Tracking Changes</h3>
+<h3 id="verifying-your-configuration">Verifying Your Configuration</h3>
 
-<ul>
-  <li>Add files:</li>
-</ul>
+<p>You can verify your configuration by running:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--list</span>
 </code></pre></div></div>
 
-<ul>
-  <li>Commit changes:</li>
-</ul>
+<p>This will display the settings you’ve configured, such as your name and email.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit -m "Initial commit"
+<hr />
+
+<h2 id="creating-a-new-git-repository">Creating a New Git Repository</h2>
+
+<p>A Git repository (or “repo”) is where your project files and their version history are stored. To create a new repository, navigate to your project folder and run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
 </code></pre></div></div>
 
-<h3 id="integrating-with-github">Integrating with GitHub</h3>
+<p>This will initialize a new Git repository in your project directory.</p>
 
-<ul>
-  <li>Push to a remote repository:</li>
-</ul>
+<hr />
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin https://github.com/yourusername/repository.git
-git push -u origin main
+<h2 id="tracking-files-with-git">Tracking Files with Git</h2>
+
+<p>Once you have initialized a Git repository, you can start tracking changes in your project files. Git tracks changes in files and stages them for committing.</p>
+
+<h3 id="adding-files-to-git">Adding Files to Git</h3>
+
+<p>To add a file to Git for tracking, use the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add &lt;file-name&gt;
 </code></pre></div></div>
 
-<p>Git enables collaboration and efficient project management.</p>
+<p>For example, to add a file named <code class="language-plaintext highlighter-rouge">index.py</code>, run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add index.py
+</code></pre></div></div>
+
+<p>To add all files in the current directory:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+</code></pre></div></div>
+
+<h3 id="committing-changes">Committing Changes</h3>
+
+<p>After adding files, you can commit them to the repository with a message describing the changes:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
+</code></pre></div></div>
+
+<p>This creates a snapshot of the files in your project and saves it in the Git history.</p>
+
+<hr />
+
+<h2 id="viewing-git-status">Viewing Git Status</h2>
+
+<p>You can check the status of your Git repository at any time by running:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>This will show you which files are staged, which are modified, and which are untracked.</p>
+
+<hr />
+
+<h2 id="viewing-git-history">Viewing Git History</h2>
+
+<p>To view the commit history for your repository, use the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git log
+</code></pre></div></div>
+
+<p>This will display a list of commits along with their commit messages, author, and date.</p>
+
+<hr />
+
+<h2 id="git-branching">Git Branching</h2>
+
+<p>Git allows you to create branches to work on different parts of your project without affecting the main version. By default, a Git repository has a branch called <code class="language-plaintext highlighter-rouge">master</code>.</p>
+
+<h3 id="creating-a-new-branch">Creating a New Branch</h3>
+
+<p>To create a new branch, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch &lt;branch-name&gt;
+</code></pre></div></div>
+
+<p>For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch feature-branch
+</code></pre></div></div>
+
+<h3 id="switching-branches">Switching Branches</h3>
+
+<p>To switch to a different branch, use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout &lt;branch-name&gt;
+</code></pre></div></div>
+
+<p>For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout feature-branch
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="pushing-changes-to-a-remote-repository">Pushing Changes to a Remote Repository</h2>
+
+<p>You can push your changes to a remote Git repository (such as GitHub, GitLab, or Bitbucket) to store your project online and share it with others.</p>
+
+<p>First, create a new repository on your remote service (e.g., GitHub), then connect your local Git repository to the remote repository:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin &lt;repository-url&gt;
+</code></pre></div></div>
+
+<p>For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin https://github.com/yourusername/yourrepo.git
+</code></pre></div></div>
+
+<p>To push your local changes to the remote repository:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push <span class="nt">-u</span> origin master
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ol>
+  <li><strong>Version Control</strong>: Git allows you to track changes in your code and collaborate with others.</li>
+  <li><strong>Commit History</strong>: You can view the commit history with <code class="language-plaintext highlighter-rouge">git log</code>.</li>
+  <li><strong>Branching</strong>: Git allows you to work on different features in separate branches.</li>
+  <li><strong>Remote Repositories</strong>: Push your local changes to a remote repository to share your work.</li>
+</ol>
+
+<hr />
+
+<p>In the next lesson, we’ll explore how to create and use virtual environments in Python.</p>
 
         <!-- Next Lesson Button -->
         

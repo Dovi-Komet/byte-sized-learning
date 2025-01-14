@@ -366,141 +366,126 @@
 
     <main class="content">
         <h1>OOP Methods</h1>
-        <p>Methods are functions defined inside a class that operate on objects. They allow objects to perform actions and interact with their attributes.</p>
+        <p>Methods in Object-Oriented Programming (OOP) are functions defined within a class that operate on its attributes. They allow objects to interact with their data and implement behavior.</p>
 
 <hr />
 
-<h2 id="what-are-methods">What Are Methods?</h2>
+<h2 id="types-of-methods">Types of Methods</h2>
+
+<h3 id="1-instance-methods">1. Instance Methods</h3>
+<p>Instance methods operate on instance attributes and require <code class="language-plaintext highlighter-rouge">self</code> as the first parameter.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">breed</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>
+
+    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> says Woof!</span><span class="sh">"</span>
+
+<span class="c1"># Create an object
+</span><span class="n">dog</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Buddy</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Golden Retriever</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Call an instance method
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog</span><span class="p">.</span><span class="nf">bark</span><span class="p">())</span>  <span class="c1"># Output: Buddy says Woof!
+</span></code></pre></div></div>
 
 <ul>
-  <li><strong>Methods</strong> are defined within a class and typically operate on the attributes of the object they belong to.</li>
-  <li>They use the <code class="language-plaintext highlighter-rouge">self</code> parameter to refer to the current instance of the class.</li>
+  <li><strong>Explanation</strong>:
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">bark</code> method uses <code class="language-plaintext highlighter-rouge">self</code> to access the instance attribute <code class="language-plaintext highlighter-rouge">name</code>.</li>
+      <li>Each object has its own <code class="language-plaintext highlighter-rouge">name</code>, so the output is specific to the instance.</li>
+    </ul>
+  </li>
 </ul>
 
 <hr />
 
-<h2 id="defining-a-method">Defining a Method</h2>
+<h3 id="2-class-methods">2. Class Methods</h3>
+<p>Class methods operate on class attributes and require <code class="language-plaintext highlighter-rouge">@classmethod</code> decorator. They take <code class="language-plaintext highlighter-rouge">cls</code> as the first parameter.</p>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">def</code> keyword inside the class to define a method. Methods are similar to regular functions but must include <code class="language-plaintext highlighter-rouge">self</code> as their first parameter.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Canis lupus familiaris</span><span class="sh">"</span>
 
-<h3 id="example-defining-a-method">Example: Defining a Method</h3>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">common_species</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">All dogs belong to </span><span class="si">{</span><span class="n">cls</span><span class="p">.</span><span class="n">species</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Attribute
-</span>        <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>    <span class="c1"># Attribute
-</span>
-    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>  <span class="c1"># Method
-</span>        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, my name is </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span>
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="using-a-method">Using a Method</h2>
-
-<p>Call a method on an object using the dot (<code class="language-plaintext highlighter-rouge">.</code>) operator.</p>
-
-<h3 id="example-calling-a-method">Example: Calling a Method</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="nc">Person</span><span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>  <span class="c1"># Create an instance of Person
-</span><span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">.</span><span class="nf">greet</span><span class="p">())</span>         <span class="c1"># Call the greet method
+<span class="c1"># Call a class method
+</span><span class="nf">print</span><span class="p">(</span><span class="n">Dog</span><span class="p">.</span><span class="nf">common_species</span><span class="p">())</span>  <span class="c1"># Output: All dogs belong to Canis lupus familiaris.
 </span></code></pre></div></div>
 
-<h3 id="output">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, my name is Alice.
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="methods-with-parameters">Methods with Parameters</h2>
-
-<p>Methods can accept additional parameters to perform more specific actions.</p>
-
-<h3 id="example-method-with-parameters">Example: Method with Parameters</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Calculator</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">calc</span> <span class="o">=</span> <span class="nc">Calculator</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">calc</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Sum:</span><span class="sh">"</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-1">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sum: 8
-</code></pre></div></div>
+<ul>
+  <li><strong>Explanation</strong>:
+    <ul>
+      <li>Class methods can modify or access class attributes using <code class="language-plaintext highlighter-rouge">cls</code>.</li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
-<h2 id="modifying-attributes-with-methods">Modifying Attributes with Methods</h2>
+<h3 id="3-static-methods">3. Static Methods</h3>
+<p>Static methods do not operate on instance or class attributes. They are utility functions within the class, marked by <code class="language-plaintext highlighter-rouge">@staticmethod</code>.</p>
 
-<p>Methods can modify the attributes of an object.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">is_puppy</span><span class="p">(</span><span class="n">age</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">1</span>
 
-<h3 id="example-modifying-attributes">Example: Modifying Attributes</h3>
+<span class="c1"># Call a static method
+</span><span class="nf">print</span><span class="p">(</span><span class="n">Dog</span><span class="p">.</span><span class="nf">is_puppy</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>  <span class="c1"># Output: True
+</span><span class="nf">print</span><span class="p">(</span><span class="n">Dog</span><span class="p">.</span><span class="nf">is_puppy</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>    <span class="c1"># Output: False
+</span></code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+<ul>
+  <li><strong>Explanation</strong>:
+    <ul>
+      <li>Static methods do not take <code class="language-plaintext highlighter-rouge">self</code> or <code class="language-plaintext highlighter-rouge">cls</code> as a parameter.</li>
+      <li>They are called directly on the class and are independent of any instance.</li>
+    </ul>
+  </li>
+</ul>
 
-    <span class="k">def</span> <span class="nf">have_birthday</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># Increment the age attribute
+<hr />
+
+<h2 id="defining-and-using-methods">Defining and Using Methods</h2>
+
+<h3 id="example-combining-instance-and-class-methods">Example: Combining Instance and Class Methods</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
+    <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>  <span class="c1"># Class attribute
 </span>
-<span class="n">person</span> <span class="o">=</span> <span class="nc">Person</span><span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-<span class="n">person</span><span class="p">.</span><span class="nf">have_birthday</span><span class="p">()</span>
-<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">person</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> is now </span><span class="si">{</span><span class="n">person</span><span class="p">.</span><span class="n">age</span><span class="si">}</span><span class="s"> years old.</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-2">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Alice is now 31 years old.
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="the-self-keyword">The <code class="language-plaintext highlighter-rouge">self</code> Keyword</h2>
-
-<p>The <code class="language-plaintext highlighter-rouge">self</code> keyword refers to the current instance of the class. It is used to access attributes and other methods within the class.</p>
-
-<h3 id="example-using-self-to-call-another-method">Example: Using <code class="language-plaintext highlighter-rouge">self</code> to Call Another Method</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
-
-    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, my name is </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span>
-
-    <span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">greet</span><span class="p">()</span> <span class="o">+</span> <span class="sa">f</span><span class="sh">"</span><span class="s"> I am </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">age</span><span class="si">}</span><span class="s"> years old.</span><span class="sh">"</span>
-</code></pre></div></div>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span> <span class="o">=</span> <span class="nc">Person</span><span class="p">(</span><span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">person</span><span class="p">.</span><span class="nf">introduce</span><span class="p">())</span>
-</code></pre></div></div>
-
-<h3 id="output-3">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, my name is Bob. I am 25 years old.
-</code></pre></div></div>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>  <span class="c1"># Instance attribute
+</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Circle</span><span class="p">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Instance method
+</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_diameter</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">diameter</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nf">cls</span><span class="p">(</span><span class="n">diameter</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Class method
+</span>
+<span class="c1"># Create a Circle using the instance method
+</span><span class="n">circle</span> <span class="o">=</span> <span class="nc">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">circle</span><span class="p">.</span><span class="nf">area</span><span class="p">())</span>  <span class="c1"># Output: 78.53975
+</span>
+<span class="c1"># Create a Circle using the class method
+</span><span class="n">circle_from_diameter</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">.</span><span class="nf">from_diameter</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">circle_from_diameter</span><span class="p">.</span><span class="nf">area</span><span class="p">())</span>  <span class="c1"># Output: 78.53975
+</span></code></pre></div></div>
 
 <hr />
 
 <h2 id="summary">Summary</h2>
 
 <ul>
-  <li><strong>Methods</strong> are functions defined inside a class to operate on objects.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">self</code> to refer to the instance and access its attributes or methods.</li>
-  <li>Methods can accept parameters to perform specific actions or calculations.</li>
-  <li>Methods can modify an object’s attributes to reflect changes in its state.</li>
+  <li><strong>Instance Methods</strong>: Operate on instance attributes, take <code class="language-plaintext highlighter-rouge">self</code> as the first parameter.</li>
+  <li><strong>Class Methods</strong>: Operate on class attributes, take <code class="language-plaintext highlighter-rouge">cls</code> as the first parameter, and are defined using <code class="language-plaintext highlighter-rouge">@classmethod</code>.</li>
+  <li><strong>Static Methods</strong>: Do not depend on instance or class attributes, use <code class="language-plaintext highlighter-rouge">@staticmethod</code>.</li>
 </ul>
 
-<p>Practice creating classes with methods to understand how they define the behavior of objects.</p>
+<p>In the next lesson, we’ll delve into the role of the <code class="language-plaintext highlighter-rouge">self</code> parameter in instance methods and how it works behind the scenes.</p>
 
         <!-- Next Lesson Button -->
         

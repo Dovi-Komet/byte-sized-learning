@@ -366,112 +366,109 @@
 
     <main class="content">
         <h1>Class Attributes</h1>
-        <p>Class attributes are variables that belong to a class rather than any specific object (instance) of the class. They are shared across all instances of the class and are useful for storing data that is the same for every object.</p>
+        <p>Class attributes in Python are variables defined within the class body but outside any methods. These attributes are shared by all instances of the class, making them useful for data or functionality common to all objects.</p>
 
 <hr />
 
-<h2 id="what-are-class-attributes">What Are Class Attributes?</h2>
+<h2 id="defining-class-attributes">Defining Class Attributes</h2>
 
-<ul>
-  <li>Defined directly in the class body, outside any method.</li>
-  <li>Shared by all instances of the class.</li>
-  <li>Accessed using the class name or an instance.</li>
-</ul>
-
-<hr />
-
-<h2 id="defining-a-class-attribute">Defining a Class Attribute</h2>
-
-<p>You define class attributes directly within the class, outside of the <code class="language-plaintext highlighter-rouge">__init__</code> method.</p>
-
-<h3 id="example-defining-and-accessing-class-attributes">Example: Defining and Accessing Class Attributes</h3>
+<p>Class attributes are defined directly in the class body and are accessible through the class name or any instance.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
-    <span class="n">species</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Canis familiaris</span><span class="sh">"</span>  <span class="c1"># Class attribute
-</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Instance attribute
-</span>        <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>    <span class="c1"># Instance attribute
-</span>
-<span class="c1"># Create two instances of Dog
-</span><span class="n">dog1</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Buddy</span><span class="sh">"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">dog2</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Max</span><span class="sh">"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="c1"># Class attribute
+</span>    <span class="n">species</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Canis lupus familiaris</span><span class="sh">"</span>
 
-<span class="c1"># Access class attributes
-</span><span class="nf">print</span><span class="p">(</span><span class="n">dog1</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Access through an instance
-</span><span class="nf">print</span><span class="p">(</span><span class="n">dog2</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Access through another instance
-</span><span class="nf">print</span><span class="p">(</span><span class="n">Dog</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>   <span class="c1"># Access directly through the class
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">breed</span><span class="p">):</span>
+        <span class="c1"># Instance attributes
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>
+
+<span class="c1"># Accessing class attributes
+</span><span class="nf">print</span><span class="p">(</span><span class="n">Dog</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Output: Canis lupus familiaris
+</span>
+<span class="c1"># Creating objects
+</span><span class="n">dog1</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Buddy</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Golden Retriever</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">dog2</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Max</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Poodle</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Class attributes are shared
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog1</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Output: Canis lupus familiaris
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog2</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Output: Canis lupus familiaris
 </span></code></pre></div></div>
-
-<h3 id="output">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Canis familiaris
-Canis familiaris
-Canis familiaris
-</code></pre></div></div>
 
 <hr />
 
 <h2 id="modifying-class-attributes">Modifying Class Attributes</h2>
 
-<p>You can modify a class attribute using the class name. Changes to class attributes affect all instances.</p>
+<p>Class attributes can be modified using the class name. Any change to a class attribute affects all instances.</p>
 
-<h3 id="example-modifying-class-attributes">Example: Modifying Class Attributes</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Dog</span><span class="p">.</span><span class="n">species</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Canis lupus</span><span class="sh">"</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Dog</span><span class="p">.</span><span class="n">species</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Canine</span><span class="sh">"</span>
-
-<span class="nf">print</span><span class="p">(</span><span class="n">dog1</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Output: Canine
-</span><span class="nf">print</span><span class="p">(</span><span class="n">dog2</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Output: Canine
+<span class="c1"># The updated value is reflected in all instances
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog1</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Output: Canis lupus
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog2</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Output: Canis lupus
 </span></code></pre></div></div>
-
-<h3 id="output-1">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Canine
-Canine
-</code></pre></div></div>
 
 <hr />
 
-<h2 id="overriding-class-attributes">Overriding Class Attributes</h2>
+<h2 id="difference-between-class-and-instance-attributes">Difference Between Class and Instance Attributes</h2>
 
-<p>While class attributes are shared, you can override them for a specific instance by assigning a new value to the attribute on that instance.</p>
+<p>Class attributes are shared across all instances, while instance attributes are unique to each object.</p>
 
-<h3 id="example-overriding-class-attributes">Example: Overriding Class Attributes</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="n">species</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Canis lupus familiaris</span><span class="sh">"</span>  <span class="c1"># Class attribute
+</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">breed</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Instance attribute
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>  <span class="c1"># Instance attribute
+</span>
+<span class="c1"># Create two objects
+</span><span class="n">dog1</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Buddy</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Golden Retriever</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">dog2</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Max</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Poodle</span><span class="sh">"</span><span class="p">)</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dog1</span><span class="p">.</span><span class="n">species</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Wolf</span><span class="sh">"</span>
+<span class="c1"># Modify instance attribute
+</span><span class="n">dog1</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Charlie</span><span class="sh">"</span>
 
-<span class="nf">print</span><span class="p">(</span><span class="n">dog1</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Output: Wolf (overridden for this instance)
-</span><span class="nf">print</span><span class="p">(</span><span class="n">dog2</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Output: Canine (class attribute remains unchanged)
-</span><span class="nf">print</span><span class="p">(</span><span class="n">Dog</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>   <span class="c1"># Output: Canine (class attribute remains unchanged)
+<span class="c1"># Instance attributes are independent
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog1</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Output: Charlie
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog2</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Output: Max
+</span>
+<span class="c1"># Class attributes remain shared
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog1</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Output: Canis lupus familiaris
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog2</span><span class="p">.</span><span class="n">species</span><span class="p">)</span>  <span class="c1"># Output: Canis lupus familiaris
 </span></code></pre></div></div>
 
-<h3 id="output-2">Output:</h3>
+<hr />
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Wolf
-Canine
-Canine
-</code></pre></div></div>
+<h2 id="practical-use-of-class-attributes">Practical Use of Class Attributes</h2>
+
+<p>Class attributes are ideal for constants or values common to all instances.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
+    <span class="c1"># Class attribute: shared across all instances
+</span>    <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>  <span class="c1"># Instance attribute
+</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Circle</span><span class="p">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Create a circle object
+</span><span class="n">circle</span> <span class="o">=</span> <span class="nc">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">circle</span><span class="p">.</span><span class="nf">area</span><span class="p">())</span>  <span class="c1"># Output: 78.53975
+</span></code></pre></div></div>
 
 <hr />
 
 <h2 id="summary">Summary</h2>
 
 <ul>
-  <li><strong>Class Attributes</strong>:
-    <ul>
-      <li>Shared across all instances of a class.</li>
-      <li>Defined directly in the class body, outside methods.</li>
-      <li>Accessed through the class name or an instance.</li>
-    </ul>
-  </li>
-  <li><strong>Instance-Specific Override</strong>:
-    <ul>
-      <li>An instance can override a class attribute by assigning a new value to it.</li>
-    </ul>
-  </li>
+  <li><strong>Class attributes</strong> are shared across all instances and are used for data or behavior common to all objects.</li>
+  <li>They are defined in the class body and accessed through the class name or an instance.</li>
+  <li>Changes to a class attribute affect all instances of the class.</li>
 </ul>
 
-<p>Class attributes are useful for storing information that is the same for all objects of a class, such as constants or shared properties. Practice defining, modifying, and overriding class attributes to deepen your understanding.</p>
+<p>In the next lesson, we’ll explore how methods work within classes and how they interact with attributes.</p>
 
         <!-- Next Lesson Button -->
         

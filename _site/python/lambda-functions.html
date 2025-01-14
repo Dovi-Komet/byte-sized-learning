@@ -366,54 +366,107 @@
 
     <main class="content">
         <h1>Lambda Functions</h1>
-        <p>Lambda functions are anonymous, single-expression functions in Python.</p>
+        <p>Lambda functions in Python are anonymous functions defined using the <code class="language-plaintext highlighter-rouge">lambda</code> keyword. They are typically used for short, simple operations where defining a full function is unnecessary. Lambda functions can take any number of arguments but have only a single expression.</p>
 
-<h3 id="syntax-of-lambda-functions">Syntax of Lambda Functions</h3>
+<hr />
+
+<h2 id="syntax-of-a-lambda-function">Syntax of a Lambda Function</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">lambda</span> <span class="n">arguments</span><span class="p">:</span> <span class="n">expression</span>
 </code></pre></div></div>
 
-<p>Example:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">square</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
-<span class="nf">print</span><span class="p">(</span><span class="nf">square</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</code></pre></div></div>
-
-<h3 id="expected-output">Expected Output</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>25
-</code></pre></div></div>
-
-<h3 id="lambda-functions-with-map-filter-and-reduce">Lambda Functions with <code class="language-plaintext highlighter-rouge">map()</code>, <code class="language-plaintext highlighter-rouge">filter()</code>, and <code class="language-plaintext highlighter-rouge">reduce()</code></h3>
-
 <ul>
-  <li><strong><code class="language-plaintext highlighter-rouge">map()</code></strong> applies a function to all items in an iterable.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">filter()</code></strong> filters items based on a condition.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">reduce()</code></strong> reduces a sequence to a single value (from <code class="language-plaintext highlighter-rouge">functools</code> module).</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">arguments</code></strong>: A comma-separated list of input parameters.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">expression</code></strong>: A single expression evaluated and returned.</li>
 </ul>
 
-<p>Example:</p>
+<h3 id="example">Example</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># A lambda function that adds 10 to its argument
+</span><span class="n">add_ten</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">add_ten</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Output: 15
+</span></code></pre></div></div>
 
-<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">squared</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
-<span class="n">even</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="nf">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">))</span>
-<span class="n">product</span> <span class="o">=</span> <span class="nf">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+<hr />
 
-<span class="nf">print</span><span class="p">(</span><span class="n">squared</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">even</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
-</code></pre></div></div>
+<h2 id="key-differences-between-lambda-and-regular-functions">Key Differences Between Lambda and Regular Functions</h2>
 
-<h3 id="expected-output-1">Expected Output</h3>
+<ol>
+  <li><strong>Syntax</strong>: Lambda functions are defined in a single line, while regular functions use the <code class="language-plaintext highlighter-rouge">def</code> keyword.</li>
+  <li><strong>Name</strong>: Lambda functions are anonymous unless assigned to a variable.</li>
+  <li><strong>Use Case</strong>: Best for simple, short-lived operations.</li>
+</ol>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 4, 9, 16]
-[2, 4]
-24
-</code></pre></div></div>
+<hr />
 
-<p>Lambda functions are widely used for short, throwaway functions.</p>
+<h2 id="using-lambda-functions-with-built-in-functions">Using Lambda Functions with Built-in Functions</h2>
+
+<p>Lambda functions are often used with Python’s built-in functions like <code class="language-plaintext highlighter-rouge">map</code>, <code class="language-plaintext highlighter-rouge">filter</code>, and <code class="language-plaintext highlighter-rouge">sorted</code>.</p>
+
+<h3 id="example-using-map">Example: Using <code class="language-plaintext highlighter-rouge">map</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">map</code> function applies a lambda function to each item in an iterable.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">squared</span> <span class="o">=</span> <span class="nf">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">squared</span><span class="p">))</span>  <span class="c1"># Output: [1, 4, 9, 16]
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="example-using-filter">Example: Using <code class="language-plaintext highlighter-rouge">filter</code></h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">filter</code> function selects items from an iterable based on a condition.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">even_numbers</span> <span class="o">=</span> <span class="nf">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="n">even_numbers</span><span class="p">))</span>  <span class="c1"># Output: [2, 4, 6]
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="example-using-sorted-with-a-custom-key">Example: Using <code class="language-plaintext highlighter-rouge">sorted</code> with a Custom Key</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">sorted</code> function can use a lambda to define a custom sorting rule.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Charlie</span><span class="sh">"</span><span class="p">]</span>
+<span class="n">sorted_names</span> <span class="o">=</span> <span class="nf">sorted</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">name</span><span class="p">:</span> <span class="nf">len</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sorted_names</span><span class="p">)</span>  <span class="c1"># Output: ['Bob', 'Alice', 'Charlie']
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="when-to-use-lambda-functions">When to Use Lambda Functions</h2>
+
+<ul>
+  <li>When a short function is needed for immediate use.</li>
+  <li>When you want to write concise code without defining a named function.</li>
+  <li>Commonly in conjunction with functional programming tools like <code class="language-plaintext highlighter-rouge">map</code>, <code class="language-plaintext highlighter-rouge">filter</code>, and <code class="language-plaintext highlighter-rouge">sorted</code>.</li>
+</ul>
+
+<hr />
+
+<h2 id="limitations-of-lambda-functions">Limitations of Lambda Functions</h2>
+
+<ol>
+  <li><strong>Single Expression</strong>: They can only contain one expression and no statements.</li>
+  <li><strong>Readability</strong>: Overuse can make code harder to read.</li>
+  <li><strong>Debugging</strong>: Lack of a name makes debugging more difficult.</li>
+</ol>
+
+<hr />
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ul>
+  <li>Lambda functions are useful for concise and functional-style programming.</li>
+  <li>They should be used judiciously to maintain code readability.</li>
+  <li>For complex operations, prefer defining regular functions with the <code class="language-plaintext highlighter-rouge">def</code> keyword.</li>
+</ul>
+
+<hr />
+
+<p>In the next lesson, we’ll explore list comprehensions, a powerful feature for concise and efficient list manipulation in Python.</p>
 
         <!-- Next Lesson Button -->
         

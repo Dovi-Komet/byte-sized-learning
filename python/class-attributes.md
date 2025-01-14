@@ -4,105 +4,108 @@ title: "Class Attributes"
 order: 42
 ---
 
-Class attributes are variables that belong to a class rather than any specific object (instance) of the class. They are shared across all instances of the class and are useful for storing data that is the same for every object.
+Class attributes in Python are variables defined within the class body but outside any methods. These attributes are shared by all instances of the class, making them useful for data or functionality common to all objects.
 
 ---
 
-## What Are Class Attributes?
+## Defining Class Attributes
 
-- Defined directly in the class body, outside any method.
-- Shared by all instances of the class.
-- Accessed using the class name or an instance.
-
----
-
-## Defining a Class Attribute
-
-You define class attributes directly within the class, outside of the `__init__` method.
-
-### Example: Defining and Accessing Class Attributes
+Class attributes are defined directly in the class body and are accessible through the class name or any instance.
 
 ```python
 class Dog:
-    species = "Canis familiaris"  # Class attribute
+    # Class attribute
+    species = "Canis lupus familiaris"
 
-    def __init__(self, name, age):
-        self.name = name  # Instance attribute
-        self.age = age    # Instance attribute
+    def __init__(self, name, breed):
+        # Instance attributes
+        self.name = name
+        self.breed = breed
 
-# Create two instances of Dog
-dog1 = Dog("Buddy", 5)
-dog2 = Dog("Max", 3)
+# Accessing class attributes
+print(Dog.species)  # Output: Canis lupus familiaris
 
-# Access class attributes
-print(dog1.species)  # Access through an instance
-print(dog2.species)  # Access through another instance
-print(Dog.species)   # Access directly through the class
-```
+# Creating objects
+dog1 = Dog("Buddy", "Golden Retriever")
+dog2 = Dog("Max", "Poodle")
 
-### Output:
-
-```plaintext
-Canis familiaris
-Canis familiaris
-Canis familiaris
+# Class attributes are shared
+print(dog1.species)  # Output: Canis lupus familiaris
+print(dog2.species)  # Output: Canis lupus familiaris
 ```
 
 ---
 
 ## Modifying Class Attributes
 
-You can modify a class attribute using the class name. Changes to class attributes affect all instances.
-
-### Example: Modifying Class Attributes
+Class attributes can be modified using the class name. Any change to a class attribute affects all instances.
 
 ```python
-Dog.species = "Canine"
+Dog.species = "Canis lupus"
 
-print(dog1.species)  # Output: Canine
-print(dog2.species)  # Output: Canine
-```
-
-### Output:
-
-```plaintext
-Canine
-Canine
+# The updated value is reflected in all instances
+print(dog1.species)  # Output: Canis lupus
+print(dog2.species)  # Output: Canis lupus
 ```
 
 ---
 
-## Overriding Class Attributes
+## Difference Between Class and Instance Attributes
 
-While class attributes are shared, you can override them for a specific instance by assigning a new value to the attribute on that instance.
-
-### Example: Overriding Class Attributes
+Class attributes are shared across all instances, while instance attributes are unique to each object.
 
 ```python
-dog1.species = "Wolf"
+class Dog:
+    species = "Canis lupus familiaris"  # Class attribute
 
-print(dog1.species)  # Output: Wolf (overridden for this instance)
-print(dog2.species)  # Output: Canine (class attribute remains unchanged)
-print(Dog.species)   # Output: Canine (class attribute remains unchanged)
+    def __init__(self, name, breed):
+        self.name = name  # Instance attribute
+        self.breed = breed  # Instance attribute
+
+# Create two objects
+dog1 = Dog("Buddy", "Golden Retriever")
+dog2 = Dog("Max", "Poodle")
+
+# Modify instance attribute
+dog1.name = "Charlie"
+
+# Instance attributes are independent
+print(dog1.name)  # Output: Charlie
+print(dog2.name)  # Output: Max
+
+# Class attributes remain shared
+print(dog1.species)  # Output: Canis lupus familiaris
+print(dog2.species)  # Output: Canis lupus familiaris
 ```
 
-### Output:
+---
 
-```plaintext
-Wolf
-Canine
-Canine
+## Practical Use of Class Attributes
+
+Class attributes are ideal for constants or values common to all instances.
+
+```python
+class Circle:
+    # Class attribute: shared across all instances
+    pi = 3.14159
+
+    def __init__(self, radius):
+        self.radius = radius  # Instance attribute
+
+    def area(self):
+        return Circle.pi * (self.radius ** 2)
+
+# Create a circle object
+circle = Circle(5)
+print(circle.area())  # Output: 78.53975
 ```
 
 ---
 
 ## Summary
 
-- **Class Attributes**:
-  - Shared across all instances of a class.
-  - Defined directly in the class body, outside methods.
-  - Accessed through the class name or an instance.
-- **Instance-Specific Override**:
-  - An instance can override a class attribute by assigning a new value to it.
+- **Class attributes** are shared across all instances and are used for data or behavior common to all objects.
+- They are defined in the class body and accessed through the class name or an instance.
+- Changes to a class attribute affect all instances of the class.
 
-Class attributes are useful for storing information that is the same for all objects of a class, such as constants or shared properties. Practice defining, modifying, and overriding class attributes to deepen your understanding.
+In the next lesson, we’ll explore how methods work within classes and how they interact with attributes.

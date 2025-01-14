@@ -366,28 +366,120 @@
 
     <main class="content">
         <h1>Logging</h1>
-        <p>The <code class="language-plaintext highlighter-rouge">logging</code> module provides a flexible way to log messages for debugging and monitoring.</p>
+        <p>Logging is a way to record messages about your program’s execution, which helps in debugging, monitoring, and troubleshooting. Python’s built-in <code class="language-plaintext highlighter-rouge">logging</code> module provides a flexible framework for adding log messages to your code.</p>
 
-<h3 id="basic-logging">Basic Logging</h3>
+<hr />
 
-<p>Example:</p>
+<h2 id="why-use-logging">Why Use Logging?</h2>
+
+<ol>
+  <li><strong>Debugging</strong>: Identify and fix issues in your code.</li>
+  <li><strong>Monitoring</strong>: Track application performance and behavior.</li>
+  <li><strong>Error Tracking</strong>: Record errors and exceptions for analysis.</li>
+</ol>
+
+<hr />
+
+<h2 id="basic-logging">Basic Logging</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">logging</code> module can be used to log messages at different severity levels. The levels, in increasing order of severity, are:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DEBUG</code>: Detailed information for debugging.</li>
+  <li><code class="language-plaintext highlighter-rouge">INFO</code>: General messages about program execution.</li>
+  <li><code class="language-plaintext highlighter-rouge">WARNING</code>: Indication of potential problems.</li>
+  <li><code class="language-plaintext highlighter-rouge">ERROR</code>: A serious issue that has occurred.</li>
+  <li><code class="language-plaintext highlighter-rouge">CRITICAL</code>: A very severe error that may require immediate attention.</li>
+</ul>
+
+<h3 id="example-basic-logging">Example: Basic Logging</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">logging</span>
 
-<span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">This is an info message.</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">logging</span><span class="p">.</span><span class="nf">warning</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a warning message.</span><span class="sh">"</span><span class="p">)</span>
-<span class="n">logging</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="sh">"</span><span class="s">This is an error message.</span><span class="sh">"</span><span class="p">)</span>
+<span class="c1"># Configure logging
+</span><span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="c1"># Log messages
+</span><span class="n">logging</span><span class="p">.</span><span class="nf">debug</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a debug message</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">This is an info message</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="nf">warning</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a warning message</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="sh">"</span><span class="s">This is an error message</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="nf">critical</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a critical message</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output">Expected Output</h3>
+<h3 id="output-example">Output Example</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INFO:root:This is an info message.
-WARNING:root:This is a warning message.
-ERROR:root:This is an error message.
+<p>When you run this code, you’ll see:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEBUG:root:This is a debug message
+INFO:root:This is an info message
+WARNING:root:This is a warning message
+ERROR:root:This is an error message
+CRITICAL:root:This is a critical message
 </code></pre></div></div>
 
-<p>Logging provides better control over message levels than <code class="language-plaintext highlighter-rouge">print()</code> statements.</p>
+<hr />
+
+<h2 id="configuring-logging">Configuring Logging</h2>
+
+<p>You can customize the logging output, including its format and where it’s written (e.g., console, file).</p>
+
+<h3 id="example-logging-to-a-file">Example: Logging to a File</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">logging</span>
+
+<span class="c1"># Configure logging to write to a file
+</span><span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span>
+    <span class="n">filename</span><span class="o">=</span><span class="sh">"</span><span class="s">app.log</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">,</span>
+    <span class="nb">format</span><span class="o">=</span><span class="sh">"</span><span class="s">%(asctime)s - %(levelname)s - %(message)s</span><span class="sh">"</span>
+<span class="p">)</span>
+
+<span class="n">logging</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">This message will be written to the file</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This creates a file <code class="language-plaintext highlighter-rouge">app.log</code> with log entries formatted with a timestamp, severity level, and message.</p>
+
+<hr />
+
+<h2 id="using-logger-objects">Using Logger Objects</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">logging</code> module allows you to create custom logger objects for more control.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">logging</span>
+
+<span class="c1"># Create a logger
+</span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nf">getLogger</span><span class="p">(</span><span class="sh">"</span><span class="s">my_logger</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="c1"># Create a console handler
+</span><span class="n">console_handler</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nc">StreamHandler</span><span class="p">()</span>
+<span class="n">console_handler</span><span class="p">.</span><span class="nf">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># Set the format for the handler
+</span><span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="nc">Formatter</span><span class="p">(</span><span class="sh">"</span><span class="s">%(name)s - %(levelname)s - %(message)s</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">console_handler</span><span class="p">.</span><span class="nf">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+
+<span class="c1"># Add the handler to the logger
+</span><span class="n">logger</span><span class="p">.</span><span class="nf">addHandler</span><span class="p">(</span><span class="n">console_handler</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="p">.</span><span class="nf">debug</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a debug message</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">This is an info message</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="best-practices-for-logging">Best Practices for Logging</h2>
+
+<ol>
+  <li><strong>Log at Appropriate Levels</strong>: Use <code class="language-plaintext highlighter-rouge">DEBUG</code> for development, <code class="language-plaintext highlighter-rouge">INFO</code> for general events, and <code class="language-plaintext highlighter-rouge">WARNING</code> or higher for issues.</li>
+  <li><strong>Don’t Overuse Logs</strong>: Log important events but avoid excessive logging, which can clutter your output.</li>
+  <li><strong>Secure Logs</strong>: Avoid logging sensitive information like passwords or personal data.</li>
+</ol>
+
+<hr />
+
+<p>In the next lesson, we’ll explore how to interact with APIs using Python’s <code class="language-plaintext highlighter-rouge">requests</code> library.</p>
 
         <!-- Next Lesson Button -->
         

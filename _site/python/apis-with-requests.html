@@ -366,40 +366,154 @@
 
     <main class="content">
         <h1>APIs with requests</h1>
-        <p>The <code class="language-plaintext highlighter-rouge">requests</code> library makes it easy to interact with APIs.</p>
+        <p>An API (Application Programming Interface) allows different software systems to communicate with each other. Python’s <code class="language-plaintext highlighter-rouge">requests</code> library is a powerful tool for sending HTTP requests to interact with APIs. It simplifies working with APIs by handling details like making requests, sending data, and parsing responses.</p>
 
-<h3 id="making-a-get-request">Making a GET Request</h3>
+<hr />
 
-<p>Example:</p>
+<h2 id="installing-requests">Installing <code class="language-plaintext highlighter-rouge">requests</code></h2>
+
+<p>First, install the <code class="language-plaintext highlighter-rouge">requests</code> library using <code class="language-plaintext highlighter-rouge">pip</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>requests
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="making-a-basic-get-request">Making a Basic GET Request</h2>
+
+<p>A GET request is used to retrieve data from a server. You can make a GET request to an API endpoint using <code class="language-plaintext highlighter-rouge">requests.get()</code>.</p>
+
+<h3 id="example-fetching-data-from-an-api">Example: Fetching Data from an API</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">https://api.github.com</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
+<span class="c1"># Make a GET request to a public API
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">https://jsonplaceholder.typicode.com/posts</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Check if the request was successful
+</span><span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>  <span class="c1"># Parse the JSON data from the response
+</span>    <span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Error: </span><span class="si">{</span><span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output-example-data">Expected Output (example data)</h3>
+<h3 id="explanation">Explanation:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">requests.get()</code> makes the request to the specified URL.</li>
+  <li><code class="language-plaintext highlighter-rouge">response.status_code</code> checks the HTTP status code (e.g., 200 means success).</li>
+  <li><code class="language-plaintext highlighter-rouge">response.json()</code> converts the returned JSON data into a Python dictionary.</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>200
-{'current_user_url': 'https://api.github.com/user', ...}
+<hr />
+
+<h2 id="sending-data-with-post-requests">Sending Data with POST Requests</h2>
+
+<p>A POST request is used to send data to the server. This is useful for creating or updating resources.</p>
+
+<h3 id="example-sending-data-with-a-post-request">Example: Sending Data with a POST Request</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+
+<span class="c1"># API endpoint
+</span><span class="n">url</span> <span class="o">=</span> <span class="sh">"</span><span class="s">https://jsonplaceholder.typicode.com/posts</span><span class="sh">"</span>
+
+<span class="c1"># Data to send (in the form of a dictionary)
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">"</span><span class="s">title</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">New Post</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">body</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">This is a new post.</span><span class="sh">"</span><span class="p">,</span>
+    <span class="sh">"</span><span class="s">userId</span><span class="sh">"</span><span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="c1"># Make a POST request
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Check if the request was successful
+</span><span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">201</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Post created successfully!</span><span class="sh">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>  <span class="c1"># Print the response data
+</span><span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Error: </span><span class="si">{</span><span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="sending-data-with-a-post-request">Sending Data with a POST Request</h3>
+<h3 id="explanation-1">Explanation:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">requests.post()</code> sends the data as a JSON object.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">json=data</code> argument automatically converts the dictionary into a JSON format.</li>
+</ul>
 
-<p>Example:</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">key</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">value</span><span class="sh">"</span><span class="p">}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="sh">"</span><span class="s">https://httpbin.org/post</span><span class="sh">"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
+<h2 id="handling-query-parameters">Handling Query Parameters</h2>
+
+<p>You can pass query parameters in the URL to filter or modify the data requested from the API.</p>
+
+<h3 id="example-sending-query-parameters-with-get-request">Example: Sending Query Parameters with GET Request</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+
+<span class="c1"># API endpoint with query parameters
+</span><span class="n">url</span> <span class="o">=</span> <span class="sh">"</span><span class="s">https://jsonplaceholder.typicode.com/posts</span><span class="sh">"</span>
+
+<span class="c1"># Define query parameters
+</span><span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">userId</span><span class="sh">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+
+<span class="c1"># Make the GET request with query parameters
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+
+<span class="c1"># Check if the request was successful
+</span><span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="nf">json</span><span class="p">()</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Error: </span><span class="si">{</span><span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="expected-output-example-data-1">Expected Output (example data)</h3>
+<h3 id="explanation-2">Explanation:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">params</code> is a dictionary of key-value pairs that get appended to the URL as query parameters.</li>
+  <li>For example, <code class="language-plaintext highlighter-rouge">userId=1</code> will filter the posts to only show those by user 1.</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'json': {'key': 'value'}, ...}
+<hr />
+
+<h2 id="handling-errors">Handling Errors</h2>
+
+<p>APIs may return error messages if something goes wrong. Use <code class="language-plaintext highlighter-rouge">response.status_code</code> to check for errors and handle them accordingly.</p>
+
+<h3 id="example-handling-errors">Example: Handling Errors</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+
+<span class="c1"># Make a GET request to a non-existent endpoint
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">https://jsonplaceholder.typicode.com/invalid-endpoint</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">json</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Error </span><span class="si">{</span><span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>APIs are essential for integrating external services into your Python applications.</p>
+<h3 id="explanation-3">Explanation:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">response.status_code</code> helps you check if the request was successful.</li>
+  <li><code class="language-plaintext highlighter-rouge">response.text</code> contains the error message returned by the API.</li>
+</ul>
+
+<hr />
+
+<h2 id="key-takeaways">Key Takeaways</h2>
+
+<ol>
+  <li><strong>GET Requests</strong>: Used to retrieve data from an API.</li>
+  <li><strong>POST Requests</strong>: Used to send data to an API.</li>
+  <li><strong>Handling Responses</strong>: Use <code class="language-plaintext highlighter-rouge">response.status_code</code> and <code class="language-plaintext highlighter-rouge">response.json()</code> to handle and process data.</li>
+  <li><strong>Error Handling</strong>: Check <code class="language-plaintext highlighter-rouge">status_code</code> to handle any issues in the response.</li>
+</ol>
+
+<hr />
+
+<p>In the next lesson, we’ll explore the basics of version control with Git.</p>
 
         <!-- Next Lesson Button -->
         

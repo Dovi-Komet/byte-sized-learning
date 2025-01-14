@@ -366,124 +366,128 @@
 
     <main class="content">
         <h1>json Module</h1>
-        <p>The <code class="language-plaintext highlighter-rouge">json</code> module allows you to work with JSON (JavaScript Object Notation), a lightweight data format commonly used for data exchange between systems and APIs.</p>
+        <p>The <code class="language-plaintext highlighter-rouge">json</code> module in Python provides tools for working with JSON (JavaScript Object Notation), a widely used format for data exchange. It allows you to convert Python objects to JSON strings and vice versa.</p>
 
 <hr />
 
-<h2 id="what-is-json">What Is JSON?</h2>
+<h2 id="importing-the-json-module">Importing the <code class="language-plaintext highlighter-rouge">json</code> Module</h2>
 
-<ul>
-  <li>JSON is a text-based format that represents structured data.</li>
-  <li>It uses key-value pairs (similar to Python dictionaries) and arrays (similar to Python lists).</li>
-  <li>JSON is widely used in APIs and web applications.</li>
-</ul>
+<p>To use the <code class="language-plaintext highlighter-rouge">json</code> module, import it into your program:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">json</span>
+</code></pre></div></div>
 
 <hr />
 
-<h2 id="converting-python-objects-to-json">Converting Python Objects to JSON</h2>
+<h2 id="commonly-used-functions-in-the-json-module">Commonly Used Functions in the <code class="language-plaintext highlighter-rouge">json</code> Module</h2>
 
-<p>Use <code class="language-plaintext highlighter-rouge">json.dumps()</code> to convert Python objects like dictionaries or lists into JSON strings.</p>
+<h3 id="converting-python-objects-to-json-serialization">Converting Python Objects to JSON (Serialization)</h3>
 
-<h3 id="example-python-to-json">Example: Python to JSON</h3>
+<p>The <code class="language-plaintext highlighter-rouge">json.dumps()</code> function converts a Python object into a JSON string.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">json</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="sh">"</span><span class="s">city</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">New York</span><span class="sh">"</span><span class="p">}</span>
-<span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+<span class="c1"># Python object (dictionary)
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="sh">"</span><span class="s">city</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">New York</span><span class="sh">"</span><span class="p">}</span>
+
+<span class="c1"># Convert Python object to JSON string
+</span><span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">JSON String:</span><span class="sh">"</span><span class="p">,</span> <span class="n">json_string</span><span class="p">)</span>
 </code></pre></div></div>
 
-<h3 id="output">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"name": "Alice", "age": 30, "city": "New York"}
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="formatting-json-strings">Formatting JSON Strings</h2>
-
-<p>You can make JSON strings more readable by using the <code class="language-plaintext highlighter-rouge">indent</code> parameter.</p>
-
-<h3 id="example-pretty-printed-json">Example: Pretty-Printed JSON</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pretty_json</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">pretty_json</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-1">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-    "name": "Alice",
-    "age": 30,
-    "city": "New York"
-}
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="converting-json-to-python-objects">Converting JSON to Python Objects</h2>
-
-<p>Use <code class="language-plaintext highlighter-rouge">json.loads()</code> to parse a JSON string and convert it into a Python object (e.g., dictionary or list).</p>
-
-<h3 id="example-json-to-python">Example: JSON to Python</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">json_data</span> <span class="o">=</span> <span class="sh">'</span><span class="s">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="s">: </span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="s">, </span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="s">: 30, </span><span class="sh">"</span><span class="s">city</span><span class="sh">"</span><span class="s">: </span><span class="sh">"</span><span class="s">New York</span><span class="sh">"</span><span class="s">}</span><span class="sh">'</span>
-<span class="n">parsed_data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">parsed_data</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">parsed_data</span><span class="p">[</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">])</span>
-</code></pre></div></div>
-
-<h3 id="output-2">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'name': 'Alice', 'age': 30, 'city': 'New York'}
-Alice
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="reading-and-writing-json-files">Reading and Writing JSON Files</h2>
-
-<p>The <code class="language-plaintext highlighter-rouge">json</code> module also allows you to read from and write to JSON files.</p>
-
-<h3 id="example-writing-to-a-json-file">Example: Writing to a JSON File</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">data.json</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
-    <span class="n">json</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>This creates a file named <code class="language-plaintext highlighter-rouge">data.json</code> with the following content:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-    "name": "Alice",
-    "age": 30,
-    "city": "New York"
-}
-</code></pre></div></div>
-
-<h3 id="example-reading-from-a-json-file">Example: Reading from a JSON File</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">data.json</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
-    <span class="n">file_data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">file_data</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="output-3">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'name': 'Alice', 'age': 30, 'city': 'New York'}
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="summary">Summary</h2>
-
+<h4 id="explanation">Explanation:</h4>
 <ul>
-  <li>Use <code class="language-plaintext highlighter-rouge">json.dumps()</code> to convert Python objects into JSON strings.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">json.loads()</code> to parse JSON strings into Python objects.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">json.dump()</code> and <code class="language-plaintext highlighter-rouge">json.load()</code> to work with JSON files.</li>
-  <li>JSON is a crucial format for data interchange, especially in APIs and web development.</li>
+  <li><code class="language-plaintext highlighter-rouge">dumps()</code> means “dump as a string.”</li>
+  <li>The output is a JSON-formatted string.</li>
 </ul>
 
-<p>Practice converting between Python objects and JSON, and working with JSON files to become proficient in handling structured data.</p>
+<hr />
+
+<h3 id="writing-json-to-a-file">Writing JSON to a File</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">json.dump()</code> function writes JSON data to a file.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Write JSON data to a file
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">data.json</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">json</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">JSON data written to file.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="reading-json-from-a-string-deserialization">Reading JSON from a String (Deserialization)</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">json.loads()</code> function parses a JSON string into a Python object.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># JSON string
+</span><span class="n">json_string</span> <span class="o">=</span> <span class="sh">'</span><span class="s">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="s">: </span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="s">, </span><span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="s">: 25, </span><span class="sh">"</span><span class="s">city</span><span class="sh">"</span><span class="s">: </span><span class="sh">"</span><span class="s">New York</span><span class="sh">"</span><span class="s">}</span><span class="sh">'</span>
+
+<span class="c1"># Convert JSON string to Python object
+</span><span class="n">parsed_data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">loads</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Parsed Data:</span><span class="sh">"</span><span class="p">,</span> <span class="n">parsed_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="explanation-1">Explanation:</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">loads()</code> means “load from a string.”</li>
+  <li>The result is a Python dictionary.</li>
+</ul>
+
+<hr />
+
+<h3 id="reading-json-from-a-file">Reading JSON from a File</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">json.load()</code> function reads JSON data from a file.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Read JSON data from a file
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">data.json</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">loaded_data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Loaded Data:</span><span class="sh">"</span><span class="p">,</span> <span class="n">loaded_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="formatting-options">Formatting Options</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">json.dumps()</code> function supports formatting options like <code class="language-plaintext highlighter-rouge">indent</code> and <code class="language-plaintext highlighter-rouge">sort_keys</code> for better readability.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Convert Python object to a formatted JSON string
+</span><span class="n">formatted_json</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Formatted JSON:</span><span class="se">\n</span><span class="sh">"</span><span class="p">,</span> <span class="n">formatted_json</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="example-json-workflow">Example: JSON Workflow</h2>
+
+<p>Here’s a complete example of creating, writing, reading, and parsing JSON data:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">json</span>
+
+<span class="c1"># Python dictionary
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="sh">"</span><span class="s">city</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">London</span><span class="sh">"</span><span class="p">}</span>
+
+<span class="c1"># Write JSON to a file
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">example.json</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">json</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
+
+<span class="c1"># Read JSON from the file
+</span><span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">example.json</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">loaded_data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Original Data:</span><span class="sh">"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Loaded Data:</span><span class="sh">"</span><span class="p">,</span> <span class="n">loaded_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="documentation">Documentation</h2>
+
+<p>For more information, visit the <a href="https://docs.python.org/3/library/json.html" target="_blank">official Python documentation</a>.</p>
+
+<hr />
+
+<p>The <code class="language-plaintext highlighter-rouge">json</code> module is a powerful tool for working with structured data in Python. In the next lesson, we’ll explore the <code class="language-plaintext highlighter-rouge">random</code> module for generating random numbers and data.</p>
 
         <!-- Next Lesson Button -->
         

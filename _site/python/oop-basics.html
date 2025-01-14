@@ -366,108 +366,108 @@
 
     <main class="content">
         <h1>OOP Basics</h1>
-        <p>Object-Oriented Programming (OOP) is a programming paradigm that organizes code using objects, which are instances of classes. OOP makes it easier to group related data and behavior, leading to more structured and reusable code.</p>
+        <p>Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects, which can contain data (attributes) and code (methods). OOP helps organize code, makes it reusable, and mirrors real-world concepts.</p>
 
 <hr />
 
-<h2 id="what-is-a-class">What Is a Class?</h2>
+<h2 id="key-concepts-of-oop">Key Concepts of OOP</h2>
 
-<p>A <strong>class</strong> is a blueprint for creating objects. It defines:</p>
+<h3 id="1-classes-and-objects">1. Classes and Objects</h3>
 <ul>
-  <li><strong>Attributes</strong>: Variables that store the object’s data.</li>
-  <li><strong>Methods</strong>: Functions that define the object’s behavior.</li>
+  <li><strong>Class</strong>: A blueprint for creating objects. It defines attributes and methods.</li>
+  <li><strong>Object</strong>: An instance of a class.</li>
+</ul>
+
+<h3 id="2-attributes-and-methods">2. Attributes and Methods</h3>
+<ul>
+  <li><strong>Attributes</strong>: Variables that store data related to the object.</li>
+  <li><strong>Methods</strong>: Functions defined in a class that describe the behaviors of an object.</li>
 </ul>
 
 <hr />
 
 <h2 id="defining-a-class">Defining a Class</h2>
 
-<p>Use the <code class="language-plaintext highlighter-rouge">class</code> keyword to define a class. The <code class="language-plaintext highlighter-rouge">__init__</code> method (constructor) is used to initialize an object’s attributes when the class is instantiated.</p>
+<p>You can define a class in Python using the <code class="language-plaintext highlighter-rouge">class</code> keyword.</p>
 
-<h3 id="example-defining-a-class">Example: Defining a Class</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Attribute
-</span>        <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>    <span class="c1"># Attribute
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Define a class
+</span><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
+    <span class="c1"># Constructor method to initialize attributes
+</span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">breed</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>  <span class="c1"># Instance attribute
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>  <span class="c1"># Instance attribute
 </span>
-    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>  <span class="c1"># Method
-</span>        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, my name is </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> and I am </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">age</span><span class="si">}</span><span class="s"> years old.</span><span class="sh">"</span>
+    <span class="c1"># Method
+</span>    <span class="k">def</span> <span class="nf">bark</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> says Woof!</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <hr />
 
 <h2 id="creating-an-object">Creating an Object</h2>
 
-<p>You create an object (an instance of a class) by calling the class with its required arguments.</p>
+<p>To create an object, call the class as if it were a function.</p>
 
-<h3 id="example-creating-an-object">Example: Creating an Object</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create an object of the Dog class
+</span><span class="n">my_dog</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Buddy</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Golden Retriever</span><span class="sh">"</span><span class="p">)</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person1</span> <span class="o">=</span> <span class="nc">Person</span><span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>  <span class="c1"># Create an instance of the Person class
-</span><span class="nf">print</span><span class="p">(</span><span class="n">person1</span><span class="p">.</span><span class="nf">greet</span><span class="p">())</span>         <span class="c1"># Call the greet method
-</span></code></pre></div></div>
-
-<h3 id="output">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, my name is Alice and I am 30 years old.
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="adding-more-methods">Adding More Methods</h2>
-
-<p>You can add additional methods to perform actions specific to the class.</p>
-
-<h3 id="example-adding-methods">Example: Adding Methods</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
-
-    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, my name is </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span>
-
-    <span class="k">def</span> <span class="nf">is_adult</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span>
-</code></pre></div></div>
-
-<h3 id="using-the-methods">Using the Methods</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person2</span> <span class="o">=</span> <span class="nc">Person</span><span class="p">(</span><span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">person2</span><span class="p">.</span><span class="nf">greet</span><span class="p">())</span>         <span class="c1"># Output: Hello, my name is Bob.
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Is adult:</span><span class="sh">"</span><span class="p">,</span> <span class="n">person2</span><span class="p">.</span><span class="nf">is_adult</span><span class="p">())</span>  <span class="c1"># Output: Is adult: False
+<span class="c1"># Access attributes
+</span><span class="nf">print</span><span class="p">(</span><span class="n">my_dog</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Output: Buddy
+</span>
+<span class="c1"># Call a method
+</span><span class="nf">print</span><span class="p">(</span><span class="n">my_dog</span><span class="p">.</span><span class="nf">bark</span><span class="p">())</span>  <span class="c1"># Output: Buddy says Woof!
 </span></code></pre></div></div>
 
 <hr />
 
-<h2 id="the-self-keyword">The <code class="language-plaintext highlighter-rouge">self</code> Keyword</h2>
+<h2 id="explanation">Explanation</h2>
 
-<p>The <code class="language-plaintext highlighter-rouge">self</code> keyword represents the instance of the class. It is used to access attributes and methods within the class.</p>
-
-<h3 id="example-using-self">Example: Using <code class="language-plaintext highlighter-rouge">self</code></h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
-
-    <span class="k">def</span> <span class="nf">update_name</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">new_name</span><span class="p">):</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">new_name</span>
-</code></pre></div></div>
+<ol>
+  <li>The <code class="language-plaintext highlighter-rouge">__init__</code> Method:
+    <ul>
+      <li>Called when an object is created.</li>
+      <li>Used to initialize the object’s attributes.</li>
+    </ul>
+  </li>
+  <li>The <code class="language-plaintext highlighter-rouge">self</code> Parameter:
+    <ul>
+      <li>Refers to the instance of the class.</li>
+      <li>Allows access to the instance’s attributes and methods.</li>
+    </ul>
+  </li>
+</ol>
 
 <hr />
 
-<h2 id="summary">Summary</h2>
+<h2 id="example-car-class">Example: Car Class</h2>
 
-<ul>
-  <li>A <strong>class</strong> is a blueprint for creating objects with attributes and methods.</li>
-  <li>An <strong>object</strong> is an instance of a class, representing a specific entity.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">__init__</code> method initializes the object’s attributes when it is created.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">self</code> keyword is used to refer to the current instance of the class.</li>
-</ul>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Car</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">make</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">make</span> <span class="o">=</span> <span class="n">make</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
 
-<p>OOP allows you to model real-world entities and their behaviors, making your code more organized and reusable. Practice creating classes and objects to deepen your understanding of this powerful paradigm.</p>
+    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">The </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">year</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">make</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">model</span><span class="si">}</span><span class="s"> is starting.</span><span class="sh">"</span>
+
+<span class="c1"># Create an object
+</span><span class="n">my_car</span> <span class="o">=</span> <span class="nc">Car</span><span class="p">(</span><span class="sh">"</span><span class="s">Toyota</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Camry</span><span class="sh">"</span><span class="p">,</span> <span class="mi">2022</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">my_car</span><span class="p">.</span><span class="nf">start</span><span class="p">())</span>  <span class="c1"># Output: The 2022 Toyota Camry is starting.
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="benefits-of-oop">Benefits of OOP</h2>
+
+<ol>
+  <li><strong>Modularity</strong>: Code is organized into classes.</li>
+  <li><strong>Reusability</strong>: Classes can be reused in different programs.</li>
+  <li><strong>Scalability</strong>: New functionality can be added with minimal changes.</li>
+</ol>
+
+<hr />
+
+<p>In the next lesson, we will explore how to define and use attributes in classes.</p>
 
         <!-- Next Lesson Button -->
         

@@ -366,118 +366,108 @@
 
     <main class="content">
         <h1>Polymorphism</h1>
-        <p>Polymorphism is a core concept in Object-Oriented Programming (OOP). It allows objects of different classes to be treated as objects of a common parent class, enabling a single interface to work with different types.</p>
+        <p>Polymorphism is a key concept in object-oriented programming (OOP) that allows objects of different classes to be treated as objects of a common superclass. It enables a single interface to represent different types of objects, making code more flexible and reusable.</p>
 
 <hr />
 
-<h2 id="what-is-polymorphism">What Is Polymorphism?</h2>
+<h2 id="polymorphism-with-methods">Polymorphism with Methods</h2>
 
-<ul>
-  <li><strong>Definition</strong>: Polymorphism means “many forms.” It allows the same method or operation to behave differently based on the object that invokes it.</li>
-  <li><strong>Key Benefit</strong>: Write code that can work with objects of different types, making it more flexible and reusable.</li>
-</ul>
+<p>In Python, polymorphism is typically achieved by defining methods with the same name in different classes. These methods can perform different operations depending on the class of the object.</p>
 
-<hr />
+<h3 id="example-polymorphism-with-methods">Example: Polymorphism with Methods</h3>
 
-<h2 id="example-polymorphism-with-methods">Example: Polymorphism with Methods</h2>
-
-<p>Different classes can implement the same method in their own way. When you call the method, the appropriate version is executed based on the object.</p>
-
-<h3 id="example-overriding-methods-for-polymorphism">Example: Overriding Methods for Polymorphism</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sh">"</span><span class="s">I make a sound.</span><span class="sh">"</span>
-
-<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Dog</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sh">"</span><span class="s">Woof!</span><span class="sh">"</span>
 
-<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Cat</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sh">"</span><span class="s">Meow!</span><span class="sh">"</span>
 
-<span class="c1"># Function that uses polymorphism
-</span><span class="k">def</span> <span class="nf">animal_sound</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">animal_speak</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
     <span class="nf">print</span><span class="p">(</span><span class="n">animal</span><span class="p">.</span><span class="nf">speak</span><span class="p">())</span>
 
-<span class="n">dog</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">()</span>
+<span class="c1"># Using the animal_speak function
+</span><span class="n">dog</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">()</span>
 <span class="n">cat</span> <span class="o">=</span> <span class="nc">Cat</span><span class="p">()</span>
 
-<span class="nf">animal_sound</span><span class="p">(</span><span class="n">dog</span><span class="p">)</span>  <span class="c1"># Calls Dog's speak method
-</span><span class="nf">animal_sound</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>  <span class="c1"># Calls Cat's speak method
+<span class="nf">animal_speak</span><span class="p">(</span><span class="n">dog</span><span class="p">)</span>  <span class="c1"># Output: Woof!
+</span><span class="nf">animal_speak</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>  <span class="c1"># Output: Meow!
 </span></code></pre></div></div>
 
-<h3 id="output">Output:</h3>
+<hr />
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Woof!
-Meow!
-</code></pre></div></div>
+<h2 id="polymorphism-with-inheritance">Polymorphism with Inheritance</h2>
+
+<p>Polymorphism is often used with inheritance. A subclass can override methods of the superclass, and the overridden method is called depending on the object type.</p>
+
+<h3 id="example-polymorphism-with-inheritance">Example: Polymorphism with Inheritance</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Shape</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="nc">NotImplementedError</span><span class="p">(</span><span class="sh">"</span><span class="s">Subclasses must implement this method</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Rectangle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">height</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="c1"># Using polymorphism with shapes
+</span><span class="n">shapes</span> <span class="o">=</span> <span class="p">[</span><span class="nc">Rectangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="nc">Circle</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">shape</span> <span class="ow">in</span> <span class="n">shapes</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">shape</span><span class="p">.</span><span class="nf">area</span><span class="p">())</span>
+<span class="c1"># Output:
+# 20
+# 28.26
+</span></code></pre></div></div>
 
 <hr />
 
-<h2 id="polymorphism-with-functions">Polymorphism with Functions</h2>
+<h2 id="polymorphism-with-built-in-functions">Polymorphism with Built-in Functions</h2>
 
-<p>Polymorphism is not limited to methods. It also applies to functions that can accept objects of different types and call their respective methods.</p>
+<p>Python’s built-in functions like <code class="language-plaintext highlighter-rouge">len</code>, <code class="language-plaintext highlighter-rouge">sorted</code>, and <code class="language-plaintext highlighter-rouge">max</code> demonstrate polymorphism by working with different types of objects.</p>
 
-<h3 id="example-using-polymorphism-in-a-function">Example: Using Polymorphism in a Function</h3>
+<h3 id="example-polymorphism-with-len">Example: Polymorphism with <code class="language-plaintext highlighter-rouge">len</code></h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="nc">Dog</span><span class="p">(),</span> <span class="nc">Cat</span><span class="p">(),</span> <span class="nc">Animal</span><span class="p">()]</span>
-
-<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
-    <span class="nf">print</span><span class="p">(</span><span class="n">animal</span><span class="p">.</span><span class="nf">speak</span><span class="p">())</span>
-</code></pre></div></div>
-
-<h3 id="output-1">Output:</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Woof!
-Meow!
-I make a sound.
-</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello</span><span class="sh">"</span><span class="p">))</span>  <span class="c1"># Output: 5
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">len</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>  <span class="c1"># Output: 4
+</span><span class="nf">print</span><span class="p">(</span><span class="nf">len</span><span class="p">({</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="sh">"</span><span class="s">b</span><span class="sh">"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}))</span>  <span class="c1"># Output: 2
+</span></code></pre></div></div>
 
 <hr />
 
-<h2 id="polymorphism-with-abstract-classes-preview">Polymorphism with Abstract Classes (Preview)</h2>
-
-<p>Polymorphism often works with abstract classes and interfaces. Abstract classes define a common interface, and derived classes provide specific implementations. This will be covered in detail in the next lesson.</p>
-
-<hr />
-
-<h2 id="why-use-polymorphism">Why Use Polymorphism?</h2>
+<h2 id="advantages-of-polymorphism">Advantages of Polymorphism</h2>
 
 <ol>
-  <li><strong>Code Reusability</strong>:
-    <ul>
-      <li>Write generic functions or methods that work with multiple types of objects.</li>
-    </ul>
-  </li>
-  <li><strong>Flexibility</strong>:
-    <ul>
-      <li>Add new classes or types without modifying existing code.</li>
-    </ul>
-  </li>
-  <li><strong>Scalability</strong>:
-    <ul>
-      <li>Handle more complex hierarchies or systems with a single interface.</li>
-    </ul>
-  </li>
+  <li><strong>Flexibility</strong>: Allows functions to use objects of different types.</li>
+  <li><strong>Reusability</strong>: Encourages the use of generalized code.</li>
+  <li><strong>Scalability</strong>: Makes it easy to add new classes with the same interface.</li>
 </ol>
 
 <hr />
 
-<h2 id="summary">Summary</h2>
+<h2 id="key-takeaways">Key Takeaways</h2>
 
 <ul>
-  <li><strong>Polymorphism</strong>:
-    <ul>
-      <li>Enables objects of different classes to be treated as objects of a common parent class.</li>
-      <li>Allows methods with the same name to behave differently depending on the object.</li>
-    </ul>
-  </li>
-  <li>Polymorphism is key to writing flexible and reusable code, especially in systems with complex class hierarchies.</li>
+  <li>Polymorphism allows objects of different classes to be used interchangeably if they implement the same method interface.</li>
+  <li>It enhances code readability, scalability, and reusability.</li>
+  <li>Polymorphism is commonly used with methods, inheritance, and built-in functions.</li>
 </ul>
 
-<p>Practice implementing polymorphism to see how it simplifies and enhances your programs.</p>
+<hr />
+
+<p>In the next lesson, we’ll explore lambda functions and how they enable concise and functional programming in Python.</p>
 
         <!-- Next Lesson Button -->
         
