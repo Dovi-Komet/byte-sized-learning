@@ -13,6 +13,9 @@
 <loc>http://localhost:4000/python/class-attributes.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/python/comments.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/python/conditionals.html</loc>
 </url>
 <url>
@@ -34,7 +37,7 @@
 <loc>http://localhost:4000/python/exceptions.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/python/first-python-program.html</loc>
+<loc>http://localhost:4000/python/first-program.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/python/for-loops.html</loc>
@@ -112,9 +115,6 @@
 <loc>http://localhost:4000/python/print-function.html</loc>
 </url>
 <url>
-<loc>http://localhost:4000/python/python-comments.html</loc>
-</url>
-<url>
 <loc>http://localhost:4000/python/random-module.html</loc>
 </url>
 <url>
@@ -148,6 +148,9 @@
 <loc>http://localhost:4000/python/the-finally-block.html</loc>
 </url>
 <url>
+<loc>http://localhost:4000/python/the-terminal.html</loc>
+</url>
+<url>
 <loc>http://localhost:4000/python/understanding-self.html</loc>
 </url>
 <url>
@@ -155,9 +158,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/python/user-input.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/python/using-the-terminal.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/python/variables-and-types.html</loc>

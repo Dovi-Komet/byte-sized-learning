@@ -17,20 +17,20 @@
     <!-- End Google Analytics -->
 
     
-    <title>First Python Program</title>
+    <title>Comments</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>First Python Program</title>
+<title>Comments</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="First Python Program" />
+<meta property="og:title" content="Comments" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/python/first-python-program.html" />
-<meta property="og:url" content="http://localhost:4000/python/first-python-program.html" />
+<link rel="canonical" href="http://localhost:4000/python/comments.html" />
+<meta property="og:url" content="http://localhost:4000/python/comments.html" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="First Python Program" />
+<meta property="twitter:title" content="Comments" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"First Python Program","url":"http://localhost:4000/python/first-python-program.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Comments","url":"http://localhost:4000/python/comments.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -58,12 +58,12 @@
         
         
         <li >
-            <a href="/python/using-the-terminal.html" ><b>3</b>. Using the Terminal</a>
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
         </li>
         
         
-        <li class="current">
-            <a href="/python/first-python-program.html" ><b>4</b>. First Python Program</a>
+        <li >
+            <a href="/python/first-program.html" ><b>4</b>. First Program</a>
         </li>
         
         
@@ -72,8 +72,8 @@
         </li>
         
         
-        <li >
-            <a href="/python/python-comments.html" ><b>6</b>. Python Comments</a>
+        <li class="current">
+            <a href="/python/comments.html" ><b>6</b>. Comments</a>
         </li>
         
         
@@ -365,80 +365,108 @@
 </script>
 
     <main class="content">
-        <h1>First Python Program</h1>
-        <h2 id="writing-and-running-your-first-python-program">Writing and Running Your First Python Program</h2>
+        <h1 id="comments-in-python">Comments in Python</h1>
 
-<p>Congratulations on setting up your Python environment! Now, let’s write and run your very first Python program.</p>
-
-<h3 id="step-1-open-vs-code">Step 1: Open VS Code</h3>
-
-<ol>
-  <li>Launch Visual Studio Code (VS Code).</li>
-  <li>Open a folder to save your Python file:
-    <ul>
-      <li>Click <strong>File</strong> &gt; <strong>Open Folder</strong> (or <strong>Open…</strong> on macOS).</li>
-      <li>Choose or create a folder where you want to save your work.</li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="step-2-create-a-python-file">Step 2: Create a Python File</h3>
-
-<ol>
-  <li>In VS Code, click the <strong>Explorer</strong> icon in the left sidebar.</li>
-  <li>Click the <strong>New File</strong> icon and name the file <code class="language-plaintext highlighter-rouge">first_program.py</code>. Make sure the file ends with <code class="language-plaintext highlighter-rouge">.py</code>, as this indicates a Python file.</li>
-</ol>
-
-<h3 id="step-3-write-your-first-python-program">Step 3: Write Your First Python Program</h3>
-
-<p>Type the following code into your <code class="language-plaintext highlighter-rouge">first_program.py</code> file:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is your first Python program
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h4 id="code-explanation">Code Explanation:</h4>
-<ul>
-  <li><strong><code class="language-plaintext highlighter-rouge"># This is your first Python program</code></strong>: This is a comment and won’t be executed. Comments are used to explain code.</li>
-  <li><strong><code class="language-plaintext highlighter-rouge">print("Hello, World!")</code></strong>: This command tells Python to display the text “Hello, World!” on the screen.</li>
-</ul>
-
-<h3 id="step-4-run-your-program">Step 4: Run Your Program</h3>
-
-<ol>
-  <li>Open the terminal in VS Code:
-    <ul>
-      <li>Go to <strong>View</strong> &gt; <strong>Terminal</strong>, or press <code class="language-plaintext highlighter-rouge">Ctrl + `</code> (Windows/Linux) or <code class="language-plaintext highlighter-rouge">Command + `</code> (macOS).</li>
-    </ul>
-  </li>
-  <li>Navigate to the folder where your <code class="language-plaintext highlighter-rouge">first_program.py</code> file is saved using the <code class="language-plaintext highlighter-rouge">cd</code> command in the terminal (see the previous lesson for navigating directories).</li>
-  <li>Run the program by typing:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python first_program.py
-</code></pre></div>    </div>
-
-    <p>If you’re using macOS or Linux, you might need to type:</p>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 first_program.py
-</code></pre></div>    </div>
-  </li>
-</ol>
-
-<h3 id="step-5-view-the-output">Step 5: View the Output</h3>
-
-<p>You should see the following output in the terminal:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, World!
-</code></pre></div></div>
-
-<p>This means your program ran successfully!</p>
+<p>Comments are lines in your code that Python ignores during execution. They are useful for documenting your code and making it easier to understand for yourself and others.</p>
 
 <hr />
 
-<p>In the next lesson, we’ll explore the <code class="language-plaintext highlighter-rouge">print()</code> function in more detail.</p>
+<h3 id="why-use-comments">Why Use Comments?</h3>
+
+<ul>
+  <li><strong>Clarify code</strong>: Explain what your code does.</li>
+  <li><strong>Debugging</strong>: Temporarily disable certain parts of your code by commenting them out.</li>
+  <li><strong>Collaboration</strong>: Help others understand your code when working in teams.</li>
+</ul>
+
+<hr />
+
+<h3 id="types-of-comments">Types of Comments</h3>
+
+<ol>
+  <li>
+    <p><strong>Single-Line Comments</strong></p>
+
+    <p>Single-line comments start with a <code class="language-plaintext highlighter-rouge">#</code> symbol. Everything after <code class="language-plaintext highlighter-rouge">#</code> on that line is ignored by Python.</p>
+
+    <p>Example:</p>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is a single-line comment
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># This prints a greeting
+</span></code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Multi-Line Comments</strong></p>
+
+    <p>Python doesn’t have a specific syntax for multi-line comments, but you can use triple quotes (<code class="language-plaintext highlighter-rouge">'''</code> or <code class="language-plaintext highlighter-rouge">"""</code>) to simulate them.</p>
+
+    <p>Example:</p>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">'''</span><span class="s">
+This is a multi-line comment.
+It spans multiple lines.
+</span><span class="sh">'''</span>
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Multi-line comments example</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p><strong>Note</strong>: Triple quotes are technically string literals. If they’re not assigned to a variable, they act like comments.</p>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="best-practices-for-comments">Best Practices for Comments</h3>
+
+<ol>
+  <li><strong>Keep comments concise and relevant.</strong></li>
+  <li><strong>Avoid obvious comments.</strong> Example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Assigns 10 to x
+</span></code></pre></div>    </div>
+    <p>The comment here doesn’t add value.</p>
+  </li>
+  <li><strong>Use comments to explain why, not what.</strong> Example:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Using a list comprehension for better performance
+</span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="practice-task">Practice Task</h3>
+
+<ol>
+  <li>Create a new file called <code class="language-plaintext highlighter-rouge">comments_example.py</code>.</li>
+  <li>
+    <p>Add the following code with appropriate comments:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># Calculate the square of numbers from 1 to 5
+</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+     <span class="c1"># Print the square of the current number
+</span>     <span class="nf">print</span><span class="p">(</span><span class="n">number</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Run the program and observe how comments help clarify what each part of the code does.</li>
+</ol>
+
+<hr />
+
+<h3 id="key-takeaways">Key Takeaways</h3>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">#</code> for single-line comments and triple quotes for multi-line comments.</li>
+  <li>Comments should enhance readability and understanding.</li>
+  <li>Avoid over-commenting or stating the obvious.</li>
+</ul>
+
+<hr />
+
+<h3 id="next-steps">Next Steps</h3>
+
+<p>In the next lesson, we’ll learn about variables and data types in Python.</p>
 
         <!-- Next Lesson Button -->
         
         
-        <a href="/python/print-function.html" class="next-lesson">Next Lesson: print Function</a>
+        <a href="/python/variables-and-types.html" class="next-lesson">Next Lesson: Variables and Types</a>
         
     </main>
 </body>

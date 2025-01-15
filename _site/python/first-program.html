@@ -17,20 +17,20 @@
     <!-- End Google Analytics -->
 
     
-    <title>Using the Terminal</title>
+    <title>First Program</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Using the Terminal</title>
+<title>First Program</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Using the Terminal" />
+<meta property="og:title" content="First Program" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/python/using-the-terminal.html" />
-<meta property="og:url" content="http://localhost:4000/python/using-the-terminal.html" />
+<link rel="canonical" href="http://localhost:4000/python/first-program.html" />
+<meta property="og:url" content="http://localhost:4000/python/first-program.html" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Using the Terminal" />
+<meta property="twitter:title" content="First Program" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Using the Terminal","url":"http://localhost:4000/python/using-the-terminal.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"First Program","url":"http://localhost:4000/python/first-program.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -57,13 +57,13 @@
         </li>
         
         
-        <li class="current">
-            <a href="/python/using-the-terminal.html" ><b>3</b>. Using the Terminal</a>
+        <li >
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
         </li>
         
         
-        <li >
-            <a href="/python/first-python-program.html" ><b>4</b>. First Python Program</a>
+        <li class="current">
+            <a href="/python/first-program.html" ><b>4</b>. First Program</a>
         </li>
         
         
@@ -73,7 +73,7 @@
         
         
         <li >
-            <a href="/python/python-comments.html" ><b>6</b>. Python Comments</a>
+            <a href="/python/comments.html" ><b>6</b>. Comments</a>
         </li>
         
         
@@ -365,118 +365,78 @@
 </script>
 
     <main class="content">
-        <h1>Using the Terminal</h1>
-        <h2 id="using-the-terminal-in-vs-code">Using the Terminal in VS Code</h2>
+        <h1 id="first-program">First Program</h1>
 
-<p>The terminal is a powerful tool that allows you to interact with your computer using text-based commands. In this lesson, you’ll learn how to open and use the terminal in Visual Studio Code (VS Code), as well as some basic commands to get started.</p>
-
-<h3 id="what-is-the-terminal">What is the Terminal?</h3>
-
-<p>The terminal lets you:</p>
-<ul>
-  <li>Run Python programs.</li>
-  <li>Install and manage libraries.</li>
-  <li>Interact with files and directories on your computer.</li>
-</ul>
-
-<h3 id="opening-the-terminal-in-vs-code">Opening the Terminal in VS Code</h3>
-
-<p>To open the terminal in VS Code:</p>
-<ol>
-  <li>Open VS Code.</li>
-  <li>Click on the <strong>View</strong> menu at the top of the screen.</li>
-  <li>
-    <p>Select <strong>Terminal</strong> from the dropdown menu, or press <code class="language-plaintext highlighter-rouge">Ctrl + `</code> (Windows/Linux) or <code class="language-plaintext highlighter-rouge">Command + `</code> (macOS).</p>
-
-    <p>This will open an integrated terminal at the bottom of the VS Code window.</p>
-  </li>
-</ol>
-
-<h3 id="what-is-the-command-prompt">What is the Command Prompt?</h3>
-
-<p>On Windows, the terminal defaults to the Command Prompt (also called <code class="language-plaintext highlighter-rouge">cmd</code>). It’s a text-based interface where you can execute commands. For macOS or Linux, the default terminal is usually a Unix shell like Bash or Zsh. These interfaces allow similar functionality but may have slight differences in syntax for certain commands.</p>
-
-<h3 id="navigating-the-file-system-in-the-terminal">Navigating the File System in the Terminal</h3>
-
-<p>The terminal starts in a specific directory (folder) on your computer. You can navigate and manage files using commands:</p>
-
-<h4 id="view-the-contents-of-a-directory">View the Contents of a Directory</h4>
-<ul>
-  <li><strong>Windows</strong>: Use <code class="language-plaintext highlighter-rouge">dir</code> to list all files and folders in the current directory.</li>
-  <li><strong>macOS/Linux</strong>: Use <code class="language-plaintext highlighter-rouge">ls</code> to list all files and folders.</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example (Windows):</span>
-<span class="nb">dir</span>
-</code></pre></div></div>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example (macOS/Linux):</span>
-<span class="nb">ls</span>
-</code></pre></div></div>
-
-<h4 id="change-directory-cd">Change Directory (cd)</h4>
-<ul>
-  <li>Use <code class="language-plaintext highlighter-rouge">cd &lt;directory-name&gt;</code> to move into a folder.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">cd ..</code> to go up one level in the directory structure.</li>
-  <li>Use <code class="language-plaintext highlighter-rouge">cd /</code> (Linux/macOS) or <code class="language-plaintext highlighter-rouge">cd \</code> (Windows) to return to the root directory.</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example (Windows):</span>
-<span class="nb">cd </span>Documents
-</code></pre></div></div>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example (macOS/Linux):</span>
-<span class="nb">cd </span>Documents
-</code></pre></div></div>
-
-<h4 id="check-your-current-directory">Check Your Current Directory</h4>
-<ul>
-  <li><strong>Windows</strong>: Use <code class="language-plaintext highlighter-rouge">cd</code> to display the current directory path.</li>
-  <li><strong>macOS/Linux</strong>: Use <code class="language-plaintext highlighter-rouge">pwd</code> (print working directory).</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Example:</span>
-<span class="nb">pwd</span>
-</code></pre></div></div>
-
-<h3 id="practical-examples">Practical Examples</h3>
-
-<ol>
-  <li><strong>Navigate to a Specific Folder</strong>:
-Suppose you have a folder named <code class="language-plaintext highlighter-rouge">PythonProjects</code> in your <code class="language-plaintext highlighter-rouge">Documents</code> folder:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>Documents/PythonProjects
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Navigate Back to the Parent Folder</strong>:
-If you’re in <code class="language-plaintext highlighter-rouge">PythonProjects</code> and want to return to <code class="language-plaintext highlighter-rouge">Documents</code>:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ..
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Navigate Directly to a Drive (Windows)</strong>:
-Switch to a specific drive (e.g., D:):
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>D:
-</code></pre></div>    </div>
-  </li>
-  <li><strong>List Files in the Current Directory</strong>:
-After navigating, use <code class="language-plaintext highlighter-rouge">dir</code> (Windows) or <code class="language-plaintext highlighter-rouge">ls</code> (macOS/Linux) to confirm your location.</li>
-</ol>
-
-<h3 id="running-python-code-in-the-terminal">Running Python Code in the Terminal</h3>
-
-<p>After navigating to the folder where your Python script is saved, you can run the script using:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python &lt;script-name&gt;.py
-</code></pre></div></div>
-
-<p>Replace <code class="language-plaintext highlighter-rouge">&lt;script-name&gt;.py</code> with the name of your Python file.</p>
+<p>Congratulations on setting up your environment and learning to use the terminal! Now, let’s write and run your very first Python program.</p>
 
 <hr />
 
-<p>In the next lesson, you’ll write and run your very first Python program.</p>
+<h3 id="step-1-create-a-python-file">Step 1: Create a Python File</h3>
+
+<ol>
+  <li>Open your code editor (e.g., VS Code).</li>
+  <li>Create a new file and save it as <code class="language-plaintext highlighter-rouge">first_program.py</code>. Make sure the file extension is <code class="language-plaintext highlighter-rouge">.py</code>, as this indicates a Python file.</li>
+</ol>
+
+<hr />
+
+<h3 id="step-2-write-your-code">Step 2: Write Your Code</h3>
+
+<p>Add the following code to <code class="language-plaintext highlighter-rouge">first_program.py</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is my first Python program
+</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="step-3-run-your-program">Step 3: Run Your Program</h3>
+
+<ol>
+  <li>Open the terminal in your code editor or your system’s terminal.</li>
+  <li>Navigate to the directory where <code class="language-plaintext highlighter-rouge">first_program.py</code> is saved using the <code class="language-plaintext highlighter-rouge">cd</code> command.</li>
+  <li>Run the program with the following command:</li>
+</ol>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python first_program.py
+</code></pre></div></div>
+
+<p>You should see the output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, World!
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="step-4-experiment">Step 4: Experiment</h3>
+
+<p>Try modifying your program to display a different message. For example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Welcome to Python programming!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Run your program again and observe the changes in the output.</p>
+
+<hr />
+
+<h3 id="key-takeaways">Key Takeaways</h3>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">print()</code> function is used to display text or other data on the screen.</li>
+  <li>Python files are saved with a <code class="language-plaintext highlighter-rouge">.py</code> extension.</li>
+  <li>You can run Python programs from the terminal using the <code class="language-plaintext highlighter-rouge">python</code> command.</li>
+</ul>
+
+<hr />
+
+<h3 id="next-steps">Next Steps</h3>
+
+<p>In the next lesson, we’ll dive deeper into the <code class="language-plaintext highlighter-rouge">print()</code> function and explore its capabilities.</p>
 
         <!-- Next Lesson Button -->
         
         
-        <a href="/python/first-python-program.html" class="next-lesson">Next Lesson: First Python Program</a>
+        <a href="/python/print-function.html" class="next-lesson">Next Lesson: print Function</a>
         
     </main>
 </body>

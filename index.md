@@ -4,6 +4,8 @@ title: Python Tutorial
 order: 0
 ---
 
+# Python Tutorial
+
 Welcome to your Python learning journey! This site provides a series of short lessons, starting from the basics and progressing to more advanced topics. Each lesson is designed to be simple, clear, and easy to follow.
 
 ## How to Use This Site

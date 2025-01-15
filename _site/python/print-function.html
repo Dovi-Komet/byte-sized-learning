@@ -58,12 +58,12 @@
         
         
         <li >
-            <a href="/python/using-the-terminal.html" ><b>3</b>. Using the Terminal</a>
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
         </li>
         
         
         <li >
-            <a href="/python/first-python-program.html" ><b>4</b>. First Python Program</a>
+            <a href="/python/first-program.html" ><b>4</b>. First Program</a>
         </li>
         
         
@@ -73,7 +73,7 @@
         
         
         <li >
-            <a href="/python/python-comments.html" ><b>6</b>. Python Comments</a>
+            <a href="/python/comments.html" ><b>6</b>. Comments</a>
         </li>
         
         
@@ -365,75 +365,113 @@
 </script>
 
     <main class="content">
-        <h1>print Function</h1>
-        <h2 id="the-print-function">The <code class="language-plaintext highlighter-rouge">print()</code> Function</h2>
+        <h1 id="the-print-function">The <code class="language-plaintext highlighter-rouge">print</code> Function</h1>
 
-<p>The <code class="language-plaintext highlighter-rouge">print()</code> function is one of the most commonly used functions in Python. It allows you to display information on the screen, which is essential for interacting with your program.</p>
-
-<h3 id="syntax-of-the-print-function">Syntax of the <code class="language-plaintext highlighter-rouge">print()</code> Function</h3>
-
-<p>The basic syntax of the <code class="language-plaintext highlighter-rouge">print()</code> function is:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="o">&lt;</span><span class="n">message</span><span class="o">&gt;</span><span class="p">)</span>
-</code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">&lt;message&gt;</code>: The information you want to display. This can be text, numbers, or other types of data.</li>
-</ul>
-
-<h3 id="printing-text">Printing Text</h3>
-
-<p>To print text, enclose the message in double (<code class="language-plaintext highlighter-rouge">"</code>) or single (<code class="language-plaintext highlighter-rouge">'</code>) quotes:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, Python!</span><span class="sh">"</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">'</span><span class="s">Welcome to the print() function.</span><span class="sh">'</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h4 id="output">Output:</h4>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, Python!
-Welcome to the print() function.
-</code></pre></div></div>
-
-<h3 id="printing-numbers">Printing Numbers</h3>
-
-<p>You can also print numbers directly without using quotes:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h4 id="output-1">Output:</h4>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>42
-3.14
-</code></pre></div></div>
-
-<h3 id="combining-text-and-variables">Combining Text and Variables</h3>
-
-<p>You can use the <code class="language-plaintext highlighter-rouge">print()</code> function to display both text and variable values:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Name:</span><span class="sh">"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Age:</span><span class="sh">"</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h4 id="output-2">Output:</h4>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name: Alice
-Age: 30
-</code></pre></div></div>
-
-<h3 id="using-print-for-debugging">Using <code class="language-plaintext highlighter-rouge">print()</code> for Debugging</h3>
-
-<p>The <code class="language-plaintext highlighter-rouge">print()</code> function is often used to debug programs by checking the values of variables or the flow of execution.</p>
+<p>The <code class="language-plaintext highlighter-rouge">print()</code> function is one of the most commonly used functions in Python. It allows you to display text, numbers, and other data on the screen.</p>
 
 <hr />
 
-<p>In the next lesson, we’ll learn about comments and how to use them effectively in Python.</p>
+<h3 id="syntax-of-print">Syntax of <code class="language-plaintext highlighter-rouge">print()</code></h3>
+
+<p>The basic syntax of the <code class="language-plaintext highlighter-rouge">print()</code> function is:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="p">...,</span> <span class="n">sep</span><span class="o">=</span><span class="sh">'</span><span class="s"> </span><span class="sh">'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="sh">'</span><span class="se">\n</span><span class="sh">'</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="n">sys</span><span class="p">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>object</strong>: The data or message you want to display. You can provide one or more objects, separated by commas.</li>
+  <li><strong>sep</strong>: The separator between multiple objects. Default is a space (<code class="language-plaintext highlighter-rouge">' '</code>).</li>
+  <li><strong>end</strong>: The string appended at the end of the output. Default is a newline (<code class="language-plaintext highlighter-rouge">'\n'</code>).</li>
+  <li><strong>file</strong>: Specifies the output stream. Default is the standard output (<code class="language-plaintext highlighter-rouge">sys.stdout</code>).</li>
+  <li><strong>flush</strong>: If <code class="language-plaintext highlighter-rouge">True</code>, forces the output to be flushed immediately.</li>
+</ul>
+
+<hr />
+
+<h3 id="examples-of-print">Examples of <code class="language-plaintext highlighter-rouge">print()</code></h3>
+
+<ol>
+  <li><strong>Printing Text</strong>:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+    <p>Output:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Hello, World!
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Printing Numbers</strong>:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nf">print</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</code></pre></div>    </div>
+    <p>Output:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 42
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Printing Multiple Values</strong>:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">The answer is</span><span class="sh">"</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+</code></pre></div>    </div>
+    <p>Output:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> The answer is 42
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Using <code class="language-plaintext highlighter-rouge">sep</code></strong>:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Python</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">is</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">fun</span><span class="sh">"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="sh">"</span><span class="s">-</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+    <p>Output:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Python-is-fun
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Using <code class="language-plaintext highlighter-rouge">end</code></strong>:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello</span><span class="sh">"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">)</span>
+ <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">World!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+    <p>Output:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Hello World!
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="practice-task">Practice Task</h3>
+
+<ol>
+  <li>Create a new file named <code class="language-plaintext highlighter-rouge">print_examples.py</code>.</li>
+  <li>
+    <p>Write and run the following code:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># Print a greeting
+</span> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Welcome to Python!</span><span class="sh">"</span><span class="p">)</span>
+
+ <span class="c1"># Print multiple values with custom separators
+</span> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Learning</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Python</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">step</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">by</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">step</span><span class="sh">"</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="sh">"</span><span class="s">-&gt;</span><span class="sh">"</span><span class="p">)</span>
+
+ <span class="c1"># Print without a newline at the end
+</span> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This is the first line.</span><span class="sh">"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="sh">"</span><span class="s"> </span><span class="sh">"</span><span class="p">)</span>
+ <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">This is the continuation.</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Observe the output and experiment with different <code class="language-plaintext highlighter-rouge">sep</code> and <code class="language-plaintext highlighter-rouge">end</code> values.</li>
+</ol>
+
+<hr />
+
+<h3 id="key-takeaways">Key Takeaways</h3>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">print()</code> function is highly versatile and can display various types of data.</li>
+  <li>Customize the output format using <code class="language-plaintext highlighter-rouge">sep</code> and <code class="language-plaintext highlighter-rouge">end</code>.</li>
+  <li>Practice using <code class="language-plaintext highlighter-rouge">print()</code> to get comfortable with its features.</li>
+</ul>
+
+<hr />
+
+<h3 id="next-steps">Next Steps</h3>
+
+<p>In the next lesson, we’ll explore how to use comments to document and clarify your Python code.</p>
 
         <!-- Next Lesson Button -->
         
         
-        <a href="/python/python-comments.html" class="next-lesson">Next Lesson: Python Comments</a>
+        <a href="/python/comments.html" class="next-lesson">Next Lesson: Comments</a>
         
     </main>
 </body>

@@ -17,20 +17,20 @@
     <!-- End Google Analytics -->
 
     
-    <title>Python Comments</title>
+    <title>The Terminal</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Python Comments</title>
+<title>The Terminal</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Python Comments" />
+<meta property="og:title" content="The Terminal" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/python/python-comments.html" />
-<meta property="og:url" content="http://localhost:4000/python/python-comments.html" />
+<link rel="canonical" href="http://localhost:4000/python/the-terminal.html" />
+<meta property="og:url" content="http://localhost:4000/python/the-terminal.html" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Python Comments" />
+<meta property="twitter:title" content="The Terminal" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Python Comments","url":"http://localhost:4000/python/python-comments.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"The Terminal","url":"http://localhost:4000/python/the-terminal.html"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -57,13 +57,13 @@
         </li>
         
         
-        <li >
-            <a href="/python/using-the-terminal.html" ><b>3</b>. Using the Terminal</a>
+        <li class="current">
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
         </li>
         
         
         <li >
-            <a href="/python/first-python-program.html" ><b>4</b>. First Python Program</a>
+            <a href="/python/first-program.html" ><b>4</b>. First Program</a>
         </li>
         
         
@@ -72,8 +72,8 @@
         </li>
         
         
-        <li class="current">
-            <a href="/python/python-comments.html" ><b>6</b>. Python Comments</a>
+        <li >
+            <a href="/python/comments.html" ><b>6</b>. Comments</a>
         </li>
         
         
@@ -365,61 +365,99 @@
 </script>
 
     <main class="content">
-        <h1>Python Comments</h1>
-        <p>Comments are lines in your code that Python ignores during execution. They are used to explain code, make it easier to read, or temporarily disable parts of the program.</p>
+        <h1 id="the-terminal">The Terminal</h1>
 
-<h2 id="single-line-comments">Single-Line Comments</h2>
+<p>The terminal (or command line) is a powerful tool for interacting with your computer. As a programmer, you’ll often use the terminal to run Python scripts, manage files, and execute commands.</p>
 
-<p>In Python, a single-line comment starts with the <code class="language-plaintext highlighter-rouge">#</code> symbol. Everything after the <code class="language-plaintext highlighter-rouge">#</code> on that line is ignored by Python.</p>
+<hr />
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is a single-line comment
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># This prints a message to the screen
-</span></code></pre></div></div>
+<h3 id="what-is-the-terminal">What is the Terminal?</h3>
 
-<h3 id="explanation">Explanation</h3>
-<ul>
-  <li>The first line is a comment that explains the code.</li>
-  <li>The comment after <code class="language-plaintext highlighter-rouge">print("Hello, World!")</code> describes what the line does.</li>
-</ul>
+<p>The terminal is a text-based interface where you can type commands to perform tasks instead of using a graphical interface. It’s also called the <strong>Command Prompt</strong> on Windows or the <strong>Terminal</strong> on macOS and Linux.</p>
 
-<h2 id="multi-line-comments-using-multiple--symbols">Multi-Line Comments (Using Multiple <code class="language-plaintext highlighter-rouge">#</code> Symbols)</h2>
+<hr />
 
-<p>Python doesn’t have a specific syntax for multi-line comments. However, you can use multiple single-line comments to achieve the same effect.</p>
+<h3 id="basic-terminal-commands">Basic Terminal Commands</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># This is a multi-line comment
-# Each line starts with a `#`
-# Comments make code easier to understand
-</span><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Python is fun!</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h2 id="multi-line-comments-using-strings">Multi-Line Comments (Using Strings)</h2>
-
-<p>Alternatively, you can use triple-quoted strings (<code class="language-plaintext highlighter-rouge">"""</code> or <code class="language-plaintext highlighter-rouge">'''</code>) as multi-line comments. These are technically multi-line string literals but are often used as comments when not assigned to a variable.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"""</span><span class="s">
-This is a multi-line comment.
-It spans multiple lines and is ignored by Python
-when it’s not assigned to a variable.
-</span><span class="sh">"""</span>
-<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Learning Python!</span><span class="sh">"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h2 id="why-use-comments">Why Use Comments?</h2>
+<p>Here are some common terminal commands you’ll use:</p>
 
 <ol>
-  <li><strong>Explain Code</strong>: Make your code understandable for others (and yourself).</li>
-  <li><strong>Debugging</strong>: Temporarily disable parts of your code by commenting them out.</li>
-  <li><strong>Documentation</strong>: Provide details about what specific blocks of code do.</li>
+  <li><strong>Navigate Directories</strong>:
+    <ul>
+      <li>To list files in the current directory:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span>   <span class="c"># macOS/Linux</span>
+<span class="nb">dir</span>  <span class="c"># Windows</span>
+</code></pre></div>        </div>
+      </li>
+      <li>To change directories:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;directory_name&gt;
+</code></pre></div>        </div>
+      </li>
+      <li>To go back one directory:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ..
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Create a Directory</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">mkdir</span> &lt;directory_name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Create a File</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">touch</span> &lt;file_name&gt;  <span class="c"># macOS/Linux</span>
+ echo. <span class="o">&gt;</span> &lt;file_name&gt;  <span class="c"># Windows</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Delete a File</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">rm</span> &lt;file_name&gt;  <span class="c"># macOS/Linux</span>
+ del &lt;file_name&gt;  <span class="c"># Windows</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Run a Python Script</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> python &lt;script_name&gt;.py
+</code></pre></div>    </div>
+  </li>
 </ol>
 
 <hr />
 
-<p>In the next lesson, we’ll explore variables and types in Python.</p>
+<h3 id="practice-task">Practice Task</h3>
+
+<p>Try the following in your terminal:</p>
+<ol>
+  <li>Create a new directory called <code class="language-plaintext highlighter-rouge">python_practice</code>.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">mkdir </span>python_practice
+</code></pre></div>    </div>
+  </li>
+  <li>Navigate into the directory.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd </span>python_practice
+</code></pre></div>    </div>
+  </li>
+  <li>Create a file called <code class="language-plaintext highlighter-rouge">hello.py</code> and open it in your editor. Add the following code:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello from the terminal!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Run the file in the terminal:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> python hello.py
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>You should see the output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello from the terminal!
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="next-steps">Next Steps</h3>
+
+<p>Now that you’re familiar with the terminal, we’ll write and execute your first Python program in the next lesson.</p>
 
         <!-- Next Lesson Button -->
         
         
-        <a href="/python/variables-and-types.html" class="next-lesson">Next Lesson: Variables and Types</a>
+        <a href="/python/first-program.html" class="next-lesson">Next Lesson: First Program</a>
         
     </main>
 </body>

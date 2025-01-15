@@ -58,12 +58,12 @@
         
         
         <li >
-            <a href="/python/using-the-terminal.html" ><b>3</b>. Using the Terminal</a>
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
         </li>
         
         
         <li >
-            <a href="/python/first-python-program.html" ><b>4</b>. First Python Program</a>
+            <a href="/python/first-program.html" ><b>4</b>. First Program</a>
         </li>
         
         
@@ -73,7 +73,7 @@
         
         
         <li >
-            <a href="/python/python-comments.html" ><b>6</b>. Python Comments</a>
+            <a href="/python/comments.html" ><b>6</b>. Comments</a>
         </li>
         
         
@@ -365,79 +365,87 @@
 </script>
 
     <main class="content">
-        <h1>Setup Environment</h1>
-        <h2 id="setting-up-your-python-development-environment">Setting Up Your Python Development Environment</h2>
+        <h1 id="setup-environment">Setup Environment</h1>
 
-<p>Before we start coding, you need to set up your development environment to work with Python. Follow these steps to install Python and a code editor.</p>
+<p>Before we can start coding in Python, we need to set up our development environment. This lesson will guide you through the process of installing Python and setting up a code editor.</p>
+
+<hr />
 
 <h3 id="step-1-install-python">Step 1: Install Python</h3>
 
 <ol>
-  <li>Visit the <a href="https://www.python.org/downloads/" target="_blank">Python official website</a>.</li>
-  <li>Download the latest version of Python for your operating system.</li>
-  <li>Run the installer and ensure the <strong>Add Python to PATH</strong> option is selected during installation.</li>
+  <li>Visit the <a href="https://www.python.org/" target="_blank">official Python website</a>.</li>
+  <li>Download the latest version of Python for your operating system (Windows, macOS, or Linux).</li>
+  <li>During installation, <strong>ensure that you check the box</strong> to “Add Python to PATH.”</li>
+</ol>
+
+<p>To verify the installation:</p>
+<ol>
+  <li>Open a terminal or command prompt.</li>
   <li>
-    <p>Verify the installation by opening a terminal and typing:</p>
+    <p>Type the following command and press Enter:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">--version</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">python</span> <span class="o">--</span><span class="n">version</span>
 </code></pre></div>    </div>
 
-    <p>If you’re on macOS or Linux, you might need to use <code class="language-plaintext highlighter-rouge">python3</code> instead:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">--version</span>
-</code></pre></div>    </div>
+    <p>This should display the installed Python version.</p>
   </li>
-</ol>
-
-<h4 id="what-to-expect">What to Expect:</h4>
-<p>When you run this command, you should see output similar to the following:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Python 3.x.x
-</code></pre></div></div>
-
-<p>The <code class="language-plaintext highlighter-rouge">3.x.x</code> will be replaced with the version number of Python you installed. If you see an error or no version number, Python may not be installed correctly.</p>
-
-<h4 id="how-to-open-a-terminal">How to Open a Terminal:</h4>
-<ul>
-  <li><strong>Windows</strong>: Press <code class="language-plaintext highlighter-rouge">Win + R</code>, type <code class="language-plaintext highlighter-rouge">cmd</code>, and press <code class="language-plaintext highlighter-rouge">Enter</code>.</li>
-  <li><strong>macOS</strong>: Press <code class="language-plaintext highlighter-rouge">Command + Space</code>, type <code class="language-plaintext highlighter-rouge">Terminal</code>, and press <code class="language-plaintext highlighter-rouge">Enter</code>.</li>
-  <li><strong>Linux</strong>: Press <code class="language-plaintext highlighter-rouge">Ctrl + Alt + T</code> or search for “Terminal” in your applications menu.</li>
-</ul>
-
-<h3 id="step-2-install-vs-code">Step 2: Install VS Code</h3>
-
-<p>Visual Studio Code (VS Code) is a free and lightweight code editor developed by Microsoft. It is widely used by developers because of its simplicity, speed, and powerful features. With VS Code, you can:</p>
-
-<ul>
-  <li>Write and edit code in various programming languages.</li>
-  <li>Use built-in tools like the terminal and debugger.</li>
-  <li>Extend functionality with a wide range of extensions.</li>
-</ul>
-
-<p>To install VS Code:</p>
-
-<ol>
-  <li>Visit the <a href="https://code.visualstudio.com/" target="_blank">VS Code download page</a>.</li>
-  <li>Download and install the version for your operating system.</li>
-  <li>During installation, select the options to add VS Code to your system path for easy access.</li>
-</ol>
-
-<h3 id="step-3-install-the-python-extension-for-vs-code">Step 3: Install the Python Extension for VS Code</h3>
-
-<ol>
-  <li>Open VS Code.</li>
-  <li>Click on the Extensions icon in the left sidebar (or press <code class="language-plaintext highlighter-rouge">Ctrl+Shift+X</code>).</li>
-  <li>Search for “Python” and install the extension provided by Microsoft.</li>
 </ol>
 
 <hr />
 
-<p>In the next lesson, we’ll learn how to use the terminal to run Python code.</p>
+<h3 id="step-2-install-a-code-editor">Step 2: Install a Code Editor</h3>
+
+<p>We recommend using <strong>Visual Studio Code (VS Code)</strong>:</p>
+<ol>
+  <li>Download VS Code from the <a href="https://code.visualstudio.com/" target="_blank">official website</a>.</li>
+  <li>Install the application on your computer.</li>
+  <li>Launch VS Code and install the <strong>Python extension</strong> for syntax highlighting, debugging, and more:
+    <ul>
+      <li>Open VS Code.</li>
+      <li>Go to the Extensions view (<code class="language-plaintext highlighter-rouge">Ctrl+Shift+X</code> or <code class="language-plaintext highlighter-rouge">Cmd+Shift+X</code> on macOS).</li>
+      <li>Search for “Python” and install the extension by Microsoft.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="step-3-test-your-setup">Step 3: Test Your Setup</h3>
+
+<ol>
+  <li>Open VS Code.</li>
+  <li>Create a new file and save it as <code class="language-plaintext highlighter-rouge">test.py</code>.</li>
+  <li>
+    <p>Add the following code:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello, Python!</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Open the terminal in VS Code (<code class="language-plaintext highlighter-rouge">Ctrl+</code><code class="language-plaintext highlighter-rouge"> or Cmd+</code>` on macOS).</li>
+  <li>
+    <p>Run the script with the following command:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">python</span> <span class="n">test</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>You should see the output:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, Python!
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="next-steps">Next Steps</h3>
+
+<p>With your environment set up, you’re ready to explore the terminal and its uses in the next lesson.</p>
 
         <!-- Next Lesson Button -->
         
         
-        <a href="/python/using-the-terminal.html" class="next-lesson">Next Lesson: Using the Terminal</a>
+        <a href="/python/the-terminal.html" class="next-lesson">Next Lesson: The Terminal</a>
         
     </main>
 </body>
