@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7YF62DJDB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P7YF62DJDB');
+    </script>
+    <!-- End Google Analytics -->
+
+    
+    <title>Testing and Unit Testing</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Testing and Unit Testing</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Testing and Unit Testing" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/python/testing-and-unit-testing.html" />
+<meta property="og:url" content="http://localhost:4000/python/testing-and-unit-testing.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Testing and Unit Testing" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Testing and Unit Testing","url":"http://localhost:4000/python/testing-and-unit-testing.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <nav class="sidebar">
+    <ul>
+        
+        
+        
+        
+        <li >
+            <a href="/" >Python Tutorial</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/intro-to-python.html" ><b>1</b>. Intro to Python</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/setup-environment.html" ><b>2</b>. Setup Environment</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comments.html" ><b>4</b>. Comments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/variables-and-types.html" ><b>5</b>. Variables and Types</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/numbers-and-math.html" ><b>6</b>. Numbers and Math</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/strings.html" ><b>7</b>. Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/slicing-and-indexing.html" ><b>8</b>. Slicing and Indexing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/f-strings.html" ><b>9</b>. f-Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/user-input-and-output.html" ><b>10</b>. User Input and Output</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/boolean-logic.html" ><b>11</b>. Boolean Logic</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/conditionals.html" ><b>12</b>. Conditionals</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/loops.html" ><b>13</b>. Loops</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/functions.html" ><b>14</b>. Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lambda-functions.html" ><b>15</b>. Lambda Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lists-sets-and-tuples.html" ><b>16</b>. Lists, Sets, and Tuples</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dictionaries.html" ><b>17</b>. Dictionaries</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/nested-structures.html" ><b>18</b>. Nested Structures</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comprehensions.html" ><b>19</b>. Comprehensions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/reading-and-writing-files.html" ><b>20</b>. Reading and Writing Files</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/error-and-exception-handling.html" ><b>21</b>. Error and Exception Handling</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/oop-basics.html" ><b>22</b>. OOP Basics</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/inheritance-and-polymorphism.html" ><b>23</b>. Inheritance and Polymorphism</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/encapsulation.html" ><b>24</b>. Encapsulation</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/modules-and-packages.html" ><b>25</b>. Modules and Packages</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/standard-library-overview.html" ><b>26</b>. Standard Library Overview</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-os-module.html" ><b>27</b>. The os Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-random-module.html" ><b>28</b>. The random Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dates-and-time.html" ><b>29</b>. Dates and Time</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/working-with-json.html" ><b>30</b>. Working with JSON</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/apis-with-requests.html" ><b>31</b>. APIs and Requests</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/regular-expressions.html" ><b>32</b>. Regular Expressions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/introduction-to-pandas.html" ><b>33</b>. Introduction to Pandas</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/debugging-and-troubleshooting.html" ><b>34</b>. Debugging and Troubleshooting</a>
+        </li>
+        
+        
+        <li class="current">
+            <a href="/python/testing-and-unit-testing.html" ><b>35</b>. Testing and Unit Testing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/logging.html" ><b>36</b>. Logging</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/web-scraping.html" ><b>37</b>. Web Scraping</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/sql-basics-and-python-integration.html" ><b>38</b>. SQL Basics and Python Integration</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/big-o-notation-and-performance.html" ><b>39</b>. Big-O Notation and Performance</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/deployment-strategies.html" ><b>40</b>. Deployment Strategies</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/pip-and-virtual-environments.html" ><b>41</b>. Pip and Virtual Environments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/git-and-version-control.html" ><b>42</b>. Git and Version Control</a>
+        </li>
+        
+        
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
+
+    <main class="content">
+        <h1 id="testing-and-unit-testing-in-python">Testing and Unit Testing in Python</h1>
+
+<p>Testing ensures that code works as expected and helps prevent future issues when changes are made. Python provides several frameworks and tools to facilitate testing, with <strong>unit testing</strong> being a fundamental approach.</p>
+
+<hr />
+
+<h2 id="why-testing-is-important">Why Testing is Important</h2>
+
+<ol>
+  <li>Ensures code correctness and reliability.</li>
+  <li>Reduces debugging time and effort.</li>
+  <li>Helps catch bugs early in development.</li>
+  <li>Facilitates easier code refactoring and updates.</li>
+  <li>Increases confidence in code quality.</li>
+</ol>
+
+<hr />
+
+<h2 id="types-of-testing">Types of Testing</h2>
+
+<ol>
+  <li><strong>Unit Testing</strong> – Tests individual functions or components.</li>
+  <li><strong>Integration Testing</strong> – Tests how different modules work together.</li>
+  <li><strong>Functional Testing</strong> – Tests the overall application behavior.</li>
+  <li><strong>Regression Testing</strong> – Ensures new changes don’t break existing functionality.</li>
+  <li><strong>Performance Testing</strong> – Evaluates speed and efficiency.</li>
+</ol>
+
+<hr />
+
+<h2 id="introduction-to-unit-testing">Introduction to Unit Testing</h2>
+
+<p>Unit tests verify the smallest parts of an application, such as functions or methods, in isolation.</p>
+
+<h3 id="pythons-built-in-unittest-module">Python’s Built-in <code class="language-plaintext highlighter-rouge">unittest</code> Module</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">unittest</code> module provides a robust framework to write and run unit tests.</p>
+
+<h3 id="writing-a-basic-unit-test">Writing a Basic Unit Test</h3>
+
+<ol>
+  <li>Import the <code class="language-plaintext highlighter-rouge">unittest</code> module.</li>
+  <li>Create a test class inheriting from <code class="language-plaintext highlighter-rouge">unittest.TestCase</code>.</li>
+  <li>Define test methods that start with <code class="language-plaintext highlighter-rouge">test_</code>.</li>
+  <li>Use assertions to check expected outcomes.</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">unittest</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">class</span> <span class="nc">TestMathOperations</span><span class="p">(</span><span class="n">unittest</span><span class="p">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_addition</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">add</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="sh">'</span><span class="s">__main__</span><span class="sh">'</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="p">.</span><span class="nf">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="assertions-in-unit-tests">Assertions in Unit Tests</h2>
+
+<p>Assertions verify expected outcomes. Common assertions in <code class="language-plaintext highlighter-rouge">unittest</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">assertEqual(a, b)</code> – Checks if <code class="language-plaintext highlighter-rouge">a == b</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">assertNotEqual(a, b)</code> – Checks if <code class="language-plaintext highlighter-rouge">a != b</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">assertTrue(x)</code> – Checks if <code class="language-plaintext highlighter-rouge">x</code> is <code class="language-plaintext highlighter-rouge">True</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">assertFalse(x)</code> – Checks if <code class="language-plaintext highlighter-rouge">x</code> is <code class="language-plaintext highlighter-rouge">False</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">assertRaises(exception, func, *args)</code> – Ensures an exception is raised.</li>
+</ul>
+
+<p>Example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Cannot divide by zero</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+
+<span class="k">class</span> <span class="nc">TestDivision</span><span class="p">(</span><span class="n">unittest</span><span class="p">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_divide</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="nf">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertRaises</span><span class="p">(</span><span class="nb">ValueError</span><span class="p">,</span> <span class="n">divide</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="running-tests">Running Tests</h2>
+
+<p>You can run tests using the command line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> unittest test_module.py
+</code></pre></div></div>
+
+<p>Run all tests in a directory:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> unittest discover
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="organizing-tests">Organizing Tests</h2>
+
+<ol>
+  <li>Store test files in a dedicated <code class="language-plaintext highlighter-rouge">tests/</code> directory.</li>
+  <li>Use consistent naming conventions (<code class="language-plaintext highlighter-rouge">test_*.py</code>).</li>
+  <li>Separate unit tests from integration tests.</li>
+  <li>Use mock objects to isolate dependencies.</li>
+</ol>
+
+<p>Example project structure:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_project/
+│-- src/
+│   ├── calculator.py
+│-- tests/
+│   ├── test_calculator.py
+│-- main.py
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="mocking-in-tests">Mocking in Tests</h2>
+
+<p>Mocking allows us to simulate dependencies that are expensive, slow, or have side effects, like database calls or API requests.</p>
+
+<h3 id="using-unittestmock">Using <code class="language-plaintext highlighter-rouge">unittest.mock</code></h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">unittest.mock</span> <span class="kn">import</span> <span class="n">MagicMock</span>
+
+<span class="k">class</span> <span class="nc">APIClient</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">fetch_data</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="sh">"</span><span class="s">key</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">value</span><span class="sh">"</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">process_data</span><span class="p">(</span><span class="n">api_client</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">api_client</span><span class="p">.</span><span class="nf">fetch_data</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="sh">"</span><span class="s">key</span><span class="sh">"</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">test_process_data</span><span class="p">():</span>
+    <span class="n">mock_client</span> <span class="o">=</span> <span class="nc">APIClient</span><span class="p">()</span>
+    <span class="n">mock_client</span><span class="p">.</span><span class="n">fetch_data</span> <span class="o">=</span> <span class="nc">MagicMock</span><span class="p">(</span><span class="n">return_value</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">key</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">mocked_value</span><span class="sh">"</span><span class="p">})</span>
+    <span class="k">assert</span> <span class="nf">process_data</span><span class="p">(</span><span class="n">mock_client</span><span class="p">)</span> <span class="o">==</span> <span class="sh">"</span><span class="s">mocked_value</span><span class="sh">"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="test-coverage">Test Coverage</h2>
+
+<p>Test coverage measures how much of your code is executed by tests. A popular tool to check test coverage in Python is <code class="language-plaintext highlighter-rouge">coverage</code>.</p>
+
+<h3 id="install-coverage">Install Coverage:</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>coverage
+</code></pre></div></div>
+
+<h3 id="run-coverage">Run Coverage:</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>coverage run <span class="nt">-m</span> unittest discover
+</code></pre></div></div>
+
+<h3 id="generate-coverage-report">Generate Coverage Report:</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>coverage report
+coverage html
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="other-testing-frameworks">Other Testing Frameworks</h2>
+
+<p>While <code class="language-plaintext highlighter-rouge">unittest</code> is built into Python, other frameworks offer additional features:</p>
+
+<h3 id="1-pytest">1. <strong>pytest</strong></h3>
+<ul>
+  <li>More concise syntax.</li>
+  <li>Powerful fixtures for setup and teardown.</li>
+  <li>Rich plugin ecosystem.</li>
+</ul>
+
+<p>Example with <code class="language-plaintext highlighter-rouge">pytest</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">test_add</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+</code></pre></div></div>
+
+<p>Run tests with:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pytest
+</code></pre></div></div>
+
+<h3 id="2-doctest">2. <strong>doctest</strong></h3>
+<p>Allows embedding tests in docstrings.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">
+    Returns the square of x.
+</span><span class="gp">
+    &gt;&gt;&gt;</span> <span class="nf">square</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="mi">9</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nf">square</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+    <span class="mi">16</span>
+    <span class="sh">"""</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<p>Run doctests:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> doctest <span class="nt">-v</span> script.py
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="continuous-integration-ci">Continuous Integration (CI)</h2>
+
+<p>Automating tests using CI tools ensures code quality with every commit. Popular CI services:</p>
+
+<ul>
+  <li>GitHub Actions</li>
+  <li>GitLab CI/CD</li>
+  <li>Jenkins</li>
+  <li>Travis CI</li>
+</ul>
+
+<p>Example GitHub Actions workflow for running tests:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">Python Tests</span>
+
+<span class="na">on</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">push</span><span class="pi">,</span> <span class="nv">pull_request</span><span class="pi">]</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="na">test</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v3</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set up Python</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/setup-python@v4</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">python-version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.10'</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Install dependencies</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">pip install -r requirements.txt</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run tests</span>
+        <span class="na">run</span><span class="pi">:</span> <span class="s">pytest</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="best-practices-for-writing-tests">Best Practices for Writing Tests</h2>
+
+<ol>
+  <li><strong>Write Tests Before Code (TDD)</strong> – Helps define expected behavior early.</li>
+  <li><strong>Keep Tests Independent</strong> – Avoid dependencies between tests.</li>
+  <li><strong>Use Meaningful Test Names</strong> – Clearly describe the purpose of the test.</li>
+  <li><strong>Test Edge Cases</strong> – Consider all possible input variations.</li>
+  <li><strong>Run Tests Frequently</strong> – Ensure regular testing to catch issues early.</li>
+</ol>
+
+<hr />
+
+<h2 id="practice-exercises">Practice Exercises</h2>
+
+<ol>
+  <li>Write unit tests for a function that checks if a number is prime.</li>
+  <li>Create a test case to verify that a function correctly handles empty inputs.</li>
+  <li>Implement a mock test for an API call using <code class="language-plaintext highlighter-rouge">unittest.mock</code>.</li>
+</ol>
+
+<hr />
+
+<p>Unit testing is crucial for writing maintainable, error-free code. Mastering testing frameworks and techniques ensures software reliability and performance.</p>
+
+        <!-- Next Lesson Button -->
+        
+        
+        <a href="/python/logging.html" class="next-lesson">Next Lesson: Logging</a>
+        
+    </main>
+</body>
+
+</html>

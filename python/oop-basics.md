@@ -1,97 +1,177 @@
 ---
-layout: default
 title: "OOP Basics"
-order: 40
+order: 22
 ---
 
-Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects, which can contain data (attributes) and code (methods). OOP helps organize code, makes it reusable, and mirrors real-world concepts.
+# OOP Basics
+
+**Object-Oriented Programming (OOP)** is a programming paradigm that organizes code into objects, which are instances of classes. This approach helps structure programs for better readability, reusability, and scalability.
 
 ---
 
-## Key Concepts of OOP
+## Key OOP Concepts
 
-### 1. Classes and Objects
-- **Class**: A blueprint for creating objects. It defines attributes and methods.
-- **Object**: An instance of a class.
+1. **Class**:
+   - A blueprint for creating objects.
+   - Defines attributes (data) and methods (functions).
 
-### 2. Attributes and Methods
-- **Attributes**: Variables that store data related to the object.
-- **Methods**: Functions defined in a class that describe the behaviors of an object.
+2. **Object**:
+   - An instance of a class.
+   - Contains specific data and can perform actions defined in the class.
+
+3. **Attributes**:
+   - Variables that store data for objects.
+
+4. **Methods**:
+   - Functions defined inside a class to perform actions.
 
 ---
 
 ## Defining a Class
 
-You can define a class in Python using the `class` keyword.
+Use the `class` keyword to define a class.
 
+### Example:
 ```python
-# Define a class
-class Dog:
-    # Constructor method to initialize attributes
-    def __init__(self, name, breed):
-        self.name = name  # Instance attribute
-        self.breed = breed  # Instance attribute
+class Person:
+    def __init__(self, name, age):
+        self.name = name  # Attribute
+        self.age = age    # Attribute
 
-    # Method
-    def bark(self):
-        return f"{self.name} says Woof!"
+    def greet(self):      # Method
+        print(f"Hello, my name is {self.name}.")
 ```
 
 ---
 
 ## Creating an Object
 
-To create an object, call the class as if it were a function.
+Create an object by calling the class like a function.
 
+### Example:
 ```python
-# Create an object of the Dog class
-my_dog = Dog("Buddy", "Golden Retriever")
+# Create an object
+person1 = Person("Alice", 30)
 
 # Access attributes
-print(my_dog.name)  # Output: Buddy
+print(person1.name)  # Output: Alice
+print(person1.age)   # Output: 30
 
-# Call a method
-print(my_dog.bark())  # Output: Buddy says Woof!
+# Call methods
+person1.greet()  # Output: Hello, my name is Alice.
 ```
 
 ---
 
-## Explanation
+## The `__init__` Method
 
-1. The `__init__` Method:
-   - Called when an object is created.
-   - Used to initialize the object's attributes.
-2. The `self` Parameter:
-   - Refers to the instance of the class.
-   - Allows access to the instance’s attributes and methods.
+The `__init__` method initializes object attributes when an object is created.
+
+### Example:
+```python
+class Dog:
+    def __init__(self, breed, color):
+        self.breed = breed
+        self.color = color
+
+dog1 = Dog("Labrador", "Yellow")
+print(dog1.breed)  # Output: Labrador
+```
 
 ---
 
-## Example: Car Class
+## Adding Methods
 
+Methods define the behavior of a class.
+
+### Example:
+```python
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+calc = Calculator()
+print(calc.add(3, 5))  # Output: 8
+```
+
+---
+
+## Class vs Instance Attributes
+
+- **Class Attributes**:
+  - Shared across all instances of the class.
+  - Defined outside the `__init__` method.
+
+- **Instance Attributes**:
+  - Unique to each object.
+  - Defined inside the `__init__` method.
+
+### Example:
 ```python
 class Car:
-    def __init__(self, make, model, year):
-        self.make = make
-        self.model = model
-        self.year = year
+    wheels = 4  # Class attribute
 
-    def start(self):
-        return f"The {self.year} {self.make} {self.model} is starting."
+    def __init__(self, brand):
+        self.brand = brand  # Instance attribute
 
-# Create an object
-my_car = Car("Toyota", "Camry", 2022)
-print(my_car.start())  # Output: The 2022 Toyota Camry is starting.
+car1 = Car("Toyota")
+car2 = Car("Ford")
+
+print(car1.wheels)  # Output: 4
+print(car1.brand)   # Output: Toyota
+```
+
+---
+
+## Encapsulation
+
+Encapsulation restricts access to certain parts of an object to protect its internal state.
+
+- Use `_attribute` for protected attributes.
+- Use `__attribute` for private attributes.
+
+### Example:
+```python
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+account = BankAccount(100)
+account.deposit(50)
+print(account.get_balance())  # Output: 150
 ```
 
 ---
 
 ## Benefits of OOP
 
-1. **Modularity**: Code is organized into classes.
-2. **Reusability**: Classes can be reused in different programs.
-3. **Scalability**: New functionality can be added with minimal changes.
+1. **Modularity**: Code is organized into classes and objects.
+2. **Reusability**: Classes can be reused in other programs.
+3. **Scalability**: Easy to manage and extend large programs.
+4. **Data Hiding**: Protects internal data from direct modification.
 
 ---
 
-In the next lesson, we will explore how to define and use attributes in classes.
+## Practice Exercises
+
+1. **Create a Class**:
+   - Define a class `Student` with attributes `name` and `grade`.
+   - Add a method `is_passing` that returns `True` if the grade is >= 50.
+
+2. **Bank Account**:
+   - Create a class `Account` with methods to `deposit`, `withdraw`, and `check_balance`.
+
+3. **Car Class**:
+   - Define a class `Car` with class attribute `wheels` and instance attributes `brand` and `model`.
+   - Add a method to display car details.
+
+4. **Encapsulation**:
+   - Create a class `Library` with a private attribute `_books` and methods to add, remove, and list books.
+
+OOP is a cornerstone of modern programming, enabling the creation of organized and reusable code.

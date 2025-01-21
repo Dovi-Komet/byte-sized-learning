@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7YF62DJDB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P7YF62DJDB');
+    </script>
+    <!-- End Google Analytics -->
+
+    
+    <title>Debugging and Troubleshooting</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Debugging and Troubleshooting</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Debugging and Troubleshooting" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/python/debugging-and-troubleshooting.html" />
+<meta property="og:url" content="http://localhost:4000/python/debugging-and-troubleshooting.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Debugging and Troubleshooting" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Debugging and Troubleshooting","url":"http://localhost:4000/python/debugging-and-troubleshooting.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <nav class="sidebar">
+    <ul>
+        
+        
+        
+        
+        <li >
+            <a href="/" >Python Tutorial</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/intro-to-python.html" ><b>1</b>. Intro to Python</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/setup-environment.html" ><b>2</b>. Setup Environment</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comments.html" ><b>4</b>. Comments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/variables-and-types.html" ><b>5</b>. Variables and Types</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/numbers-and-math.html" ><b>6</b>. Numbers and Math</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/strings.html" ><b>7</b>. Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/slicing-and-indexing.html" ><b>8</b>. Slicing and Indexing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/f-strings.html" ><b>9</b>. f-Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/user-input-and-output.html" ><b>10</b>. User Input and Output</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/boolean-logic.html" ><b>11</b>. Boolean Logic</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/conditionals.html" ><b>12</b>. Conditionals</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/loops.html" ><b>13</b>. Loops</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/functions.html" ><b>14</b>. Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lambda-functions.html" ><b>15</b>. Lambda Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lists-sets-and-tuples.html" ><b>16</b>. Lists, Sets, and Tuples</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dictionaries.html" ><b>17</b>. Dictionaries</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/nested-structures.html" ><b>18</b>. Nested Structures</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comprehensions.html" ><b>19</b>. Comprehensions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/reading-and-writing-files.html" ><b>20</b>. Reading and Writing Files</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/error-and-exception-handling.html" ><b>21</b>. Error and Exception Handling</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/oop-basics.html" ><b>22</b>. OOP Basics</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/inheritance-and-polymorphism.html" ><b>23</b>. Inheritance and Polymorphism</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/encapsulation.html" ><b>24</b>. Encapsulation</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/modules-and-packages.html" ><b>25</b>. Modules and Packages</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/standard-library-overview.html" ><b>26</b>. Standard Library Overview</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-os-module.html" ><b>27</b>. The os Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-random-module.html" ><b>28</b>. The random Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dates-and-time.html" ><b>29</b>. Dates and Time</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/working-with-json.html" ><b>30</b>. Working with JSON</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/apis-with-requests.html" ><b>31</b>. APIs and Requests</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/regular-expressions.html" ><b>32</b>. Regular Expressions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/introduction-to-pandas.html" ><b>33</b>. Introduction to Pandas</a>
+        </li>
+        
+        
+        <li class="current">
+            <a href="/python/debugging-and-troubleshooting.html" ><b>34</b>. Debugging and Troubleshooting</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/testing-and-unit-testing.html" ><b>35</b>. Testing and Unit Testing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/logging.html" ><b>36</b>. Logging</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/web-scraping.html" ><b>37</b>. Web Scraping</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/sql-basics-and-python-integration.html" ><b>38</b>. SQL Basics and Python Integration</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/big-o-notation-and-performance.html" ><b>39</b>. Big-O Notation and Performance</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/deployment-strategies.html" ><b>40</b>. Deployment Strategies</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/pip-and-virtual-environments.html" ><b>41</b>. Pip and Virtual Environments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/git-and-version-control.html" ><b>42</b>. Git and Version Control</a>
+        </li>
+        
+        
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
+
+    <main class="content">
+        <h1 id="debugging-and-troubleshooting-in-python">Debugging and Troubleshooting in Python</h1>
+
+<p>Debugging is the process of identifying and fixing errors in your code. Python provides various tools and techniques to help troubleshoot issues efficiently.</p>
+
+<hr />
+
+<h2 id="common-types-of-errors">Common Types of Errors</h2>
+
+<ol>
+  <li><strong>Syntax Errors</strong> – Occur when the code violates Python’s syntax rules.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello</span><span class="sh">"</span>  <span class="c1"># Missing closing parenthesis
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong>Runtime Errors (Exceptions)</strong> – Occur during execution, such as division by zero.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>  <span class="c1"># ZeroDivisionError
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong>Logical Errors</strong> – The program runs without errors but produces incorrect results.</li>
+</ol>
+
+<hr />
+
+<h2 id="debugging-techniques">Debugging Techniques</h2>
+
+<h3 id="1-print-statements">1. Print Statements</h3>
+<p>Adding <code class="language-plaintext highlighter-rouge">print()</code> statements is a simple yet effective way to track variable values.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">a: </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s">, b: </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="nf">add_numbers</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="sh">"</span><span class="s">10</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Intentional error
+</span></code></pre></div></div>
+
+<h3 id="2-using-assertions">2. Using Assertions</h3>
+<p>Assertions help catch bugs early by validating assumptions.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">y</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="sh">"</span><span class="s">Denominator should not be zero</span><span class="sh">"</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+
+<span class="nf">divide</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># AssertionError
+</span></code></pre></div></div>
+
+<h3 id="3-pythons-built-in-pdb-debugger">3. Python’s Built-in <code class="language-plaintext highlighter-rouge">pdb</code> Debugger</h3>
+<p>Python Debugger (<code class="language-plaintext highlighter-rouge">pdb</code>) allows stepping through code interactively.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pdb</span>
+
+<span class="k">def</span> <span class="nf">faulty_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">pdb</span><span class="p">.</span><span class="nf">set_trace</span><span class="p">()</span>  <span class="c1"># Start debugging session
+</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="nf">faulty_function</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h4 id="useful-pdb-commands">Useful <code class="language-plaintext highlighter-rouge">pdb</code> Commands:</h4>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">n</code> – Execute the next line.</li>
+  <li><code class="language-plaintext highlighter-rouge">c</code> – Continue execution.</li>
+  <li><code class="language-plaintext highlighter-rouge">p variable</code> – Print variable value.</li>
+  <li><code class="language-plaintext highlighter-rouge">q</code> – Quit the debugger.</li>
+</ul>
+
+<h3 id="4-using-logging-for-better-insights">4. Using <code class="language-plaintext highlighter-rouge">logging</code> for Better Insights</h3>
+<p>Instead of <code class="language-plaintext highlighter-rouge">print()</code>, use logging for tracking program execution in production.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">logging</span>
+
+<span class="n">logging</span><span class="p">.</span><span class="nf">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">DEBUG</span><span class="p">)</span>
+<span class="n">logging</span><span class="p">.</span><span class="nf">debug</span><span class="p">(</span><span class="sh">"</span><span class="s">This is a debug message</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="5-exception-handling-with-try-except">5. Exception Handling with <code class="language-plaintext highlighter-rouge">try-except</code></h3>
+<p>Catching exceptions prevents crashes and provides error messages.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="nf">int</span><span class="p">(</span><span class="sh">"</span><span class="s">abc</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># ValueError
+</span><span class="k">except</span> <span class="nb">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="debugging-tools">Debugging Tools</h2>
+
+<h3 id="1-using-ide-debuggers">1. <strong>Using IDE Debuggers</strong></h3>
+<p>Most IDEs like PyCharm and VSCode offer built-in debuggers with features like breakpoints, watches, and stepping.</p>
+
+<h3 id="2-using-trace-module">2. <strong>Using <code class="language-plaintext highlighter-rouge">trace</code> Module</strong></h3>
+<p>Trace module helps track function calls.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">trace</span>
+
+<span class="k">def</span> <span class="nf">sample_function</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Tracing this function</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">tracer</span> <span class="o">=</span> <span class="n">trace</span><span class="p">.</span><span class="nc">Trace</span><span class="p">()</span>
+<span class="n">tracer</span><span class="p">.</span><span class="nf">runfunc</span><span class="p">(</span><span class="n">sample_function</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="3-using-cprofile-for-performance-debugging">3. <strong>Using <code class="language-plaintext highlighter-rouge">cProfile</code> for Performance Debugging</strong></h3>
+<p>Analyze the runtime of different parts of your code.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">cProfile</span>
+
+<span class="k">def</span> <span class="nf">compute</span><span class="p">():</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nf">sum</span><span class="p">(</span><span class="nf">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">))</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+
+<span class="n">cProfile</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="sh">"</span><span class="s">compute()</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="troubleshooting-strategies">Troubleshooting Strategies</h2>
+
+<ol>
+  <li><strong>Reproduce the Error</strong>
+    <ul>
+      <li>Clearly understand how and when the issue occurs.</li>
+    </ul>
+  </li>
+  <li><strong>Read the Error Message Carefully</strong>
+    <ul>
+      <li>Analyze the stack trace to pinpoint the problem.</li>
+    </ul>
+  </li>
+  <li><strong>Divide and Conquer</strong>
+    <ul>
+      <li>Isolate parts of the code to identify where the issue lies.</li>
+    </ul>
+  </li>
+  <li><strong>Check Recent Changes</strong>
+    <ul>
+      <li>Review modifications that might have introduced the bug.</li>
+    </ul>
+  </li>
+  <li><strong>Rubber Duck Debugging</strong>
+    <ul>
+      <li>Explain the code to someone else or even to a rubber duck!</li>
+    </ul>
+  </li>
+  <li><strong>Search for Solutions</strong>
+    <ul>
+      <li>Utilize online resources such as Stack Overflow and Python documentation.</li>
+    </ul>
+  </li>
+  <li><strong>Keep Track of Bugs</strong>
+    <ul>
+      <li>Use issue tracking systems like GitHub Issues or Jira.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="common-debugging-scenarios">Common Debugging Scenarios</h2>
+
+<h3 id="1-handling-infinite-loops">1. Handling Infinite Loops</h3>
+<p>Check for incorrect loop conditions.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c1"># Missing i += 1 leads to an infinite loop
+</span></code></pre></div></div>
+
+<h3 id="2-fixing-off-by-one-errors">2. Fixing Off-by-One Errors</h3>
+<p>Carefully check index ranges in loops and slicing.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>  <span class="c1"># Correct range
+</span>    <span class="nf">print</span><span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="3-tracking-unintended-variable-modifications">3. Tracking Unintended Variable Modifications</h3>
+<p>Use breakpoints to monitor variable changes in loops.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">2</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Is x the expected value?
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="best-practices-for-debugging">Best Practices for Debugging</h2>
+
+<ol>
+  <li><strong>Write Readable Code</strong>
+    <ul>
+      <li>Clear code reduces the chance of introducing bugs.</li>
+    </ul>
+  </li>
+  <li><strong>Test Small Units of Code</strong>
+    <ul>
+      <li>Use unit testing to verify functions individually.</li>
+    </ul>
+  </li>
+  <li><strong>Use Version Control</strong>
+    <ul>
+      <li>Track code changes to revert when needed.</li>
+    </ul>
+  </li>
+  <li><strong>Automate Testing</strong>
+    <ul>
+      <li>Continuous integration tools help catch bugs early.</li>
+    </ul>
+  </li>
+  <li><strong>Document Known Issues</strong>
+    <ul>
+      <li>Maintain documentation of recurring issues and their solutions.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="practice-exercises">Practice Exercises</h2>
+
+<ol>
+  <li><strong>Debug the Following Code:</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">multiply</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Fix the missing argument
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong>Identify and Fix the Bug:</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>  <span class="c1"># Out-of-range error
+</span></code></pre></div>    </div>
+  </li>
+  <li><strong>Use Logging Instead of Print:</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Hello</span><span class="sh">"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>  <span class="c1"># Convert to logging
+</span></code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Debugging is an essential skill in software development. Mastering debugging techniques and tools will help you identify and resolve issues efficiently.</p>
+
+        <!-- Next Lesson Button -->
+        
+        
+        <a href="/python/testing-and-unit-testing.html" class="next-lesson">Next Lesson: Testing and Unit Testing</a>
+        
+    </main>
+</body>
+
+</html>

@@ -1,84 +1,136 @@
 ---
-layout: default
 title: "Slicing and Indexing"
-order: 10
+order: 8
 ---
 
-Slicing and indexing allow you to access specific parts of a sequence, such as a string or a list. This lesson focuses on how to use these features effectively.
+# Slicing and Indexing
+
+Python provides powerful tools for working with sequences like strings, lists, and tuples. **Indexing** allows you to access individual elements, while **slicing** enables you to extract a portion of the sequence.
 
 ## Indexing
 
-Indexing retrieves a single element from a sequence. Python uses zero-based indexing, meaning the first element has an index of `0`.
+Indexing retrieves a single element from a sequence using its position.
 
-### Example:
+### Zero-Based Indexing
+- Python indices start at `0` for the first element.
+- Negative indices count from the end of the sequence.
+
+### Examples:
 ```python
 text = "Python"
 
-# Accessing characters by index
-print(text[0])   # Output: P (first character)
-print(text[1])   # Output: y (second character)
-print(text[-1])  # Output: n (last character)
-print(text[-2])  # Output: o (second to last character)
+# Positive Indexing
+print(text[0])  # 'P' (First character)
+print(text[3])  # 'h' (Fourth character)
+
+# Negative Indexing
+print(text[-1])  # 'n' (Last character)
+print(text[-3])  # 't' (Third character from the end)
 ```
 
-### Key Points:
-- Positive indices count from the start (0, 1, 2, ...).
-- Negative indices count from the end (-1, -2, -3, ...).
-
-## Slicing
-
-Slicing retrieves a portion (substring or sublist) of a sequence. Use the syntax `sequence[start:end]`, where:
-- `start` is the index where the slice begins (inclusive).
-- `end` is the index where the slice ends (exclusive).
-
-### Example:
+### IndexError
+Trying to access an index that doesn't exist will raise an `IndexError`:
 ```python
-text = "Python"
-
-# Slicing the string
-print(text[0:3])  # Output: Pyt (characters at indices 0, 1, 2)
-print(text[2:5])  # Output: tho (characters at indices 2, 3, 4)
-```
-
-### Omitting Start or End
-- If you omit `start`, Python assumes the slice begins at the start of the sequence.
-- If you omit `end`, Python assumes the slice ends at the last element.
-
-```python
-text = "Python"
-
-print(text[:3])   # Output: Pyt (from start to index 2)
-print(text[3:])   # Output: hon (from index 3 to the end)
-```
-
-### Using Step
-You can include a third parameter, `step`, to specify the interval between indices.
-
-```python
-text = "Python"
-
-print(text[::2])  # Output: Pto (every second character)
-print(text[::-1]) # Output: nohtyP (reversed string)
-```
-
-## Practical Examples
-
-### Extracting Substrings
-```python
-url = "https://example.com"
-domain = url[8:]  # Extract everything after the 8th character
-print(domain)  # Output: example.com
-```
-
-### Modifying a Sequence
-While strings are immutable (cannot be modified directly), you can create a new string using slicing.
-
-```python
-text = "Jython"
-corrected_text = "P" + text[1:]  # Replace the first character
-print(corrected_text)  # Output: Python
+print(text[10])  # Error: Index out of range
 ```
 
 ---
 
-In the next lesson, we’ll learn how to gather input from users with the `input()` function.
+## Slicing
+
+Slicing extracts a subset of elements from a sequence. It uses the syntax:
+```python
+sequence[start:stop:step]
+```
+- **`start`**: The index to begin the slice (inclusive).
+- **`stop`**: The index to end the slice (exclusive).
+- **`step`**: The interval between indices (optional).
+
+### Examples:
+```python
+text = "Python"
+
+# Basic Slicing
+print(text[0:3])  # 'Pyt' (Indices 0, 1, 2)
+print(text[2:])   # 'thon' (From index 2 to the end)
+print(text[:4])   # 'Pyth' (From start to index 3)
+
+# Negative Indices
+print(text[-4:])  # 'thon' (Last 4 characters)
+print(text[:-2])  # 'Pyth' (Excluding the last 2 characters)
+
+# Step
+print(text[::2])  # 'Pto' (Every second character)
+print(text[::-1]) # 'nohtyP' (Reversed string)
+```
+
+---
+
+## Slicing on Other Sequences
+
+Slicing works with any sequence type, such as **lists** and **tuples**.
+
+### List Example:
+```python
+numbers = [0, 1, 2, 3, 4, 5]
+
+# Slice
+print(numbers[1:4])  # [1, 2, 3]
+print(numbers[:3])   # [0, 1, 2]
+
+# Step
+print(numbers[::2])  # [0, 2, 4]
+
+# Reverse
+print(numbers[::-1]) # [5, 4, 3, 2, 1, 0]
+```
+
+### Tuple Example:
+```python
+data = (10, 20, 30, 40, 50)
+
+# Slice
+print(data[2:])  # (30, 40, 50)
+```
+
+---
+
+## Common Use Cases
+
+1. **Extracting Substrings**:
+   ```python
+   greeting = "Hello, World!"
+   print(greeting[7:12])  # 'World'
+   ```
+
+2. **Reversing a Sequence**:
+   ```python
+   name = "Alice"
+   print(name[::-1])  # 'ecilA'
+   ```
+
+3. **Skipping Elements**:
+   ```python
+   sequence = "ABCDEFGHI"
+   print(sequence[::2])  # 'ACEGI'
+   ```
+
+---
+
+## Practice Exercises
+
+1. Given the string `"programming"`:
+   - Extract `"gram"`.
+   - Reverse the string.
+   - Extract every third character.
+
+2. Create a list of numbers from `1` to `10`:
+   - Slice to get the first 5 numbers.
+   - Slice to get the last 3 numbers.
+   - Slice with a step of 2.
+
+3. Given the tuple `(100, 200, 300, 400, 500)`:
+   - Extract the middle three values.
+   - Reverse the tuple.
+
+With slicing and indexing, you can manipulate sequences efficiently and extract the data you need!

@@ -1,91 +1,92 @@
 ---
 title: "Comments"
-order: 6
+order: 4
 ---
 
-# Comments in Python
+# Comments
 
-Comments are lines in your code that Python ignores during execution. They are useful for documenting your code and making it easier to understand for yourself and others.
+Comments are an essential part of writing clean and maintainable code. They allow you to explain your code to others (or your future self) and make your programs easier to understand.
 
----
+## What are Comments?
 
-### Why Use Comments?
+- Comments are lines in your code that are ignored by the Python interpreter.
+- They are used to document your code and provide explanations.
 
-- **Clarify code**: Explain what your code does.
-- **Debugging**: Temporarily disable certain parts of your code by commenting them out.
-- **Collaboration**: Help others understand your code when working in teams.
+## Why Use Comments?
 
----
+1. **Explain Code**: Help others (and yourself) understand your logic.
+2. **Debugging**: Temporarily disable parts of your code.
+3. **Documentation**: Describe what your code does and why.
 
-### Types of Comments
+## Writing Comments in Python
 
-1. **Single-Line Comments**
+### Single-Line Comments
 
-   Single-line comments start with a `#` symbol. Everything after `#` on that line is ignored by Python.
+Single-line comments start with a `#` symbol. Everything after the `#` is ignored by Python.
 
-   Example:
-   ```python
-   # This is a single-line comment
-   print("Hello, World!")  # This prints a greeting
-   ```
+Example:
+```python
+# This is a single-line comment
+print("Hello, World!")  # This prints a message
+```
 
-2. **Multi-Line Comments**
+### Multi-Line Comments
 
-   Python doesn’t have a specific syntax for multi-line comments, but you can use triple quotes (`'''` or `"""`) to simulate them.
+Python does not have a specific syntax for multi-line comments. However, you can use a series of single-line comments or a multi-line string (enclosed in triple quotes) to achieve the same effect.
 
-   Example:
-   ```python
-   '''
-   This is a multi-line comment.
-   It spans multiple lines.
-   '''
-   print("Multi-line comments example")
-   ```
+#### Using Single-Line Comments:
+```python
+# This is a multi-line comment
+# Each line starts with a '#'
+print("Multi-line comments example")
+```
 
-   **Note**: Triple quotes are technically string literals. If they’re not assigned to a variable, they act like comments.
+#### Using Multi-Line Strings:
+Multi-line strings are enclosed in triple quotes (`'''` or `"""`). While they are technically strings, they can be used as comments if they are not assigned to a variable.
 
----
+```python
+"""
+This is a multi-line comment.
+It can span multiple lines.
+"""
+print("Using multi-line strings for comments")
+```
 
-### Best Practices for Comments
+## Best Practices for Comments
 
-1. **Keep comments concise and relevant.**
-2. **Avoid obvious comments.** Example:
-   ```python
-   x = 10  # Assigns 10 to x
-   ```
-   The comment here doesn’t add value.
-3. **Use comments to explain why, not what.** Example:
-   ```python
-   # Using a list comprehension for better performance
-   squares = [x**2 for x in range(10)]
-   ```
+1. **Be Concise**: Write short and clear comments.
+2. **Avoid Redundancy**: Don't explain what is already obvious from the code.
+   - Poor comment:
+     ```python
+     x = 10  # Assign 10 to x
+     ```
+   - Better comment:
+     ```python
+     x = 10  # Initial value for the counter
+     ```
+3. **Update Comments**: Ensure comments are accurate as the code evolves.
+4. **Use Docstrings**: Use triple-quoted strings to document functions, classes, or modules.
 
----
+### Example of Docstrings:
+```python
+def greet(name):
+    """
+    This function greets a person by name.
+    
+    Parameters:
+    name (str): The name of the person to greet.
+    
+    Returns:
+    None
+    """
+    print(f"Hello, {name}!")
+```
 
-### Practice Task
+## Practice Exercises
 
-1. Create a new file called `comments_example.py`.
-2. Add the following code with appropriate comments:
+1. Write a Python script with:
+   - A single-line comment explaining the purpose of the script.
+   - A multi-line comment providing more detailed documentation.
+2. Create a function and document it using a docstring.
 
-    ```python
-    # Calculate the square of numbers from 1 to 5
-    for number in range(1, 6):
-        # Print the square of the current number
-        print(number**2)
-    ```
-
-3. Run the program and observe how comments help clarify what each part of the code does.
-
----
-
-### Key Takeaways
-
-- Use `#` for single-line comments and triple quotes for multi-line comments.
-- Comments should enhance readability and understanding.
-- Avoid over-commenting or stating the obvious.
-
----
-
-### Next Steps
-
-In the next lesson, we’ll learn about variables and data types in Python.
+With comments, you can make your code readable, professional, and easier to maintain!

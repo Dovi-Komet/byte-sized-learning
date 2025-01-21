@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7YF62DJDB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P7YF62DJDB');
+    </script>
+    <!-- End Google Analytics -->
+
+    
+    <title>Git and Version Control</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Git and Version Control</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Git and Version Control" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/python/git-and-version-control.html" />
+<meta property="og:url" content="http://localhost:4000/python/git-and-version-control.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Git and Version Control" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Git and Version Control","url":"http://localhost:4000/python/git-and-version-control.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <nav class="sidebar">
+    <ul>
+        
+        
+        
+        
+        <li >
+            <a href="/" >Python Tutorial</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/intro-to-python.html" ><b>1</b>. Intro to Python</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/setup-environment.html" ><b>2</b>. Setup Environment</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comments.html" ><b>4</b>. Comments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/variables-and-types.html" ><b>5</b>. Variables and Types</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/numbers-and-math.html" ><b>6</b>. Numbers and Math</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/strings.html" ><b>7</b>. Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/slicing-and-indexing.html" ><b>8</b>. Slicing and Indexing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/f-strings.html" ><b>9</b>. f-Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/user-input-and-output.html" ><b>10</b>. User Input and Output</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/boolean-logic.html" ><b>11</b>. Boolean Logic</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/conditionals.html" ><b>12</b>. Conditionals</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/loops.html" ><b>13</b>. Loops</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/functions.html" ><b>14</b>. Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lambda-functions.html" ><b>15</b>. Lambda Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lists-sets-and-tuples.html" ><b>16</b>. Lists, Sets, and Tuples</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dictionaries.html" ><b>17</b>. Dictionaries</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/nested-structures.html" ><b>18</b>. Nested Structures</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comprehensions.html" ><b>19</b>. Comprehensions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/reading-and-writing-files.html" ><b>20</b>. Reading and Writing Files</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/error-and-exception-handling.html" ><b>21</b>. Error and Exception Handling</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/oop-basics.html" ><b>22</b>. OOP Basics</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/inheritance-and-polymorphism.html" ><b>23</b>. Inheritance and Polymorphism</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/encapsulation.html" ><b>24</b>. Encapsulation</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/modules-and-packages.html" ><b>25</b>. Modules and Packages</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/standard-library-overview.html" ><b>26</b>. Standard Library Overview</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-os-module.html" ><b>27</b>. The os Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-random-module.html" ><b>28</b>. The random Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dates-and-time.html" ><b>29</b>. Dates and Time</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/working-with-json.html" ><b>30</b>. Working with JSON</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/apis-with-requests.html" ><b>31</b>. APIs and Requests</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/regular-expressions.html" ><b>32</b>. Regular Expressions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/introduction-to-pandas.html" ><b>33</b>. Introduction to Pandas</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/debugging-and-troubleshooting.html" ><b>34</b>. Debugging and Troubleshooting</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/testing-and-unit-testing.html" ><b>35</b>. Testing and Unit Testing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/logging.html" ><b>36</b>. Logging</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/web-scraping.html" ><b>37</b>. Web Scraping</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/sql-basics-and-python-integration.html" ><b>38</b>. SQL Basics and Python Integration</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/big-o-notation-and-performance.html" ><b>39</b>. Big-O Notation and Performance</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/deployment-strategies.html" ><b>40</b>. Deployment Strategies</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/pip-and-virtual-environments.html" ><b>41</b>. Pip and Virtual Environments</a>
+        </li>
+        
+        
+        <li class="current">
+            <a href="/python/git-and-version-control.html" ><b>42</b>. Git and Version Control</a>
+        </li>
+        
+        
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
+
+    <main class="content">
+        <h1 id="git-and-version-control">Git and Version Control</h1>
+
+<p>Version control is an essential tool in software development that allows developers to track changes, collaborate, and manage code efficiently. Git is the most widely used version control system, providing powerful features for tracking and managing code changes.</p>
+
+<hr />
+
+<h2 id="what-is-version-control">What is Version Control?</h2>
+
+<p>Version control systems (VCS) help developers:</p>
+
+<ul>
+  <li>Track changes to code over time.</li>
+  <li>Collaborate with team members efficiently.</li>
+  <li>Revert to previous versions if needed.</li>
+  <li>Work on different features simultaneously using branches.</li>
+</ul>
+
+<hr />
+
+<h2 id="what-is-git">What is Git?</h2>
+
+<p>Git is a distributed version control system that tracks changes in code, enabling teams to collaborate efficiently. It provides:</p>
+
+<ul>
+  <li>A complete history of changes.</li>
+  <li>The ability to work offline.</li>
+  <li>Branching and merging features.</li>
+  <li>Collaboration via platforms like GitHub, GitLab, and Bitbucket.</li>
+</ul>
+
+<hr />
+
+<h2 id="installing-git">Installing Git</h2>
+
+<p><strong>On Windows:</strong></p>
+<ol>
+  <li>Download and install Git from <a href="https://git-scm.com/download/win" target="_blank">git-scm.com</a>.</li>
+  <li>Use Git Bash or the Command Prompt to run Git commands.</li>
+</ol>
+
+<p><strong>On macOS:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>git
+</code></pre></div></div>
+
+<p><strong>On Linux:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>git  <span class="c"># Debian/Ubuntu</span>
+<span class="nb">sudo </span>yum <span class="nb">install </span>git  <span class="c"># CentOS/RedHat</span>
+</code></pre></div></div>
+
+<p>Check if Git is installed:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git <span class="nt">--version</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="basic-git-commands">Basic Git Commands</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git init</code></td>
+      <td>Initialize a new Git repository</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git clone &lt;repo_url&gt;</code></td>
+      <td>Clone an existing repository</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git status</code></td>
+      <td>Check the status of your working directory</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git add &lt;file&gt;</code></td>
+      <td>Stage changes for commit</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git commit -m "message"</code></td>
+      <td>Commit changes with a message</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git log</code></td>
+      <td>View commit history</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git branch</code></td>
+      <td>List, create, or delete branches</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git checkout &lt;branch&gt;</code></td>
+      <td>Switch to a different branch</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git merge &lt;branch&gt;</code></td>
+      <td>Merge a branch into the current branch</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git push origin &lt;branch&gt;</code></td>
+      <td>Push changes to a remote repository</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">git pull origin &lt;branch&gt;</code></td>
+      <td>Pull updates from a remote repository</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="setting-up-git">Setting Up Git</h2>
+
+<p>Configure Git with your details:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--global</span> user.name <span class="s2">"Your Name"</span>
+git config <span class="nt">--global</span> user.email <span class="s2">"youremail@example.com"</span>
+</code></pre></div></div>
+
+<p>To verify configuration:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">--list</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="initializing-a-git-repository">Initializing a Git Repository</h2>
+
+<p>To start tracking a project with Git:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+</code></pre></div></div>
+
+<p>This command creates a <code class="language-plaintext highlighter-rouge">.git</code> directory inside your project, where Git stores all version history.</p>
+
+<hr />
+
+<h2 id="tracking-changes">Tracking Changes</h2>
+
+<ol>
+  <li><strong>Add files to staging:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add filename.py
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Commit changes:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Initial commit"</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Check status:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="cloning-a-repository">Cloning a Repository</h2>
+
+<p>To copy an existing repository from a remote location (like GitHub):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/user/repository.git
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="branching-and-merging">Branching and Merging</h2>
+
+<p>Branches allow you to work on different features without affecting the main codebase.</p>
+
+<p><strong>Create a new branch:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch feature-branch
+</code></pre></div></div>
+
+<p><strong>Switch to the new branch:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout feature-branch
+</code></pre></div></div>
+
+<p><strong>Merge a branch into main:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout main
+git merge feature-branch
+</code></pre></div></div>
+
+<p><strong>Delete a branch:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch <span class="nt">-d</span> feature-branch
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="working-with-remote-repositories">Working with Remote Repositories</h2>
+
+<p>To connect to a remote repository:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin https://github.com/user/repository.git
+</code></pre></div></div>
+
+<p><strong>Push changes to remote:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin main
+</code></pre></div></div>
+
+<p><strong>Pull latest changes from remote:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin main
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="resolving-merge-conflicts">Resolving Merge Conflicts</h2>
+
+<p>When merging branches, conflicts may arise if the same part of a file was modified. Git will highlight conflicts in the affected files.</p>
+
+<p><strong>Steps to resolve:</strong></p>
+<ol>
+  <li>Open the conflicted file and resolve differences.</li>
+  <li>Stage the resolved file:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add conflicted_file.py
+</code></pre></div>    </div>
+  </li>
+  <li>Commit the resolution:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Resolved merge conflict"</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="undoing-changes">Undoing Changes</h2>
+
+<p><strong>Undo changes in a file:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">--</span> filename.py
+</code></pre></div></div>
+
+<p><strong>Unstage a file:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset filename.py
+</code></pre></div></div>
+
+<p><strong>Undo the last commit:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git reset <span class="nt">--soft</span> HEAD~1
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="git-ignore">Git Ignore</h2>
+
+<p>A <code class="language-plaintext highlighter-rouge">.gitignore</code> file tells Git which files to ignore and not track.</p>
+
+<p><strong>Example <code class="language-plaintext highlighter-rouge">.gitignore</code> file:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>__pycache__/
+*.log
+.env
+node_modules/
+</code></pre></div></div>
+
+<p>Add the ignore file to Git:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .gitignore
+git commit <span class="nt">-m</span> <span class="s2">"Add gitignore"</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="github-workflow">GitHub Workflow</h2>
+
+<ol>
+  <li>Create a repository on GitHub.</li>
+  <li>Clone the repository to your local machine.</li>
+  <li>Make changes and commit them.</li>
+  <li>Push changes to GitHub.</li>
+  <li>Create pull requests for code review.</li>
+</ol>
+
+<hr />
+
+<h2 id="best-practices-for-using-git">Best Practices for Using Git</h2>
+
+<ol>
+  <li>Commit often with meaningful messages.</li>
+  <li>Use branches to isolate features and bug fixes.</li>
+  <li>Pull changes before pushing to avoid conflicts.</li>
+  <li>Avoid committing sensitive information (use <code class="language-plaintext highlighter-rouge">.gitignore</code>).</li>
+  <li>Regularly backup your repository.</li>
+</ol>
+
+<hr />
+
+<h2 id="practice-exercises">Practice Exercises</h2>
+
+<ol>
+  <li>Initialize a new Git repository and track changes to a Python file.</li>
+  <li>Create a branch, make changes, and merge it into the main branch.</li>
+  <li>Set up a remote repository and push code to GitHub.</li>
+  <li>Resolve a merge conflict in a test project.</li>
+</ol>
+
+<hr />
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Git is a powerful version control tool used to track changes and collaborate on code.</li>
+  <li>Basic Git commands include <code class="language-plaintext highlighter-rouge">init</code>, <code class="language-plaintext highlighter-rouge">clone</code>, <code class="language-plaintext highlighter-rouge">add</code>, <code class="language-plaintext highlighter-rouge">commit</code>, <code class="language-plaintext highlighter-rouge">push</code>, and <code class="language-plaintext highlighter-rouge">pull</code>.</li>
+  <li>Branching and merging allow for parallel development.</li>
+  <li>Best practices include committing frequently, using branches, and avoiding sensitive data in repositories.</li>
+</ul>
+
+<p>By mastering Git, you can collaborate effectively and maintain a clean, organized codebase.</p>
+
+        <!-- Next Lesson Button -->
+        
+        
+    </main>
+</body>
+
+</html>

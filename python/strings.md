@@ -1,109 +1,129 @@
 ---
-layout: default
 title: "Strings"
-order: 9
+order: 7
 ---
 
-Strings are sequences of characters enclosed in quotes. They are used to represent text in Python.
+# Strings
+
+Strings are sequences of characters enclosed in quotes. They are one of the most commonly used data types in Python, allowing you to work with text.
 
 ## Creating Strings
 
-You can create strings using single quotes, double quotes, or triple quotes.
+1. **Single Quotes**:
+   ```python
+   single_quote = 'Hello, World!'
+   ```
 
+2. **Double Quotes**:
+   ```python
+   double_quote = "Hello, Python!"
+   ```
+
+3. **Triple Quotes**:
+   Used for multi-line strings or docstrings:
+   ```python
+   multi_line = """This is
+   a multi-line
+   string."""
+   ```
+
+## Common String Operations
+
+| Operation          | Example                          | Result                   |
+|--------------------|----------------------------------|--------------------------|
+| Concatenation      | `'Hello' + ' World'`            | `'Hello World'`          |
+| Repetition         | `'Python' * 3`                  | `'PythonPythonPython'`   |
+| Length             | `len('Python')`                 | `6`                      |
+| Access by Index    | `'Python'[0]`                   | `'P'`                    |
+| Slicing            | `'Python'[0:3]`                 | `'Pyt'`                  |
+| Check Substring    | `'Py' in 'Python'`              | `True`                   |
+
+### Examples:
 ```python
-# Single-quoted string
-single = 'Hello'
+greeting = "Hello"
+name = "Alice"
 
-# Double-quoted string
-double = "World"
+# Concatenation
+print(greeting + " " + name)  # Hello Alice
 
-# Triple-quoted string (used for multi-line strings)
-triple = """This is a
-multi-line string."""
-print(single, double, triple)
-```
+# Repetition
+print(name * 3)  # AliceAliceAlice
 
-## String Operations
+# Length
+print(len(greeting))  # 5
 
-Strings in Python support many operations, including concatenation, repetition, and indexing.
-
-### Concatenation
-
-You can combine strings using the `+` operator.
-
-```python
-greeting = "Hello, " + "World!"
-print(greeting)  # Output: Hello, World!
-```
-
-### Repetition
-
-Use the `*` operator to repeat a string multiple times.
-
-```python
-repeat = "ha" * 3
-print(repeat)  # Output: hahaha
-```
-
-### Indexing and Slicing
-
-Strings are indexed starting from `0`. You can access individual characters or slices (substrings) of a string.
-
-```python
-text = "Python"
-
-# Indexing
-print(text[0])  # Output: P
-print(text[-1]) # Output: n (last character)
+# Access by Index
+print(greeting[1])  # e
 
 # Slicing
-print(text[0:3])  # Output: Pyt (characters from index 0 to 2)
-print(text[3:])   # Output: hon (characters from index 3 to end)
+print(greeting[1:4])  # ell
+
+# Check Substring
+print("lo" in greeting)  # True
 ```
 
-## Common String Methods
+## String Methods
 
-Python provides several built-in methods to manipulate strings:
+Python provides several built-in methods to work with strings:
 
-| Method          | Description                                     | Example                               |
-|------------------|-------------------------------------------------|---------------------------------------|
-| `lower()`       | Converts all characters to lowercase.           | `"PYTHON".lower()` → `"python"`      |
-| `upper()`       | Converts all characters to uppercase.           | `"python".upper()` → `"PYTHON"`      |
-| `strip()`       | Removes leading and trailing whitespace.        | `"  hello  ".strip()` → `"hello"`    |
-| `replace(a, b)` | Replaces all occurrences of `a` with `b`.       | `"hello".replace("e", "a")` → `"hallo"` |
-| `split(delim)`  | Splits a string into a list using `delim`.      | `"a,b,c".split(",")` → `['a', 'b', 'c']` |
-| `join(list)`    | Joins a list of strings into one string.         | `",".join(['a', 'b', 'c'])` → `"a,b,c"` |
+| Method             | Description                              | Example                        | Result                 |
+|--------------------|------------------------------------------|--------------------------------|------------------------|
+| `lower()`          | Converts to lowercase                   | `'PYTHON'.lower()`            | `'python'`            |
+| `upper()`          | Converts to uppercase                   | `'python'.upper()`            | `'PYTHON'`            |
+| `strip()`          | Removes whitespace                      | `'  hello  '.strip()`         | `'hello'`             |
+| `replace(a, b)`    | Replaces substring `a` with `b`          | `'hello'.replace('e', 'a')`   | `'hallo'`             |
+| `split(delim)`     | Splits string into a list               | `'a,b,c'.split(',')`          | `['a', 'b', 'c']`     |
+| `join(iterable)`   | Joins elements with a delimiter          | `','.join(['a', 'b', 'c'])`   | `'a,b,c'`             |
 
-### Examples
+### Examples:
 ```python
-text = " Python Programming "
-print(text.lower())     # Output: python programming
-print(text.upper())     # Output: PYTHON PROGRAMMING
-print(text.strip())     # Output: Python Programming
-print(text.replace("Python", "Java"))  # Output: Java Programming
+text = "  Python is Fun!  "
+
+# Convert to lowercase
+print(text.lower())  # python is fun!
+
+# Convert to uppercase
+print(text.upper())  # PYTHON IS FUN!
+
+# Remove whitespace
+print(text.strip())  # Python is Fun!
+
+# Replace substring
+print(text.replace("Fun", "Awesome"))  # Python is Awesome!
+
+# Split and join
+words = text.strip().split(" ")  # ['Python', 'is', 'Fun!']
+print("-".join(words))  # Python-is-Fun!
 ```
 
-## String Formatting
+## Escape Characters
 
-String formatting allows you to create dynamic strings by including variable values.
+Special characters in strings can be included using backslashes (`\`):
 
-### Using f-strings (Recommended)
+| Escape Character | Description               | Example         | Result          |
+|------------------|---------------------------|-----------------|-----------------|
+| `\'`            | Single quote              | `'It\'s OK'`    | `It's OK`       |
+| `\"`            | Double quote              | `"He said \"Hi\""` | `He said "Hi"` |
+| `\\`            | Backslash                 | `'C:\\path'`    | `C:\path`       |
+| `\n`            | Newline                   | `'Hello\nWorld'`| `Hello↵World`   |
+| `\t`            | Tab                       | `'Hello\tWorld'`| `Hello    World`|
 
+### Example:
 ```python
-name = "Alice"
-age = 25
-print(f"My name is {name} and I am {age} years old.")
-# Output: My name is Alice and I am 25 years old.
+print("It's a beautiful day!")
+print("Line1\nLine2")
+print("Path: C:\\Users\\Alice")
 ```
 
-### Using `.format()`
+## Practice Exercises
 
-```python
-template = "My name is {} and I am {} years old."
-print(template.format("Alice", 25))
-# Output: My name is Alice and I am 25 years old.
-```
+1. Create a string variable containing your full name.
+   - Print the length of the string.
+   - Extract your first and last names using slicing.
+2. Take a string `"Hello, World!"`:
+   - Convert it to lowercase.
+   - Replace `"World"` with `"Python"`.
+   - Split it into a list of words.
+3. Print a multi-line string using triple quotes.
 
----
-
-In the next lesson, we’ll explore slicing and indexing in greater depth.
+Strings are an essential part of Python and understanding them will help you work with text-based data effectively!

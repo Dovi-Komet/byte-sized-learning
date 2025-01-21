@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7YF62DJDB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P7YF62DJDB');
+    </script>
+    <!-- End Google Analytics -->
+
+    
+    <title>Introduction to Pandas</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Introduction to Pandas</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Introduction to Pandas" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/python/introduction-to-pandas.html" />
+<meta property="og:url" content="http://localhost:4000/python/introduction-to-pandas.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Introduction to Pandas" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Introduction to Pandas","url":"http://localhost:4000/python/introduction-to-pandas.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <nav class="sidebar">
+    <ul>
+        
+        
+        
+        
+        <li >
+            <a href="/" >Python Tutorial</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/intro-to-python.html" ><b>1</b>. Intro to Python</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/setup-environment.html" ><b>2</b>. Setup Environment</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comments.html" ><b>4</b>. Comments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/variables-and-types.html" ><b>5</b>. Variables and Types</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/numbers-and-math.html" ><b>6</b>. Numbers and Math</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/strings.html" ><b>7</b>. Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/slicing-and-indexing.html" ><b>8</b>. Slicing and Indexing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/f-strings.html" ><b>9</b>. f-Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/user-input-and-output.html" ><b>10</b>. User Input and Output</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/boolean-logic.html" ><b>11</b>. Boolean Logic</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/conditionals.html" ><b>12</b>. Conditionals</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/loops.html" ><b>13</b>. Loops</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/functions.html" ><b>14</b>. Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lambda-functions.html" ><b>15</b>. Lambda Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lists-sets-and-tuples.html" ><b>16</b>. Lists, Sets, and Tuples</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dictionaries.html" ><b>17</b>. Dictionaries</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/nested-structures.html" ><b>18</b>. Nested Structures</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comprehensions.html" ><b>19</b>. Comprehensions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/reading-and-writing-files.html" ><b>20</b>. Reading and Writing Files</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/error-and-exception-handling.html" ><b>21</b>. Error and Exception Handling</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/oop-basics.html" ><b>22</b>. OOP Basics</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/inheritance-and-polymorphism.html" ><b>23</b>. Inheritance and Polymorphism</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/encapsulation.html" ><b>24</b>. Encapsulation</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/modules-and-packages.html" ><b>25</b>. Modules and Packages</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/standard-library-overview.html" ><b>26</b>. Standard Library Overview</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-os-module.html" ><b>27</b>. The os Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-random-module.html" ><b>28</b>. The random Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dates-and-time.html" ><b>29</b>. Dates and Time</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/working-with-json.html" ><b>30</b>. Working with JSON</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/apis-with-requests.html" ><b>31</b>. APIs and Requests</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/regular-expressions.html" ><b>32</b>. Regular Expressions</a>
+        </li>
+        
+        
+        <li class="current">
+            <a href="/python/introduction-to-pandas.html" ><b>33</b>. Introduction to Pandas</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/debugging-and-troubleshooting.html" ><b>34</b>. Debugging and Troubleshooting</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/testing-and-unit-testing.html" ><b>35</b>. Testing and Unit Testing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/logging.html" ><b>36</b>. Logging</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/web-scraping.html" ><b>37</b>. Web Scraping</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/sql-basics-and-python-integration.html" ><b>38</b>. SQL Basics and Python Integration</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/big-o-notation-and-performance.html" ><b>39</b>. Big-O Notation and Performance</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/deployment-strategies.html" ><b>40</b>. Deployment Strategies</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/pip-and-virtual-environments.html" ><b>41</b>. Pip and Virtual Environments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/git-and-version-control.html" ><b>42</b>. Git and Version Control</a>
+        </li>
+        
+        
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
+
+    <main class="content">
+        <h1 id="introduction-to-pandas">Introduction to Pandas</h1>
+
+<p>Pandas is a powerful Python library for data manipulation and analysis. It provides data structures like <strong>Series</strong> and <strong>DataFrame</strong> to work efficiently with structured data.</p>
+
+<hr />
+
+<h2 id="installing-pandas">Installing Pandas</h2>
+
+<p>To use Pandas, install it via <code class="language-plaintext highlighter-rouge">pip</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>pandas
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="core-data-structures">Core Data Structures</h2>
+
+<h3 id="1-series">1. Series</h3>
+<p>A <strong>Series</strong> is a one-dimensional labeled array.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="c1"># Creating a Series
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">Series</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">b</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">c</span><span class="sh">"</span><span class="p">])</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+<span class="c1"># Output:
+# a    10
+# b    20
+# c    30
+# dtype: int64
+</span></code></pre></div></div>
+
+<h3 id="2-dataframe">2. DataFrame</h3>
+<p>A <strong>DataFrame</strong> is a two-dimensional labeled data structure.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Creating a DataFrame
+</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">"</span><span class="s">Name</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Charlie</span><span class="sh">"</span><span class="p">],</span>
+    <span class="sh">"</span><span class="s">Age</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">],</span>
+    <span class="sh">"</span><span class="s">City</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="sh">"</span><span class="s">New York</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Los Angeles</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Chicago</span><span class="sh">"</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="c1"># Output:
+#       Name  Age         City
+# 0    Alice   25     New York
+# 1      Bob   30  Los Angeles
+# 2  Charlie   35      Chicago
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="reading-and-writing-data">Reading and Writing Data</h2>
+
+<h3 id="reading-data">Reading Data</h3>
+<p>Pandas supports reading data from various file formats:</p>
+
+<ul>
+  <li><strong>CSV</strong>:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_csv</span><span class="p">(</span><span class="sh">"</span><span class="s">data.csv</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Excel</strong>:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_excel</span><span class="p">(</span><span class="sh">"</span><span class="s">data.xlsx</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>JSON</strong>:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_json</span><span class="p">(</span><span class="sh">"</span><span class="s">data.json</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="writing-data">Writing Data</h3>
+<p>You can write a DataFrame to a file:</p>
+
+<ul>
+  <li><strong>CSV</strong>:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="nf">to_csv</span><span class="p">(</span><span class="sh">"</span><span class="s">output.csv</span><span class="sh">"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Excel</strong>:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="nf">to_excel</span><span class="p">(</span><span class="sh">"</span><span class="s">output.xlsx</span><span class="sh">"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="exploring-data">Exploring Data</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Display first few rows
+</span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">head</span><span class="p">())</span>
+
+<span class="c1"># Display last few rows
+</span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">tail</span><span class="p">())</span>
+
+<span class="c1"># Summary of the DataFrame
+</span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">info</span><span class="p">())</span>
+
+<span class="c1"># Statistical summary
+</span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">describe</span><span class="p">())</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="selecting-and-filtering-data">Selecting and Filtering Data</h2>
+
+<h3 id="selecting-columns">Selecting Columns</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Single column
+</span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">"</span><span class="s">Name</span><span class="sh">"</span><span class="p">])</span>
+
+<span class="c1"># Multiple columns
+</span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="sh">"</span><span class="s">Name</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">City</span><span class="sh">"</span><span class="p">]])</span>
+</code></pre></div></div>
+
+<h3 id="filtering-rows">Filtering Rows</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Rows where Age &gt; 30
+</span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="sh">"</span><span class="s">Age</span><span class="sh">"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">])</span>
+
+<span class="c1"># Rows where City is Chicago
+</span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="sh">"</span><span class="s">City</span><span class="sh">"</span><span class="p">]</span> <span class="o">==</span> <span class="sh">"</span><span class="s">Chicago</span><span class="sh">"</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="using-conditions">Using Conditions</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Multiple conditions
+</span><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="sh">"</span><span class="s">Age</span><span class="sh">"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="sh">"</span><span class="s">City</span><span class="sh">"</span><span class="p">]</span> <span class="o">==</span> <span class="sh">"</span><span class="s">New York</span><span class="sh">"</span><span class="p">)])</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="modifying-data">Modifying Data</h2>
+
+<h3 id="adding-a-column">Adding a Column</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="sh">"</span><span class="s">Salary</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50000</span><span class="p">,</span> <span class="mi">60000</span><span class="p">,</span> <span class="mi">70000</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="updating-values">Updating Values</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="sh">"</span><span class="s">Age</span><span class="sh">"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">26</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="removing-columns-and-rows">Removing Columns and Rows</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Remove a column
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="sh">"</span><span class="s">Salary</span><span class="sh">"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Remove a row
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="nf">drop</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="grouping-and-aggregating-data">Grouping and Aggregating Data</h2>
+
+<h3 id="grouping">Grouping</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="nf">groupby</span><span class="p">(</span><span class="sh">"</span><span class="s">City</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">grouped</span><span class="p">[</span><span class="sh">"</span><span class="s">Age</span><span class="sh">"</span><span class="p">].</span><span class="nf">mean</span><span class="p">())</span>
+</code></pre></div></div>
+
+<h3 id="aggregating">Aggregating</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">groupby</span><span class="p">(</span><span class="sh">"</span><span class="s">City</span><span class="sh">"</span><span class="p">).</span><span class="nf">agg</span><span class="p">({</span><span class="sh">"</span><span class="s">Age</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="sh">"</span><span class="s">mean</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">max</span><span class="sh">"</span><span class="p">]}))</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="merging-and-joining-dataframes">Merging and Joining DataFrames</h2>
+
+<h3 id="merging">Merging</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">({</span><span class="sh">"</span><span class="s">ID</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="sh">"</span><span class="s">Name</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">]})</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">({</span><span class="sh">"</span><span class="s">ID</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="sh">"</span><span class="s">Score</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">90</span><span class="p">]})</span>
+
+<span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">merge</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="sh">"</span><span class="s">ID</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">merged</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="concatenating">Concatenating</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">({</span><span class="sh">"</span><span class="s">Name</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">]})</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">({</span><span class="sh">"</span><span class="s">Name</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="sh">"</span><span class="s">Charlie</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">David</span><span class="sh">"</span><span class="p">]})</span>
+
+<span class="n">concat</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">concat</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="handling-missing-data">Handling Missing Data</h2>
+
+<h3 id="identifying-missing-data">Identifying Missing Data</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">isnull</span><span class="p">())</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="nf">isnull</span><span class="p">().</span><span class="nf">sum</span><span class="p">())</span>
+</code></pre></div></div>
+
+<h3 id="filling-missing-data">Filling Missing Data</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">[</span><span class="sh">"</span><span class="s">Age</span><span class="sh">"</span><span class="p">].</span><span class="nf">fillna</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="dropping-missing-data">Dropping Missing Data</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span><span class="p">.</span><span class="nf">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="practical-examples">Practical Examples</h2>
+
+<h3 id="calculate-average-salary">Calculate Average Salary</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Average Salary:</span><span class="sh">"</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="sh">"</span><span class="s">Salary</span><span class="sh">"</span><span class="p">].</span><span class="nf">mean</span><span class="p">())</span>
+</code></pre></div></div>
+
+<h3 id="count-unique-cities">Count Unique Cities</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Unique Cities:</span><span class="sh">"</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="sh">"</span><span class="s">City</span><span class="sh">"</span><span class="p">].</span><span class="nf">nunique</span><span class="p">())</span>
+</code></pre></div></div>
+
+<h3 id="sort-by-age">Sort by Age</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="nf">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="sh">"</span><span class="s">Age</span><span class="sh">"</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="practice-exercises">Practice Exercises</h2>
+
+<ol>
+  <li><strong>Read a CSV</strong>:
+    <ul>
+      <li>Load a CSV file into a DataFrame and display the first 5 rows.</li>
+    </ul>
+  </li>
+  <li><strong>Filter Data</strong>:
+    <ul>
+      <li>Find all rows where the age is greater than 30.</li>
+    </ul>
+  </li>
+  <li><strong>Group and Aggregate</strong>:
+    <ul>
+      <li>Group data by a column and calculate the average of another column.</li>
+    </ul>
+  </li>
+  <li><strong>Handle Missing Data</strong>:
+    <ul>
+      <li>Identify missing values in a dataset and fill them with a default value.</li>
+    </ul>
+  </li>
+  <li><strong>Merge DataFrames</strong>:
+    <ul>
+      <li>Merge two DataFrames on a common column.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Pandas is an essential library for anyone working with data in Python. Mastering its features will enable you to handle, analyze, and visualize data efficiently.</p>
+
+        <!-- Next Lesson Button -->
+        
+        
+        <a href="/python/debugging-and-troubleshooting.html" class="next-lesson">Next Lesson: Debugging and Troubleshooting</a>
+        
+    </main>
+</body>
+
+</html>

@@ -1,102 +1,128 @@
 ---
-layout: default
 title: "Lambda Functions"
-order: 48
+order: 15
 ---
 
-Lambda functions in Python are anonymous functions defined using the `lambda` keyword. They are typically used for short, simple operations where defining a full function is unnecessary. Lambda functions can take any number of arguments but have only a single expression.
+# Lambda Functions
+
+**Lambda functions**, also known as anonymous functions, are small, one-line functions defined without a name. They are often used for short, simple operations where defining a full function would be unnecessary.
 
 ---
 
-## Syntax of a Lambda Function
+## Syntax
 
+### General Syntax:
 ```python
 lambda arguments: expression
 ```
 
-- **`arguments`**: A comma-separated list of input parameters.
-- **`expression`**: A single expression evaluated and returned.
+- **`lambda`**: The keyword used to define a lambda function.
+- **`arguments`**: Inputs to the function (like parameters in regular functions).
+- **`expression`**: The single operation or computation the function performs.
 
-### Example
+---
 
+## Example
+
+Here’s a simple example:
 ```python
-# A lambda function that adds 10 to its argument
-add_ten = lambda x: x + 10
-print(add_ten(5))  # Output: 15
+# Lambda function to add two numbers
+add = lambda x, y: x + y
+print(add(3, 5))  # Output: 8
 ```
 
 ---
 
-## Key Differences Between Lambda and Regular Functions
+## Differences from Regular Functions
 
-1. **Syntax**: Lambda functions are defined in a single line, while regular functions use the `def` keyword.
-2. **Name**: Lambda functions are anonymous unless assigned to a variable.
-3. **Use Case**: Best for simple, short-lived operations.
+1. **No Name**: Lambda functions are anonymous.
+2. **One Expression**: A lambda function can only contain a single expression. It automatically returns the result of this expression.
+3. **Compact**: Useful for short, simple operations.
+
+### Regular Function vs Lambda Function:
+```python
+# Regular function
+def square(x):
+    return x * x
+
+# Lambda function
+square = lambda x: x * x
+
+print(square(4))  # Output: 16
+```
 
 ---
 
-## Using Lambda Functions with Built-in Functions
+## Using Lambda Functions
 
-Lambda functions are often used with Python’s built-in functions like `map`, `filter`, and `sorted`.
-
-### Example: Using `map`
-
-The `map` function applies a lambda function to each item in an iterable.
-
+### With `map()`
+The `map()` function applies a lambda function to all items in an iterable (e.g., list).
 ```python
 numbers = [1, 2, 3, 4]
-squared = map(lambda x: x ** 2, numbers)
+squared = map(lambda x: x * x, numbers)
 print(list(squared))  # Output: [1, 4, 9, 16]
 ```
 
----
-
-### Example: Using `filter`
-
-The `filter` function selects items from an iterable based on a condition.
-
+### With `filter()`
+The `filter()` function uses a lambda to determine which items to keep from an iterable.
 ```python
 numbers = [1, 2, 3, 4, 5, 6]
 even_numbers = filter(lambda x: x % 2 == 0, numbers)
 print(list(even_numbers))  # Output: [2, 4, 6]
 ```
 
----
-
-### Example: Using `sorted` with a Custom Key
-
-The `sorted` function can use a lambda to define a custom sorting rule.
-
+### With `sorted()`
+The `sorted()` function can use a lambda to define a custom sort key.
 ```python
 names = ["Alice", "Bob", "Charlie"]
-sorted_names = sorted(names, key=lambda name: len(name))
+sorted_names = sorted(names, key=lambda x: len(x))
 print(sorted_names)  # Output: ['Bob', 'Alice', 'Charlie']
 ```
 
 ---
 
-## When to Use Lambda Functions
+## Nested Lambda Functions
 
-- When a short function is needed for immediate use.
-- When you want to write concise code without defining a named function.
-- Commonly in conjunction with functional programming tools like `map`, `filter`, and `sorted`.
+You can use a lambda function as a parameter or even return it from another function.
+
+### Example:
+```python
+def multiplier(n):
+    return lambda x: x * n
+
+double = multiplier(2)
+triple = multiplier(3)
+
+print(double(5))  # Output: 10
+print(triple(5))  # Output: 15
+```
 
 ---
 
 ## Limitations of Lambda Functions
 
-1. **Single Expression**: They can only contain one expression and no statements.
-2. **Readability**: Overuse can make code harder to read.
-3. **Debugging**: Lack of a name makes debugging more difficult.
+1. **Single Expression**: Lambdas can only execute a single expression. For complex logic, use a regular function.
+2. **Readability**: Overusing lambdas can make code harder to understand.
 
 ---
 
-## Key Takeaways
+## Best Practices
 
-- Lambda functions are useful for concise and functional-style programming.
-- They should be used judiciously to maintain code readability.
-- For complex operations, prefer defining regular functions with the `def` keyword.
+- Use lambda functions for **simple operations**.
+- Avoid using lambdas for **complex logic** or when readability is a concern.
 
 ---
 
-In the next lesson, we’ll explore list comprehensions, a powerful feature for concise and efficient list manipulation in Python.
+## Practice Exercises
+
+1. Use a lambda function with `map()` to:
+   - Double all numbers in a list: `[1, 2, 3, 4]`.
+
+2. Use a lambda function with `filter()` to:
+   - Extract all words longer than 4 characters from a list: `["apple", "cat", "banana", "dog"]`.
+
+3. Create a function `power(n)` that:
+   - Returns a lambda function to calculate the `n`th power of a number.
+   - Example: `power(2)(3)` should return `9`.
+
+Lambda functions are a powerful tool for writing concise and functional-style Python code!

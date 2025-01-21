@@ -1,118 +1,265 @@
 ---
-layout: default
 title: "Logging"
-order: 53
+order: 36
 ---
 
-Logging is a way to record messages about your program’s execution, which helps in debugging, monitoring, and troubleshooting. Python’s built-in `logging` module provides a flexible framework for adding log messages to your code.
+# Logging in Python
+
+Logging is an essential tool for tracking the execution of an application, diagnosing issues, and gaining insights into its behavior. Python’s built-in `logging` module provides a flexible and powerful way to generate logs.
 
 ---
 
 ## Why Use Logging?
 
-1. **Debugging**: Identify and fix issues in your code.
-2. **Monitoring**: Track application performance and behavior.
-3. **Error Tracking**: Record errors and exceptions for analysis.
+1. **Better than Print Statements:** Persistent and configurable logging avoids cluttering the code with `print()` statements.
+2. **Debugging and Troubleshooting:** Helps identify issues by tracking program execution.
+3. **Performance Monitoring:** Logs can provide valuable performance metrics.
+4. **Security Audits:** Tracks actions and access within applications.
+5. **Persistence:** Logs can be saved to files for future analysis.
 
 ---
 
-## Basic Logging
+## Basic Logging Example
 
-The `logging` module can be used to log messages at different severity levels. The levels, in increasing order of severity, are:
-
-- `DEBUG`: Detailed information for debugging.
-- `INFO`: General messages about program execution.
-- `WARNING`: Indication of potential problems.
-- `ERROR`: A serious issue that has occurred.
-- `CRITICAL`: A very severe error that may require immediate attention.
-
-### Example: Basic Logging
+Python provides a straightforward way to log messages.
 
 ```python
 import logging
 
-# Configure logging
-logging.basicConfig(level=logging.DEBUG)
-
-# Log messages
-logging.debug("This is a debug message")
-logging.info("This is an info message")
-logging.warning("This is a warning message")
-logging.error("This is an error message")
-logging.critical("This is a critical message")
+logging.basicConfig(level=logging.INFO)
+logging.info("This is an informational message")
 ```
 
-### Output Example
+### Output:
+```
+INFO:root:This is an informational message
+```
 
-When you run this code, you’ll see:
+---
 
-```plaintext
-DEBUG:root:This is a debug message
-INFO:root:This is an info message
-WARNING:root:This is a warning message
-ERROR:root:This is an error message
-CRITICAL:root:This is a critical message
+## Logging Levels
+
+Python's logging module provides several log levels to indicate the severity of messages:
+
+| Level      | Description                                | Numeric Value |
+|------------|--------------------------------------------|---------------|
+| DEBUG      | Detailed information for diagnosing issues | 10            |
+| INFO       | General operational messages              | 20            |
+| WARNING    | Something unexpected, but the program continues | 30            |
+| ERROR      | A more serious issue that prevents execution of some parts | 40            |
+| CRITICAL   | A severe error that might halt the application | 50            |
+
+### Example of Different Log Levels:
+
+```python
+logging.debug("This is a debug message")
+logging.info("This is an info message")
+logging.warning("This is a warning")
+logging.error("This is an error")
+logging.critical("This is a critical error")
 ```
 
 ---
 
 ## Configuring Logging
 
-You can customize the logging output, including its format and where it’s written (e.g., console, file).
+The `basicConfig()` method allows configuring the logging behavior such as:
 
-### Example: Logging to a File
+- Setting log levels
+- Formatting log messages
+- Specifying output files
+
+### Example Configuration:
 
 ```python
-import logging
-
-# Configure logging to write to a file
 logging.basicConfig(
-    filename="app.log",
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
+    filename='app.log',
+    level=logging.DEBUG,
+    format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-logging.info("This message will be written to the file")
+logging.info("This message will be logged to a file")
 ```
 
-This creates a file `app.log` with log entries formatted with a timestamp, severity level, and message.
+#### Log File Output Example (`app.log`):
+```
+2025-01-21 12:34:56,789 - INFO - This message will be logged to a file
+```
+
+---
+
+## Formatting Log Messages
+
+Customizing log messages helps provide useful contextual information.
+
+### Common Formatting Options:
+
+- `%(asctime)s` – Timestamp
+- `%(levelname)s` – Log level (DEBUG, INFO, etc.)
+- `%(message)s` – Actual log message
+- `%(name)s` – Logger's name
+- `%(lineno)d` – Line number where log was created
+- `%(filename)s` – Source file name
+
+### Example with Custom Format:
+
+```python
+logging.basicConfig(
+    format='%(levelname)s: %(name)s - %(message)s',
+    level=logging.DEBUG
+)
+
+logging.debug("Debugging message")
+```
+
+#### Output:
+```
+DEBUG: root - Debugging message
+```
+
+---
+
+## Logging to a File
+
+Instead of logging to the console, logs can be saved to a file for later analysis.
+
+```python
+logging.basicConfig(
+    filename='error.log',
+    level=logging.ERROR,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+logging.error("This is logged to the error.log file")
+```
 
 ---
 
 ## Using Logger Objects
 
-The `logging` module allows you to create custom logger objects for more control.
+Instead of using the root logger, creating custom loggers gives more control.
 
 ```python
-import logging
+logger = logging.getLogger('my_logger')
+logger.setLevel(logging.INFO)
 
-# Create a logger
-logger = logging.getLogger("my_logger")
-logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler('my_log.log')
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
 
-# Create a console handler
-console_handler = logging.StreamHandler()
-console_handler.setLevel(logging.INFO)
+logger.addHandler(handler)
 
-# Set the format for the handler
-formatter = logging.Formatter("%(name)s - %(levelname)s - %(message)s")
-console_handler.setFormatter(formatter)
+logger.info("This is an info message from my_logger")
+```
 
-# Add the handler to the logger
-logger.addHandler(console_handler)
+---
 
-logger.debug("This is a debug message")
-logger.info("This is an info message")
+## Logging Exceptions
+
+Logging exceptions provides stack traces that help debug errors.
+
+```python
+try:
+    result = 10 / 0
+except ZeroDivisionError as e:
+    logging.error("An exception occurred", exc_info=True)
+```
+
+#### Output:
+```
+ERROR:root:An exception occurred
+Traceback (most recent call last):
+  File "example.py", line 2, in <module>
+    result = 10 / 0
+ZeroDivisionError: division by zero
+```
+
+---
+
+## Rotating Logs
+
+Using rotating log handlers prevents log files from growing indefinitely.
+
+### Using `RotatingFileHandler`:
+
+```python
+from logging.handlers import RotatingFileHandler
+
+handler = RotatingFileHandler('app.log', maxBytes=2000, backupCount=3)
+logger = logging.getLogger('rotating_logger')
+logger.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+for i in range(1000):
+    logger.info(f"Log message {i}")
+```
+
+- `maxBytes`: Maximum size of the log file before rotation.
+- `backupCount`: Number of backup files to keep.
+
+---
+
+## Using `TimedRotatingFileHandler`
+
+Logs can rotate based on time intervals.
+
+```python
+from logging.handlers import TimedRotatingFileHandler
+
+handler = TimedRotatingFileHandler('timed_app.log', when='midnight', interval=1, backupCount=7)
+logger = logging.getLogger('timed_logger')
+logger.setLevel(logging.INFO)
+logger.addHandler(handler)
+
+logger.info("Log message with time-based rotation")
+```
+
+---
+
+## Disabling Logging
+
+To disable logging temporarily:
+
+```python
+logging.disable(logging.CRITICAL)
+logging.critical("This message will not be logged")
 ```
 
 ---
 
 ## Best Practices for Logging
 
-1. **Log at Appropriate Levels**: Use `DEBUG` for development, `INFO` for general events, and `WARNING` or higher for issues.
-2. **Don’t Overuse Logs**: Log important events but avoid excessive logging, which can clutter your output.
-3. **Secure Logs**: Avoid logging sensitive information like passwords or personal data.
+1. **Log Strategically:** Avoid logging too much or too little.
+2. **Use Appropriate Levels:** Choose log levels according to message importance.
+3. **Avoid Sensitive Data:** Never log passwords or personal information.
+4. **Implement Rotations:** Prevent unlimited log growth.
+5. **Centralize Logs:** Consider log aggregation tools for analysis.
+6. **Format Consistently:** Ensure log readability and structure.
+7. **Use Contextual Information:** Add relevant metadata (e.g., request IDs).
 
 ---
 
-In the next lesson, we’ll explore how to interact with APIs using Python’s `requests` library.
+## Common Tools for Log Management
+
+1. **Log Aggregation Services:**
+   - ELK Stack (Elasticsearch, Logstash, Kibana)
+   - Splunk
+   - Graylog
+
+2. **Cloud Logging Solutions:**
+   - AWS CloudWatch
+   - Google Cloud Logging
+   - Azure Monitor
+
+---
+
+## Practice Exercises
+
+1. Configure logging to log warnings and higher-level messages to a file.
+2. Create a rotating file logger that rotates logs every 1KB.
+3. Write a program that logs exceptions using `exc_info=True`.
+4. Use a custom logger to log different messages to the console and file.
+
+---
+
+Logging is an essential tool for maintaining, debugging, and monitoring Python applications effectively. Using the right logging strategy helps improve the maintainability and scalability of your projects.

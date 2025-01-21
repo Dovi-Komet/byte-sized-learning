@@ -119,8 +119,8 @@ main.content pre {
     padding: 15px;
     border-radius: 8px;
     overflow-x: auto;
-    font-size: 16px;
-    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    font-family: monospace;
     border: 1px solid #ddd;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
     white-space: pre-wrap; /* Prevent overlapping text */
@@ -130,8 +130,8 @@ main.content code {
     background-color: #f8f8f8; /* Consistent with pre */
     color: #2c3e50; /* Dark gray for inline code */
     border-radius: 5px;
-    font-family: 'Courier New', Courier, monospace;
-    line-height: 1.3;
+    font-family: monospace;
+    line-height: 1.8;
 }
 
 /* Next Lesson Button */
@@ -214,4 +214,8 @@ main.content tr:hover {
 main.content table {
     overflow-x: auto; /* Allow horizontal scrolling on small screens */
     display: block; /* Make table scrollable */
+}
+
+main.content table code {
+    background: unset;
 }

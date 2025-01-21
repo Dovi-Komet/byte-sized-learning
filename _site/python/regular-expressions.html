@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7YF62DJDB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P7YF62DJDB');
+    </script>
+    <!-- End Google Analytics -->
+
+    
+    <title>Regular Expressions</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Regular Expressions</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Regular Expressions" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/python/regular-expressions.html" />
+<meta property="og:url" content="http://localhost:4000/python/regular-expressions.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Regular Expressions" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Regular Expressions","url":"http://localhost:4000/python/regular-expressions.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <nav class="sidebar">
+    <ul>
+        
+        
+        
+        
+        <li >
+            <a href="/" >Python Tutorial</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/intro-to-python.html" ><b>1</b>. Intro to Python</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/setup-environment.html" ><b>2</b>. Setup Environment</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comments.html" ><b>4</b>. Comments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/variables-and-types.html" ><b>5</b>. Variables and Types</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/numbers-and-math.html" ><b>6</b>. Numbers and Math</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/strings.html" ><b>7</b>. Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/slicing-and-indexing.html" ><b>8</b>. Slicing and Indexing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/f-strings.html" ><b>9</b>. f-Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/user-input-and-output.html" ><b>10</b>. User Input and Output</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/boolean-logic.html" ><b>11</b>. Boolean Logic</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/conditionals.html" ><b>12</b>. Conditionals</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/loops.html" ><b>13</b>. Loops</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/functions.html" ><b>14</b>. Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lambda-functions.html" ><b>15</b>. Lambda Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lists-sets-and-tuples.html" ><b>16</b>. Lists, Sets, and Tuples</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dictionaries.html" ><b>17</b>. Dictionaries</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/nested-structures.html" ><b>18</b>. Nested Structures</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comprehensions.html" ><b>19</b>. Comprehensions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/reading-and-writing-files.html" ><b>20</b>. Reading and Writing Files</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/error-and-exception-handling.html" ><b>21</b>. Error and Exception Handling</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/oop-basics.html" ><b>22</b>. OOP Basics</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/inheritance-and-polymorphism.html" ><b>23</b>. Inheritance and Polymorphism</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/encapsulation.html" ><b>24</b>. Encapsulation</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/modules-and-packages.html" ><b>25</b>. Modules and Packages</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/standard-library-overview.html" ><b>26</b>. Standard Library Overview</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-os-module.html" ><b>27</b>. The os Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-random-module.html" ><b>28</b>. The random Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dates-and-time.html" ><b>29</b>. Dates and Time</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/working-with-json.html" ><b>30</b>. Working with JSON</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/apis-with-requests.html" ><b>31</b>. APIs and Requests</a>
+        </li>
+        
+        
+        <li class="current">
+            <a href="/python/regular-expressions.html" ><b>32</b>. Regular Expressions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/introduction-to-pandas.html" ><b>33</b>. Introduction to Pandas</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/debugging-and-troubleshooting.html" ><b>34</b>. Debugging and Troubleshooting</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/testing-and-unit-testing.html" ><b>35</b>. Testing and Unit Testing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/logging.html" ><b>36</b>. Logging</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/web-scraping.html" ><b>37</b>. Web Scraping</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/sql-basics-and-python-integration.html" ><b>38</b>. SQL Basics and Python Integration</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/big-o-notation-and-performance.html" ><b>39</b>. Big-O Notation and Performance</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/deployment-strategies.html" ><b>40</b>. Deployment Strategies</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/pip-and-virtual-environments.html" ><b>41</b>. Pip and Virtual Environments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/git-and-version-control.html" ><b>42</b>. Git and Version Control</a>
+        </li>
+        
+        
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
+
+    <main class="content">
+        <h1 id="regular-expressions-in-python">Regular Expressions in Python</h1>
+
+<p>Regular expressions (regex) are a powerful tool for pattern matching and text processing. Python provides the <strong><code class="language-plaintext highlighter-rouge">re</code></strong> module to work with regular expressions.</p>
+
+<hr />
+
+<h2 id="importing-the-re-module">Importing the <code class="language-plaintext highlighter-rouge">re</code> Module</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">re</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="basic-functions-in-the-re-module">Basic Functions in the <code class="language-plaintext highlighter-rouge">re</code> Module</h2>
+
+<h3 id="research"><code class="language-plaintext highlighter-rouge">re.search()</code></h3>
+<p>Searches for the first occurrence of a pattern in a string.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Hello, world!</span><span class="sh">"</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="sa">r</span><span class="sh">"</span><span class="s">world</span><span class="sh">"</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Found:</span><span class="sh">"</span><span class="p">,</span> <span class="n">match</span><span class="p">.</span><span class="nf">group</span><span class="p">())</span>  <span class="c1"># Output: Found: world
+</span></code></pre></div></div>
+
+<h3 id="rematch"><code class="language-plaintext highlighter-rouge">re.match()</code></h3>
+<p>Checks if the pattern matches the start of the string.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Hello, world!</span><span class="sh">"</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sa">r</span><span class="sh">"</span><span class="s">Hello</span><span class="sh">"</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Matched:</span><span class="sh">"</span><span class="p">,</span> <span class="n">match</span><span class="p">.</span><span class="nf">group</span><span class="p">())</span>  <span class="c1"># Output: Matched: Hello
+</span></code></pre></div></div>
+
+<h3 id="refindall"><code class="language-plaintext highlighter-rouge">re.findall()</code></h3>
+<p>Finds all occurrences of a pattern in a string.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">apple banana apple grape</span><span class="sh">"</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="sa">r</span><span class="sh">"</span><span class="s">apple</span><span class="sh">"</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>  <span class="c1"># Output: ['apple', 'apple']
+</span></code></pre></div></div>
+
+<h3 id="resub"><code class="language-plaintext highlighter-rouge">re.sub()</code></h3>
+<p>Replaces occurrences of a pattern with a specified string.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">123-456-7890</span><span class="sh">"</span>
+<span class="n">formatted</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sa">r</span><span class="sh">"</span><span class="s">-</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">.</span><span class="sh">"</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">formatted</span><span class="p">)</span>  <span class="c1"># Output: 123.456.7890
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="regular-expression-syntax">Regular Expression Syntax</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Syntax</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.</code></td>
+      <td>Any character except newline</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\d</code></td>
+      <td>Digit (0-9)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\D</code></td>
+      <td>Non-digit</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\w</code></td>
+      <td>Word character (letters, digits, _)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\W</code></td>
+      <td>Non-word character</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\s</code></td>
+      <td>Whitespace (space, tab, newline)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">\S</code></td>
+      <td>Non-whitespace</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">^</code></td>
+      <td>Start of string</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">$</code></td>
+      <td>End of string</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">*</code></td>
+      <td>Zero or more occurrences</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">+</code></td>
+      <td>One or more occurrences</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">?</code></td>
+      <td>Zero or one occurrence</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{n}</code></td>
+      <td>Exactly n occurrences</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{n,}</code></td>
+      <td>At least n occurrences</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{n,m}</code></td>
+      <td>Between n and m occurrences</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">|</code></td>
+      <td>Logical OR</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">(...)</code></td>
+      <td>Grouping</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="pattern-examples">Pattern Examples</h2>
+
+<h3 id="match-email-addresses">Match Email Addresses</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Contact us at support@example.com</span><span class="sh">"</span>
+<span class="n">email_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="sh">"</span><span class="s">[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</span><span class="sh">"</span>
+
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">email_pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Email:</span><span class="sh">"</span><span class="p">,</span> <span class="n">match</span><span class="p">.</span><span class="nf">group</span><span class="p">())</span>  <span class="c1"># Output: support@example.com
+</span></code></pre></div></div>
+
+<h3 id="validate-a-phone-number">Validate a Phone Number</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">phone_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="sh">"</span><span class="s">\d{3}-\d{3}-\d{4}</span><span class="sh">"</span>
+<span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Call me at 123-456-7890.</span><span class="sh">"</span>
+
+<span class="k">if</span> <span class="n">re</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">phone_pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Valid phone number found</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="extract-numbers">Extract Numbers</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">The price is 100 dollars</span><span class="sh">"</span>
+<span class="n">numbers</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="sa">r</span><span class="sh">"</span><span class="s">\d+</span><span class="sh">"</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>  <span class="c1"># Output: ['100']
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="working-with-groups">Working with Groups</h2>
+
+<h3 id="capturing-groups">Capturing Groups</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Date: 2025-01-16</span><span class="sh">"</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="sh">"</span><span class="s">(\d{4})-(\d{2})-(\d{2})</span><span class="sh">"</span>
+
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Year:</span><span class="sh">"</span><span class="p">,</span> <span class="n">match</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># Output: 2025
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Month:</span><span class="sh">"</span><span class="p">,</span> <span class="n">match</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># Output: 01
+</span>    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Day:</span><span class="sh">"</span><span class="p">,</span> <span class="n">match</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>    <span class="c1"># Output: 16
+</span></code></pre></div></div>
+
+<h3 id="named-groups">Named Groups</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Date: 2025-01-16</span><span class="sh">"</span>
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="sh">"</span><span class="s">(?P&lt;year&gt;\d{4})-(?P&lt;month&gt;\d{2})-(?P&lt;day&gt;\d{2})</span><span class="sh">"</span>
+
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Year:</span><span class="sh">"</span><span class="p">,</span> <span class="n">match</span><span class="p">.</span><span class="nf">group</span><span class="p">(</span><span class="sh">"</span><span class="s">year</span><span class="sh">"</span><span class="p">))</span>  <span class="c1"># Output: 2025
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="compiling-regular-expressions">Compiling Regular Expressions</h2>
+
+<p>For better performance when using the same pattern multiple times, compile the regex.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pattern</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">compile</span><span class="p">(</span><span class="sa">r</span><span class="sh">"</span><span class="s">\d+</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">There are 123 apples and 456 oranges.</span><span class="sh">"</span>
+
+<span class="n">matches</span> <span class="o">=</span> <span class="n">pattern</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>  <span class="c1"># Output: ['123', '456']
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="flags-in-regular-expressions">Flags in Regular Expressions</h2>
+
+<h3 id="common-flags">Common Flags</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">re.IGNORECASE</code> (<strong><code class="language-plaintext highlighter-rouge">re.I</code></strong>): Ignore case in matching.</li>
+  <li><code class="language-plaintext highlighter-rouge">re.MULTILINE</code> (<strong><code class="language-plaintext highlighter-rouge">re.M</code></strong>): Enable multi-line matching.</li>
+  <li><code class="language-plaintext highlighter-rouge">re.DOTALL</code> (<strong><code class="language-plaintext highlighter-rouge">re.S</code></strong>): Allow <code class="language-plaintext highlighter-rouge">.</code> to match newline characters.</li>
+</ul>
+
+<h3 id="example-ignore-case">Example: Ignore Case</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Hello, World!</span><span class="sh">"</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="sa">r</span><span class="sh">"</span><span class="s">hello</span><span class="sh">"</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="p">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Matched:</span><span class="sh">"</span><span class="p">,</span> <span class="n">match</span><span class="p">.</span><span class="nf">group</span><span class="p">())</span>  <span class="c1"># Output: Hello
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="practical-examples">Practical Examples</h2>
+
+<h3 id="replace-sensitive-data">Replace Sensitive Data</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">text</span> <span class="o">=</span> <span class="sh">"</span><span class="s">My phone number is 123-456-7890.</span><span class="sh">"</span>
+<span class="n">redacted</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sa">r</span><span class="sh">"</span><span class="s">\d{3}-\d{3}-\d{4}</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">[REDACTED]</span><span class="sh">"</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">redacted</span><span class="p">)</span>  <span class="c1"># Output: My phone number is [REDACTED].
+</span></code></pre></div></div>
+
+<h3 id="validate-a-password">Validate a Password</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">password</span> <span class="o">=</span> <span class="sh">"</span><span class="s">P@ssw0rd2025</span><span class="sh">"</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="sh">"</span><span class="s">^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&amp;])[A-Za-z\d@$!%*?&amp;]{8,}$</span><span class="sh">"</span>
+<span class="k">if</span> <span class="n">re</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Password is valid</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Password is invalid</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="best-practices">Best Practices</h2>
+
+<ol>
+  <li><strong>Escape Special Characters</strong>:
+    <ul>
+      <li>Use <code class="language-plaintext highlighter-rouge">\</code> to escape special regex characters (e.g., <code class="language-plaintext highlighter-rouge">\.</code> for a literal dot).</li>
+    </ul>
+  </li>
+  <li><strong>Use Raw Strings</strong>:
+    <ul>
+      <li>Always use raw strings (e.g., <code class="language-plaintext highlighter-rouge">r"pattern"</code>) to avoid issues with Python’s string escaping.</li>
+    </ul>
+  </li>
+  <li><strong>Break Down Complex Patterns</strong>:
+    <ul>
+      <li>Use comments with the <code class="language-plaintext highlighter-rouge">re.VERBOSE</code> flag for readability.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="practice-exercises">Practice Exercises</h2>
+
+<ol>
+  <li><strong>Extract Hashtags</strong>:
+    <ul>
+      <li>Write a regex to find all hashtags in a tweet.</li>
+    </ul>
+  </li>
+  <li><strong>Validate an Email</strong>:
+    <ul>
+      <li>Create a regex to validate an email address.</li>
+    </ul>
+  </li>
+  <li><strong>Replace URLs</strong>:
+    <ul>
+      <li>Replace all URLs in a string with <code class="language-plaintext highlighter-rouge">[LINK]</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Find Dates</strong>:
+    <ul>
+      <li>Extract all dates in the format <code class="language-plaintext highlighter-rouge">YYYY-MM-DD</code> from a text.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Regular expressions are a versatile tool for pattern matching and text processing. With practice, they become an invaluable skill for handling strings in Python.</p>
+
+        <!-- Next Lesson Button -->
+        
+        
+        <a href="/python/introduction-to-pandas.html" class="next-lesson">Next Lesson: Introduction to Pandas</a>
+        
+    </main>
+</body>
+
+</html>

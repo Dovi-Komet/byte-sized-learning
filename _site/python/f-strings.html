@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7YF62DJDB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P7YF62DJDB');
+    </script>
+    <!-- End Google Analytics -->
+
+    
+    <title>f-Strings</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>f-Strings</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="f-Strings" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/python/f-strings.html" />
+<meta property="og:url" content="http://localhost:4000/python/f-strings.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="f-Strings" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"f-Strings","url":"http://localhost:4000/python/f-strings.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <nav class="sidebar">
+    <ul>
+        
+        
+        
+        
+        <li >
+            <a href="/" >Python Tutorial</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/intro-to-python.html" ><b>1</b>. Intro to Python</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/setup-environment.html" ><b>2</b>. Setup Environment</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comments.html" ><b>4</b>. Comments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/variables-and-types.html" ><b>5</b>. Variables and Types</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/numbers-and-math.html" ><b>6</b>. Numbers and Math</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/strings.html" ><b>7</b>. Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/slicing-and-indexing.html" ><b>8</b>. Slicing and Indexing</a>
+        </li>
+        
+        
+        <li class="current">
+            <a href="/python/f-strings.html" ><b>9</b>. f-Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/user-input-and-output.html" ><b>10</b>. User Input and Output</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/boolean-logic.html" ><b>11</b>. Boolean Logic</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/conditionals.html" ><b>12</b>. Conditionals</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/loops.html" ><b>13</b>. Loops</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/functions.html" ><b>14</b>. Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lambda-functions.html" ><b>15</b>. Lambda Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lists-sets-and-tuples.html" ><b>16</b>. Lists, Sets, and Tuples</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dictionaries.html" ><b>17</b>. Dictionaries</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/nested-structures.html" ><b>18</b>. Nested Structures</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comprehensions.html" ><b>19</b>. Comprehensions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/reading-and-writing-files.html" ><b>20</b>. Reading and Writing Files</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/error-and-exception-handling.html" ><b>21</b>. Error and Exception Handling</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/oop-basics.html" ><b>22</b>. OOP Basics</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/inheritance-and-polymorphism.html" ><b>23</b>. Inheritance and Polymorphism</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/encapsulation.html" ><b>24</b>. Encapsulation</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/modules-and-packages.html" ><b>25</b>. Modules and Packages</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/standard-library-overview.html" ><b>26</b>. Standard Library Overview</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-os-module.html" ><b>27</b>. The os Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-random-module.html" ><b>28</b>. The random Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dates-and-time.html" ><b>29</b>. Dates and Time</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/working-with-json.html" ><b>30</b>. Working with JSON</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/apis-with-requests.html" ><b>31</b>. APIs and Requests</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/regular-expressions.html" ><b>32</b>. Regular Expressions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/introduction-to-pandas.html" ><b>33</b>. Introduction to Pandas</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/debugging-and-troubleshooting.html" ><b>34</b>. Debugging and Troubleshooting</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/testing-and-unit-testing.html" ><b>35</b>. Testing and Unit Testing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/logging.html" ><b>36</b>. Logging</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/web-scraping.html" ><b>37</b>. Web Scraping</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/sql-basics-and-python-integration.html" ><b>38</b>. SQL Basics and Python Integration</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/big-o-notation-and-performance.html" ><b>39</b>. Big-O Notation and Performance</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/deployment-strategies.html" ><b>40</b>. Deployment Strategies</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/pip-and-virtual-environments.html" ><b>41</b>. Pip and Virtual Environments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/git-and-version-control.html" ><b>42</b>. Git and Version Control</a>
+        </li>
+        
+        
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
+
+    <main class="content">
+        <h1 id="f-strings">f-Strings</h1>
+
+<p>Python’s <strong>f-strings</strong> (formatted string literals) provide a concise and efficient way to embed expressions and variables into strings. Introduced in Python 3.6, f-strings make string formatting easier and more readable.</p>
+
+<h2 id="creating-an-f-string">Creating an f-String</h2>
+
+<p>To create an f-string:</p>
+<ol>
+  <li>Start the string with an <code class="language-plaintext highlighter-rouge">f</code> or <code class="language-plaintext highlighter-rouge">F</code>.</li>
+  <li>Use curly braces <code class="language-plaintext highlighter-rouge">{}</code> to include expressions or variables.</li>
+</ol>
+
+<h3 id="example">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c1"># f-string with variables
+</span><span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s"> years old.</span><span class="sh">"</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>  <span class="c1"># My name is Alice and I am 30 years old.
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="embedding-expressions">Embedding Expressions</h2>
+
+<p>f-Strings can evaluate expressions directly within curly braces.</p>
+
+<h3 id="example-1">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s"> + </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s"> = </span><span class="si">{</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># 5 + 3 = 8
+</span><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">The square of </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s"> is </span><span class="si">{</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span><span class="si">}</span><span class="s">.</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># The square of 5 is 25.
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="formatting-numbers">Formatting Numbers</h2>
+
+<p>f-Strings support number formatting for enhanced output:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Format Specifier</th>
+      <th>Description</th>
+      <th>Example</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.nf</code></td>
+      <td>Round to <code class="language-plaintext highlighter-rouge">n</code> decimal places</td>
+      <td><code class="language-plaintext highlighter-rouge">f"{3.14159:.2f}"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">3.14</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">,</code></td>
+      <td>Adds a comma as a thousands separator</td>
+      <td><code class="language-plaintext highlighter-rouge">f"{1000000:,}"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">1,000,000</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">e</code></td>
+      <td>Scientific notation</td>
+      <td><code class="language-plaintext highlighter-rouge">f"{1234:e}"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">1.234000e+03</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">%</code></td>
+      <td>Percentage</td>
+      <td><code class="language-plaintext highlighter-rouge">f"{0.75:.0%}"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">75%</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="examples">Examples:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">value</span> <span class="o">=</span> <span class="mf">12345.6789</span>
+
+<span class="c1"># Round to 2 decimal places
+</span><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Value: </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Value: 12345.68
+</span>
+<span class="c1"># Add commas
+</span><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Formatted: </span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="p">,.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Formatted: 12,345.68
+</span>
+<span class="c1"># Percentage
+</span><span class="n">percentage</span> <span class="o">=</span> <span class="mf">0.85</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Success Rate: </span><span class="si">{</span><span class="n">percentage</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="o">%</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Success Rate: 85.0%
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="multiline-f-strings">Multiline f-Strings</h2>
+
+<p>Use triple quotes for multiline f-strings:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"""</span><span class="s">
+Name: </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">
+Age: </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s">
+Status: </span><span class="si">{</span><span class="sh">"</span><span class="s">Adult</span><span class="sh">"</span> <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="k">else</span> <span class="sh">"</span><span class="s">Minor</span><span class="sh">"</span><span class="si">}</span><span class="s">
+</span><span class="sh">"""</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="using-f-strings-with-functions">Using f-Strings with Functions</h2>
+
+<p>You can call functions directly within f-strings:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s">!</span><span class="sh">"</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="nf">greet</span><span class="p">(</span><span class="sh">'</span><span class="s">Alice</span><span class="sh">'</span><span class="p">)</span><span class="si">}</span><span class="s"> Welcome to Python.</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Hello, Alice! Welcome to Python.
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="escaping-braces-in-f-strings">Escaping Braces in f-Strings</h2>
+
+<p>To include literal curly braces <code class="language-plaintext highlighter-rouge">{</code> or <code class="language-plaintext highlighter-rouge">}</code> in an f-string, double them:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">{{}} is an empty set of braces.</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># {} is an empty set of braces.
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="practice-exercises">Practice Exercises</h2>
+
+<ol>
+  <li>Create variables for:
+    <ul>
+      <li>Your name.</li>
+      <li>Your favorite color.</li>
+      <li>Your favorite number.
+Use an f-string to print a sentence including all three variables.</li>
+    </ul>
+  </li>
+  <li>Calculate and display the following using f-strings:
+    <ul>
+      <li>The area of a circle with a radius of <code class="language-plaintext highlighter-rouge">7</code> (use <code class="language-plaintext highlighter-rouge">3.14</code> for π).</li>
+      <li>A salary increase of <code class="language-plaintext highlighter-rouge">15%</code> for an initial salary of <code class="language-plaintext highlighter-rouge">$50,000</code>.</li>
+    </ul>
+  </li>
+  <li>Print a formatted table:
+    <ul>
+      <li>Product names and their prices.</li>
+      <li>Align product names to the left and prices to the right, formatted to two decimal places.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>f-Strings are a powerful and convenient feature for dynamic string formatting in Python. They make your code cleaner and easier to read!</p>
+
+        <!-- Next Lesson Button -->
+        
+        
+        <a href="/python/user-input-and-output.html" class="next-lesson">Next Lesson: User Input and Output</a>
+        
+    </main>
+</body>
+
+</html>

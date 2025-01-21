@@ -5,87 +5,94 @@ order: 3
 
 # The Terminal
 
-The terminal (or command line) is a powerful tool for interacting with your computer. As a programmer, you'll often use the terminal to run Python scripts, manage files, and execute commands.
+The terminal (or command line) is a powerful tool that allows you to interact with your computer directly using text commands. You'll often use it while working with Python for running scripts, managing files, and installing packages.
 
----
+## What is the Terminal?
 
-### What is the Terminal?
+The terminal is a text-based interface where you can:
+- Navigate your file system.
+- Run programs and scripts.
+- Perform administrative tasks.
+- Manage packages and environments.
 
-The terminal is a text-based interface where you can type commands to perform tasks instead of using a graphical interface. It's also called the **Command Prompt** on Windows or the **Terminal** on macOS and Linux.
+### Common Terminal Names:
+- **Windows**: Command Prompt or PowerShell.
+- **macOS**: Terminal.
+- **Linux**: Terminal or Shell.
 
----
+## Opening the Terminal
 
-### Basic Terminal Commands
+- **Windows**: Press `Win + R`, type `cmd`, and press Enter, or search for "PowerShell" in the Start menu.
+- **macOS**: Press `Cmd + Space`, type `Terminal`, and press Enter.
+- **Linux**: Look for "Terminal" in your applications menu or press `Ctrl + Alt + T`.
 
-Here are some common terminal commands you'll use:
+## Basic Commands
 
-1. **Navigate Directories**:
-    - To list files in the current directory:
-      ```bash
-      ls   # macOS/Linux
-      dir  # Windows
-      ```
-    - To change directories:
-      ```bash
-      cd <directory_name>
-      ```
-    - To go back one directory:
-      ```bash
-      cd ..
-      ```
+Here are some essential terminal commands:
 
-2. **Create a Directory**:
-    ```bash
-    mkdir <directory_name>
-    ```
+| Command            | Description                                    |
+|--------------------|------------------------------------------------|
+| `pwd`              | Print the current working directory.          |
+| `ls` (Linux/macOS) or `dir` (Windows) | List files and directories in the current directory. |
+| `cd <directory>`   | Change to a specific directory.               |
+| `mkdir <name>`     | Create a new directory.                       |
+| `rm <file>`        | Remove a file.                                |
+| `rmdir <directory>`| Remove an empty directory.                    |
+| `touch <file>`     | Create a new file (Linux/macOS).              |
 
-3. **Create a File**:
-    ```bash
-    touch <file_name>  # macOS/Linux
-    echo. > <file_name>  # Windows
-    ```
+### Example:
+```bash
+# Navigate to Desktop
+cd Desktop
 
-4. **Delete a File**:
-    ```bash
-    rm <file_name>  # macOS/Linux
-    del <file_name>  # Windows
-    ```
+# Create a folder called "python_course"
+mkdir python_course
 
-5. **Run a Python Script**:
-    ```bash
-    python <script_name>.py
-    ```
+# Change into the folder
+cd python_course
 
----
-
-### Practice Task
-
-Try the following in your terminal:
-1. Create a new directory called `python_practice`.
-    ```bash
-    mkdir python_practice
-    ```
-2. Navigate into the directory.
-    ```bash
-    cd python_practice
-    ```
-3. Create a file called `hello.py` and open it in your editor. Add the following code:
-    ```python
-    print("Hello from the terminal!")
-    ```
-4. Run the file in the terminal:
-    ```bash
-    python hello.py
-    ```
-
-You should see the output:
-
-```plaintext
-Hello from the terminal!
+# Create a file
+touch hello.py
 ```
 
----
+## Running Python in the Terminal
 
-### Next Steps
+Once Python is installed, you can use the terminal to run Python code.
 
-Now that you're familiar with the terminal, we'll write and execute your first Python program in the next lesson.
+1. Open the terminal.
+2. Type `python` (or `python3` on some systems) and press Enter.
+3. You'll see the Python interactive shell:
+   ```
+   Python 3.x.x (default, ...)
+   Type "help", "copyright", "credits" or "license" for more information.
+   >>>
+   ```
+4. Type Python commands directly, like:
+   ```python
+   >>> print("Hello, Python!")
+   Hello, Python!
+   ```
+
+To exit the Python shell, type:
+```bash
+exit()
+```
+
+## Running Python Scripts
+
+Instead of typing code interactively, you can run Python scripts saved in files:
+1. Save your script (e.g., `script.py`).
+2. Navigate to its location in the terminal using `cd`.
+3. Run the script with:
+   ```bash
+   python script.py
+   ```
+
+## Practice Exercises
+
+1. Open the terminal and navigate to your Desktop.
+2. Create a folder called `python_practice`.
+3. Inside the folder, create a file called `hello_world.py`.
+4. Write a Python script to print "Hello, World!" and run it using the terminal.
+
+With these basics, you're ready to use the terminal like a pro!

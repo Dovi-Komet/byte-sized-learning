@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7YF62DJDB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P7YF62DJDB');
+    </script>
+    <!-- End Google Analytics -->
+
+    
+    <title>Web Scraping</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Web Scraping</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Web Scraping" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/python/web-scraping.html" />
+<meta property="og:url" content="http://localhost:4000/python/web-scraping.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Web Scraping" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Web Scraping","url":"http://localhost:4000/python/web-scraping.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <nav class="sidebar">
+    <ul>
+        
+        
+        
+        
+        <li >
+            <a href="/" >Python Tutorial</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/intro-to-python.html" ><b>1</b>. Intro to Python</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/setup-environment.html" ><b>2</b>. Setup Environment</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comments.html" ><b>4</b>. Comments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/variables-and-types.html" ><b>5</b>. Variables and Types</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/numbers-and-math.html" ><b>6</b>. Numbers and Math</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/strings.html" ><b>7</b>. Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/slicing-and-indexing.html" ><b>8</b>. Slicing and Indexing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/f-strings.html" ><b>9</b>. f-Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/user-input-and-output.html" ><b>10</b>. User Input and Output</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/boolean-logic.html" ><b>11</b>. Boolean Logic</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/conditionals.html" ><b>12</b>. Conditionals</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/loops.html" ><b>13</b>. Loops</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/functions.html" ><b>14</b>. Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lambda-functions.html" ><b>15</b>. Lambda Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lists-sets-and-tuples.html" ><b>16</b>. Lists, Sets, and Tuples</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dictionaries.html" ><b>17</b>. Dictionaries</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/nested-structures.html" ><b>18</b>. Nested Structures</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comprehensions.html" ><b>19</b>. Comprehensions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/reading-and-writing-files.html" ><b>20</b>. Reading and Writing Files</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/error-and-exception-handling.html" ><b>21</b>. Error and Exception Handling</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/oop-basics.html" ><b>22</b>. OOP Basics</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/inheritance-and-polymorphism.html" ><b>23</b>. Inheritance and Polymorphism</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/encapsulation.html" ><b>24</b>. Encapsulation</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/modules-and-packages.html" ><b>25</b>. Modules and Packages</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/standard-library-overview.html" ><b>26</b>. Standard Library Overview</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-os-module.html" ><b>27</b>. The os Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-random-module.html" ><b>28</b>. The random Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dates-and-time.html" ><b>29</b>. Dates and Time</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/working-with-json.html" ><b>30</b>. Working with JSON</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/apis-with-requests.html" ><b>31</b>. APIs and Requests</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/regular-expressions.html" ><b>32</b>. Regular Expressions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/introduction-to-pandas.html" ><b>33</b>. Introduction to Pandas</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/debugging-and-troubleshooting.html" ><b>34</b>. Debugging and Troubleshooting</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/testing-and-unit-testing.html" ><b>35</b>. Testing and Unit Testing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/logging.html" ><b>36</b>. Logging</a>
+        </li>
+        
+        
+        <li class="current">
+            <a href="/python/web-scraping.html" ><b>37</b>. Web Scraping</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/sql-basics-and-python-integration.html" ><b>38</b>. SQL Basics and Python Integration</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/big-o-notation-and-performance.html" ><b>39</b>. Big-O Notation and Performance</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/deployment-strategies.html" ><b>40</b>. Deployment Strategies</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/pip-and-virtual-environments.html" ><b>41</b>. Pip and Virtual Environments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/git-and-version-control.html" ><b>42</b>. Git and Version Control</a>
+        </li>
+        
+        
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
+
+    <main class="content">
+        <h1 id="web-scraping-with-python">Web Scraping with Python</h1>
+
+<p>Web scraping is the process of extracting data from websites automatically. Python provides several powerful libraries for web scraping, such as <code class="language-plaintext highlighter-rouge">BeautifulSoup</code>, <code class="language-plaintext highlighter-rouge">requests</code>, and <code class="language-plaintext highlighter-rouge">Selenium</code>.</p>
+
+<hr />
+
+<h2 id="when-to-use-web-scraping">When to Use Web Scraping</h2>
+
+<p>Web scraping is useful for:</p>
+
+<ol>
+  <li><strong>Data Collection:</strong> Gathering information for analysis (e.g., stock prices, news articles).</li>
+  <li><strong>Monitoring Websites:</strong> Tracking changes on competitors’ sites.</li>
+  <li><strong>Automation:</strong> Extracting repetitive data without manual effort.</li>
+  <li><strong>Data Aggregation:</strong> Collecting data from multiple sources into a single repository.</li>
+</ol>
+
+<p><strong>Important:</strong> Always check a website’s <code class="language-plaintext highlighter-rouge">robots.txt</code> file and terms of service before scraping.</p>
+
+<hr />
+
+<h2 id="setting-up-the-environment">Setting Up the Environment</h2>
+
+<p>Install the required libraries:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>requests beautifulsoup4 lxml
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="using-requests-to-fetch-web-pages">Using <code class="language-plaintext highlighter-rouge">requests</code> to Fetch Web Pages</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">requests</code> library is used to download web pages as HTML.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="sh">"</span><span class="s">https://example.com</span><span class="sh">"</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">[:</span><span class="mi">500</span><span class="p">])</span>  <span class="c1"># Print first 500 characters of the page
+</span><span class="k">else</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Failed to retrieve page, status code: </span><span class="si">{</span><span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="handling-common-issues">Handling Common Issues:</h3>
+
+<ul>
+  <li>
+    <p><strong>Headers:</strong> Some websites block requests without headers.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">User-Agent</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Mozilla/5.0</span><span class="sh">"</span><span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Timeouts:</strong> Avoid hanging requests.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="parsing-html-with-beautifulsoup">Parsing HTML with BeautifulSoup</h2>
+
+<p><code class="language-plaintext highlighter-rouge">BeautifulSoup</code> helps extract data from HTML content.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">html_content</span> <span class="o">=</span> <span class="sh">"</span><span class="s">&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, World!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</span><span class="sh">"</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="sh">"</span><span class="s">html.parser</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">soup</span><span class="p">.</span><span class="n">h1</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># Output: Hello, World!
+</span></code></pre></div></div>
+
+<h3 id="extracting-elements">Extracting Elements</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">https://example.com</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">,</span> <span class="sh">"</span><span class="s">html.parser</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Find elements
+</span><span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="sh">"</span><span class="s">title</span><span class="sh">"</span><span class="p">).</span><span class="n">text</span>
+<span class="n">all_links</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="sh">"</span><span class="s">a</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Page Title:</span><span class="sh">"</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">all_links</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Link:</span><span class="sh">"</span><span class="p">,</span> <span class="n">link</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">href</span><span class="sh">'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="navigating-the-html-structure">Navigating the HTML Structure</h2>
+
+<p>BeautifulSoup provides methods to navigate through the HTML structure:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">soup.title.text</code> – Gets the text of the <code class="language-plaintext highlighter-rouge">&lt;title&gt;</code> tag.</li>
+  <li><code class="language-plaintext highlighter-rouge">soup.find("div", class_="content")</code> – Finds a <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> with a specific class.</li>
+  <li><code class="language-plaintext highlighter-rouge">soup.find_all("p")</code> – Finds all paragraph tags.</li>
+</ul>
+
+<p>Example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">content</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="sh">"</span><span class="s">div</span><span class="sh">"</span><span class="p">,</span> <span class="p">{</span><span class="sh">"</span><span class="s">id</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">main-content</span><span class="sh">"</span><span class="p">})</span>
+<span class="n">paragraphs</span> <span class="o">=</span> <span class="n">content</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="sh">"</span><span class="s">p</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">paragraphs</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="handling-pagination">Handling Pagination</h2>
+
+<p>Many websites display data across multiple pages. You can scrape multiple pages using loops.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">base_url</span> <span class="o">=</span> <span class="sh">"</span><span class="s">https://example.com/page=</span><span class="sh">"</span>
+<span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">base_url</span><span class="si">}{</span><span class="n">page</span><span class="si">}</span><span class="sh">"</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">,</span> <span class="sh">"</span><span class="s">html.parser</span><span class="sh">"</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">soup</span><span class="p">.</span><span class="n">title</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="scraping-tables">Scraping Tables</h2>
+
+<p>Web pages often contain structured data in tables.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="sh">"</span><span class="s">table</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="sh">"</span><span class="s">tr</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="n">row</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="sh">"</span><span class="s">td</span><span class="sh">"</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">.</span><span class="nf">append</span><span class="p">([</span><span class="n">col</span><span class="p">.</span><span class="n">text</span><span class="p">.</span><span class="nf">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">])</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nc">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">Column1</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Column2</span><span class="sh">"</span><span class="p">])</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="web-scraping-with-selenium">Web Scraping with Selenium</h2>
+
+<p>For dynamic websites that rely on JavaScript, Selenium can be used to interact with the page.</p>
+
+<h3 id="installation">Installation:</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>selenium webdriver-manager
+</code></pre></div></div>
+
+<h3 id="example">Example:</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="n">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<span class="kn">from</span> <span class="n">webdriver_manager.chrome</span> <span class="kn">import</span> <span class="n">ChromeDriverManager</span>
+
+<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="nc">Chrome</span><span class="p">(</span><span class="nc">ChromeDriverManager</span><span class="p">().</span><span class="nf">install</span><span class="p">())</span>
+
+<span class="n">driver</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">https://example.com</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">driver</span><span class="p">.</span><span class="n">title</span><span class="p">)</span>
+
+<span class="n">element</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="nf">find_element</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">TAG_NAME</span><span class="p">,</span> <span class="sh">"</span><span class="s">h1</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">element</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">driver</span><span class="p">.</span><span class="nf">quit</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="interacting-with-elements">Interacting with Elements:</h3>
+
+<ul>
+  <li>Clicking buttons: <code class="language-plaintext highlighter-rouge">element.click()</code></li>
+  <li>Typing into fields: <code class="language-plaintext highlighter-rouge">element.send_keys("Python")</code></li>
+  <li>Submitting forms: <code class="language-plaintext highlighter-rouge">element.submit()</code></li>
+</ul>
+
+<hr />
+
+<h2 id="handling-common-challenges">Handling Common Challenges</h2>
+
+<ol>
+  <li><strong>Dynamic Content:</strong> Use Selenium or wait for JavaScript to load.</li>
+  <li><strong>CAPTCHAs:</strong> Some sites block bots with CAPTCHAs.</li>
+  <li><strong>IP Blocking:</strong> Rotate proxies or use a delay between requests.</li>
+  <li><strong>Session Handling:</strong> Use cookies and authentication tokens.</li>
+</ol>
+
+<hr />
+
+<h2 id="ethical-web-scraping-guidelines">Ethical Web Scraping Guidelines</h2>
+
+<ol>
+  <li><strong>Respect <code class="language-plaintext highlighter-rouge">robots.txt</code>:</strong> Check if scraping is allowed.</li>
+  <li><strong>Avoid Overloading Servers:</strong> Use delays between requests.</li>
+  <li><strong>Give Credit:</strong> Respect data ownership and licensing.</li>
+  <li><strong>Don’t Harvest Personal Data:</strong> Ensure compliance with regulations like GDPR.</li>
+</ol>
+
+<p>Example of checking <code class="language-plaintext highlighter-rouge">robots.txt</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">https://example.com/robots.txt</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="storing-scraped-data">Storing Scraped Data</h2>
+
+<p>Once data is extracted, it can be stored in various formats:</p>
+
+<ul>
+  <li>
+    <p><strong>CSV File:</strong></p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">csv</span>
+
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">data.csv</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="sh">""</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="p">.</span><span class="nf">writer</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">writer</span><span class="p">.</span><span class="nf">writerow</span><span class="p">([</span><span class="sh">"</span><span class="s">Name</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Price</span><span class="sh">"</span><span class="p">])</span>
+    <span class="n">writer</span><span class="p">.</span><span class="nf">writerow</span><span class="p">([</span><span class="sh">"</span><span class="s">Item1</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">$10</span><span class="sh">"</span><span class="p">])</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>JSON File:</strong></p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">json</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Item1</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">price</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">$10</span><span class="sh">"</span><span class="p">}</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">data.json</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">w</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Database (SQLite Example):</strong></p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">sqlite3</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">"</span><span class="s">data.db</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">cursor</span><span class="p">()</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">"</span><span class="s">CREATE TABLE IF NOT EXISTS products (name TEXT, price TEXT)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">c</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">"</span><span class="s">INSERT INTO products VALUES (</span><span class="sh">'</span><span class="s">Item1</span><span class="sh">'</span><span class="s">, </span><span class="sh">'</span><span class="s">$10</span><span class="sh">'</span><span class="s">)</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">conn</span><span class="p">.</span><span class="nf">commit</span><span class="p">()</span>
+<span class="n">conn</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="practice-exercises">Practice Exercises</h2>
+
+<ol>
+  <li>Scrape the titles of articles from a news website.</li>
+  <li>Extract product names and prices from an e-commerce website.</li>
+  <li>Use Selenium to interact with a login form and scrape data post-login.</li>
+  <li>Store scraped data in a CSV file.</li>
+</ol>
+
+<hr />
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li><strong>requests</strong>: Fetch web pages.</li>
+  <li><strong>BeautifulSoup</strong>: Parse HTML and extract data.</li>
+  <li><strong>Selenium</strong>: Handle dynamic web pages.</li>
+  <li><strong>Ethics</strong>: Always follow best practices to avoid legal issues.</li>
+</ul>
+
+<p>With these tools, you can automate data extraction and build powerful data-driven applications.</p>
+
+        <!-- Next Lesson Button -->
+        
+        
+        <a href="/python/sql-basics-and-python-integration.html" class="next-lesson">Next Lesson: SQL Basics and Python Integration</a>
+        
+    </main>
+</body>
+
+</html>

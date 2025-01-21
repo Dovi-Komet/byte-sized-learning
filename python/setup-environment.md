@@ -5,65 +5,70 @@ order: 2
 
 # Setup Environment
 
-Before we can start coding in Python, we need to set up our development environment. This lesson will guide you through the process of installing Python and setting up a code editor.
+Before we dive into Python programming, we need to set up your development environment. This includes installing Python and choosing a code editor.
 
----
+## Installing Python
 
-### Step 1: Install Python
+1. **Download Python**:
+   - Visit the [official Python website](https://www.python.org/){:target="_blank"}.
+   - Download the latest version for your operating system.
 
-1. Visit the [official Python website](https://www.python.org/){:target="_blank"}.
-2. Download the latest version of Python for your operating system (Windows, macOS, or Linux).
-3. During installation, **ensure that you check the box** to "Add Python to PATH."
+2. **Install Python**:
+   - Run the installer.
+   - Make sure to check the box that says **"Add Python to PATH"** during installation.
+   - Follow the installation prompts.
 
-To verify the installation:
-1. Open a terminal or command prompt.
-2. Type the following command and press Enter:
+3. **Verify Installation**:
+   - Open a terminal or command prompt.
+   - Type the command:  
+     ```bash
+     python --version
+     ```
+   - You should see the installed Python version.
 
-    ```python
-    python --version
-    ```
+## Choosing a Code Editor
 
-   This should display the installed Python version.
+A code editor is where you'll write your Python code. Here are some popular options:
 
----
+- **VS Code** (Recommended):  
+  - Download from [Visual Studio Code](https://code.visualstudio.com/){:target="_blank"}.
+  - Install the Python extension for syntax highlighting and debugging.
 
-### Step 2: Install a Code Editor
+- **PyCharm**:  
+  - Ideal for larger Python projects.
+  - Download from [JetBrains PyCharm](https://www.jetbrains.com/pycharm/){:target="_blank"}.
 
-We recommend using **Visual Studio Code (VS Code)**:
-1. Download VS Code from the [official website](https://code.visualstudio.com/){:target="_blank"}.
-2. Install the application on your computer.
-3. Launch VS Code and install the **Python extension** for syntax highlighting, debugging, and more:
+- **Other Options**: Sublime Text, Atom, or even a simple text editor.
+
+## Setting Up VS Code for Python
+
+1. **Install VS Code**:
+   - Download and install from the [official website](https://code.visualstudio.com/){:target="_blank"}.
+
+2. **Install the Python Extension**:
    - Open VS Code.
-   - Go to the Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X` on macOS).
+   - Go to the Extensions view (`Ctrl+Shift+X`).
    - Search for "Python" and install the extension by Microsoft.
 
----
+3. **Verify the Setup**:
+   - Open a new file and save it with a `.py` extension (e.g., `hello.py`).
+   - Type the following code:
+     ```python
+     print("Hello, Python!")
+     ```
+   - Run the file by pressing `Ctrl+Shift+B` or using the Run option.
 
-### Step 3: Test Your Setup
+## Testing Your Setup
 
-1. Open VS Code.
-2. Create a new file and save it as `test.py`.
-3. Add the following code:
+1. Open a terminal in your code editor.
+2. Navigate to the folder where your Python file is saved.
+3. Run the file with:
+   ```bash
+   python hello.py
+   ```
+4. You should see the output:
+   ```
+   Hello, Python!
+   ```
 
-    ```python
-    print("Hello, Python!")
-    ```
-
-4. Open the terminal in VS Code (`Ctrl+`` or Cmd+`` on macOS).
-5. Run the script with the following command:
-
-    ```python
-    python test.py
-    ```
-
-You should see the output:
-
-```plaintext
-Hello, Python!
-```
-
----
-
-### Next Steps
-
-With your environment set up, you’re ready to explore the terminal and its uses in the next lesson.
+Now that your environment is ready, you're all set to begin your Python journey!

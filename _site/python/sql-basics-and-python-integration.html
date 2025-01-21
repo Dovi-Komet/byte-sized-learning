@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7YF62DJDB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P7YF62DJDB');
+    </script>
+    <!-- End Google Analytics -->
+
+    
+    <title>SQL Basics and Python Integration</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SQL Basics and Python Integration</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="SQL Basics and Python Integration" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/python/sql-basics-and-python-integration.html" />
+<meta property="og:url" content="http://localhost:4000/python/sql-basics-and-python-integration.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SQL Basics and Python Integration" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"SQL Basics and Python Integration","url":"http://localhost:4000/python/sql-basics-and-python-integration.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <nav class="sidebar">
+    <ul>
+        
+        
+        
+        
+        <li >
+            <a href="/" >Python Tutorial</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/intro-to-python.html" ><b>1</b>. Intro to Python</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/setup-environment.html" ><b>2</b>. Setup Environment</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comments.html" ><b>4</b>. Comments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/variables-and-types.html" ><b>5</b>. Variables and Types</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/numbers-and-math.html" ><b>6</b>. Numbers and Math</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/strings.html" ><b>7</b>. Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/slicing-and-indexing.html" ><b>8</b>. Slicing and Indexing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/f-strings.html" ><b>9</b>. f-Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/user-input-and-output.html" ><b>10</b>. User Input and Output</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/boolean-logic.html" ><b>11</b>. Boolean Logic</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/conditionals.html" ><b>12</b>. Conditionals</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/loops.html" ><b>13</b>. Loops</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/functions.html" ><b>14</b>. Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lambda-functions.html" ><b>15</b>. Lambda Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lists-sets-and-tuples.html" ><b>16</b>. Lists, Sets, and Tuples</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dictionaries.html" ><b>17</b>. Dictionaries</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/nested-structures.html" ><b>18</b>. Nested Structures</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comprehensions.html" ><b>19</b>. Comprehensions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/reading-and-writing-files.html" ><b>20</b>. Reading and Writing Files</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/error-and-exception-handling.html" ><b>21</b>. Error and Exception Handling</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/oop-basics.html" ><b>22</b>. OOP Basics</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/inheritance-and-polymorphism.html" ><b>23</b>. Inheritance and Polymorphism</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/encapsulation.html" ><b>24</b>. Encapsulation</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/modules-and-packages.html" ><b>25</b>. Modules and Packages</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/standard-library-overview.html" ><b>26</b>. Standard Library Overview</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-os-module.html" ><b>27</b>. The os Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-random-module.html" ><b>28</b>. The random Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dates-and-time.html" ><b>29</b>. Dates and Time</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/working-with-json.html" ><b>30</b>. Working with JSON</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/apis-with-requests.html" ><b>31</b>. APIs and Requests</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/regular-expressions.html" ><b>32</b>. Regular Expressions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/introduction-to-pandas.html" ><b>33</b>. Introduction to Pandas</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/debugging-and-troubleshooting.html" ><b>34</b>. Debugging and Troubleshooting</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/testing-and-unit-testing.html" ><b>35</b>. Testing and Unit Testing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/logging.html" ><b>36</b>. Logging</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/web-scraping.html" ><b>37</b>. Web Scraping</a>
+        </li>
+        
+        
+        <li class="current">
+            <a href="/python/sql-basics-and-python-integration.html" ><b>38</b>. SQL Basics and Python Integration</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/big-o-notation-and-performance.html" ><b>39</b>. Big-O Notation and Performance</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/deployment-strategies.html" ><b>40</b>. Deployment Strategies</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/pip-and-virtual-environments.html" ><b>41</b>. Pip and Virtual Environments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/git-and-version-control.html" ><b>42</b>. Git and Version Control</a>
+        </li>
+        
+        
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
+
+    <main class="content">
+        <h1 id="sql-basics-and-python-integration">SQL Basics and Python Integration</h1>
+
+<p>Structured Query Language (SQL) is used to manage and manipulate relational databases. Python provides libraries like <code class="language-plaintext highlighter-rouge">sqlite3</code>, <code class="language-plaintext highlighter-rouge">mysql-connector-python</code>, and <code class="language-plaintext highlighter-rouge">SQLAlchemy</code> to interact with databases efficiently.</p>
+
+<hr />
+
+<h2 id="why-use-sql-with-python">Why Use SQL with Python?</h2>
+
+<ul>
+  <li>Store and manage structured data efficiently.</li>
+  <li>Perform complex queries and data manipulations.</li>
+  <li>Integrate with web applications, data analysis, and automation tasks.</li>
+</ul>
+
+<hr />
+
+<h2 id="setting-up-sqlite-in-python">Setting Up SQLite in Python</h2>
+
+<p>SQLite is a lightweight, serverless database that comes with Python by default.</p>
+
+<h3 id="checking-sqlite-installation">Checking SQLite Installation</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">sqlite3</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">sqlite3</span><span class="p">.</span><span class="n">sqlite_version</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="creating-an-sqlite-database">Creating an SQLite Database</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">sqlite3</span>
+
+<span class="c1"># Connect to a database (or create one)
+</span><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">"</span><span class="s">my_database.db</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Create a cursor object to execute SQL commands
+</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">cursor</span><span class="p">()</span>
+
+<span class="c1"># Create a table
+</span><span class="n">cursor</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">"""</span><span class="s">
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        age INTEGER
+    )
+</span><span class="sh">"""</span><span class="p">)</span>
+
+<span class="c1"># Commit changes and close the connection
+</span><span class="n">conn</span><span class="p">.</span><span class="nf">commit</span><span class="p">()</span>
+<span class="n">conn</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="inserting-data-into-the-database">Inserting Data into the Database</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">"</span><span class="s">my_database.db</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">cursor</span><span class="p">()</span>
+
+<span class="n">cursor</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">"</span><span class="s">INSERT INTO users (name, age) VALUES (?, ?)</span><span class="sh">"</span><span class="p">,</span> <span class="p">(</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+<span class="n">cursor</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">"</span><span class="s">INSERT INTO users (name, age) VALUES (?, ?)</span><span class="sh">"</span><span class="p">,</span> <span class="p">(</span><span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+<span class="n">conn</span><span class="p">.</span><span class="nf">commit</span><span class="p">()</span>
+<span class="n">conn</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="querying-data">Querying Data</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">"</span><span class="s">my_database.db</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">cursor</span><span class="p">()</span>
+
+<span class="n">cursor</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">"</span><span class="s">SELECT * FROM users</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">cursor</span><span class="p">.</span><span class="nf">fetchall</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+<span class="n">conn</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1, 'Alice', 25)
+(2, 'Bob', 30)
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="updating-data">Updating Data</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">"</span><span class="s">my_database.db</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">cursor</span><span class="p">()</span>
+
+<span class="n">cursor</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">"</span><span class="s">UPDATE users SET age = ? WHERE name = ?</span><span class="sh">"</span><span class="p">,</span> <span class="p">(</span><span class="mi">26</span><span class="p">,</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">))</span>
+
+<span class="n">conn</span><span class="p">.</span><span class="nf">commit</span><span class="p">()</span>
+<span class="n">conn</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="deleting-data">Deleting Data</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">"</span><span class="s">my_database.db</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">cursor</span><span class="p">()</span>
+
+<span class="n">cursor</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">"</span><span class="s">DELETE FROM users WHERE name = ?</span><span class="sh">"</span><span class="p">,</span> <span class="p">(</span><span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">,))</span>
+
+<span class="n">conn</span><span class="p">.</span><span class="nf">commit</span><span class="p">()</span>
+<span class="n">conn</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="using-parameterized-queries-to-prevent-sql-injection">Using Parameterized Queries to Prevent SQL Injection</h2>
+
+<p>Always use parameterized queries to avoid SQL injection vulnerabilities.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">name</span> <span class="o">=</span> <span class="nf">input</span><span class="p">(</span><span class="sh">"</span><span class="s">Enter user name: </span><span class="sh">"</span><span class="p">)</span>
+<span class="n">cursor</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">"</span><span class="s">SELECT * FROM users WHERE name = ?</span><span class="sh">"</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,))</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="using-sqlalchemy-for-advanced-database-interaction">Using SQLAlchemy for Advanced Database Interaction</h2>
+
+<p>SQLAlchemy is a popular Python ORM (Object Relational Mapper) that simplifies database interactions.</p>
+
+<h3 id="install-sqlalchemy">Install SQLAlchemy</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>sqlalchemy
+</code></pre></div></div>
+
+<h3 id="using-sqlalchemy-with-sqlite">Using SQLAlchemy with SQLite</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span><span class="p">,</span> <span class="n">Column</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span>
+<span class="kn">from</span> <span class="n">sqlalchemy.ext.declarative</span> <span class="kn">import</span> <span class="n">declarative_base</span>
+<span class="kn">from</span> <span class="n">sqlalchemy.orm</span> <span class="kn">import</span> <span class="n">sessionmaker</span>
+
+<span class="c1"># Database setup
+</span><span class="n">engine</span> <span class="o">=</span> <span class="nf">create_engine</span><span class="p">(</span><span class="sh">"</span><span class="s">sqlite:///my_database.db</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">Base</span> <span class="o">=</span> <span class="nf">declarative_base</span><span class="p">()</span>
+
+<span class="c1"># Define model
+</span><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">Base</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="sh">'</span><span class="s">users</span><span class="sh">'</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="nc">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nc">Column</span><span class="p">(</span><span class="n">String</span><span class="p">)</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="nc">Column</span><span class="p">(</span><span class="n">Integer</span><span class="p">)</span>
+
+<span class="c1"># Create tables
+</span><span class="n">Base</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="nf">create_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="c1"># Add data
+</span><span class="n">Session</span> <span class="o">=</span> <span class="nf">sessionmaker</span><span class="p">(</span><span class="n">bind</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="n">session</span> <span class="o">=</span> <span class="nc">Session</span><span class="p">()</span>
+<span class="n">new_user</span> <span class="o">=</span> <span class="nc">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="sh">"</span><span class="s">Charlie</span><span class="sh">"</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">29</span><span class="p">)</span>
+<span class="n">session</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">new_user</span><span class="p">)</span>
+<span class="n">session</span><span class="p">.</span><span class="nf">commit</span><span class="p">()</span>
+
+<span class="c1"># Query data
+</span><span class="n">users</span> <span class="o">=</span> <span class="n">session</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="n">User</span><span class="p">).</span><span class="nf">all</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">user</span><span class="p">.</span><span class="n">age</span><span class="p">)</span>
+
+<span class="n">session</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="connecting-to-mysql-databases">Connecting to MySQL Databases</h2>
+
+<p>To connect to MySQL databases, install the connector:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>mysql-connector-python
+</code></pre></div></div>
+
+<h3 id="example-connecting-to-a-mysql-database">Example: Connecting to a MySQL Database</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">mysql.connector</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">mysql</span><span class="p">.</span><span class="n">connector</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span>
+    <span class="n">host</span><span class="o">=</span><span class="sh">"</span><span class="s">localhost</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">user</span><span class="o">=</span><span class="sh">"</span><span class="s">root</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="sh">"</span><span class="s">yourpassword</span><span class="sh">"</span><span class="p">,</span>
+    <span class="n">database</span><span class="o">=</span><span class="sh">"</span><span class="s">test_db</span><span class="sh">"</span>
+<span class="p">)</span>
+
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="p">.</span><span class="nf">cursor</span><span class="p">()</span>
+
+<span class="n">cursor</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="sh">"</span><span class="s">SELECT * FROM employees</span><span class="sh">"</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">.</span><span class="nf">fetchall</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+
+<span class="n">conn</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="common-sql-commands">Common SQL Commands</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SELECT</code></td>
+      <td>Retrieve data from a table</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">INSERT</code></td>
+      <td>Add new records to a table</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">UPDATE</code></td>
+      <td>Modify existing records</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">DELETE</code></td>
+      <td>Remove records from a table</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">CREATE TABLE</code></td>
+      <td>Define a new table</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">DROP TABLE</code></td>
+      <td>Delete a table</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ALTER TABLE</code></td>
+      <td>Modify a table structure</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">JOIN</code></td>
+      <td>Combine rows from multiple tables</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="sql-joins">SQL Joins</h2>
+
+<p>SQL joins allow combining data from multiple tables.</p>
+
+<h3 id="example">Example:</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">users</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">orders</span><span class="p">.</span><span class="n">amount</span> 
+<span class="k">FROM</span> <span class="n">users</span> 
+<span class="k">JOIN</span> <span class="n">orders</span> <span class="k">ON</span> <span class="n">users</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">orders</span><span class="p">.</span><span class="n">user_id</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="types-of-joins">Types of Joins:</h3>
+
+<ol>
+  <li><strong>INNER JOIN:</strong> Returns records with matching values in both tables.</li>
+  <li><strong>LEFT JOIN:</strong> Returns all records from the left table and matching ones from the right.</li>
+  <li><strong>RIGHT JOIN:</strong> Returns all records from the right table and matching ones from the left.</li>
+  <li><strong>FULL JOIN:</strong> Returns all records when there is a match in either table.</li>
+</ol>
+
+<hr />
+
+<h2 id="using-sqlite-with-pandas">Using SQLite with Pandas</h2>
+
+<p>Python’s Pandas library can interact with SQLite databases for data analysis.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="n">sqlite3</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="sh">"</span><span class="s">my_database.db</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="nf">read_sql_query</span><span class="p">(</span><span class="sh">"</span><span class="s">SELECT * FROM users</span><span class="sh">"</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="n">conn</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="best-practices-for-using-sql-with-python">Best Practices for Using SQL with Python</h2>
+
+<ol>
+  <li><strong>Use parameterized queries to avoid SQL injection.</strong></li>
+  <li><strong>Close connections after queries to free up resources.</strong></li>
+  <li><strong>Use ORM like SQLAlchemy for complex applications.</strong></li>
+  <li><strong>Normalize database schema to avoid redundancy.</strong></li>
+  <li><strong>Index columns used in queries for better performance.</strong></li>
+</ol>
+
+<hr />
+
+<h2 id="practice-exercises">Practice Exercises</h2>
+
+<ol>
+  <li>Create a Python script to store user information in an SQLite database.</li>
+  <li>Write a query to find users older than 30 from the database.</li>
+  <li>Integrate SQLite with Pandas to analyze the stored data.</li>
+  <li>Use SQLAlchemy to insert, update, and delete records.</li>
+</ol>
+
+<hr />
+
+<p>SQL is a powerful tool for managing data, and integrating it with Python allows for robust, scalable, and efficient data-driven applications.</p>
+
+        <!-- Next Lesson Button -->
+        
+        
+        <a href="/python/big-o-notation-and-performance.html" class="next-lesson">Next Lesson: Big-O Notation and Performance</a>
+        
+    </main>
+</body>
+
+</html>

@@ -1,136 +1,100 @@
 ---
 title: "Numbers and Math"
-order: 8
+order: 6
 ---
 
 # Numbers and Math
 
-Python makes it easy to work with numbers. Whether you're performing simple arithmetic or complex mathematical operations, Python provides a variety of tools to help you out.
+Python is excellent for working with numbers. It provides robust support for numerical operations, from basic arithmetic to more advanced math.
 
----
+## Number Types in Python
 
-### Types of Numbers in Python
+1. **Integers (`int`)**: Whole numbers (positive or negative).
+   ```python
+   x = 10  # Integer
+   y = -5  # Negative integer
+   ```
+2. **Floating-Point Numbers (`float`)**: Numbers with a decimal point.
+   ```python
+   pi = 3.14159  # Float
+   result = -0.5  # Negative float
+   ```
+3. **Complex Numbers (`complex`)**: Numbers with a real and imaginary part.
+   ```python
+   z = 2 + 3j  # Complex number
+   ```
 
-Python has two primary types of numbers:
+## Basic Arithmetic Operations
 
-1. **Integers**: Whole numbers, positive or negative, without decimals.
-    ```python
-    age = 25  # Integer
-    ```
+Python supports standard arithmetic operators:
 
-2. **Floats**: Numbers with a decimal point.
-    ```python
-    price = 19.99  # Float
-    ```
+| Operator | Description          | Example       | Result  |
+|----------|----------------------|---------------|---------|
+| `+`      | Addition             | `5 + 3`       | `8`     |
+| `-`      | Subtraction          | `10 - 4`      | `6`     |
+| `*`      | Multiplication       | `2 * 3`       | `6`     |
+| `/`      | Division (float)     | `7 / 2`       | `3.5`   |
+| `//`     | Floor Division       | `7 // 2`      | `3`     |
+| `%`      | Modulus (remainder)  | `7 % 2`       | `1`     |
+| `**`     | Exponentiation       | `2 ** 3`      | `8`     |
 
----
-
-### Basic Mathematical Operations
-
-You can perform common mathematical operations using Python’s arithmetic operators:
-
-1. **Addition** (`+`)
-    ```python
-    result = 5 + 3
-    print(result)  # Output: 8
-    ```
-
-2. **Subtraction** (`-`)
-    ```python
-    result = 5 - 3
-    print(result)  # Output: 2
-    ```
-
-3. **Multiplication** (`*`)
-    ```python
-    result = 5 * 3
-    print(result)  # Output: 15
-    ```
-
-4. **Division** (`/`)
-    ```python
-    result = 5 / 3
-    print(result)  # Output: 1.666...
-    ```
-
-5. **Floor Division** (`//`) - Divides and rounds down to the nearest integer.
-    ```python
-    result = 5 // 3
-    print(result)  # Output: 1
-    ```
-
-6. **Modulus** (`%`) - Returns the remainder of the division.
-    ```python
-    result = 5 % 3
-    print(result)  # Output: 2
-    ```
-
-7. **Exponentiation** (`**`) - Raises a number to the power of another.
-    ```python
-    result = 5 ** 3
-    print(result)  # Output: 125
-    ```
-
----
-
-### Order of Operations
-
-Python follows the order of operations (PEMDAS), which stands for:
-
-- **P**arentheses
-- **E**xponents
-- **M**ultiplication and **D**ivision (left to right)
-- **A**ddition and **S**ubtraction (left to right)
-
-Example:
+### Examples:
 ```python
-result = 2 + 3 * 4
-print(result)  # Output: 14 (Multiplication happens first)
+a = 15
+b = 4
+
+print(a + b)  # 19
+print(a - b)  # 11
+print(a * b)  # 60
+print(a / b)  # 3.75
+print(a // b) # 3
+print(a % b)  # 3
+print(a ** b) # 50625
 ```
 
-To change the order of operations, use parentheses:
+## Built-in Math Functions
+
+Python provides several built-in functions for working with numbers:
+
+| Function     | Description                        | Example          | Result  |
+|--------------|------------------------------------|------------------|---------|
+| `abs(x)`     | Absolute value                    | `abs(-5)`        | `5`     |
+| `round(x, n)`| Round to `n` decimal places       | `round(3.14159, 2)` | `3.14` |
+| `max(x, y)`  | Maximum value                     | `max(3, 7)`      | `7`     |
+| `min(x, y)`  | Minimum value                     | `min(3, 7)`      | `3`     |
+| `pow(x, y)`  | Raise `x` to the power of `y`     | `pow(2, 3)`      | `8`     |
+
+## The `math` Module
+
+For advanced mathematical operations, Python includes the `math` module.
+
+### Using the `math` Module:
 ```python
-result = (2 + 3) * 4
-print(result)  # Output: 20
+import math
+
+print(math.sqrt(16))  # 4.0
+print(math.pi)        # 3.141592653589793
+print(math.sin(math.radians(90)))  # 1.0
 ```
 
----
+### Common `math` Functions:
 
-### Practice Task
+| Function       | Description                          | Example                  |
+|----------------|--------------------------------------|--------------------------|
+| `math.sqrt(x)` | Square root of `x`                  | `math.sqrt(9)` → `3.0`   |
+| `math.pi`      | Value of π                          | `math.pi` → `3.14159...` |
+| `math.sin(x)`  | Sine of `x` (in radians)            | `math.sin(math.pi/2)` → `1.0` |
+| `math.cos(x)`  | Cosine of `x` (in radians)          | `math.cos(0)` → `1.0`    |
+| `math.log(x)`  | Natural logarithm of `x`            | `math.log(10)` → `2.302...` |
 
-1. Create a new file called `math_example.py`.
-2. Write the following code:
+## Practice Exercises
 
-    ```python
-    # Perform basic arithmetic
-    sum_result = 10 + 5
-    diff_result = 10 - 5
-    prod_result = 10 * 5
-    div_result = 10 / 5
-    mod_result = 10 % 3
-    exp_result = 2 ** 3
+1. Write a Python script to:
+   - Add, subtract, multiply, and divide two numbers.
+   - Use floor division and modulus to find the quotient and remainder.
+2. Use the `math` module to calculate:
+   - The square root of 64.
+   - The sine of 45 degrees.
+3. Round the number `7.56789` to 2 decimal places.
 
-    # Print results
-    print("Sum:", sum_result)
-    print("Difference:", diff_result)
-    print("Product:", prod_result)
-    print("Division:", div_result)
-    print("Modulus:", mod_result)
-    print("Exponentiation:", exp_result)
-    ```
-
-3. Run the program and verify the output of each operation.
-
----
-
-### Key Takeaways
-
-- Python supports basic arithmetic operations such as addition, subtraction, multiplication, and division.
-- Python also supports advanced operations like floor division, modulus, and exponentiation.
-- Python follows the order of operations (PEMDAS), which you can control using parentheses.
-
----
-
-### Next Steps
-
-In the next lesson, we'll dive into working with strings, another fundamental data type in Python.
+With these tools, you can confidently handle numerical operations in Python!

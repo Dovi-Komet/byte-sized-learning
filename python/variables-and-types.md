@@ -1,109 +1,106 @@
 ---
 title: "Variables and Types"
-order: 7
+order: 5
 ---
 
 # Variables and Types
 
-Variables are used to store data in Python, and each variable has a specific type that determines what kind of data it holds.
+Variables are used to store data in Python programs. They act as containers for values that can be used and manipulated.
 
----
+## What is a Variable?
 
-### What is a Variable?
+- A variable is a name that refers to a value.
+- You can think of it as a label attached to a value.
 
-A variable is a name that refers to a value. You can think of it as a labeled container that holds information.
-
-Example:
+### Example:
 ```python
-age = 25  # The variable 'age' stores the value 25
-```
-
----
-
-### Rules for Naming Variables
-
-1. Variable names must start with a letter or an underscore (`_`).
-2. They can contain letters, numbers, and underscores, but cannot start with a number.
-3. Variable names are case-sensitive (`Age` and `age` are different).
-4. Avoid using Python reserved keywords (e.g., `if`, `else`, `while`).
-
----
-
-### Data Types in Python
-
-Python has several built-in data types, and the type of a variable is determined automatically when you assign a value.
-
-1. **Numbers**
-    - Integers: Whole numbers.
-      ```python
-      age = 25
-      ```
-    - Floats: Numbers with a decimal point.
-      ```python
-      price = 19.99
-      ```
-
-2. **Strings**
-    - Text data, enclosed in single or double quotes.
-      ```python
-      name = "Alice"
-      greeting = 'Hello'
-      ```
-
-3. **Booleans**
-    - Represents `True` or `False`.
-      ```python
-      is_logged_in = True
-      ```
-
-4. **NoneType**
-    - Represents the absence of a value.
-      ```python
-      result = None
-      ```
-
----
-
-### Checking Data Types
-
-You can use the `type()` function to check the type of a variable:
-
-```python
+name = "Alice"
 age = 25
-print(type(age))  # Output: <class 'int'>
+height = 5.6
 ```
 
----
+In this example:
+- `name` stores the string `"Alice"`.
+- `age` stores the integer `25`.
+- `height` stores the floating-point number `5.6`.
 
-### Practice Task
+## Variable Naming Rules
 
-1. Create a new file called `variables_example.py`.
-2. Write the following code:
+1. Names can contain letters, numbers, and underscores (`_`).
+2. Names must start with a letter or an underscore, not a number.
+3. Names cannot be the same as Python's reserved keywords (e.g., `if`, `for`, `class`).
 
-    ```python
-    # Assign values to variables
-    name = "John"
-    age = 30
-    is_student = True
+### Valid and Invalid Names:
+```python
+# Valid
+first_name = "Alice"
+_age = 30
+user2 = "Bob"
 
-    # Print the values and their types
-    print("Name:", name, "- Type:", type(name))
-    print("Age:", age, "- Type:", type(age))
-    print("Is student:", is_student, "- Type:", type(is_student))
-    ```
+# Invalid
+2name = "Error"  # Starts with a number
+first-name = "Error"  # Contains a hyphen
+class = "Error"  # Reserved keyword
+```
 
-3. Run the program and observe the output.
+## Data Types in Python
 
----
+Python is dynamically typed, which means you don’t need to declare the type of a variable. The type is determined by the value assigned.
 
-### Key Takeaways
+### Common Data Types:
 
-- Variables store data, and their types are inferred based on the value assigned.
-- Python supports various data types like integers, floats, strings, booleans, and `NoneType`.
-- Use `type()` to check the type of a variable.
+| Data Type     | Description                          | Example                  |
+|---------------|--------------------------------------|--------------------------|
+| `int`         | Integer numbers                     | `10`, `-5`, `100`        |
+| `float`       | Decimal numbers                     | `3.14`, `-0.01`, `2.0`   |
+| `str`         | Strings (text)                      | `"hello"`, `'world'`     |
+| `bool`        | Boolean (True or False)             | `True`, `False`          |
+| `list`        | Ordered collection of values        | `[1, 2, 3]`, `["a", "b"]`|
+| `tuple`       | Immutable ordered collection        | `(1, 2, 3)`              |
+| `dict`        | Key-value pairs (dictionary)        | `{"key": "value"}`       |
 
----
+### Checking the Type of a Variable
 
-### Next Steps
+Use the `type()` function to check a variable's type:
+```python
+x = 42
+print(type(x))  # Output: <class 'int'>
+```
 
-In the next lesson, we’ll explore how to work with numbers and perform mathematical operations in Python.
+## Reassigning Variables
+
+Variables can be reassigned to values of different types:
+```python
+x = 10  # x is an integer
+x = "Python"  # x is now a string
+```
+
+## Multiple Assignments
+
+You can assign multiple variables in a single line:
+```python
+a, b, c = 1, 2, 3
+```
+
+Or assign the same value to multiple variables:
+```python
+x = y = z = 0
+```
+
+## Constants
+
+Constants are variables meant to remain unchanged. By convention, their names are written in uppercase:
+```python
+PI = 3.14159
+```
+
+## Practice Exercises
+
+1. Create variables for:
+   - Your name.
+   - Your age.
+   - Your favorite number.
+2. Print the type of each variable using `type()`.
+3. Reassign one variable to a new value of a different type and print the result.
+
+With this knowledge, you're ready to start working with data in Python!

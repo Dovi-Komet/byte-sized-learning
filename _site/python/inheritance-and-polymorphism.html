@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7YF62DJDB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P7YF62DJDB');
+    </script>
+    <!-- End Google Analytics -->
+
+    
+    <title>Inheritance and Polymorphism</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Inheritance and Polymorphism</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Inheritance and Polymorphism" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/python/inheritance-and-polymorphism.html" />
+<meta property="og:url" content="http://localhost:4000/python/inheritance-and-polymorphism.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Inheritance and Polymorphism" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Inheritance and Polymorphism","url":"http://localhost:4000/python/inheritance-and-polymorphism.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <nav class="sidebar">
+    <ul>
+        
+        
+        
+        
+        <li >
+            <a href="/" >Python Tutorial</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/intro-to-python.html" ><b>1</b>. Intro to Python</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/setup-environment.html" ><b>2</b>. Setup Environment</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comments.html" ><b>4</b>. Comments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/variables-and-types.html" ><b>5</b>. Variables and Types</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/numbers-and-math.html" ><b>6</b>. Numbers and Math</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/strings.html" ><b>7</b>. Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/slicing-and-indexing.html" ><b>8</b>. Slicing and Indexing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/f-strings.html" ><b>9</b>. f-Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/user-input-and-output.html" ><b>10</b>. User Input and Output</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/boolean-logic.html" ><b>11</b>. Boolean Logic</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/conditionals.html" ><b>12</b>. Conditionals</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/loops.html" ><b>13</b>. Loops</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/functions.html" ><b>14</b>. Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lambda-functions.html" ><b>15</b>. Lambda Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lists-sets-and-tuples.html" ><b>16</b>. Lists, Sets, and Tuples</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dictionaries.html" ><b>17</b>. Dictionaries</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/nested-structures.html" ><b>18</b>. Nested Structures</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comprehensions.html" ><b>19</b>. Comprehensions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/reading-and-writing-files.html" ><b>20</b>. Reading and Writing Files</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/error-and-exception-handling.html" ><b>21</b>. Error and Exception Handling</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/oop-basics.html" ><b>22</b>. OOP Basics</a>
+        </li>
+        
+        
+        <li class="current">
+            <a href="/python/inheritance-and-polymorphism.html" ><b>23</b>. Inheritance and Polymorphism</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/encapsulation.html" ><b>24</b>. Encapsulation</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/modules-and-packages.html" ><b>25</b>. Modules and Packages</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/standard-library-overview.html" ><b>26</b>. Standard Library Overview</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-os-module.html" ><b>27</b>. The os Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-random-module.html" ><b>28</b>. The random Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dates-and-time.html" ><b>29</b>. Dates and Time</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/working-with-json.html" ><b>30</b>. Working with JSON</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/apis-with-requests.html" ><b>31</b>. APIs and Requests</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/regular-expressions.html" ><b>32</b>. Regular Expressions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/introduction-to-pandas.html" ><b>33</b>. Introduction to Pandas</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/debugging-and-troubleshooting.html" ><b>34</b>. Debugging and Troubleshooting</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/testing-and-unit-testing.html" ><b>35</b>. Testing and Unit Testing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/logging.html" ><b>36</b>. Logging</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/web-scraping.html" ><b>37</b>. Web Scraping</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/sql-basics-and-python-integration.html" ><b>38</b>. SQL Basics and Python Integration</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/big-o-notation-and-performance.html" ><b>39</b>. Big-O Notation and Performance</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/deployment-strategies.html" ><b>40</b>. Deployment Strategies</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/pip-and-virtual-environments.html" ><b>41</b>. Pip and Virtual Environments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/git-and-version-control.html" ><b>42</b>. Git and Version Control</a>
+        </li>
+        
+        
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
+
+    <main class="content">
+        <h1 id="inheritance-and-polymorphism">Inheritance and Polymorphism</h1>
+
+<p>Inheritance and polymorphism are core concepts of Object-Oriented Programming (OOP) that promote code reuse and flexibility.</p>
+
+<hr />
+
+<h2 id="inheritance">Inheritance</h2>
+
+<p><strong>Inheritance</strong> allows a class (child) to inherit attributes and methods from another class (parent). The child class can also have additional attributes and methods or override existing ones.</p>
+
+<h3 id="syntax">Syntax:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>
+    <span class="c1"># Parent class
+</span>    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+    <span class="c1"># Child class inherits Parent
+</span>    <span class="k">pass</span>
+</code></pre></div></div>
+
+<h3 id="example">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">I make a sound.</span><span class="sh">"</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">Woof!</span><span class="sh">"</span>
+
+<span class="n">dog</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Buddy</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">dog</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>   <span class="c1"># Output: Buddy
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog</span><span class="p">.</span><span class="nf">speak</span><span class="p">())</span>  <span class="c1"># Output: Woof!
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="the-super-function">The <code class="language-plaintext highlighter-rouge">super()</code> Function</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">super()</code> function allows the child class to call methods from the parent class.</p>
+
+<h3 id="example-1">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">breed</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">().</span><span class="nf">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Call the parent class's __init__
+</span>        <span class="n">self</span><span class="p">.</span><span class="n">breed</span> <span class="o">=</span> <span class="n">breed</span>
+
+<span class="n">dog</span> <span class="o">=</span> <span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Buddy</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Labrador</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">dog</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>   <span class="c1"># Output: Buddy
+</span><span class="nf">print</span><span class="p">(</span><span class="n">dog</span><span class="p">.</span><span class="n">breed</span><span class="p">)</span>  <span class="c1"># Output: Labrador
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="method-overriding">Method Overriding</h2>
+
+<p>A child class can override methods from the parent class to provide specialized behavior.</p>
+
+<h3 id="example-2">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Bird</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">I can fly!</span><span class="sh">"</span>
+
+<span class="k">class</span> <span class="nc">Penguin</span><span class="p">(</span><span class="n">Bird</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">fly</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">I cannot fly.</span><span class="sh">"</span>
+
+<span class="n">penguin</span> <span class="o">=</span> <span class="nc">Penguin</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">penguin</span><span class="p">.</span><span class="nf">fly</span><span class="p">())</span>  <span class="c1"># Output: I cannot fly.
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="polymorphism">Polymorphism</h2>
+
+<p><strong>Polymorphism</strong> allows objects of different classes to be treated as objects of a common parent class. This enables the same interface to handle different types of objects.</p>
+
+<h3 id="example-3">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">Meow!</span><span class="sh">"</span>
+
+<span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="nc">Dog</span><span class="p">(</span><span class="sh">"</span><span class="s">Buddy</span><span class="sh">"</span><span class="p">),</span> <span class="nc">Cat</span><span class="p">(</span><span class="sh">"</span><span class="s">Kitty</span><span class="sh">"</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">animal</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">animal</span><span class="p">.</span><span class="nf">speak</span><span class="p">()</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="c1"># Output:
+# Buddy: Woof!
+# Kitty: Meow!
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="abstract-classes-and-methods">Abstract Classes and Methods</h2>
+
+<p>Abstract classes serve as blueprints for other classes. They can define methods that must be implemented by child classes.</p>
+
+<ul>
+  <li>Use the <code class="language-plaintext highlighter-rouge">abc</code> module to create abstract classes.</li>
+</ul>
+
+<h3 id="example-4">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">Shape</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Rectangle</span><span class="p">(</span><span class="n">Shape</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">self</span><span class="p">.</span><span class="n">height</span>
+
+    <span class="k">def</span> <span class="nf">perimeter</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">width</span> <span class="o">+</span> <span class="n">self</span><span class="p">.</span><span class="n">height</span><span class="p">)</span>
+
+<span class="n">rect</span> <span class="o">=</span> <span class="nc">Rectangle</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="nf">area</span><span class="p">())</span>      <span class="c1"># Output: 20
+</span><span class="nf">print</span><span class="p">(</span><span class="n">rect</span><span class="p">.</span><span class="nf">perimeter</span><span class="p">())</span> <span class="c1"># Output: 18
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="multiple-inheritance">Multiple Inheritance</h2>
+
+<p>A class can inherit from more than one parent class.</p>
+
+<h3 id="example-5">Example:</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">method_a</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">Method from A</span><span class="sh">"</span>
+
+<span class="k">class</span> <span class="nc">B</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">method_b</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sh">"</span><span class="s">Method from B</span><span class="sh">"</span>
+
+<span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="nc">C</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="nf">method_a</span><span class="p">())</span>  <span class="c1"># Output: Method from A
+</span><span class="nf">print</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="nf">method_b</span><span class="p">())</span>  <span class="c1"># Output: Method from B
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="best-practices">Best Practices</h2>
+
+<ol>
+  <li>Use inheritance to model “is-a” relationships (e.g., a Dog is an Animal).</li>
+  <li>Avoid deep inheritance hierarchies; they can make code harder to understand.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">super()</code> to access parent class methods and ensure proper initialization.</li>
+  <li>Prefer composition over inheritance when a class “has-a” relationship (e.g., a Car has an Engine).</li>
+</ol>
+
+<hr />
+
+<h2 id="practice-exercises">Practice Exercises</h2>
+
+<ol>
+  <li><strong>Basic Inheritance</strong>:
+    <ul>
+      <li>Create a parent class <code class="language-plaintext highlighter-rouge">Vehicle</code> with attributes <code class="language-plaintext highlighter-rouge">brand</code> and <code class="language-plaintext highlighter-rouge">model</code>.</li>
+      <li>Create a child class <code class="language-plaintext highlighter-rouge">Car</code> with an additional attribute <code class="language-plaintext highlighter-rouge">seats</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Method Overriding</strong>:
+    <ul>
+      <li>Define a parent class <code class="language-plaintext highlighter-rouge">Shape</code> with a method <code class="language-plaintext highlighter-rouge">area</code>.</li>
+      <li>Create child classes <code class="language-plaintext highlighter-rouge">Circle</code> and <code class="language-plaintext highlighter-rouge">Square</code> that override <code class="language-plaintext highlighter-rouge">area</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Polymorphism</strong>:
+    <ul>
+      <li>Create a parent class <code class="language-plaintext highlighter-rouge">Instrument</code> with a method <code class="language-plaintext highlighter-rouge">play</code>.</li>
+      <li>Create child classes <code class="language-plaintext highlighter-rouge">Guitar</code> and <code class="language-plaintext highlighter-rouge">Piano</code> that implement <code class="language-plaintext highlighter-rouge">play</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Abstract Classes</strong>:
+    <ul>
+      <li>Define an abstract class <code class="language-plaintext highlighter-rouge">Animal</code> with an abstract method <code class="language-plaintext highlighter-rouge">sound</code>.</li>
+      <li>Implement <code class="language-plaintext highlighter-rouge">sound</code> in child classes <code class="language-plaintext highlighter-rouge">Dog</code> and <code class="language-plaintext highlighter-rouge">Cat</code>.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Inheritance and polymorphism help create flexible, reusable, and organized code structures for complex applications.</p>
+
+        <!-- Next Lesson Button -->
+        
+        
+        <a href="/python/encapsulation.html" class="next-lesson">Next Lesson: Encapsulation</a>
+        
+    </main>
+</body>
+
+</html>

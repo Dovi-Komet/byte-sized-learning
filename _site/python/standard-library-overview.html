@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7YF62DJDB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P7YF62DJDB');
+    </script>
+    <!-- End Google Analytics -->
+
+    
+    <title>Standard Library Overview</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Standard Library Overview</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Standard Library Overview" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/python/standard-library-overview.html" />
+<meta property="og:url" content="http://localhost:4000/python/standard-library-overview.html" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Standard Library Overview" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Standard Library Overview","url":"http://localhost:4000/python/standard-library-overview.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+    <nav class="sidebar">
+    <ul>
+        
+        
+        
+        
+        <li >
+            <a href="/" >Python Tutorial</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/intro-to-python.html" ><b>1</b>. Intro to Python</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/setup-environment.html" ><b>2</b>. Setup Environment</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-terminal.html" ><b>3</b>. The Terminal</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comments.html" ><b>4</b>. Comments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/variables-and-types.html" ><b>5</b>. Variables and Types</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/numbers-and-math.html" ><b>6</b>. Numbers and Math</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/strings.html" ><b>7</b>. Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/slicing-and-indexing.html" ><b>8</b>. Slicing and Indexing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/f-strings.html" ><b>9</b>. f-Strings</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/user-input-and-output.html" ><b>10</b>. User Input and Output</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/boolean-logic.html" ><b>11</b>. Boolean Logic</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/conditionals.html" ><b>12</b>. Conditionals</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/loops.html" ><b>13</b>. Loops</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/functions.html" ><b>14</b>. Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lambda-functions.html" ><b>15</b>. Lambda Functions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/lists-sets-and-tuples.html" ><b>16</b>. Lists, Sets, and Tuples</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dictionaries.html" ><b>17</b>. Dictionaries</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/nested-structures.html" ><b>18</b>. Nested Structures</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/comprehensions.html" ><b>19</b>. Comprehensions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/reading-and-writing-files.html" ><b>20</b>. Reading and Writing Files</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/error-and-exception-handling.html" ><b>21</b>. Error and Exception Handling</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/oop-basics.html" ><b>22</b>. OOP Basics</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/inheritance-and-polymorphism.html" ><b>23</b>. Inheritance and Polymorphism</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/encapsulation.html" ><b>24</b>. Encapsulation</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/modules-and-packages.html" ><b>25</b>. Modules and Packages</a>
+        </li>
+        
+        
+        <li class="current">
+            <a href="/python/standard-library-overview.html" ><b>26</b>. Standard Library Overview</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-os-module.html" ><b>27</b>. The os Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/the-random-module.html" ><b>28</b>. The random Module</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/dates-and-time.html" ><b>29</b>. Dates and Time</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/working-with-json.html" ><b>30</b>. Working with JSON</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/apis-with-requests.html" ><b>31</b>. APIs and Requests</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/regular-expressions.html" ><b>32</b>. Regular Expressions</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/introduction-to-pandas.html" ><b>33</b>. Introduction to Pandas</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/debugging-and-troubleshooting.html" ><b>34</b>. Debugging and Troubleshooting</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/testing-and-unit-testing.html" ><b>35</b>. Testing and Unit Testing</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/logging.html" ><b>36</b>. Logging</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/web-scraping.html" ><b>37</b>. Web Scraping</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/sql-basics-and-python-integration.html" ><b>38</b>. SQL Basics and Python Integration</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/big-o-notation-and-performance.html" ><b>39</b>. Big-O Notation and Performance</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/deployment-strategies.html" ><b>40</b>. Deployment Strategies</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/pip-and-virtual-environments.html" ><b>41</b>. Pip and Virtual Environments</a>
+        </li>
+        
+        
+        <li >
+            <a href="/python/git-and-version-control.html" ><b>42</b>. Git and Version Control</a>
+        </li>
+        
+        
+    </ul>
+</nav>
+
+<script>
+    // When a link is clicked, save the scroll position of the sidebar
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Store the scroll position when a link is clicked
+            localStorage.setItem('sidebarScrollPosition', document.querySelector('.sidebar').scrollTop);
+        });
+    });
+
+    // On page load, restore the scroll position if saved
+    window.addEventListener('load', function() {
+        const savedScrollPosition = localStorage.getItem('sidebarScrollPosition');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (savedScrollPosition) {
+            // Restore the scroll position from localStorage
+            sidebar.scrollTop = savedScrollPosition;
+        }
+
+        // Find the current page in the sidebar and scroll to it (center it)
+        const currentPage = document.querySelector('.sidebar .current');
+        if (currentPage) {
+            const sidebarHeight = sidebar.offsetHeight;
+            const currentPageTop = currentPage.offsetTop;
+            const currentPageHeight = currentPage.offsetHeight;
+
+            // Calculate the scroll position to center the current page
+            const scrollToPosition = currentPageTop - (sidebarHeight / 2) + (currentPageHeight / 2);
+
+            sidebar.scrollTop = scrollToPosition;
+        }
+    });
+</script>
+
+    <main class="content">
+        <h1 id="standard-library-overview">Standard Library Overview</h1>
+
+<p>Python’s <strong>standard library</strong> is a collection of modules and packages that come pre-installed with Python. It provides a wealth of functionality, enabling developers to perform a variety of tasks without installing external packages.</p>
+
+<hr />
+
+<h2 id="categories-of-modules">Categories of Modules</h2>
+
+<h3 id="1-file-and-directory-management">1. <strong>File and Directory Management</strong></h3>
+<ul>
+  <li><strong>os</strong>: Interact with the operating system.</li>
+  <li><strong>shutil</strong>: High-level file operations.</li>
+  <li><strong>glob</strong>: Find files by patterns.</li>
+</ul>
+
+<h4 id="examples">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">os</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="nf">getcwd</span><span class="p">())</span>  <span class="c1"># Get current working directory
+</span><span class="n">os</span><span class="p">.</span><span class="nf">mkdir</span><span class="p">(</span><span class="sh">"</span><span class="s">new_folder</span><span class="sh">"</span><span class="p">)</span>  <span class="c1"># Create a new directory
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="2-data-and-time-handling">2. <strong>Data and Time Handling</strong></h3>
+<ul>
+  <li><strong>datetime</strong>: Work with dates and times.</li>
+  <li><strong>time</strong>: Time-related functions.</li>
+  <li><strong>calendar</strong>: Generate and manipulate calendars.</li>
+</ul>
+
+<h4 id="examples-1">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>  <span class="c1"># Output: Current date and time
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="3-mathematics">3. <strong>Mathematics</strong></h3>
+<ul>
+  <li><strong>math</strong>: Mathematical functions.</li>
+  <li><strong>random</strong>: Generate random numbers.</li>
+  <li><strong>statistics</strong>: Statistical functions.</li>
+</ul>
+
+<h4 id="examples-2">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">math</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># Output: 4.0
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="4-string-handling">4. <strong>String Handling</strong></h3>
+<ul>
+  <li><strong>string</strong>: Constants and utility functions for strings.</li>
+  <li><strong>re</strong>: Regular expressions for advanced string processing.</li>
+</ul>
+
+<h4 id="examples-3">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">re</span>
+
+<span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="sh">"</span><span class="s">\d+</span><span class="sh">"</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="sh">"</span><span class="s">There are 123 apples</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">match</span><span class="p">.</span><span class="nf">group</span><span class="p">())</span>  <span class="c1"># Output: 123
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="5-internet-and-web-services">5. <strong>Internet and Web Services</strong></h3>
+<ul>
+  <li><strong>urllib</strong>: Work with URLs.</li>
+  <li><strong>http.client</strong>: HTTP protocol client.</li>
+  <li><strong>json</strong>: Parse and generate JSON data.</li>
+</ul>
+
+<h4 id="examples-4">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">json</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">json_data</span><span class="p">)</span>  <span class="c1"># Output: {"name": "Alice", "age": 30}
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="6-system-utilities">6. <strong>System Utilities</strong></h3>
+<ul>
+  <li><strong>sys</strong>: System-specific parameters and functions.</li>
+  <li><strong>argparse</strong>: Command-line argument parsing.</li>
+  <li><strong>logging</strong>: Logging utility.</li>
+</ul>
+
+<h4 id="examples-5">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">sys</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="n">version</span><span class="p">)</span>  <span class="c1"># Python version
+</span></code></pre></div></div>
+
+<hr />
+
+<h3 id="7-concurrency-and-parallelism">7. <strong>Concurrency and Parallelism</strong></h3>
+<ul>
+  <li><strong>threading</strong>: Thread-based parallelism.</li>
+  <li><strong>multiprocessing</strong>: Process-based parallelism.</li>
+</ul>
+
+<h4 id="examples-6">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">threading</span>
+
+<span class="k">def</span> <span class="nf">worker</span><span class="p">():</span>
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Thread is running</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="p">.</span><span class="nc">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">worker</span><span class="p">)</span>
+<span class="n">thread</span><span class="p">.</span><span class="nf">start</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="8-data-persistence">8. <strong>Data Persistence</strong></h3>
+<ul>
+  <li><strong>pickle</strong>: Serialize and deserialize Python objects.</li>
+  <li><strong>shelve</strong>: Persistent, dictionary-like objects.</li>
+</ul>
+
+<h4 id="examples-7">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">pickle</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">name</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">age</span><span class="sh">"</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
+<span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="sh">"</span><span class="s">data.pkl</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">wb</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="nb">file</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">file</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="9-testing-and-debugging">9. <strong>Testing and Debugging</strong></h3>
+<ul>
+  <li><strong>unittest</strong>: Unit testing framework.</li>
+  <li><strong>pdb</strong>: Python debugger.</li>
+</ul>
+
+<h4 id="examples-8">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">unittest</span>
+
+<span class="k">class</span> <span class="nc">TestExample</span><span class="p">(</span><span class="n">unittest</span><span class="p">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_addition</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">assertEqual</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">unittest</span><span class="p">.</span><span class="nf">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="10-compression-and-archiving">10. <strong>Compression and Archiving</strong></h3>
+<ul>
+  <li><strong>zipfile</strong>: Work with ZIP files.</li>
+  <li><strong>tarfile</strong>: Work with TAR files.</li>
+</ul>
+
+<h4 id="examples-9">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">zipfile</span>
+
+<span class="k">with</span> <span class="n">zipfile</span><span class="p">.</span><span class="nc">ZipFile</span><span class="p">(</span><span class="sh">"</span><span class="s">example.zip</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">r</span><span class="sh">"</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_ref</span><span class="p">:</span>
+    <span class="n">zip_ref</span><span class="p">.</span><span class="nf">extractall</span><span class="p">(</span><span class="sh">"</span><span class="s">output_folder</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="11-email-and-communication">11. <strong>Email and Communication</strong></h3>
+<ul>
+  <li><strong>smtplib</strong>: Send emails using SMTP.</li>
+  <li><strong>email</strong>: Create and parse email messages.</li>
+</ul>
+
+<h4 id="examples-10">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">smtplib</span>
+
+<span class="c1"># Connect to SMTP server
+</span><span class="n">server</span> <span class="o">=</span> <span class="n">smtplib</span><span class="p">.</span><span class="nc">SMTP</span><span class="p">(</span><span class="sh">"</span><span class="s">smtp.example.com</span><span class="sh">"</span><span class="p">,</span> <span class="mi">587</span><span class="p">)</span>
+<span class="n">server</span><span class="p">.</span><span class="nf">starttls</span><span class="p">()</span>
+<span class="n">server</span><span class="p">.</span><span class="nf">login</span><span class="p">(</span><span class="sh">"</span><span class="s">user@example.com</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">password</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">server</span><span class="p">.</span><span class="nf">quit</span><span class="p">()</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="12-development-tools">12. <strong>Development Tools</strong></h3>
+<ul>
+  <li><strong>abc</strong>: Abstract base classes.</li>
+  <li><strong>inspect</strong>: Inspect live objects.</li>
+</ul>
+
+<h4 id="examples-11">Examples:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="k">class</span> <span class="nc">Shape</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="benefits-of-using-the-standard-library">Benefits of Using the Standard Library</h2>
+
+<ol>
+  <li><strong>No Installation Required</strong>: Comes with Python by default.</li>
+  <li><strong>Reliable and Well-Maintained</strong>: Built and maintained by Python developers.</li>
+  <li><strong>Cross-Platform</strong>: Works across operating systems.</li>
+</ol>
+
+<hr />
+
+<h2 id="practice-exercises">Practice Exercises</h2>
+
+<ol>
+  <li><strong>File Management</strong>:
+    <ul>
+      <li>Use the <code class="language-plaintext highlighter-rouge">os</code> and <code class="language-plaintext highlighter-rouge">shutil</code> modules to create a directory, move a file into it, and then delete the directory.</li>
+    </ul>
+  </li>
+  <li><strong>Data Handling</strong>:
+    <ul>
+      <li>Write a script that uses <code class="language-plaintext highlighter-rouge">json</code> to read a JSON file and print its contents.</li>
+    </ul>
+  </li>
+  <li><strong>String Processing</strong>:
+    <ul>
+      <li>Use the <code class="language-plaintext highlighter-rouge">re</code> module to find all numbers in a given string.</li>
+    </ul>
+  </li>
+  <li><strong>Datetime</strong>:
+    <ul>
+      <li>Create a script that calculates the number of days until the next year using <code class="language-plaintext highlighter-rouge">datetime</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Testing</strong>:
+    <ul>
+      <li>Write a simple unit test using the <code class="language-plaintext highlighter-rouge">unittest</code> module.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Python’s standard library provides all the tools you need to perform common programming tasks effectively and efficiently.</p>
+
+        <!-- Next Lesson Button -->
+        
+        
+        <a href="/python/the-os-module.html" class="next-lesson">Next Lesson: The os Module</a>
+        
+    </main>
+</body>
+
+</html>
